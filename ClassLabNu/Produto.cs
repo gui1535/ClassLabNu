@@ -4,7 +4,7 @@ namespace ClassLabNu
 {
     public class Produto
     {
-        // Atributos / Propriedades ---------------------------------------------------
+        // Atributos / Propriedades ----------------------------------------------------
 
         private readonly int id;
         private readonly string descricao;
@@ -39,9 +39,10 @@ namespace ClassLabNu
         }
 
         // Metodos ---------------------------------------------------------------------
+       
         public void Inserir()
         {
-
+            
         }
 
         public bool Alterar(Produto Produto)
@@ -55,28 +56,28 @@ namespace ClassLabNu
             return produto;
         }
 
-        public static Produto ConsultarPorValor(string _valor)
+        public static Produto ConsultarPorValor(int _valor)
         {
             Produto produto = new Produto();
             return produto;
         }
+
         public static Produto ConsultarPorDescricao(string _descricao)
         {
             Produto produto = new Produto();
             return produto;
         }
-        public static Produto ConsultarPorCodbar(string _codbar)
+
+        public static Produto ConsultarPorCodbar(int _codbar)
         {
             Produto produto = new Produto();
             return produto;
         }
-
+        
         public static List<Produto> Listar()
         {
             List<Produto> produto = new List<Produto>();
             return produto;
         }
-       
-
     }
 }

@@ -50,6 +50,7 @@
         {
 
         }
+
         public Usuario(string nome, string email, string password, Nivel nivel)
         {
             this.nome = nome;

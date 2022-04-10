@@ -10,41 +10,12 @@ namespace ClassLabNu
 
         // Atributos -----------------------------------------------------------------------------
 
-        private int id;
-        private string nome;
-        private string email;
-        private string password;
-        private bool ativo;
-        private Nivel nivel;
-
-        // Propriedades --------------------------------------------------------------------------
-
-        public int Id
-        {
-            get { return id; }
-        }
-        public string Nome
-        {
-            get { return nome; }
-        }
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
-        public string Password
-        {
-            get { return password; }
-        }
-        public bool Ativo
-        {
-            get { return ativo; }
-            set { ativo = value; }
-        }
-        public Nivel Nivel
-        {
-            get { return nivel; }
-        }
+        public int Id { get; set; }
+        public string Nome { get; }
+        public string Email { get; set; }
+        public string Password { get;  }
+        public bool Ativo { get; set; }
+        public Nivel Nivel { get; }
 
         // Metodos Construtores ------------------------------------------------------------------
 
@@ -55,21 +26,21 @@ namespace ClassLabNu
 
         public Usuario(string nome, string email, string password, Nivel nivel)
         {
-            this.nome = nome;
-            this.email = email;
-            this.password = password;
-            this.ativo = true;
-            this.nivel = nivel;
+            this.Nome = nome;
+            this.Email = email;
+            this.Password = password;
+            this.Ativo = true;
+            this.Nivel = nivel;
         }
 
         public Usuario(int id, string nome, string email, string password, bool ativo, Nivel nivel)
         {
-            this.id = id;
-            this.nome = nome;
-            this.email = email;
-            this.password = password;
-            this.ativo = ativo;
-            this.nivel = nivel;
+            this.Id = id;
+            this.Nome = nome;
+            this.Email = email;
+            this.Password = password;
+            this.Ativo = ativo;
+            this.Nivel = nivel;
         }
 
         // Metodos da Classe ---------------------------------------------------------------------
@@ -80,7 +51,7 @@ namespace ClassLabNu
 
             // Comandos SQL
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert usuarios values(@id, @nome, @email, @senha, @nivel)";
+            cmd.CommandText = "insert Usuarios values(@id, @nome, @email, @senha)";
 
             // Parametros SQL
             cmd.Parameters.AddWithValue("@id", null);
@@ -93,8 +64,8 @@ namespace ClassLabNu
             // Pega o ultimo ID criado
             cmd.CommandText = "select @@identity";
 
-            // Guarda o ultimo ID criado no id
-            id = Convert.ToInt32(cmd.ExecuteScalar());
+            // Guarda o ultimo ID criado no Id
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
 
             // Limpar parametros
             cmd.Parameters.Clear();
@@ -105,6 +76,5 @@ namespace ClassLabNu
             // Realiza validação e devolve verdadeiro ou falso
             return false;
         }
-
     }
 }

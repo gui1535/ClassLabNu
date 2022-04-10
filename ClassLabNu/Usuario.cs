@@ -1,4 +1,7 @@
-﻿namespace ClassLabNu
+﻿using System;
+using System.Data;
+
+namespace ClassLabNu
 {
     // Documentação de classes de projeto -> XML Docs
 
@@ -70,10 +73,31 @@
         }
 
         // Metodos da Classe ---------------------------------------------------------------------
-        public int Inserir()
+        public void Inserir()
         {
-            // Chamadas de banco de guarda registro
-            return id;
+            // Abre conexão com banco
+            var cmd = Banco.Abrir();
+
+            // Comandos SQL
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "insert usuarios values(@id, @nome, @email, @senha, @nivel)";
+
+            // Parametros SQL
+            cmd.Parameters.AddWithValue("@id", null);
+            cmd.Parameters.AddWithValue("@nome", Nome);
+            cmd.Parameters.AddWithValue("@email", Email);
+            cmd.Parameters.AddWithValue("@telefone", Password);
+            cmd.Parameters.AddWithValue("@senha", Nivel);
+            cmd.ExecuteNonQuery();
+
+            // Pega o ultimo ID criado
+            cmd.CommandText = "select @@identity";
+
+            // Guarda o ultimo ID criado no id
+            id = Convert.ToInt32(cmd.ExecuteScalar());
+
+            // Limpar parametros
+            cmd.Parameters.Clear();
         }
 
         public static bool EfetuarLogin(string email, string senha)

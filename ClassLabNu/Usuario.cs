@@ -81,6 +81,5 @@
             // Realiza validação e devolve verdadeiro ou falso
             return false;
         }
-
     }
 }

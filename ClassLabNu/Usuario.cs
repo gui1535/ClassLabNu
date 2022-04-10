@@ -43,7 +43,6 @@
             get { return nivel; }
         }
 
-
         // Metodos Construtores ------------------------------------------------------------------
 
         public Usuario()

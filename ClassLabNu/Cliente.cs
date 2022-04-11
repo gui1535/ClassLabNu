@@ -41,7 +41,9 @@ namespace ClassLabNu
             this.dataCad = dataCad;
             this.Ativo = ativo;
         }
+        
         // Metodos ---------------------------------------------------------------------
+        
         public void Inserir()
         {
             // Abre conexão com banco

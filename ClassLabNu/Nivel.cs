@@ -40,14 +40,15 @@
             // Inserir um novo nível
         }
 
-        
-        public bool Alterar(int id, string sigla)
-        {/// <summary>
+
+        /// <summary>
         /// Altera a sigla do nível indicado. Apenas administradores.
         /// </summary>
         /// <param name="id">Identificação do nível</param>
         /// <param name="sigla">Valor literal da nova sigla</param>
         /// <returns>Retorna valor para teste lógico, confirmando a alteração</returns>
+        public bool Alterar(int id, string sigla)
+        {
             return true;
         }
     }

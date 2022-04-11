@@ -160,7 +160,6 @@ namespace ClassLabNu
 
         public List<Produto> ConsultarPorDescricao(string _descricao)
         {
-           
         }
 
         public void ConsultarPorCodbar(int _codbar)

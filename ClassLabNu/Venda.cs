@@ -4,6 +4,7 @@ namespace ClassLabNu
 {
     public class Venda
     {
+
         // Atributos
 
         public int Id { get; set; }

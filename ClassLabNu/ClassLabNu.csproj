@@ -96,13 +96,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco.cs" />
+    <Compile Include="Caixa.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ItemPedido.cs" />
     <Compile Include="Nivel.cs" />
+    <Compile Include="Pagamento.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="Venda.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

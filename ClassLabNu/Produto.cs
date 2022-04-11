@@ -160,6 +160,8 @@ namespace ClassLabNu
 
         public List<Produto> ConsultarPorDescricao(string _descricao)
         {
+            List <Produto> lista = new List<Produto>();
+            return lista;
         }
 
         public void ConsultarPorCodbar(int _codbar)

@@ -11,8 +11,6 @@ namespace ClassLabNu
         public string Status { get; set; }
         public double Desconto { get; set; }
 
-
-
         // Construtores
 
         public Venda()

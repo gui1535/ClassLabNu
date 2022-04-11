@@ -60,7 +60,7 @@ namespace ClassLabNu
             /*
             // Abre conexão com banco
             var cmd = Banco.Abrir();
-            // ---------------------------------------------------------------------//
+            // --------------------------------------------------------------------//
             // Comandos SQL
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "insert Usuarios values(@id, @nome, @email, @senha)";
@@ -72,13 +72,13 @@ namespace ClassLabNu
             cmd.Parameters.AddWithValue("@senha", Password);
             cmd.Parameters.AddWithValue("@senha", Nivel);
             cmd.ExecuteNonQuery();
-            // ---------------------------------------------------------------------//
+            // --------------------------------------------------------------------//
             // Pega o ultimo ID criado
             cmd.CommandText = "select @@identity";
-            // ---------------------------------------------------------------------//
+            // --------------------------------------------------------------------//
             // Guarda o ultimo ID criado no Id
             Id = Convert.ToInt32(cmd.ExecuteScalar());
-            // ---------------------------------------------------------------------//
+            // --------------------------------------------------------------------//
             // Limpar parametros
             cmd.Parameters.Clear();
             */

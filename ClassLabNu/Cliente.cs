@@ -26,6 +26,7 @@ namespace ClassLabNu
             Id = id;
             Nome = nome;
             Cpf = cpf;
+            
             // DataCad = DateTime.Now;
             // ativo = true;
         }

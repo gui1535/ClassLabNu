@@ -152,11 +152,11 @@ namespace ClassLabNu
             // Enquanto limite for maior que 0
             if (limite > 0)
             {
-                cmd.CommandText = "select * from alunos limit " + inicio + "," + limite;
+                cmd.CommandText = $"select * from clientes limit {inicio}, {limite}";
             }
             else
             {
-                cmd.CommandText = "select * from alunos";
+                cmd.CommandText = "select * from clientes";
             }
 
             // Variavel para consulta

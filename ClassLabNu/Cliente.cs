@@ -17,6 +17,7 @@ namespace ClassLabNu
 
         // Construtores ----------------------------------------------------------------
 
+
         public Cliente()
         {
         }
@@ -41,34 +42,48 @@ namespace ClassLabNu
             this.dataCad = dataCad;
             this.Ativo = ativo;
         }
-        
+
+        public Cliente(string nome, string cpf, string email)
+        {
+            Nome = nome;
+            Cpf = cpf;
+            Email = email;
+        }
+
         // Metodos ---------------------------------------------------------------------
-        
-        public void Inserir()
+
+        public void Inserir(Cliente cliente)
         {
             // Abre conexão com banco
             var cmd = Banco.Abrir();
 
             // Comandos SQL
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert clientes values(@id, @nome, @cpf, @email, @datacad)";
+            cmd.CommandText = "insert clientes(nome, cpf, email, datacad, ativo) values(@id, @nome, @cpf, @email, @datacad)";
+
+            //cmd.CommandText = $"insert clientes(nome, cpf, email, datacad, ativo) values('{cliente.Nome}', '{cliente.Cpf}', '{cliente.Email}', 'default', 'default')";
 
             // Parametros SQL
             cmd.Parameters.AddWithValue("@id", null);
-            cmd.Parameters.AddWithValue("@nome", Nome);
-            cmd.Parameters.AddWithValue("@cpf", Cpf);
-            cmd.Parameters.AddWithValue("@email", Email);
-            cmd.Parameters.AddWithValue("@datacad", dataCad);
+            cmd.Parameters.AddWithValue("@nome", cliente.Nome);
+            cmd.Parameters.AddWithValue("@cpf", cliente.Cpf);
+            cmd.Parameters.AddWithValue("@email", cliente.Email);
+            cmd.Parameters.AddWithValue("@datacad", cliente.dataCad);
+
+            // Executar
             cmd.ExecuteNonQuery();
 
             // Pega o ultimo ID criado
             cmd.CommandText = "select @@identity";
 
-            // Guarda o ultimo ID criado no Id
+            // Guarda o ultimo ID na propriedade
             Id = Convert.ToInt32(cmd.ExecuteScalar());
 
             // Limpar parametros
             cmd.Parameters.Clear();
+
+            // Fecha Conexão
+            cmd.Connection.Clone();
         }
 
         public void Alterar(Cliente cliente)

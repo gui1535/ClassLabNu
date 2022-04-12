@@ -1,8 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
-using System.Windows;
-using System.Windows.Forms;
 
 namespace ClassLabNu
 {
@@ -29,6 +27,7 @@ namespace ClassLabNu
                 // Se o status de conexão for diferente do que aberto
                 if (conexao.State != ConnectionState.Open)
                 {
+                    // Entrega conexão
                     conexao.Open();
                     cmdSQL.Connection = conexao;
                 }

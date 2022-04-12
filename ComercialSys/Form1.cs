@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MetroFramework;
-using ClassLabNu;
+﻿using ClassLabNu;
+using System;
 namespace ComercialSys
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
@@ -20,8 +11,24 @@ namespace ComercialSys
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           // MessageBox.Show($"Ola {usuario.Nome}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
-           Banco.
+
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            // Objeto Cliente
+            Cliente c = new Cliente(
+                txtNome.Text,
+                txtCpf.Text,
+                txtEmail.Text);
+
+            c.Inserir();
+
+            txtId.Text = c.Id.ToString();
+
+            txtNome.Clear();
+            txtCpf.Clear();
+            txtEmail.Clear();
 
         }
     }

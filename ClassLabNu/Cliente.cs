@@ -87,8 +87,7 @@ namespace ClassLabNu
 
         public void Alterar(Cliente cliente)
         {
-            try // Faça
-            {
+           
                 // Abrir conexão com banco
                 var cmd = Banco.Abrir();
 
@@ -101,11 +100,7 @@ namespace ClassLabNu
                 cmd.Parameters.AddWithValue("_email", Email).Direction = ParameterDirection.Input;
                 cmd.Parameters.AddWithValue("_datacad", dataCad).Direction = ParameterDirection.Input;
                 cmd.ExecuteNonQuery();
-            }
-            catch (Exception) // Exception
-            {
-                throw;
-            }
+           
         }
 
         public void ConsultarPorId(int _id)

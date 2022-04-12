@@ -52,23 +52,22 @@ namespace ClassLabNu
 
         // Metodos ---------------------------------------------------------------------
 
-        public void Inserir(Cliente cliente)
+        public void Inserir()
         {
             // Abre conexão com banco
             var cmd = Banco.Abrir();
 
             // Comandos SQL
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert clientes(nome, cpf, email, datacad, ativo) values(@id, @nome, @cpf, @email, @datacad)";
+            cmd.CommandText = "insert clientes values(@id, @nome, @cpf, @email, default, 1)";
 
             //cmd.CommandText = $"insert clientes(nome, cpf, email, datacad, ativo) values('{cliente.Nome}', '{cliente.Cpf}', '{cliente.Email}', 'default', 'default')";
 
             // Parametros SQL
-            cmd.Parameters.AddWithValue("@id", null);
-            cmd.Parameters.AddWithValue("@nome", cliente.Nome);
-            cmd.Parameters.AddWithValue("@cpf", cliente.Cpf);
-            cmd.Parameters.AddWithValue("@email", cliente.Email);
-            cmd.Parameters.AddWithValue("@datacad", cliente.dataCad);
+            cmd.Parameters.AddWithValue("@id", 0);
+            cmd.Parameters.AddWithValue("@nome", Nome);
+            cmd.Parameters.AddWithValue("@cpf", Cpf);
+            cmd.Parameters.AddWithValue("@email", Email);
 
             // Executar
             cmd.ExecuteNonQuery();
@@ -83,7 +82,7 @@ namespace ClassLabNu
             cmd.Parameters.Clear();
 
             // Fecha Conexão
-            cmd.Connection.Clone();
+            cmd.Connection.Close();
         }
 
         public void Alterar(Cliente cliente)

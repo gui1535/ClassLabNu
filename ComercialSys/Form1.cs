@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
+using ClassLabNu;
 namespace ComercialSys
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
@@ -19,6 +20,8 @@ namespace ComercialSys
 
         private void Form1_Load(object sender, EventArgs e)
         {
+           // MessageBox.Show($"Ola {usuario.Nome}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           Banco.
 
         }
     }

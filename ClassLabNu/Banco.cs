@@ -6,7 +6,9 @@ using System.Windows.Forms;
 
 namespace ClassLabNu
 {
-    // Classe para conectar com o banco de dados
+    /// <summary>
+    /// Conectar no banco
+    /// </summary>
     public static class Banco
     {
         // Metodo Conexão
@@ -16,7 +18,7 @@ namespace ClassLabNu
             MySqlCommand cmdSQL = new MySqlCommand();
 
             // String de conexão
-            string stringDeConexao = @"server=localhost;database=comercialdb0191;user id=root;password=; port=3306";
+            string stringDeConexao = @"server=localhost;database=comercialdb0191;user id=root;password=;port=3306";
 
             // Conectando
             MySqlConnection conexao = new MySqlConnection(stringDeConexao);

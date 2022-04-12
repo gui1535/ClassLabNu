@@ -114,7 +114,7 @@ namespace ClassLabNu
             // Comando SQL
             banco.CommandText = "SELECT * FROM usuarios";
 
-            // var para consultar
+            // Var para consultar
             var ConsultaDados = banco.ExecuteReader();
 
             // Consulta

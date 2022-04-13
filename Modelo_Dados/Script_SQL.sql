@@ -193,3 +193,21 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- PROCEDURES CLIENTE
+-- -----------------------------------------------------
+
+-- INSERIR CLIENTE --
+delimiter |
+create procedure cliente_inserir(
+_nome varchar (60),
+_cpf varchar (11),
+_email varchar(60)
+)
+begin
+insert into clientes(nome, cpf, email, datacad, ativo)
+values (_nome, _cpf, _email, default, default);
+select * from cliente where id = (select @@identity);
+end
+|

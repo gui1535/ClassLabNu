@@ -38,6 +38,13 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.btnInserir = new MetroFramework.Controls.MetroButton();
             this.GridCliente = new System.Windows.Forms.DataGridView();
+            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.a = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnListar = new MetroFramework.Controls.MetroButton();
             this.lbIdPesq = new MetroFramework.Controls.MetroLabel();
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
@@ -47,13 +54,7 @@
             this.lbCpfPesq = new MetroFramework.Controls.MetroLabel();
             this.txtCpfPsq = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.a = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -258,6 +259,62 @@
             this.GridCliente.Size = new System.Drawing.Size(670, 314);
             this.GridCliente.TabIndex = 10;
             // 
+            // colunaId
+            // 
+            this.colunaId.HeaderText = "Id";
+            this.colunaId.MinimumWidth = 6;
+            this.colunaId.Name = "colunaId";
+            this.colunaId.ReadOnly = true;
+            this.colunaId.Width = 125;
+            // 
+            // colunaNome
+            // 
+            this.colunaNome.HeaderText = "Nome";
+            this.colunaNome.MinimumWidth = 6;
+            this.colunaNome.Name = "colunaNome";
+            this.colunaNome.ReadOnly = true;
+            this.colunaNome.Width = 125;
+            // 
+            // colunaCpf
+            // 
+            this.colunaCpf.HeaderText = "CPF";
+            this.colunaCpf.MinimumWidth = 6;
+            this.colunaCpf.Name = "colunaCpf";
+            this.colunaCpf.ReadOnly = true;
+            this.colunaCpf.Width = 125;
+            // 
+            // colunaEmail
+            // 
+            this.colunaEmail.HeaderText = "Email";
+            this.colunaEmail.MinimumWidth = 6;
+            this.colunaEmail.Name = "colunaEmail";
+            this.colunaEmail.ReadOnly = true;
+            this.colunaEmail.Width = 125;
+            // 
+            // colunaDataCad
+            // 
+            this.colunaDataCad.HeaderText = "DataCad";
+            this.colunaDataCad.MinimumWidth = 6;
+            this.colunaDataCad.Name = "colunaDataCad";
+            this.colunaDataCad.ReadOnly = true;
+            this.colunaDataCad.Width = 125;
+            // 
+            // colunaAtivo
+            // 
+            this.colunaAtivo.HeaderText = "Ativo";
+            this.colunaAtivo.MinimumWidth = 6;
+            this.colunaAtivo.Name = "colunaAtivo";
+            this.colunaAtivo.ReadOnly = true;
+            this.colunaAtivo.Width = 125;
+            // 
+            // a
+            // 
+            this.a.HeaderText = "aaaa";
+            this.a.MinimumWidth = 6;
+            this.a.Name = "a";
+            this.a.ReadOnly = true;
+            this.a.Width = 125;
+            // 
             // btnListar
             // 
             this.btnListar.Location = new System.Drawing.Point(208, 251);
@@ -406,67 +463,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
             // 
-            // colunaId
+            // metroButton1
             // 
-            this.colunaId.HeaderText = "Id";
-            this.colunaId.MinimumWidth = 6;
-            this.colunaId.Name = "colunaId";
-            this.colunaId.ReadOnly = true;
-            this.colunaId.Width = 125;
-            // 
-            // colunaNome
-            // 
-            this.colunaNome.HeaderText = "Nome";
-            this.colunaNome.MinimumWidth = 6;
-            this.colunaNome.Name = "colunaNome";
-            this.colunaNome.ReadOnly = true;
-            this.colunaNome.Width = 125;
-            // 
-            // colunaCpf
-            // 
-            this.colunaCpf.HeaderText = "CPF";
-            this.colunaCpf.MinimumWidth = 6;
-            this.colunaCpf.Name = "colunaCpf";
-            this.colunaCpf.ReadOnly = true;
-            this.colunaCpf.Width = 125;
-            // 
-            // colunaEmail
-            // 
-            this.colunaEmail.HeaderText = "Email";
-            this.colunaEmail.MinimumWidth = 6;
-            this.colunaEmail.Name = "colunaEmail";
-            this.colunaEmail.ReadOnly = true;
-            this.colunaEmail.Width = 125;
-            // 
-            // colunaDataCad
-            // 
-            this.colunaDataCad.HeaderText = "DataCad";
-            this.colunaDataCad.MinimumWidth = 6;
-            this.colunaDataCad.Name = "colunaDataCad";
-            this.colunaDataCad.ReadOnly = true;
-            this.colunaDataCad.Width = 125;
-            // 
-            // colunaAtivo
-            // 
-            this.colunaAtivo.HeaderText = "Ativo";
-            this.colunaAtivo.MinimumWidth = 6;
-            this.colunaAtivo.Name = "colunaAtivo";
-            this.colunaAtivo.ReadOnly = true;
-            this.colunaAtivo.Width = 125;
-            // 
-            // a
-            // 
-            this.a.HeaderText = "aaaa";
-            this.a.MinimumWidth = 6;
-            this.a.Name = "a";
-            this.a.ReadOnly = true;
-            this.a.Width = 125;
+            this.metroButton1.Location = new System.Drawing.Point(144, 450);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(161, 38);
+            this.metroButton1.TabIndex = 12;
+            this.metroButton1.Text = "Listar";
+            this.metroButton1.UseSelectable = true;
             // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1161, 668);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GridCliente);
@@ -513,6 +524,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaAtivo;
         private System.Windows.Forms.DataGridViewTextBoxColumn a;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 
 namespace ClassLabNu
 {
@@ -54,53 +55,87 @@ namespace ClassLabNu
 
         public void Inserir()
         {
-            // Abre conexão com banco
-            var cmd = Banco.Abrir();
 
-            // Comandos SQL
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert clientes values(@id, @nome, @cpf, @email, default, 1)";
+            try
+            {
+                // Abre conexão com banco
+                var cmd = Banco.Abrir();
 
-            //cmd.CommandText = $"insert clientes(nome, cpf, email, datacad, ativo) values('{cliente.Nome}', '{cliente.Cpf}', '{cliente.Email}', 'default', 'default')";
+                // Comandos SQL
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "insert clientes values(@id, @nome, @cpf, @email, default, 1)";
 
-            // Parametros SQL
-            cmd.Parameters.AddWithValue("@id", 0);
-            cmd.Parameters.AddWithValue("@nome", Nome);
-            cmd.Parameters.AddWithValue("@cpf", Cpf);
-            cmd.Parameters.AddWithValue("@email", Email);
+                //cmd.CommandText = $"insert clientes(nome, cpf, email, datacad, ativo) values('{cliente.Nome}', '{cliente.Cpf}', '{cliente.Email}', 'default', 'default')";
 
-            // Executar
-            cmd.ExecuteNonQuery();
+                // Parametros SQL
+                cmd.Parameters.AddWithValue("@id", 0);
+                cmd.Parameters.AddWithValue("@nome", Nome);
+                cmd.Parameters.AddWithValue("@cpf", Cpf);
+                cmd.Parameters.AddWithValue("@email", Email);
 
-            // Pega o ultimo ID criado
-            cmd.CommandText = "select @@identity";
+                // Executar
+                cmd.ExecuteNonQuery();
 
-            // Guarda o ultimo ID na propriedade
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
+                // Pega o ultimo ID criado
+                cmd.CommandText = "select @@identity";
 
-            // Limpar parametros
-            cmd.Parameters.Clear();
+                // Guarda o ultimo ID na propriedade
+                Id = Convert.ToInt32(cmd.ExecuteScalar());
 
-            // Fecha Conexão
-            cmd.Connection.Close();
+                // Limpar parametros
+                cmd.Parameters.Clear();
+
+                // Fecha Conexão
+                cmd.Connection.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"Ocorreu um erro, verifique os valores digitados", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }
+            
         }
 
         public void Alterar(Cliente cliente)
         {
-           
-                // Abrir conexão com banco
+            try
+            {
+                // Abre conexão com banco
                 var cmd = Banco.Abrir();
 
                 // Comandos SQL
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "altera_Cliente";
-                cmd.Parameters.AddWithValue("_id", Id).Direction = ParameterDirection.Input;
-                cmd.Parameters.AddWithValue("_nome", Nome).Direction = ParameterDirection.Input;
-                cmd.Parameters.AddWithValue("_cpf", Cpf).Direction = ParameterDirection.Input;
-                cmd.Parameters.AddWithValue("_email", Email).Direction = ParameterDirection.Input;
-                cmd.Parameters.AddWithValue("_datacad", dataCad).Direction = ParameterDirection.Input;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "insert clientes values(@id, @nome, @cpf, @email, default, 1)";
+
+                //cmd.CommandText = $"insert clientes(nome, cpf, email, datacad, ativo) values('{cliente.Nome}', '{cliente.Cpf}', '{cliente.Email}', 'default', 'default')";
+
+                // Parametros SQL
+                cmd.Parameters.AddWithValue("@id", 0);
+                cmd.Parameters.AddWithValue("@nome", Nome);
+                cmd.Parameters.AddWithValue("@cpf", Cpf);
+                cmd.Parameters.AddWithValue("@email", Email);
+
+                // Executar
                 cmd.ExecuteNonQuery();
+
+                // Pega o ultimo ID criado
+                cmd.CommandText = "select @@identity";
+
+                // Guarda o ultimo ID na propriedade
+                Id = Convert.ToInt32(cmd.ExecuteScalar());
+
+                // Limpar parametros
+                cmd.Parameters.Clear();
+
+                // Fecha Conexão
+                cmd.Connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ops, ocorreu um erro {ex}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
            
+
         }
 
         public void ConsultarPorId(int _id)

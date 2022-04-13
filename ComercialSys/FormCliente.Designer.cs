@@ -263,7 +263,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCliente";
             this.Padding = new System.Windows.Forms.Padding(26, 79, 26, 26);
-            this.Text = "ComercialSys";
+            this.Text = "Cliente";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).EndInit();
             this.ResumeLayout(false);

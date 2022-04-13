@@ -59,7 +59,7 @@
             this.txtId.CustomButton.Visible = false;
             this.txtId.Enabled = false;
             this.txtId.Lines = new string[0];
-            this.txtId.Location = new System.Drawing.Point(170, 121);
+            this.txtId.Location = new System.Drawing.Point(146, 92);
             this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.MaxLength = 32767;
             this.txtId.Name = "txtId";
@@ -91,7 +91,7 @@
             this.txtNome.CustomButton.UseSelectable = true;
             this.txtNome.CustomButton.Visible = false;
             this.txtNome.Lines = new string[0];
-            this.txtNome.Location = new System.Drawing.Point(170, 166);
+            this.txtNome.Location = new System.Drawing.Point(146, 137);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.MaxLength = 60;
             this.txtNome.Name = "txtNome";
@@ -123,7 +123,7 @@
             this.txtCpf.CustomButton.UseSelectable = true;
             this.txtCpf.CustomButton.Visible = false;
             this.txtCpf.Lines = new string[0];
-            this.txtCpf.Location = new System.Drawing.Point(170, 215);
+            this.txtCpf.Location = new System.Drawing.Point(146, 186);
             this.txtCpf.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpf.MaxLength = 12;
             this.txtCpf.Name = "txtCpf";
@@ -155,7 +155,7 @@
             this.txtEmail.CustomButton.UseSelectable = true;
             this.txtEmail.CustomButton.Visible = false;
             this.txtEmail.Lines = new string[0];
-            this.txtEmail.Location = new System.Drawing.Point(170, 265);
+            this.txtEmail.Location = new System.Drawing.Point(146, 236);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.MaxLength = 60;
             this.txtEmail.Name = "txtEmail";
@@ -174,7 +174,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(71, 121);
+            this.metroLabel1.Location = new System.Drawing.Point(47, 92);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(22, 20);
@@ -184,7 +184,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(71, 172);
+            this.metroLabel2.Location = new System.Drawing.Point(47, 143);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(48, 20);
@@ -194,7 +194,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(71, 221);
+            this.metroLabel3.Location = new System.Drawing.Point(47, 192);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(33, 20);
@@ -204,7 +204,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(71, 271);
+            this.metroLabel4.Location = new System.Drawing.Point(47, 242);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(42, 20);
@@ -213,7 +213,7 @@
             // 
             // btnInserir
             // 
-            this.btnInserir.Location = new System.Drawing.Point(71, 330);
+            this.btnInserir.Location = new System.Drawing.Point(47, 301);
             this.btnInserir.Margin = new System.Windows.Forms.Padding(4);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(161, 38);
@@ -226,16 +226,16 @@
             // 
             this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridCliente.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.GridCliente.Location = new System.Drawing.Point(44, 392);
+            this.GridCliente.Location = new System.Drawing.Point(44, 373);
             this.GridCliente.Name = "GridCliente";
             this.GridCliente.ReadOnly = true;
             this.GridCliente.RowHeadersWidth = 51;
-            this.GridCliente.Size = new System.Drawing.Size(743, 247);
+            this.GridCliente.Size = new System.Drawing.Size(743, 266);
             this.GridCliente.TabIndex = 10;
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(263, 330);
+            this.btnListar.Location = new System.Drawing.Point(239, 301);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(161, 38);
             this.btnListar.TabIndex = 11;

@@ -8,9 +8,12 @@ namespace ComercialSys
 {
     public partial class FormCliente : MetroFramework.Forms.MetroForm
     {
-        public FormCliente()
+        public FormCliente(Form parent)
         {
             InitializeComponent();
+
+            // MdiParent
+            MdiParent = parent;
         }
 
         private void Form1_Load(object sender, EventArgs e)

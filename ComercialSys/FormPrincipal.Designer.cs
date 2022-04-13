@@ -28,78 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+            this.mtClientes = new MetroFramework.Controls.MetroTile();
+            this.mtUsuarios = new MetroFramework.Controls.MetroTile();
+            this.mtProdutos = new MetroFramework.Controls.MetroTile();
+            this.mtPedidos = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // mtClientes
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientesToolStripMenuItem,
-            this.usuáriosToolStripMenuItem,
-            this.produtosToolStripMenuItem,
-            this.pedidosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1376, 35);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mtClientes.ActiveControl = null;
+            this.mtClientes.Location = new System.Drawing.Point(34, 61);
+            this.mtClientes.Name = "mtClientes";
+            this.mtClientes.Size = new System.Drawing.Size(71, 47);
+            this.mtClientes.TabIndex = 2;
+            this.mtClientes.Text = "Clientes";
+            this.mtClientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.mtClientes.TileImage = ((System.Drawing.Image)(resources.GetObject("mtClientes.TileImage")));
+            this.mtClientes.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.mtClientes.UseSelectable = true;
+            this.mtClientes.UseTileImage = true;
+            this.mtClientes.Click += new System.EventHandler(this.mtClientes_Click);
             // 
-            // clientesToolStripMenuItem
+            // mtUsuarios
             // 
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(118, 31);
-            this.clientesToolStripMenuItem.Text = "Clientes";
-            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            this.mtUsuarios.ActiveControl = null;
+            this.mtUsuarios.Location = new System.Drawing.Point(147, 61);
+            this.mtUsuarios.Name = "mtUsuarios";
+            this.mtUsuarios.Size = new System.Drawing.Size(71, 47);
+            this.mtUsuarios.TabIndex = 3;
+            this.mtUsuarios.Text = "Usuarios";
+            this.mtUsuarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.mtUsuarios.TileImage = ((System.Drawing.Image)(resources.GetObject("mtUsuarios.TileImage")));
+            this.mtUsuarios.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.mtUsuarios.UseSelectable = true;
+            this.mtUsuarios.UseTileImage = true;
             // 
-            // usuáriosToolStripMenuItem
+            // mtProdutos
             // 
-            this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(118, 31);
-            this.usuáriosToolStripMenuItem.Text = "Usuários";
+            this.mtProdutos.ActiveControl = null;
+            this.mtProdutos.Location = new System.Drawing.Point(260, 61);
+            this.mtProdutos.Name = "mtProdutos";
+            this.mtProdutos.Size = new System.Drawing.Size(71, 47);
+            this.mtProdutos.TabIndex = 4;
+            this.mtProdutos.Text = "Produtos";
+            this.mtProdutos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.mtProdutos.TileImage = ((System.Drawing.Image)(resources.GetObject("mtProdutos.TileImage")));
+            this.mtProdutos.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.mtProdutos.UseSelectable = true;
+            this.mtProdutos.UseTileImage = true;
             // 
-            // produtosToolStripMenuItem
+            // mtPedidos
             // 
-            this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(124, 31);
-            this.produtosToolStripMenuItem.Text = "Produtos";
-            // 
-            // pedidosToolStripMenuItem
-            // 
-            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(117, 31);
-            this.pedidosToolStripMenuItem.Text = "Pedidos";
+            this.mtPedidos.ActiveControl = null;
+            this.mtPedidos.Location = new System.Drawing.Point(373, 61);
+            this.mtPedidos.Name = "mtPedidos";
+            this.mtPedidos.Size = new System.Drawing.Size(71, 47);
+            this.mtPedidos.TabIndex = 5;
+            this.mtPedidos.Text = "Pedidos";
+            this.mtPedidos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.mtPedidos.TileImage = ((System.Drawing.Image)(resources.GetObject("mtPedidos.TileImage")));
+            this.mtPedidos.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.mtPedidos.UseSelectable = true;
+            this.mtPedidos.UseTileImage = true;
             // 
             // FormPrincipal
             // 
-            this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1376, 712);
-            this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.mtPedidos);
+            this.Controls.Add(this.mtClientes);
+            this.Controls.Add(this.mtProdutos);
+            this.Controls.Add(this.mtUsuarios);
+            this.IsMdiContainer = true;
             this.Name = "FormPrincipal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Padding = new System.Windows.Forms.Padding(10, 120, 10, 10);
+            this.Text = "SysComercial";
+            this.TransparencyKey = System.Drawing.Color.Empty;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
+
+        private MetroFramework.Controls.MetroTile mtClientes;
+        private MetroFramework.Controls.MetroTile mtUsuarios;
+        private MetroFramework.Controls.MetroTile mtProdutos;
+        private MetroFramework.Controls.MetroTile mtPedidos;
     }
 }

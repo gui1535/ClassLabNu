@@ -1,15 +1,14 @@
 ﻿using ClassLabNu;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
 namespace ComercialSys
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class FormCliente : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public FormCliente()
         {
             InitializeComponent();
         }
@@ -22,7 +21,7 @@ namespace ComercialSys
         private void btnInserir_Click(object sender, EventArgs e)
         {
             // Objeto Cliente
-            Cliente c = new Cliente(
+            ClassLabNu.Cliente c = new ClassLabNu.Cliente(
                 txtNome.Text,
                 txtCpf.Text,
                 txtEmail.Text);
@@ -31,8 +30,16 @@ namespace ComercialSys
 
             if (c.Id > 0)
             {
-                txtId.Text = c.Id.ToString();
-                MessageBox.Show("Cliente inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Verificação se email é valido
+                if (Validacao.EmailValido(txtEmail.Text))
+                {
+                    txtId.Text = c.Id.ToString();
+                    MessageBox.Show("Cliente inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Email invalido", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             else
             {
@@ -42,11 +49,9 @@ namespace ComercialSys
 
 
         }
-
-
         private void lstClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnListar_Click(object sender, EventArgs e)

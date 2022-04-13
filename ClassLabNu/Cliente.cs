@@ -14,7 +14,7 @@ namespace ClassLabNu
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public string Email { get; set; }
-        public DateTime dataCad { get; set; }
+        public string dataCad { get; set; }
         public bool Ativo { get; set; }
 
         // Construtores ----------------------------------------------------------------
@@ -40,7 +40,7 @@ namespace ClassLabNu
 
         }
 
-        public Cliente(int id, string nome, string cpf, string email, DateTime dataCad, bool ativo)
+        public Cliente(int id, string nome, string cpf, string email, string dataCad, bool ativo)
         {
             this.Id = id;
             this.Nome = nome;
@@ -66,20 +66,20 @@ namespace ClassLabNu
             try
             {
                 // Abre conexão com banco
-                var cmd = Banco.Abrir();
+                var banco = Banco.Abrir();
 
                 // Comandos SQL
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "cliente_inserir";
+                banco.CommandType = System.Data.CommandType.StoredProcedure;
+                banco.CommandText = "cliente_inserir";
 
                 // Parametros
-                cmd.Parameters.AddWithValue("_nome", Nome);
-                cmd.Parameters.AddWithValue("_cpf", Cpf);
-                cmd.Parameters.AddWithValue("_email", Email);
-                Id = Convert.ToInt32(cmd.ExecuteScalar());
+                banco.Parameters.AddWithValue("_nome", Nome);
+                banco.Parameters.AddWithValue("_cpf", Cpf);
+                banco.Parameters.AddWithValue("_email", Email);
+                Id = Convert.ToInt32(banco.ExecuteScalar());
 
                 // Fecha Conexão
-                cmd.Connection.Close();
+                banco.Connection.Close();
             }
             catch (Exception ex)
             {
@@ -91,63 +91,18 @@ namespace ClassLabNu
 
         public bool Alterar(Cliente cliente)
         {
-
-            // Abre conexão com banco
-            var cmd = Banco.Abrir();
-
-            // Comandos SQL
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "update clientes set nome = @nome,cpf = @cpf,email = @email where id = @id";
-
-            // Parametros SQL
-            cmd.Parameters.AddWithValue("@nome", Nome);
-            cmd.Parameters.AddWithValue("@cpf", Cpf);
-            cmd.Parameters.AddWithValue("@email", Email);
-
-            // Variavel ExeRetorno recebe o execute do Query
-            int QueryRetorno = cmd.ExecuteNonQuery();
-
-            // Limpar parametros
-            cmd.Parameters.Clear();
-
-            // Fecha Conexão
-            cmd.Connection.Close();
-
-
-            // Condição para retornar bool
-            if (QueryRetorno == 1)
-            {
-                // Se o valor for 1
-                return true;
-            }
-            else
-            {
-                // Se o valor nao for 1
-                return false;
-            }
-
-
         }
 
-        public void ConsultarPorId(int _id)
+        public void ConsultarPorId(string _id)
         {
+
             // Abre conexão com banco
             var cmd = Banco.Abrir();
 
             // Comandos SQL
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from clientes where id = " + _id;
+            cmd.CommandText = $"select * from clientes where idcli ='{Id}'";
 
-            // Variavel para consulta
-            var dr = cmd.ExecuteReader();
-
-            // Consulta
-            while (dr.Read())
-            {
-                Id = dr.GetInt32(0);
-                Nome = dr.GetString(1);
-                Cpf = dr.GetString(2);
-            }
         }
 
         public void ConsultarPorCpf(string _cpf)
@@ -159,31 +114,45 @@ namespace ClassLabNu
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = "select * from clientes where cpf = " + _cpf;
 
-            // Variavel para consulta
-            var dr = cmd.ExecuteReader();
-
            
         }
 
-        public static List<Cliente> Listar()
+        public List<Cliente> ListarClientes(int inicio= 0, int limite = 0)
         {
-            List<Cliente> clientes = new List<Cliente>();
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from clientes order by nome";
-            var dr = cmd.ExecuteReader();
+            // Nova lista
+            List<Cliente> lista = new List<Cliente>();
+
+            // Abrir conexão
+            var banco = Banco.Abrir();
+
+            // Comando
+            banco.CommandType = CommandType.Text;
+            if (limite > 0)
+                banco.CommandText = $"select * from clientes limit {inicio} , {limite}";
+            else
+                banco.CommandText = "select * from clientes";
+
+            // Var para Consulta
+            var dr = banco.ExecuteReader();
+
+            // Consulta
             while (dr.Read())
             {
-                clientes.Add(new Cliente(
-                    dr.GetInt32(0),
-                    dr.GetString(1),
-                    dr.GetString(2),
-                    dr.GetString(3),
-                    dr.GetDateTime(4),
-                    dr.GetBoolean(5)
+                lista.Add(new Cliente(
+                    Convert.ToInt32(dr.GetValue(0)), // ID
+                    dr.GetString(1), // Nome
+                    dr.GetString(2), // Cpf
+                    dr.GetString(3), // Email
+                    dr.GetString(4), // Datacad
+                    dr.GetBoolean(5) // Ativo
                     ));
             }
-            return clientes;
+
+            // Fecha Conexão
+            banco.Connection.Close();
+
+            // Retornando lista
+            return lista;
         }
     }
 }

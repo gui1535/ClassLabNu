@@ -39,13 +39,21 @@
             this.btnInserir = new MetroFramework.Controls.MetroButton();
             this.GridCliente = new System.Windows.Forms.DataGridView();
             this.btnListar = new MetroFramework.Controls.MetroButton();
-            this.LbIdPesq = new MetroFramework.Controls.MetroLabel();
+            this.lbIdPesq = new MetroFramework.Controls.MetroLabel();
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPesqCpf = new MetroFramework.Controls.MetroButton();
+            this.btnPesquisarId = new MetroFramework.Controls.MetroButton();
             this.lbCpfPesq = new MetroFramework.Controls.MetroLabel();
-            this.txtCpfPesq = new MetroFramework.Controls.MetroTextBox();
-            this.btnPesquisar = new MetroFramework.Controls.MetroButton();
+            this.txtCpfPsq = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.a = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -234,6 +242,14 @@
             // GridCliente
             // 
             this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colunaId,
+            this.colunaNome,
+            this.colunaCpf,
+            this.colunaEmail,
+            this.colunaDataCad,
+            this.colunaAtivo,
+            this.a});
             this.GridCliente.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.GridCliente.Location = new System.Drawing.Point(462, 137);
             this.GridCliente.Name = "GridCliente";
@@ -252,15 +268,15 @@
             this.btnListar.UseSelectable = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
-            // LbIdPesq
+            // lbIdPesq
             // 
-            this.LbIdPesq.AutoSize = true;
-            this.LbIdPesq.Location = new System.Drawing.Point(16, 29);
-            this.LbIdPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LbIdPesq.Name = "LbIdPesq";
-            this.LbIdPesq.Size = new System.Drawing.Size(22, 20);
-            this.LbIdPesq.TabIndex = 13;
-            this.LbIdPesq.Text = "ID";
+            this.lbIdPesq.AutoSize = true;
+            this.lbIdPesq.Location = new System.Drawing.Point(16, 29);
+            this.lbIdPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbIdPesq.Name = "lbIdPesq";
+            this.lbIdPesq.Size = new System.Drawing.Size(22, 20);
+            this.lbIdPesq.TabIndex = 13;
+            this.lbIdPesq.Text = "ID";
             // 
             // txtIdPesq
             // 
@@ -268,7 +284,7 @@
             // 
             // 
             this.txtIdPesq.CustomButton.Image = null;
-            this.txtIdPesq.CustomButton.Location = new System.Drawing.Point(63, 1);
+            this.txtIdPesq.CustomButton.Location = new System.Drawing.Point(60, 1);
             this.txtIdPesq.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdPesq.CustomButton.Name = "";
             this.txtIdPesq.CustomButton.Size = new System.Drawing.Size(23, 23);
@@ -288,7 +304,7 @@
             this.txtIdPesq.SelectionLength = 0;
             this.txtIdPesq.SelectionStart = 0;
             this.txtIdPesq.ShortcutsEnabled = true;
-            this.txtIdPesq.Size = new System.Drawing.Size(87, 25);
+            this.txtIdPesq.Size = new System.Drawing.Size(84, 25);
             this.txtIdPesq.TabIndex = 12;
             this.txtIdPesq.UseSelectable = true;
             this.txtIdPesq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -296,10 +312,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnPesquisar);
+            this.groupBox1.Controls.Add(this.btnPesqCpf);
+            this.groupBox1.Controls.Add(this.btnPesquisarId);
             this.groupBox1.Controls.Add(this.lbCpfPesq);
-            this.groupBox1.Controls.Add(this.txtCpfPesq);
-            this.groupBox1.Controls.Add(this.LbIdPesq);
+            this.groupBox1.Controls.Add(this.txtCpfPsq);
+            this.groupBox1.Controls.Add(this.lbIdPesq);
             this.groupBox1.Controls.Add(this.txtIdPesq);
             this.groupBox1.Location = new System.Drawing.Point(462, 39);
             this.groupBox1.Name = "groupBox1";
@@ -307,6 +324,26 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisar";
+            // 
+            // btnPesqCpf
+            // 
+            this.btnPesqCpf.Location = new System.Drawing.Point(273, 57);
+            this.btnPesqCpf.Name = "btnPesqCpf";
+            this.btnPesqCpf.Size = new System.Drawing.Size(93, 25);
+            this.btnPesqCpf.TabIndex = 16;
+            this.btnPesqCpf.Text = "Pesquisar";
+            this.btnPesqCpf.UseSelectable = true;
+            this.btnPesqCpf.Click += new System.EventHandler(this.btnPesqCpf_Click);
+            // 
+            // btnPesquisarId
+            // 
+            this.btnPesquisarId.Location = new System.Drawing.Point(173, 24);
+            this.btnPesquisarId.Name = "btnPesquisarId";
+            this.btnPesquisarId.Size = new System.Drawing.Size(93, 25);
+            this.btnPesquisarId.TabIndex = 15;
+            this.btnPesquisarId.Text = "Pesquisar";
+            this.btnPesquisarId.UseSelectable = true;
+            this.btnPesquisarId.Click += new System.EventHandler(this.btnPesquisarId_Click);
             // 
             // lbCpfPesq
             // 
@@ -318,47 +355,37 @@
             this.lbCpfPesq.TabIndex = 15;
             this.lbCpfPesq.Text = "CPF";
             // 
-            // txtCpfPesq
+            // txtCpfPsq
             // 
             // 
             // 
             // 
-            this.txtCpfPesq.CustomButton.Image = null;
-            this.txtCpfPesq.CustomButton.Location = new System.Drawing.Point(147, 1);
-            this.txtCpfPesq.CustomButton.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCpfPesq.CustomButton.Name = "";
-            this.txtCpfPesq.CustomButton.Size = new System.Drawing.Size(23, 23);
-            this.txtCpfPesq.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCpfPesq.CustomButton.TabIndex = 1;
-            this.txtCpfPesq.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtCpfPesq.CustomButton.UseSelectable = true;
-            this.txtCpfPesq.CustomButton.Visible = false;
-            this.txtCpfPesq.Lines = new string[0];
-            this.txtCpfPesq.Location = new System.Drawing.Point(82, 57);
-            this.txtCpfPesq.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCpfPesq.MaxLength = 12;
-            this.txtCpfPesq.Name = "txtCpfPesq";
-            this.txtCpfPesq.PasswordChar = '\0';
-            this.txtCpfPesq.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtCpfPesq.SelectedText = "";
-            this.txtCpfPesq.SelectionLength = 0;
-            this.txtCpfPesq.SelectionStart = 0;
-            this.txtCpfPesq.ShortcutsEnabled = true;
-            this.txtCpfPesq.Size = new System.Drawing.Size(171, 25);
-            this.txtCpfPesq.TabIndex = 14;
-            this.txtCpfPesq.UseSelectable = true;
-            this.txtCpfPesq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtCpfPesq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(324, 24);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(104, 58);
-            this.btnPesquisar.TabIndex = 15;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseSelectable = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            this.txtCpfPsq.CustomButton.Image = null;
+            this.txtCpfPsq.CustomButton.Location = new System.Drawing.Point(160, 1);
+            this.txtCpfPsq.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCpfPsq.CustomButton.Name = "";
+            this.txtCpfPsq.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtCpfPsq.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtCpfPsq.CustomButton.TabIndex = 1;
+            this.txtCpfPsq.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtCpfPsq.CustomButton.UseSelectable = true;
+            this.txtCpfPsq.CustomButton.Visible = false;
+            this.txtCpfPsq.Lines = new string[0];
+            this.txtCpfPsq.Location = new System.Drawing.Point(82, 57);
+            this.txtCpfPsq.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCpfPsq.MaxLength = 60;
+            this.txtCpfPsq.Name = "txtCpfPsq";
+            this.txtCpfPsq.PasswordChar = '\0';
+            this.txtCpfPsq.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCpfPsq.SelectedText = "";
+            this.txtCpfPsq.SelectionLength = 0;
+            this.txtCpfPsq.SelectionStart = 0;
+            this.txtCpfPsq.ShortcutsEnabled = true;
+            this.txtCpfPsq.Size = new System.Drawing.Size(184, 25);
+            this.txtCpfPsq.TabIndex = 14;
+            this.txtCpfPsq.UseSelectable = true;
+            this.txtCpfPsq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtCpfPsq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // groupBox2
             // 
@@ -378,6 +405,62 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
+            // 
+            // colunaId
+            // 
+            this.colunaId.HeaderText = "Id";
+            this.colunaId.MinimumWidth = 6;
+            this.colunaId.Name = "colunaId";
+            this.colunaId.ReadOnly = true;
+            this.colunaId.Width = 125;
+            // 
+            // colunaNome
+            // 
+            this.colunaNome.HeaderText = "Nome";
+            this.colunaNome.MinimumWidth = 6;
+            this.colunaNome.Name = "colunaNome";
+            this.colunaNome.ReadOnly = true;
+            this.colunaNome.Width = 125;
+            // 
+            // colunaCpf
+            // 
+            this.colunaCpf.HeaderText = "CPF";
+            this.colunaCpf.MinimumWidth = 6;
+            this.colunaCpf.Name = "colunaCpf";
+            this.colunaCpf.ReadOnly = true;
+            this.colunaCpf.Width = 125;
+            // 
+            // colunaEmail
+            // 
+            this.colunaEmail.HeaderText = "Email";
+            this.colunaEmail.MinimumWidth = 6;
+            this.colunaEmail.Name = "colunaEmail";
+            this.colunaEmail.ReadOnly = true;
+            this.colunaEmail.Width = 125;
+            // 
+            // colunaDataCad
+            // 
+            this.colunaDataCad.HeaderText = "DataCad";
+            this.colunaDataCad.MinimumWidth = 6;
+            this.colunaDataCad.Name = "colunaDataCad";
+            this.colunaDataCad.ReadOnly = true;
+            this.colunaDataCad.Width = 125;
+            // 
+            // colunaAtivo
+            // 
+            this.colunaAtivo.HeaderText = "Ativo";
+            this.colunaAtivo.MinimumWidth = 6;
+            this.colunaAtivo.Name = "colunaAtivo";
+            this.colunaAtivo.ReadOnly = true;
+            this.colunaAtivo.Width = 125;
+            // 
+            // a
+            // 
+            this.a.HeaderText = "aaaa";
+            this.a.MinimumWidth = 6;
+            this.a.Name = "a";
+            this.a.ReadOnly = true;
+            this.a.Width = 125;
             // 
             // FormCliente
             // 
@@ -415,13 +498,21 @@
         private MetroFramework.Controls.MetroButton btnInserir;
         private System.Windows.Forms.DataGridView GridCliente;
         private MetroFramework.Controls.MetroButton btnListar;
-        private MetroFramework.Controls.MetroLabel LbIdPesq;
+        private MetroFramework.Controls.MetroLabel lbIdPesq;
         private MetroFramework.Controls.MetroTextBox txtIdPesq;
         private System.Windows.Forms.GroupBox groupBox1;
         private MetroFramework.Controls.MetroLabel lbCpfPesq;
-        private MetroFramework.Controls.MetroTextBox txtCpfPesq;
-        private MetroFramework.Controls.MetroButton btnPesquisar;
+        private MetroFramework.Controls.MetroTextBox txtCpfPsq;
+        private MetroFramework.Controls.MetroButton btnPesquisarId;
         private System.Windows.Forms.GroupBox groupBox2;
+        private MetroFramework.Controls.MetroButton btnPesqCpf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaCpf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaAtivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn a;
     }
 }
 

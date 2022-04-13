@@ -52,18 +52,41 @@ namespace ComercialSys
 
 
         }
-        private void lstClientes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            // Abrir conexão
+            // Limpar Grid
+            GridCliente.Rows.Clear();
+
+            // Novo objeto Cliente
+            Cliente cliente = new Cliente();
+
+            // Var para Listar clientes
+            var lista = cliente.ListarClientes();
+            lista.ForEach(i =>
+            {
+
+                // Linhas 
+                GridCliente.Rows.Add();
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // ID
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Nome
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Email
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // CPF
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // DataCad
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Ativo
+
+
+            });
+        }
+
+        private void btnPesquisarId_Click(object sender, EventArgs e)
+        {
+            // Abre conexão com banco
             var banco = Banco.Abrir();
 
+            // Comandos SQL
             banco.CommandType = CommandType.Text;
-            banco.CommandText = "select * from clientes";
+            banco.CommandText = $"select * from clientes where idcli ='{txtIdPesq.Text}'";
 
             var da = new MySqlDataAdapter(banco);
 
@@ -73,22 +96,21 @@ namespace ComercialSys
             GridCliente.DataSource = dt;
         }
 
-        private void btnPesquisar_Click(object sender, EventArgs e)
+        private void btnPesqCpf_Click(object sender, EventArgs e)
         {
             // Abre conexão com banco
-            var cmd = Banco.Abrir();
+            var banco = Banco.Abrir();
 
             // Comandos SQL
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"select * from clientes where idcli ='{txtIdPesq.Text}'";
+            banco.CommandType = CommandType.Text;
+            banco.CommandText = $"select * from clientes where cpf ='{txtCpfPsq.Text}'";
 
-            var da = new MySqlDataAdapter(cmd);
+            var da = new MySqlDataAdapter(banco);
 
             DataTable dt = new DataTable();
 
             da.Fill(dt);
             GridCliente.DataSource = dt;
-
         }
     }
 }

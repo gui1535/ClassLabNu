@@ -105,9 +105,7 @@ namespace ClassLabNu
 
                 // Comandos SQL
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert clientes values(@id, @nome, @cpf, @email, default, 1)";
-
-                //cmd.CommandText = $"insert clientes(nome, cpf, email, datacad, ativo) values('{cliente.Nome}', '{cliente.Cpf}', '{cliente.Email}', 'default', 'default')";
+                cmd.CommandText = "update cliente set nome = @nome,cpf = @cpf,email = @email where id = @id";
 
                 // Parametros SQL
                 cmd.Parameters.AddWithValue("@id", 0);

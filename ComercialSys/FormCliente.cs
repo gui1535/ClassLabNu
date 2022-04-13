@@ -73,10 +73,27 @@ namespace ComercialSys
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Email
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // CPF
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // DataCad
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Ativo
 
+                // Verificação para Ativo ou Inativo
+                if ((i.Ativo == true))
+                {
+
+                    // Se Ativo for igual a 'True' -> 1
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = "Ativo"; // Ativo
+
+                }
+                else if (i.Ativo == false)
+                {
+
+                    // Se Ativo for igual a 'False' -> 0
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = "Inativo"; // Inativo
+
+                }
 
             });
+
+
+
         }
 
         private void btnPesquisarId_Click(object sender, EventArgs e)

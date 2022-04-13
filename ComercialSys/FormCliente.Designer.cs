@@ -44,7 +44,6 @@
             this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.a = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnListar = new MetroFramework.Controls.MetroButton();
             this.lbIdPesq = new MetroFramework.Controls.MetroLabel();
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
@@ -54,7 +53,6 @@
             this.lbCpfPesq = new MetroFramework.Controls.MetroLabel();
             this.txtCpfPsq = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -249,8 +247,7 @@
             this.colunaCpf,
             this.colunaEmail,
             this.colunaDataCad,
-            this.colunaAtivo,
-            this.a});
+            this.colunaAtivo});
             this.GridCliente.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.GridCliente.Location = new System.Drawing.Point(462, 137);
             this.GridCliente.Name = "GridCliente";
@@ -306,14 +303,6 @@
             this.colunaAtivo.Name = "colunaAtivo";
             this.colunaAtivo.ReadOnly = true;
             this.colunaAtivo.Width = 125;
-            // 
-            // a
-            // 
-            this.a.HeaderText = "aaaa";
-            this.a.MinimumWidth = 6;
-            this.a.Name = "a";
-            this.a.ReadOnly = true;
-            this.a.Width = 125;
             // 
             // btnListar
             // 
@@ -463,21 +452,11 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
             // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(144, 450);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(161, 38);
-            this.metroButton1.TabIndex = 12;
-            this.metroButton1.Text = "Listar";
-            this.metroButton1.UseSelectable = true;
-            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1161, 668);
-            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GridCliente);
@@ -523,8 +502,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaAtivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn a;
-        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
 

@@ -91,6 +91,7 @@ namespace ClassLabNu
 
         public bool Alterar(Cliente cliente)
         {
+            return true;
         }
 
         public void ConsultarPorId(string _id)

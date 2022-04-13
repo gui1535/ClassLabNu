@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
@@ -44,6 +45,7 @@ namespace ClassLabNu
             this.Ativo = ativo;
         }
 
+
         public Cliente(string nome, string cpf, string email)
         {
             Nome = nome;
@@ -62,35 +64,21 @@ namespace ClassLabNu
                 var cmd = Banco.Abrir();
 
                 // Comandos SQL
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert clientes values(@id, @nome, @cpf, @email, default, 1)";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "cliente_inserir";
 
-                //cmd.CommandText = $"insert clientes(nome, cpf, email, datacad, ativo) values('{cliente.Nome}', '{cliente.Cpf}', '{cliente.Email}', 'default', 'default')";
-
-                // Parametros SQL
-                cmd.Parameters.AddWithValue("@id", 0);
-                cmd.Parameters.AddWithValue("@nome", Nome);
-                cmd.Parameters.AddWithValue("@cpf", Cpf);
-                cmd.Parameters.AddWithValue("@email", Email);
-
-                // Executar
-                cmd.ExecuteNonQuery();
-
-                // Pega o ultimo ID criado
-                cmd.CommandText = "select @@identity";
-
-                // Guarda o ultimo ID na propriedade
+                // Parametros
+                cmd.Parameters.AddWithValue("_nome", Nome);
+                cmd.Parameters.AddWithValue("_cpf", Cpf);
+                cmd.Parameters.AddWithValue("_email", Email);
                 Id = Convert.ToInt32(cmd.ExecuteScalar());
-
-                // Limpar parametros
-                cmd.Parameters.Clear();
 
                 // Fecha Conexão
                 cmd.Connection.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show($"Ocorreu um erro, verifique os valores digitados", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocorreu um erro, verifique os valores digitados {ex}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -154,9 +142,6 @@ namespace ClassLabNu
                 Id = dr.GetInt32(0);
                 Nome = dr.GetString(1);
                 Cpf = dr.GetString(2);
-                Email = dr.GetString(3);
-                dataCad = dr.GetDateTime(4);
-                Ativo = dr.GetBoolean(5);
             }
         }
 
@@ -184,35 +169,17 @@ namespace ClassLabNu
             }
         }
 
-        public List<Cliente> ListarClientes(int inicio, int limite)
+        public static List<Cliente> Listar()
         {
-            // Lista Cliente
-            List<Cliente> lista = new List<Cliente>();
-
-            // Abrir conexão com banco
+            List<Cliente> clientes = new List<Cliente>();
             var cmd = Banco.Abrir();
-
-            // Comandos SQL
-            cmd.CommandType = System.Data.CommandType.Text;
-
-            // Enquanto limite for maior que 0
-            if (limite > 0)
-            {
-                cmd.CommandText = $"select * from clientes limit {inicio}, {limite}";
-            }
-            else
-            {
-                cmd.CommandText = "select * from clientes";
-            }
-
-            // Variavel para consulta
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from clientes order by nome";
             var dr = cmd.ExecuteReader();
-
-            // Consulta
             while (dr.Read())
             {
-                lista.Add(new Cliente(
-                    Convert.ToInt32(dr.GetValue(0)),
+                clientes.Add(new Cliente(
+                    dr.GetInt32(0),
                     dr.GetString(1),
                     dr.GetString(2),
                     dr.GetString(3),
@@ -220,9 +187,7 @@ namespace ClassLabNu
                     dr.GetBoolean(5)
                     ));
             }
-
-            // Retornando lista
-            return lista;
+            return clientes;
         }
     }
 }

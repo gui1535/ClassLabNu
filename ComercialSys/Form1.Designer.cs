@@ -37,6 +37,9 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.btnInserir = new MetroFramework.Controls.MetroButton();
+            this.GridCliente = new System.Windows.Forms.DataGridView();
+            this.btnListar = new MetroFramework.Controls.MetroButton();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // txtId
@@ -67,7 +70,7 @@
             this.txtId.SelectionStart = 0;
             this.txtId.ShortcutsEnabled = true;
             this.txtId.Size = new System.Drawing.Size(73, 25);
-            this.txtId.TabIndex = 0;
+            this.txtId.TabIndex = 1;
             this.txtId.UseSelectable = true;
             this.txtId.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtId.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -174,7 +177,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(71, 121);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(22, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(21, 19);
             this.metroLabel1.TabIndex = 4;
             this.metroLabel1.Text = "ID";
             // 
@@ -184,7 +187,7 @@
             this.metroLabel2.Location = new System.Drawing.Point(71, 172);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(48, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(46, 19);
             this.metroLabel2.TabIndex = 5;
             this.metroLabel2.Text = "Nome";
             // 
@@ -194,7 +197,7 @@
             this.metroLabel3.Location = new System.Drawing.Point(71, 221);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(33, 20);
+            this.metroLabel3.Size = new System.Drawing.Size(33, 19);
             this.metroLabel3.TabIndex = 6;
             this.metroLabel3.Text = "CPF";
             // 
@@ -204,7 +207,7 @@
             this.metroLabel4.Location = new System.Drawing.Point(71, 271);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(42, 20);
+            this.metroLabel4.Size = new System.Drawing.Size(41, 19);
             this.metroLabel4.TabIndex = 7;
             this.metroLabel4.Text = "Email";
             // 
@@ -219,11 +222,31 @@
             this.btnInserir.UseSelectable = true;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
+            // GridCliente
+            // 
+            this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridCliente.Location = new System.Drawing.Point(44, 392);
+            this.GridCliente.Name = "GridCliente";
+            this.GridCliente.Size = new System.Drawing.Size(743, 247);
+            this.GridCliente.TabIndex = 10;
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(263, 330);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(161, 38);
+            this.btnListar.TabIndex = 11;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseSelectable = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 498);
+            this.ClientSize = new System.Drawing.Size(862, 668);
+            this.Controls.Add(this.btnListar);
+            this.Controls.Add(this.GridCliente);
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
@@ -239,6 +262,7 @@
             this.Padding = new System.Windows.Forms.Padding(26, 79, 26, 26);
             this.Text = "ComercialSys";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,6 +279,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroButton btnInserir;
+        private System.Windows.Forms.DataGridView GridCliente;
+        private MetroFramework.Controls.MetroButton btnListar;
     }
 }
 

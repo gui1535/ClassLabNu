@@ -72,5 +72,23 @@ namespace ComercialSys
             da.Fill(dt);
             GridCliente.DataSource = dt;
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            // Abre conexão com banco
+            var cmd = Banco.Abrir();
+
+            // Comandos SQL
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"select * from clientes where idcli ='{txtIdPesq.Text}'";
+
+            var da = new MySqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+            GridCliente.DataSource = dt;
+
+        }
     }
 }

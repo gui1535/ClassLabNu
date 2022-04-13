@@ -34,6 +34,11 @@ namespace ClassLabNu
             // ativo = true;
 
         }
+        public Cliente(int id)
+        {
+            Id = id;
+
+        }
 
         public Cliente(int id, string nome, string cpf, string email, DateTime dataCad, bool ativo)
         {
@@ -157,16 +162,7 @@ namespace ClassLabNu
             // Variavel para consulta
             var dr = cmd.ExecuteReader();
 
-            // Consulta
-            while (dr.Read())
-            {
-                Id = dr.GetInt32(0);
-                Nome = dr.GetString(1);
-                Cpf = dr.GetString(2);
-                Email = dr.GetString(3);
-                dataCad = dr.GetDateTime(4);
-                Ativo = dr.GetBoolean(5);
-            }
+           
         }
 
         public static List<Cliente> Listar()

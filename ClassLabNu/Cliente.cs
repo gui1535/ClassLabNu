@@ -28,10 +28,10 @@ namespace ClassLabNu
             Id = id;
             Nome = nome;
             Cpf = cpf;
-            
+
             // DataCad = DateTime.Now;
             // ativo = true;
-            
+
         }
 
         public Cliente(int id, string nome, string cpf, string email, DateTime dataCad, bool ativo)
@@ -91,48 +91,48 @@ namespace ClassLabNu
             catch (Exception)
             {
                 MessageBox.Show($"Ocorreu um erro, verifique os valores digitados", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
             }
-            
+
         }
 
-        public void Alterar(Cliente cliente)
+        public bool Alterar(Cliente cliente)
         {
-            try
+
+            // Abre conexão com banco
+            var cmd = Banco.Abrir();
+
+            // Comandos SQL
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "update clientes set nome = @nome,cpf = @cpf,email = @email where id = @id";
+
+            // Parametros SQL
+            cmd.Parameters.AddWithValue("@nome", Nome);
+            cmd.Parameters.AddWithValue("@cpf", Cpf);
+            cmd.Parameters.AddWithValue("@email", Email);
+
+            // Variavel ExeRetorno recebe o execute do Query
+            int QueryRetorno = cmd.ExecuteNonQuery();
+
+            // Limpar parametros
+            cmd.Parameters.Clear();
+
+            // Fecha Conexão
+            cmd.Connection.Close();
+
+
+            // Condição para retornar bool
+            if (QueryRetorno == 1)
             {
-                // Abre conexão com banco
-                var cmd = Banco.Abrir();
-
-                // Comandos SQL
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "update cliente set nome = @nome,cpf = @cpf,email = @email where id = @id";
-
-                // Parametros SQL
-                cmd.Parameters.AddWithValue("@id", 0);
-                cmd.Parameters.AddWithValue("@nome", Nome);
-                cmd.Parameters.AddWithValue("@cpf", Cpf);
-                cmd.Parameters.AddWithValue("@email", Email);
-
-                // Executar
-                cmd.ExecuteNonQuery();
-
-                // Pega o ultimo ID criado
-                cmd.CommandText = "select @@identity";
-
-                // Guarda o ultimo ID na propriedade
-                Id = Convert.ToInt32(cmd.ExecuteScalar());
-
-                // Limpar parametros
-                cmd.Parameters.Clear();
-
-                // Fecha Conexão
-                cmd.Connection.Close();
+                // Se o valor for 1
+                return true;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Ops, ocorreu um erro {ex}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Se o valor nao for 1
+                return false;
             }
-           
+
 
         }
 
@@ -142,7 +142,7 @@ namespace ClassLabNu
             var cmd = Banco.Abrir();
 
             // Comandos SQL
-            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from clientes where id = " + _id;
 
             // Variavel para consulta

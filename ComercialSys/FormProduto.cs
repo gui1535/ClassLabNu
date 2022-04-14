@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace ComercialSys
 {
-    public partial class FormProduto : Form
+    public partial class FormProduto : MetroFramework.Forms.MetroForm
     {
         public FormProduto()
         {
             InitializeComponent();
         }
+
+
     }
 }

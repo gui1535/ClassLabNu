@@ -151,7 +151,7 @@ namespace ClassLabNu
 
         }
 
-        public List<Cliente> ListarClientes(int inicio = 0, int limite = 0)
+        public List<Cliente> ListarClientes(int i = 0, int l = 0)
         {
             // Nova lista
             List<Cliente> lista = new List<Cliente>();
@@ -161,8 +161,8 @@ namespace ClassLabNu
 
             // Comando
             banco.CommandType = CommandType.Text;
-            if (limite > 0)
-                banco.CommandText = $"select * from clientes limit {inicio} , {limite}";
+            if (l > 0)
+                banco.CommandText = $"select * from clientes limit {i} , {l}";
             else
                 banco.CommandText = "select * from clientes";
 

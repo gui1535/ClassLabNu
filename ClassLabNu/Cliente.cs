@@ -97,14 +97,7 @@ namespace ClassLabNu
 
         public void Alterar(Cliente cliente)
         {
-            // Abre conexao
-            var banco = Banco.Abrir();
-
-            // Comandos SQL
-            banco.CommandType = System.Data.CommandType.StoredProcedure;
-            banco.CommandText = $"UPDATE clientes SET nome = '{Nome}' WHERE idcli = {Id}";
-
-            banco.ExecuteNonQuery();
+            //
         }
 
         public void ConsultarPorId(int _id)

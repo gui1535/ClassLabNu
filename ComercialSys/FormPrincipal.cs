@@ -12,19 +12,19 @@ namespace ComercialSys
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             // Objeto FormCliente
-            FormCliente frmCliente = new FormCliente(this);
+            //FormCliente frmCliente = new FormCliente(this);
 
             // Definindo Form como MdiParent
             // frmCliente.MdiParent = this;
 
             // Abrir Form
-            frmCliente.Show();
+           // frmCliente.Show();
         }
 
         private void mtClientes_Click(object sender, EventArgs e)
         {
-            FormCliente frmCliente = new FormCliente(this);
-            frmCliente.Show();
+            //FormCliente frmCliente = new FormCliente(this);
+            //frmCliente.Show();
         }
     }
 }

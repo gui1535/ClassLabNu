@@ -54,7 +54,6 @@
             this.lbCpfPesq = new MetroFramework.Controls.MetroLabel();
             this.txtCpfPsq = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.gpBoxPesq.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -195,7 +194,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(16, 42);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(22, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(21, 19);
             this.metroLabel1.TabIndex = 4;
             this.metroLabel1.Text = "ID";
             // 
@@ -205,7 +204,7 @@
             this.metroLabel2.Location = new System.Drawing.Point(16, 93);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(48, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(46, 19);
             this.metroLabel2.TabIndex = 5;
             this.metroLabel2.Text = "Nome";
             // 
@@ -215,7 +214,7 @@
             this.metroLabel3.Location = new System.Drawing.Point(16, 142);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(33, 20);
+            this.metroLabel3.Size = new System.Drawing.Size(33, 19);
             this.metroLabel3.TabIndex = 6;
             this.metroLabel3.Text = "CPF";
             // 
@@ -225,7 +224,7 @@
             this.metroLabel4.Location = new System.Drawing.Point(16, 192);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(42, 20);
+            this.metroLabel4.Size = new System.Drawing.Size(41, 19);
             this.metroLabel4.TabIndex = 7;
             this.metroLabel4.Text = "Email";
             // 
@@ -323,7 +322,7 @@
             this.lbIdPesq.Location = new System.Drawing.Point(16, 29);
             this.lbIdPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbIdPesq.Name = "lbIdPesq";
-            this.lbIdPesq.Size = new System.Drawing.Size(22, 20);
+            this.lbIdPesq.Size = new System.Drawing.Size(21, 19);
             this.lbIdPesq.TabIndex = 13;
             this.lbIdPesq.Text = "ID";
             // 
@@ -406,7 +405,7 @@
             this.lbCpfPesq.Location = new System.Drawing.Point(16, 62);
             this.lbCpfPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCpfPesq.Name = "lbCpfPesq";
-            this.lbCpfPesq.Size = new System.Drawing.Size(33, 20);
+            this.lbCpfPesq.Size = new System.Drawing.Size(33, 19);
             this.lbCpfPesq.TabIndex = 15;
             this.lbCpfPesq.Text = "CPF";
             // 
@@ -461,21 +460,11 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
             // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(144, 496);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(161, 38);
-            this.metroButton1.TabIndex = 12;
-            this.metroButton1.Text = "Listar";
-            this.metroButton1.UseSelectable = true;
-            // 
             // FormCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1305, 668);
-            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gpBoxPesq);
             this.Controls.Add(this.GridCliente);
@@ -521,7 +510,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaAtivo;
         private System.Windows.Forms.Button btnPesqId;
         private System.Windows.Forms.Button btnPesqCpf;
-        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
 

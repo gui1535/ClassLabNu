@@ -6,12 +6,12 @@ namespace ComercialSys
 {
     public partial class FormCliente : MetroFramework.Forms.MetroForm
     {
-        public FormCliente(Form parent)
+        public FormCliente()
         {
             InitializeComponent();
 
             // MdiParent
-            MdiParent = parent;
+            //MdiParent = parent;
         }
 
         private void Form1_Load(object sender, EventArgs e)

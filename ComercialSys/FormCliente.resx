@@ -135,29 +135,11 @@
   <metadata name="colunaAtivo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="colunaId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colunaNome.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colunaCpf.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colunaEmail.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colunaDataCad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colunaAtivo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnPesqId.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cgAAEnIBXmVb4wAABD5JREFUWEfVl21sU2UUx/fF7/pVUYPGj76QkBgTTXwLH/xijJkxEV8CGoLyRRMU
+        cQAAEnEB89x6jgAABD5JREFUWEfVl21sU2UUx/fF7/pVUYPGj76QkBgTTXwLH/xijJkxEV8CGoLyRRMU
         o8iiIi+JCwXFKeBkMl0202yygDJwhlDoYBP2vq4rbdd2t7e9bW+7ri9ry9/nnKfPLMUXbmcxnuSf3nt7
         zz2/5zznntM2/K9sbccsnmnz4dUfgihfqr/dtn0SDVvG/kKjWLXHXR+YlTumZJB3RrHa5sbmXg2tzhi+
         PR9Hi8PARnsQd3wi7hHf032Pfnn53wO56V0Z+JH9Hji9aZRKJRZZ9XHnxQQU7O1Ng8uHUMG3Hg8vBVMq
@@ -181,7 +163,7 @@
   <data name="btnPesqCpf.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cwAAEnMBjCK5BwAABD5JREFUWEfVl21sU2UUx/fF7/pVUYPGj76QkBgTTXwLH/xijJkxEV8CGoLyRRMU
+        cgAAEnIBXmVb4wAABD5JREFUWEfVl21sU2UUx/fF7/pVUYPGj76QkBgTTXwLH/xijJkxEV8CGoLyRRMU
         o8iiIi+JCwXFKeBkMl0202yygDJwhlDoYBP2vq4rbdd2t7e9bW+7ri9ry9/nnKfPLMUXbmcxnuSf3nt7
         zz2/5zznntM2/K9sbccsnmnz4dUfgihfqr/dtn0SDVvG/kKjWLXHXR+YlTumZJB3RrHa5sbmXg2tzhi+
         PR9Hi8PARnsQd3wi7hHf032Pfnn53wO56V0Z+JH9Hji9aZRKJRZZ9XHnxQQU7O1Ng8uHUMG3Hg8vBVMq

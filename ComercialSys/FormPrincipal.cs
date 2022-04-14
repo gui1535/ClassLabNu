@@ -12,19 +12,31 @@ namespace ComercialSys
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             // Objeto FormCliente
-            //FormCliente frmCliente = new FormCliente(this);
+            FormCliente frmCliente = new FormCliente(this);
 
             // Definindo Form como MdiParent
-            // frmCliente.MdiParent = this;
+            frmCliente.MdiParent = this;
 
             // Abrir Form
-           // frmCliente.Show();
+            frmCliente.Show();
         }
 
-        private void mtClientes_Click(object sender, EventArgs e)
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FormCliente frmCliente = new FormCliente(this);
-            //frmCliente.Show();
+            // Instancia do form Cliente
+            FormCliente frmCliente = new FormCliente(this);
+
+            // Exibe Form
+            frmCliente.Show();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Instancia do form Cliente
+            FormProduto frmProduto = new FormProduto(this);
+
+            // Exibe Form
+            frmProduto.Show();
         }
     }
 }

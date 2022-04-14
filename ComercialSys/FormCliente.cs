@@ -6,12 +6,12 @@ namespace ComercialSys
 {
     public partial class FormCliente : MetroFramework.Forms.MetroForm
     {
-        public FormCliente()
+        public FormCliente(Form parent)
         {
             InitializeComponent();
 
-            // MdiParent
-            //MdiParent = parent;
+            //MdiParent
+           MdiParent = parent;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -69,6 +69,8 @@ namespace ComercialSys
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Nome
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Email
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // CPF
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // DataCad
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // DataCad
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // DataCad
 
                 // Verificação para Ativo ou Inativo

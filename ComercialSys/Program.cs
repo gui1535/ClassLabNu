@@ -16,7 +16,7 @@ namespace ComercialSys
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormCliente());
+            Application.Run(new FormPrincipal());
         }
     }
 }

@@ -195,7 +195,7 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- PROCEDURES CLIENTE
+-- PROCEDURES CLIENTES
 -- -----------------------------------------------------
 
 -- INSERIR CLIENTE --
@@ -209,5 +209,25 @@ begin
 insert into clientes(nome, cpf, email, datacad, ativo)
 values (_nome, _cpf, _email, default, default);
 select * from cliente where id = (select @@identity);
+end
+|
+
+-- -----------------------------------------------------
+-- PROCEDURES PRODUTOS
+-- -----------------------------------------------------
+
+-- INSERIR PRODUTO --
+delimiter |
+create procedure produto_inserir(
+_descricao varchar (100),
+_unidade varchar (14),
+_codbar char(13),
+_desconto DECIMAL(10,2),
+_valor DECIMAL(10,2)
+)
+begin
+insert into produtos(descricao, unidade, codbar, desconto, valor)
+values (_descricao, _unidade, _codbar, _desconto, _valor);
+select * from produtos where idprod = (select @@identity);
 end
 |

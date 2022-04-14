@@ -1,5 +1,6 @@
 ﻿using ClassLabNu;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace ComercialSys
@@ -11,7 +12,49 @@ namespace ComercialSys
             InitializeComponent();
 
             //MdiParent
-           MdiParent = parent;
+            MdiParent = parent;
+
+            ListarDataGrid();
+        }
+
+        private void ListarDataGrid()
+        {
+            // Limpar Grid
+            GridCliente.Rows.Clear();
+
+            // Novo objeto Cliente
+            Cliente cliente = new Cliente();
+
+            // Var para Listar clientes
+            var lista = cliente.ListarClientes();
+            lista.ForEach(i =>
+            {
+
+                // Linhas 
+                GridCliente.Rows.Add();
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // ID
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Nome
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Email
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // CPF
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // DataCad
+
+                // Verificação para Ativo ou Inativo
+                if ((i.Ativo == true))
+                {
+
+                    // Se Ativo for igual a 'True' -> 1
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = "Ativo"; // Ativo
+
+                }
+                else if (i.Ativo == false)
+                {
+
+                    // Se Ativo for igual a 'False' -> 0
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = "Inativo"; // Inativo
+
+                }
+
+            });
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -52,47 +95,8 @@ namespace ComercialSys
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            // Limpar Grid
-            GridCliente.Rows.Clear();
-
-            // Novo objeto Cliente
-            Cliente cliente = new Cliente();
-
-            // Var para Listar clientes
-            var lista = cliente.ListarClientes();
-            lista.ForEach(i =>
-            {
-
-                // Linhas 
-                GridCliente.Rows.Add();
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // ID
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Nome
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Email
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // CPF
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // DataCad
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // DataCad
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // DataCad
-
-                // Verificação para Ativo ou Inativo
-                if ((i.Ativo == true))
-                {
-
-                    // Se Ativo for igual a 'True' -> 1
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = "Ativo"; // Ativo
-
-                }
-                else if (i.Ativo == false)
-                {
-
-                    // Se Ativo for igual a 'False' -> 0
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = "Inativo"; // Inativo
-
-                }
-
-            });
-
+            ListarDataGrid();
         }
-
         private void btnPesqId_Click(object sender, EventArgs e)
         {
             // Objeto Cliente
@@ -106,13 +110,17 @@ namespace ComercialSys
             txtNome.Text = cliente.Nome;
             txtEmail.Text = cliente.Email;
             txtCpf.Text = cliente.Cpf;
+
+            // Limpando as TextBox de pesquisa
+            txtIdPesq.Clear();
+            txtCpfPsq.Clear();
         }
 
         private void GridCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // Variaveis para objeto Cliente
             int id;
-            string nome, email,cpf;
+            string nome, email, cpf;
 
             // Valores para variaveis
             id = Convert.ToInt32(GridCliente["colunaId", e.RowIndex].Value);
@@ -136,13 +144,17 @@ namespace ComercialSys
             Cliente cliente = new Cliente();
 
             // Metodo Consulta por ID
-            cliente.ConsultarPorCpf(txtCpfPsq.Text);
+            cliente.ConsultarPorCpf(Convert.ToString(txtCpfPsq.Text));
 
             // Atributos
             txtId.Text = Convert.ToString(cliente.Id);
             txtNome.Text = cliente.Nome;
             txtEmail.Text = cliente.Email;
             txtCpf.Text = cliente.Cpf;
+
+            // Limpando as TextBox de pesquisa
+            txtIdPesq.Clear();
+            txtCpfPsq.Clear();
         }
     }
 }

@@ -123,6 +123,8 @@ namespace ClassLabNu
                 Ativo = dr.GetBoolean(5);
             }
 
+
+
         }
 
         public void ConsultarPorCpf(string _cpf)
@@ -147,8 +149,30 @@ namespace ClassLabNu
                 dataCad = dr.GetString(4);
                 Ativo = dr.GetBoolean(5);
             }
+        }
 
+        public void ConsultarPorNome(string _nome)
+        {
+            // Abre conexao com banco
+            var cmd = Banco.Abrir();
 
+            // Comandos SQL
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = $"select * from clientes where nome = {_nome}";
+
+            // Var para leitura
+            var dr = cmd.ExecuteReader();
+
+            // Consulta
+            while (dr.Read())
+            {
+                Id = dr.GetInt32(0);
+                Nome = dr.GetString(1);
+                Cpf = dr.GetString(2);
+                Email = dr.GetString(3);
+                dataCad = dr.GetString(4);
+                Ativo = dr.GetBoolean(5);
+            }
         }
 
         public List<Cliente> ListarClientes(int i = 0, int l = 0)

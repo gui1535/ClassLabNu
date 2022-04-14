@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows;
+using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace ClassLabNu
 {
@@ -66,28 +69,36 @@ namespace ClassLabNu
 
         public void Inserir()
         {
-            // Abre conexão com banco
-            var banco = Banco.Abrir();
+            try
+            {
+                // Abre conexão com banco
+                var banco = Banco.Abrir();
 
-            // Comandos SQL
-            banco.CommandType = CommandType.StoredProcedure;
-            banco.CommandText = "produto_inserir";
+                // Comandos SQL
+                banco.CommandType = CommandType.StoredProcedure;
+                banco.CommandText = "produto_inserir";
 
-            // Parametros
-            banco.Parameters.AddWithValue("_descricao", Descricao);
-            banco.Parameters.AddWithValue("_unidade", Unidade);
-            banco.Parameters.AddWithValue("_codbar", Codbar);
-            banco.Parameters.AddWithValue("_desconto", Desconto);
-            banco.Parameters.AddWithValue("_valor", Valor);
-            Id = Convert.ToInt32(banco.ExecuteScalar());
+                // Parametros
+                banco.Parameters.AddWithValue("_descricao", Descricao);
+                banco.Parameters.AddWithValue("_unidade", Unidade);
+                banco.Parameters.AddWithValue("_codbar", Codbar);
+                banco.Parameters.AddWithValue("_desconto", Desconto);
+                banco.Parameters.AddWithValue("_valor", Valor);
+                Id = Convert.ToInt32(banco.ExecuteScalar());
 
-            // Fecha Conexão
-            banco.Connection.Close();
+                // Fecha Conexão
+                banco.Connection.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro, verifique os valores digitados", "SysComercial", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         public void Alterar(Produto Produto)
         {
-            
+
         }
 
         public void ConsultarPorId(int _id)

@@ -12,9 +12,12 @@ namespace ComercialSys
 
             //MdiParent
             MdiParent = parent;
+
+            // Listando Produtos
+            ListarProdutos();
         }
 
-        private void btnListar_Click(object sender, EventArgs e)
+        private void ListarProdutos()
         {
             // Limpar Grid
             GridProdutos.Rows.Clear();
@@ -55,13 +58,17 @@ namespace ComercialSys
                 }
 
             });
+        }
 
-
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            // Listando produtos
+            ListarProdutos();
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            // Objeto Cliente
+            // Objeto Produto
             Produto p = new Produto(
                  txtNome.Text,
                  txtunidade.Text,
@@ -69,12 +76,12 @@ namespace ComercialSys
                  Convert.ToDouble(txtValor.Text),
                  Convert.ToDouble(txtDesconto.Text)
                  );
-            p.Inserir();
+            p.Inserir(); ;
         }
 
         private void GridProdutos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Variaveis para objeto Cliente
+            // Variaveis para objeto Produto
             int id;
             string unidade, codbar, nome;
             double valor, desconto;
@@ -98,11 +105,6 @@ namespace ComercialSys
             txtCodBar.Text = produto.Codbar;
             txtValor.Text = produto.Valor.ToString();
             txtDesconto.Text = produto.Desconto.ToString();
-        }
-
-        private void GridProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnPesqId_Click(object sender, EventArgs e)

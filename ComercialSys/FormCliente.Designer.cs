@@ -37,7 +37,6 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.btnInserir = new MetroFramework.Controls.MetroButton();
             this.GridCliente = new System.Windows.Forms.DataGridView();
             this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,18 +44,23 @@
             this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnListar = new MetroFramework.Controls.MetroButton();
-            this.lbIdPesq = new MetroFramework.Controls.MetroLabel();
-            this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
-            this.gpBoxPesq = new System.Windows.Forms.GroupBox();
-            this.btnPesqId = new System.Windows.Forms.Button();
-            this.btnPesqCpf = new System.Windows.Forms.Button();
-            this.lbCpfPesq = new MetroFramework.Controls.MetroLabel();
-            this.txtCpfPsq = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gpBoxImg = new System.Windows.Forms.GroupBox();
+            this.btnInserirImg = new MetroFramework.Controls.MetroButton();
+            this.btnInserir = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
+            this.lbIdPesq = new MetroFramework.Controls.MetroLabel();
+            this.txtCpfPsq = new MetroFramework.Controls.MetroTextBox();
+            this.lbCpfPesq = new MetroFramework.Controls.MetroLabel();
+            this.btnPesqCpf = new System.Windows.Forms.Button();
+            this.btnPesqId = new System.Windows.Forms.Button();
+            this.gpBoxPesq = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
-            this.gpBoxPesq.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.gpBoxPesq.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtId
@@ -65,7 +69,7 @@
             // 
             // 
             this.txtId.CustomButton.Image = null;
-            this.txtId.CustomButton.Location = new System.Drawing.Point(49, 1);
+            this.txtId.CustomButton.Location = new System.Drawing.Point(42, 1);
             this.txtId.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.CustomButton.Name = "";
             this.txtId.CustomButton.Size = new System.Drawing.Size(23, 23);
@@ -76,7 +80,7 @@
             this.txtId.CustomButton.Visible = false;
             this.txtId.Enabled = false;
             this.txtId.Lines = new string[0];
-            this.txtId.Location = new System.Drawing.Point(115, 42);
+            this.txtId.Location = new System.Drawing.Point(264, 30);
             this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.MaxLength = 32767;
             this.txtId.Name = "txtId";
@@ -86,7 +90,7 @@
             this.txtId.SelectionLength = 0;
             this.txtId.SelectionStart = 0;
             this.txtId.ShortcutsEnabled = true;
-            this.txtId.Size = new System.Drawing.Size(73, 25);
+            this.txtId.Size = new System.Drawing.Size(66, 25);
             this.txtId.TabIndex = 1;
             this.txtId.UseSelectable = true;
             this.txtId.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -98,7 +102,7 @@
             // 
             // 
             this.txtNome.CustomButton.Image = null;
-            this.txtNome.CustomButton.Location = new System.Drawing.Point(230, 1);
+            this.txtNome.CustomButton.Location = new System.Drawing.Point(194, 1);
             this.txtNome.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.CustomButton.Name = "";
             this.txtNome.CustomButton.Size = new System.Drawing.Size(23, 23);
@@ -108,7 +112,7 @@
             this.txtNome.CustomButton.UseSelectable = true;
             this.txtNome.CustomButton.Visible = false;
             this.txtNome.Lines = new string[0];
-            this.txtNome.Location = new System.Drawing.Point(115, 87);
+            this.txtNome.Location = new System.Drawing.Point(264, 69);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.MaxLength = 60;
             this.txtNome.Name = "txtNome";
@@ -118,7 +122,7 @@
             this.txtNome.SelectionLength = 0;
             this.txtNome.SelectionStart = 0;
             this.txtNome.ShortcutsEnabled = true;
-            this.txtNome.Size = new System.Drawing.Size(254, 25);
+            this.txtNome.Size = new System.Drawing.Size(218, 25);
             this.txtNome.TabIndex = 1;
             this.txtNome.UseSelectable = true;
             this.txtNome.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -130,7 +134,7 @@
             // 
             // 
             this.txtCpf.CustomButton.Image = null;
-            this.txtCpf.CustomButton.Location = new System.Drawing.Point(178, 1);
+            this.txtCpf.CustomButton.Location = new System.Drawing.Point(132, 1);
             this.txtCpf.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpf.CustomButton.Name = "";
             this.txtCpf.CustomButton.Size = new System.Drawing.Size(23, 23);
@@ -140,7 +144,7 @@
             this.txtCpf.CustomButton.UseSelectable = true;
             this.txtCpf.CustomButton.Visible = false;
             this.txtCpf.Lines = new string[0];
-            this.txtCpf.Location = new System.Drawing.Point(115, 136);
+            this.txtCpf.Location = new System.Drawing.Point(264, 152);
             this.txtCpf.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpf.MaxLength = 12;
             this.txtCpf.Name = "txtCpf";
@@ -150,7 +154,7 @@
             this.txtCpf.SelectionLength = 0;
             this.txtCpf.SelectionStart = 0;
             this.txtCpf.ShortcutsEnabled = true;
-            this.txtCpf.Size = new System.Drawing.Size(202, 25);
+            this.txtCpf.Size = new System.Drawing.Size(156, 25);
             this.txtCpf.TabIndex = 2;
             this.txtCpf.UseSelectable = true;
             this.txtCpf.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -162,7 +166,7 @@
             // 
             // 
             this.txtEmail.CustomButton.Image = null;
-            this.txtEmail.CustomButton.Location = new System.Drawing.Point(178, 1);
+            this.txtEmail.CustomButton.Location = new System.Drawing.Point(194, 1);
             this.txtEmail.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.CustomButton.Name = "";
             this.txtEmail.CustomButton.Size = new System.Drawing.Size(23, 23);
@@ -172,7 +176,7 @@
             this.txtEmail.CustomButton.UseSelectable = true;
             this.txtEmail.CustomButton.Visible = false;
             this.txtEmail.Lines = new string[0];
-            this.txtEmail.Location = new System.Drawing.Point(115, 186);
+            this.txtEmail.Location = new System.Drawing.Point(264, 113);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.MaxLength = 60;
             this.txtEmail.Name = "txtEmail";
@@ -182,7 +186,7 @@
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.ShortcutsEnabled = true;
-            this.txtEmail.Size = new System.Drawing.Size(202, 25);
+            this.txtEmail.Size = new System.Drawing.Size(218, 25);
             this.txtEmail.TabIndex = 3;
             this.txtEmail.UseSelectable = true;
             this.txtEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -191,56 +195,51 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(16, 42);
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(206, 35);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(21, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(24, 20);
             this.metroLabel1.TabIndex = 4;
             this.metroLabel1.Text = "ID";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(16, 93);
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(206, 74);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(46, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(50, 20);
             this.metroLabel2.TabIndex = 5;
             this.metroLabel2.Text = "Nome";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(16, 142);
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.Location = new System.Drawing.Point(206, 152);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(33, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(33, 20);
             this.metroLabel3.TabIndex = 6;
             this.metroLabel3.Text = "CPF";
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(16, 192);
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.Location = new System.Drawing.Point(206, 113);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(41, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(46, 20);
             this.metroLabel4.TabIndex = 7;
             this.metroLabel4.Text = "Email";
             // 
-            // btnInserir
-            // 
-            this.btnInserir.Location = new System.Drawing.Point(16, 251);
-            this.btnInserir.Margin = new System.Windows.Forms.Padding(4);
-            this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(161, 38);
-            this.btnInserir.TabIndex = 8;
-            this.btnInserir.Text = "&Inserir";
-            this.btnInserir.UseSelectable = true;
-            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
-            // 
             // GridCliente
             // 
+            this.GridCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colunaId,
@@ -249,12 +248,12 @@
             this.colunaEmail,
             this.colunaDataCad,
             this.colunaAtivo});
-            this.GridCliente.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.GridCliente.Location = new System.Drawing.Point(462, 137);
+            this.GridCliente.GridColor = System.Drawing.Color.Black;
+            this.GridCliente.Location = new System.Drawing.Point(6, 26);
             this.GridCliente.Name = "GridCliente";
             this.GridCliente.ReadOnly = true;
             this.GridCliente.RowHeadersWidth = 51;
-            this.GridCliente.Size = new System.Drawing.Size(804, 314);
+            this.GridCliente.Size = new System.Drawing.Size(855, 384);
             this.GridCliente.TabIndex = 10;
             this.GridCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCliente_CellDoubleClick);
             // 
@@ -264,7 +263,6 @@
             this.colunaId.MinimumWidth = 6;
             this.colunaId.Name = "colunaId";
             this.colunaId.ReadOnly = true;
-            this.colunaId.Width = 125;
             // 
             // colunaNome
             // 
@@ -272,7 +270,6 @@
             this.colunaNome.MinimumWidth = 6;
             this.colunaNome.Name = "colunaNome";
             this.colunaNome.ReadOnly = true;
-            this.colunaNome.Width = 125;
             // 
             // colunaCpf
             // 
@@ -280,7 +277,6 @@
             this.colunaCpf.MinimumWidth = 6;
             this.colunaCpf.Name = "colunaCpf";
             this.colunaCpf.ReadOnly = true;
-            this.colunaCpf.Width = 125;
             // 
             // colunaEmail
             // 
@@ -288,7 +284,6 @@
             this.colunaEmail.MinimumWidth = 6;
             this.colunaEmail.Name = "colunaEmail";
             this.colunaEmail.ReadOnly = true;
-            this.colunaEmail.Width = 125;
             // 
             // colunaDataCad
             // 
@@ -296,7 +291,6 @@
             this.colunaDataCad.MinimumWidth = 6;
             this.colunaDataCad.Name = "colunaDataCad";
             this.colunaDataCad.ReadOnly = true;
-            this.colunaDataCad.Width = 125;
             // 
             // colunaAtivo
             // 
@@ -304,27 +298,67 @@
             this.colunaAtivo.MinimumWidth = 6;
             this.colunaAtivo.Name = "colunaAtivo";
             this.colunaAtivo.ReadOnly = true;
-            this.colunaAtivo.Width = 125;
             // 
-            // btnListar
+            // groupBox2
             // 
-            this.btnListar.Location = new System.Drawing.Point(208, 251);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(161, 38);
-            this.btnListar.TabIndex = 11;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseSelectable = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            this.groupBox2.Controls.Add(this.metroButton1);
+            this.groupBox2.Controls.Add(this.btnInserirImg);
+            this.groupBox2.Controls.Add(this.btnInserir);
+            this.groupBox2.Controls.Add(this.gpBoxImg);
+            this.groupBox2.Controls.Add(this.txtCpf);
+            this.groupBox2.Controls.Add(this.txtId);
+            this.groupBox2.Controls.Add(this.txtNome);
+            this.groupBox2.Controls.Add(this.txtEmail);
+            this.groupBox2.Controls.Add(this.metroLabel1);
+            this.groupBox2.Controls.Add(this.metroLabel4);
+            this.groupBox2.Controls.Add(this.metroLabel2);
+            this.groupBox2.Controls.Add(this.metroLabel3);
+            this.groupBox2.Location = new System.Drawing.Point(29, 69);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(508, 243);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cadastrar";
             // 
-            // lbIdPesq
+            // gpBoxImg
             // 
-            this.lbIdPesq.AutoSize = true;
-            this.lbIdPesq.Location = new System.Drawing.Point(16, 29);
-            this.lbIdPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbIdPesq.Name = "lbIdPesq";
-            this.lbIdPesq.Size = new System.Drawing.Size(21, 19);
-            this.lbIdPesq.TabIndex = 13;
-            this.lbIdPesq.Text = "ID";
+            this.gpBoxImg.Location = new System.Drawing.Point(20, 26);
+            this.gpBoxImg.Name = "gpBoxImg";
+            this.gpBoxImg.Size = new System.Drawing.Size(163, 148);
+            this.gpBoxImg.TabIndex = 16;
+            this.gpBoxImg.TabStop = false;
+            this.gpBoxImg.Text = "Imagem";
+            // 
+            // btnInserirImg
+            // 
+            this.btnInserirImg.Location = new System.Drawing.Point(20, 181);
+            this.btnInserirImg.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInserirImg.Name = "btnInserirImg";
+            this.btnInserirImg.Size = new System.Drawing.Size(163, 23);
+            this.btnInserirImg.TabIndex = 16;
+            this.btnInserirImg.Text = "Inserir Imagem";
+            this.btnInserirImg.UseSelectable = true;
+            // 
+            // btnInserir
+            // 
+            this.btnInserir.Location = new System.Drawing.Point(359, 196);
+            this.btnInserir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(96, 30);
+            this.btnInserir.TabIndex = 8;
+            this.btnInserir.Text = "&Inserir";
+            this.btnInserir.UseSelectable = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(234, 196);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(96, 30);
+            this.metroButton1.TabIndex = 17;
+            this.metroButton1.Text = "&Editar";
+            this.metroButton1.UseSelectable = true;
             // 
             // txtIdPesq
             // 
@@ -342,7 +376,7 @@
             this.txtIdPesq.CustomButton.UseSelectable = true;
             this.txtIdPesq.CustomButton.Visible = false;
             this.txtIdPesq.Lines = new string[0];
-            this.txtIdPesq.Location = new System.Drawing.Point(82, 24);
+            this.txtIdPesq.Location = new System.Drawing.Point(186, 29);
             this.txtIdPesq.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdPesq.MaxLength = 60;
             this.txtIdPesq.Name = "txtIdPesq";
@@ -358,56 +392,15 @@
             this.txtIdPesq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtIdPesq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // gpBoxPesq
+            // lbIdPesq
             // 
-            this.gpBoxPesq.Controls.Add(this.btnPesqId);
-            this.gpBoxPesq.Controls.Add(this.btnPesqCpf);
-            this.gpBoxPesq.Controls.Add(this.lbCpfPesq);
-            this.gpBoxPesq.Controls.Add(this.txtCpfPsq);
-            this.gpBoxPesq.Controls.Add(this.lbIdPesq);
-            this.gpBoxPesq.Controls.Add(this.txtIdPesq);
-            this.gpBoxPesq.Location = new System.Drawing.Point(462, 39);
-            this.gpBoxPesq.Name = "gpBoxPesq";
-            this.gpBoxPesq.Size = new System.Drawing.Size(804, 98);
-            this.gpBoxPesq.TabIndex = 14;
-            this.gpBoxPesq.TabStop = false;
-            this.gpBoxPesq.Text = "Pesquisar";
-            // 
-            // btnPesqId
-            // 
-            this.btnPesqId.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqId.BackgroundImage")));
-            this.btnPesqId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesqId.FlatAppearance.BorderSize = 0;
-            this.btnPesqId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesqId.Location = new System.Drawing.Point(173, 24);
-            this.btnPesqId.Name = "btnPesqId";
-            this.btnPesqId.Size = new System.Drawing.Size(44, 25);
-            this.btnPesqId.TabIndex = 17;
-            this.btnPesqId.UseVisualStyleBackColor = true;
-            this.btnPesqId.Click += new System.EventHandler(this.btnPesqId_Click);
-            // 
-            // btnPesqCpf
-            // 
-            this.btnPesqCpf.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqCpf.BackgroundImage")));
-            this.btnPesqCpf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesqCpf.FlatAppearance.BorderSize = 0;
-            this.btnPesqCpf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesqCpf.Location = new System.Drawing.Point(273, 57);
-            this.btnPesqCpf.Name = "btnPesqCpf";
-            this.btnPesqCpf.Size = new System.Drawing.Size(44, 25);
-            this.btnPesqCpf.TabIndex = 16;
-            this.btnPesqCpf.UseVisualStyleBackColor = true;
-            this.btnPesqCpf.Click += new System.EventHandler(this.btnPesqCpf_Click);
-            // 
-            // lbCpfPesq
-            // 
-            this.lbCpfPesq.AutoSize = true;
-            this.lbCpfPesq.Location = new System.Drawing.Point(16, 62);
-            this.lbCpfPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbCpfPesq.Name = "lbCpfPesq";
-            this.lbCpfPesq.Size = new System.Drawing.Size(33, 19);
-            this.lbCpfPesq.TabIndex = 15;
-            this.lbCpfPesq.Text = "CPF";
+            this.lbIdPesq.AutoSize = true;
+            this.lbIdPesq.Location = new System.Drawing.Point(156, 34);
+            this.lbIdPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbIdPesq.Name = "lbIdPesq";
+            this.lbIdPesq.Size = new System.Drawing.Size(22, 20);
+            this.lbIdPesq.TabIndex = 13;
+            this.lbIdPesq.Text = "ID";
             // 
             // txtCpfPsq
             // 
@@ -425,7 +418,7 @@
             this.txtCpfPsq.CustomButton.UseSelectable = true;
             this.txtCpfPsq.CustomButton.Visible = false;
             this.txtCpfPsq.Lines = new string[0];
-            this.txtCpfPsq.Location = new System.Drawing.Point(82, 57);
+            this.txtCpfPsq.Location = new System.Drawing.Point(467, 29);
             this.txtCpfPsq.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpfPsq.MaxLength = 60;
             this.txtCpfPsq.Name = "txtCpfPsq";
@@ -441,33 +434,75 @@
             this.txtCpfPsq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCpfPsq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // groupBox2
+            // lbCpfPesq
             // 
-            this.groupBox2.Controls.Add(this.txtCpf);
-            this.groupBox2.Controls.Add(this.txtId);
-            this.groupBox2.Controls.Add(this.btnListar);
-            this.groupBox2.Controls.Add(this.txtNome);
-            this.groupBox2.Controls.Add(this.txtEmail);
-            this.groupBox2.Controls.Add(this.btnInserir);
-            this.groupBox2.Controls.Add(this.metroLabel1);
-            this.groupBox2.Controls.Add(this.metroLabel4);
-            this.groupBox2.Controls.Add(this.metroLabel2);
-            this.groupBox2.Controls.Add(this.metroLabel3);
-            this.groupBox2.Location = new System.Drawing.Point(29, 82);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(384, 304);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cadastrar";
+            this.lbCpfPesq.AutoSize = true;
+            this.lbCpfPesq.Location = new System.Drawing.Point(426, 34);
+            this.lbCpfPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCpfPesq.Name = "lbCpfPesq";
+            this.lbCpfPesq.Size = new System.Drawing.Size(33, 20);
+            this.lbCpfPesq.TabIndex = 15;
+            this.lbCpfPesq.Text = "CPF";
+            // 
+            // btnPesqCpf
+            // 
+            this.btnPesqCpf.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqCpf.BackgroundImage")));
+            this.btnPesqCpf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesqCpf.FlatAppearance.BorderSize = 0;
+            this.btnPesqCpf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesqCpf.Location = new System.Drawing.Point(658, 29);
+            this.btnPesqCpf.Name = "btnPesqCpf";
+            this.btnPesqCpf.Size = new System.Drawing.Size(44, 25);
+            this.btnPesqCpf.TabIndex = 16;
+            this.btnPesqCpf.UseVisualStyleBackColor = true;
+            this.btnPesqCpf.Click += new System.EventHandler(this.btnPesqCpf_Click);
+            // 
+            // btnPesqId
+            // 
+            this.btnPesqId.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqId.BackgroundImage")));
+            this.btnPesqId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesqId.FlatAppearance.BorderSize = 0;
+            this.btnPesqId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesqId.Location = new System.Drawing.Point(277, 29);
+            this.btnPesqId.Name = "btnPesqId";
+            this.btnPesqId.Size = new System.Drawing.Size(44, 25);
+            this.btnPesqId.TabIndex = 17;
+            this.btnPesqId.UseVisualStyleBackColor = true;
+            this.btnPesqId.Click += new System.EventHandler(this.btnPesqId_Click);
+            // 
+            // gpBoxPesq
+            // 
+            this.gpBoxPesq.Controls.Add(this.btnPesqId);
+            this.gpBoxPesq.Controls.Add(this.btnPesqCpf);
+            this.gpBoxPesq.Controls.Add(this.lbCpfPesq);
+            this.gpBoxPesq.Controls.Add(this.txtCpfPsq);
+            this.gpBoxPesq.Controls.Add(this.lbIdPesq);
+            this.gpBoxPesq.Controls.Add(this.txtIdPesq);
+            this.gpBoxPesq.Location = new System.Drawing.Point(557, 69);
+            this.gpBoxPesq.Name = "gpBoxPesq";
+            this.gpBoxPesq.Size = new System.Drawing.Size(867, 74);
+            this.gpBoxPesq.TabIndex = 14;
+            this.gpBoxPesq.TabStop = false;
+            this.gpBoxPesq.Text = "Pesquisar";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.GridCliente);
+            this.groupBox1.Location = new System.Drawing.Point(557, 161);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(867, 416);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Clientes";
             // 
             // FormCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1305, 668);
+            this.ClientSize = new System.Drawing.Size(1437, 766);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gpBoxPesq);
-            this.Controls.Add(this.GridCliente);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCliente";
@@ -475,10 +510,11 @@
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).EndInit();
-            this.gpBoxPesq.ResumeLayout(false);
-            this.gpBoxPesq.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.gpBoxPesq.ResumeLayout(false);
+            this.gpBoxPesq.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -493,14 +529,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroButton btnInserir;
         private System.Windows.Forms.DataGridView GridCliente;
-        private MetroFramework.Controls.MetroButton btnListar;
-        private MetroFramework.Controls.MetroLabel lbIdPesq;
-        private MetroFramework.Controls.MetroTextBox txtIdPesq;
-        private System.Windows.Forms.GroupBox gpBoxPesq;
-        private MetroFramework.Controls.MetroLabel lbCpfPesq;
-        private MetroFramework.Controls.MetroTextBox txtCpfPsq;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
@@ -508,8 +537,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaAtivo;
-        private System.Windows.Forms.Button btnPesqId;
+        private System.Windows.Forms.GroupBox gpBoxImg;
+        private MetroFramework.Controls.MetroButton btnInserirImg;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnInserir;
+        private MetroFramework.Controls.MetroTextBox txtIdPesq;
+        private MetroFramework.Controls.MetroLabel lbIdPesq;
+        private MetroFramework.Controls.MetroTextBox txtCpfPsq;
+        private MetroFramework.Controls.MetroLabel lbCpfPesq;
         private System.Windows.Forms.Button btnPesqCpf;
+        private System.Windows.Forms.Button btnPesqId;
+        private System.Windows.Forms.GroupBox gpBoxPesq;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

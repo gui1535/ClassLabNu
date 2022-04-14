@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProduto));
             this.gpBoxCadastrar = new System.Windows.Forms.GroupBox();
+            this.txtValor = new MetroFramework.Controls.MetroTextBox();
+            this.lbValor = new MetroFramework.Controls.MetroLabel();
+            this.txtDesconto = new MetroFramework.Controls.MetroTextBox();
+            this.lbDesconto = new MetroFramework.Controls.MetroLabel();
             this.txtunidade = new MetroFramework.Controls.MetroTextBox();
             this.txtId = new MetroFramework.Controls.MetroTextBox();
             this.btnListar = new MetroFramework.Controls.MetroButton();
@@ -41,20 +45,16 @@
             this.lbNome = new MetroFramework.Controls.MetroLabel();
             this.lbUnidade = new MetroFramework.Controls.MetroLabel();
             this.gpBoxPesq = new System.Windows.Forms.GroupBox();
+            this.btnPesqCodBar = new System.Windows.Forms.Button();
+            this.lbCodBarPesq = new MetroFramework.Controls.MetroLabel();
+            this.txtCodBarPesq = new MetroFramework.Controls.MetroTextBox();
             this.btnPesqId = new System.Windows.Forms.Button();
-            this.btnPesqCpf = new System.Windows.Forms.Button();
+            this.btnPesqValor = new System.Windows.Forms.Button();
             this.lbValorPesq = new MetroFramework.Controls.MetroLabel();
             this.txtValorPesq = new MetroFramework.Controls.MetroTextBox();
             this.lbIdPesq = new MetroFramework.Controls.MetroLabel();
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
             this.GridProdutos = new System.Windows.Forms.DataGridView();
-            this.txtDesconto = new MetroFramework.Controls.MetroTextBox();
-            this.lbDesconto = new MetroFramework.Controls.MetroLabel();
-            this.txtValor = new MetroFramework.Controls.MetroTextBox();
-            this.lbValor = new MetroFramework.Controls.MetroLabel();
-            this.btnPesqCodBar = new System.Windows.Forms.Button();
-            this.lbCodBarPesq = new MetroFramework.Controls.MetroLabel();
-            this.txtCodBarPesq = new MetroFramework.Controls.MetroTextBox();
             this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaUnidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,6 +89,90 @@
             this.gpBoxCadastrar.TabIndex = 18;
             this.gpBoxCadastrar.TabStop = false;
             this.gpBoxCadastrar.Text = "Cadastrar";
+            // 
+            // txtValor
+            // 
+            // 
+            // 
+            // 
+            this.txtValor.CustomButton.Image = null;
+            this.txtValor.CustomButton.Location = new System.Drawing.Point(178, 1);
+            this.txtValor.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtValor.CustomButton.Name = "";
+            this.txtValor.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtValor.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtValor.CustomButton.TabIndex = 1;
+            this.txtValor.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtValor.CustomButton.UseSelectable = true;
+            this.txtValor.CustomButton.Visible = false;
+            this.txtValor.Lines = new string[0];
+            this.txtValor.Location = new System.Drawing.Point(115, 278);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtValor.MaxLength = 60;
+            this.txtValor.Name = "txtValor";
+            this.txtValor.PasswordChar = '\0';
+            this.txtValor.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtValor.SelectedText = "";
+            this.txtValor.SelectionLength = 0;
+            this.txtValor.SelectionStart = 0;
+            this.txtValor.ShortcutsEnabled = true;
+            this.txtValor.Size = new System.Drawing.Size(202, 25);
+            this.txtValor.TabIndex = 14;
+            this.txtValor.UseSelectable = true;
+            this.txtValor.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtValor.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // lbValor
+            // 
+            this.lbValor.AutoSize = true;
+            this.lbValor.Location = new System.Drawing.Point(17, 284);
+            this.lbValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbValor.Name = "lbValor";
+            this.lbValor.Size = new System.Drawing.Size(38, 19);
+            this.lbValor.TabIndex = 15;
+            this.lbValor.Text = "Valor";
+            // 
+            // txtDesconto
+            // 
+            // 
+            // 
+            // 
+            this.txtDesconto.CustomButton.Image = null;
+            this.txtDesconto.CustomButton.Location = new System.Drawing.Point(178, 1);
+            this.txtDesconto.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDesconto.CustomButton.Name = "";
+            this.txtDesconto.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtDesconto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDesconto.CustomButton.TabIndex = 1;
+            this.txtDesconto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDesconto.CustomButton.UseSelectable = true;
+            this.txtDesconto.CustomButton.Visible = false;
+            this.txtDesconto.Lines = new string[0];
+            this.txtDesconto.Location = new System.Drawing.Point(115, 234);
+            this.txtDesconto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDesconto.MaxLength = 60;
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.PasswordChar = '\0';
+            this.txtDesconto.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDesconto.SelectedText = "";
+            this.txtDesconto.SelectionLength = 0;
+            this.txtDesconto.SelectionStart = 0;
+            this.txtDesconto.ShortcutsEnabled = true;
+            this.txtDesconto.Size = new System.Drawing.Size(202, 25);
+            this.txtDesconto.TabIndex = 12;
+            this.txtDesconto.UseSelectable = true;
+            this.txtDesconto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDesconto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // lbDesconto
+            // 
+            this.lbDesconto.AutoSize = true;
+            this.lbDesconto.Location = new System.Drawing.Point(17, 240);
+            this.lbDesconto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbDesconto.Name = "lbDesconto";
+            this.lbDesconto.Size = new System.Drawing.Size(63, 19);
+            this.lbDesconto.TabIndex = 13;
+            this.lbDesconto.Text = "Desconto";
             // 
             // txtunidade
             // 
@@ -286,7 +370,7 @@
             this.gpBoxPesq.Controls.Add(this.lbCodBarPesq);
             this.gpBoxPesq.Controls.Add(this.txtCodBarPesq);
             this.gpBoxPesq.Controls.Add(this.btnPesqId);
-            this.gpBoxPesq.Controls.Add(this.btnPesqCpf);
+            this.gpBoxPesq.Controls.Add(this.btnPesqValor);
             this.gpBoxPesq.Controls.Add(this.lbValorPesq);
             this.gpBoxPesq.Controls.Add(this.txtValorPesq);
             this.gpBoxPesq.Controls.Add(this.lbIdPesq);
@@ -297,6 +381,61 @@
             this.gpBoxPesq.TabIndex = 17;
             this.gpBoxPesq.TabStop = false;
             this.gpBoxPesq.Text = "Pesquisar";
+            // 
+            // btnPesqCodBar
+            // 
+            this.btnPesqCodBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqCodBar.BackgroundImage")));
+            this.btnPesqCodBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesqCodBar.FlatAppearance.BorderSize = 0;
+            this.btnPesqCodBar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesqCodBar.Location = new System.Drawing.Point(431, 23);
+            this.btnPesqCodBar.Name = "btnPesqCodBar";
+            this.btnPesqCodBar.Size = new System.Drawing.Size(44, 25);
+            this.btnPesqCodBar.TabIndex = 20;
+            this.btnPesqCodBar.UseVisualStyleBackColor = true;
+            this.btnPesqCodBar.Click += new System.EventHandler(this.btnPesqCodBar_Click);
+            // 
+            // lbCodBarPesq
+            // 
+            this.lbCodBarPesq.AutoSize = true;
+            this.lbCodBarPesq.Location = new System.Drawing.Point(254, 28);
+            this.lbCodBarPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCodBarPesq.Name = "lbCodBarPesq";
+            this.lbCodBarPesq.Size = new System.Drawing.Size(78, 19);
+            this.lbCodBarPesq.TabIndex = 19;
+            this.lbCodBarPesq.Text = "Cod. Barras";
+            // 
+            // txtCodBarPesq
+            // 
+            // 
+            // 
+            // 
+            this.txtCodBarPesq.CustomButton.Image = null;
+            this.txtCodBarPesq.CustomButton.Location = new System.Drawing.Point(60, 1);
+            this.txtCodBarPesq.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodBarPesq.CustomButton.Name = "";
+            this.txtCodBarPesq.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtCodBarPesq.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtCodBarPesq.CustomButton.TabIndex = 1;
+            this.txtCodBarPesq.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtCodBarPesq.CustomButton.UseSelectable = true;
+            this.txtCodBarPesq.CustomButton.Visible = false;
+            this.txtCodBarPesq.Lines = new string[0];
+            this.txtCodBarPesq.Location = new System.Drawing.Point(340, 23);
+            this.txtCodBarPesq.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodBarPesq.MaxLength = 60;
+            this.txtCodBarPesq.Name = "txtCodBarPesq";
+            this.txtCodBarPesq.PasswordChar = '\0';
+            this.txtCodBarPesq.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCodBarPesq.SelectedText = "";
+            this.txtCodBarPesq.SelectionLength = 0;
+            this.txtCodBarPesq.SelectionStart = 0;
+            this.txtCodBarPesq.ShortcutsEnabled = true;
+            this.txtCodBarPesq.Size = new System.Drawing.Size(84, 25);
+            this.txtCodBarPesq.TabIndex = 18;
+            this.txtCodBarPesq.UseSelectable = true;
+            this.txtCodBarPesq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtCodBarPesq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // btnPesqId
             // 
@@ -309,18 +448,20 @@
             this.btnPesqId.Size = new System.Drawing.Size(44, 25);
             this.btnPesqId.TabIndex = 17;
             this.btnPesqId.UseVisualStyleBackColor = true;
+            this.btnPesqId.Click += new System.EventHandler(this.btnPesqId_Click);
             // 
-            // btnPesqCpf
+            // btnPesqValor
             // 
-            this.btnPesqCpf.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqCpf.BackgroundImage")));
-            this.btnPesqCpf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesqCpf.FlatAppearance.BorderSize = 0;
-            this.btnPesqCpf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesqCpf.Location = new System.Drawing.Point(173, 57);
-            this.btnPesqCpf.Name = "btnPesqCpf";
-            this.btnPesqCpf.Size = new System.Drawing.Size(44, 25);
-            this.btnPesqCpf.TabIndex = 16;
-            this.btnPesqCpf.UseVisualStyleBackColor = true;
+            this.btnPesqValor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqValor.BackgroundImage")));
+            this.btnPesqValor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesqValor.FlatAppearance.BorderSize = 0;
+            this.btnPesqValor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesqValor.Location = new System.Drawing.Point(173, 57);
+            this.btnPesqValor.Name = "btnPesqValor";
+            this.btnPesqValor.Size = new System.Drawing.Size(44, 25);
+            this.btnPesqValor.TabIndex = 16;
+            this.btnPesqValor.UseVisualStyleBackColor = true;
+            this.btnPesqValor.Click += new System.EventHandler(this.btnPesqValor_Click);
             // 
             // lbValorPesq
             // 
@@ -424,144 +565,8 @@
             this.GridProdutos.RowHeadersWidth = 51;
             this.GridProdutos.Size = new System.Drawing.Size(804, 314);
             this.GridProdutos.TabIndex = 16;
-            // 
-            // txtDesconto
-            // 
-            // 
-            // 
-            // 
-            this.txtDesconto.CustomButton.Image = null;
-            this.txtDesconto.CustomButton.Location = new System.Drawing.Point(178, 1);
-            this.txtDesconto.CustomButton.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDesconto.CustomButton.Name = "";
-            this.txtDesconto.CustomButton.Size = new System.Drawing.Size(23, 23);
-            this.txtDesconto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDesconto.CustomButton.TabIndex = 1;
-            this.txtDesconto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDesconto.CustomButton.UseSelectable = true;
-            this.txtDesconto.CustomButton.Visible = false;
-            this.txtDesconto.Lines = new string[0];
-            this.txtDesconto.Location = new System.Drawing.Point(115, 234);
-            this.txtDesconto.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDesconto.MaxLength = 60;
-            this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.PasswordChar = '\0';
-            this.txtDesconto.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDesconto.SelectedText = "";
-            this.txtDesconto.SelectionLength = 0;
-            this.txtDesconto.SelectionStart = 0;
-            this.txtDesconto.ShortcutsEnabled = true;
-            this.txtDesconto.Size = new System.Drawing.Size(202, 25);
-            this.txtDesconto.TabIndex = 12;
-            this.txtDesconto.UseSelectable = true;
-            this.txtDesconto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDesconto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lbDesconto
-            // 
-            this.lbDesconto.AutoSize = true;
-            this.lbDesconto.Location = new System.Drawing.Point(17, 240);
-            this.lbDesconto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbDesconto.Name = "lbDesconto";
-            this.lbDesconto.Size = new System.Drawing.Size(63, 19);
-            this.lbDesconto.TabIndex = 13;
-            this.lbDesconto.Text = "Desconto";
-            // 
-            // txtValor
-            // 
-            // 
-            // 
-            // 
-            this.txtValor.CustomButton.Image = null;
-            this.txtValor.CustomButton.Location = new System.Drawing.Point(178, 1);
-            this.txtValor.CustomButton.Margin = new System.Windows.Forms.Padding(4);
-            this.txtValor.CustomButton.Name = "";
-            this.txtValor.CustomButton.Size = new System.Drawing.Size(23, 23);
-            this.txtValor.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtValor.CustomButton.TabIndex = 1;
-            this.txtValor.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtValor.CustomButton.UseSelectable = true;
-            this.txtValor.CustomButton.Visible = false;
-            this.txtValor.Lines = new string[0];
-            this.txtValor.Location = new System.Drawing.Point(115, 278);
-            this.txtValor.Margin = new System.Windows.Forms.Padding(4);
-            this.txtValor.MaxLength = 60;
-            this.txtValor.Name = "txtValor";
-            this.txtValor.PasswordChar = '\0';
-            this.txtValor.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtValor.SelectedText = "";
-            this.txtValor.SelectionLength = 0;
-            this.txtValor.SelectionStart = 0;
-            this.txtValor.ShortcutsEnabled = true;
-            this.txtValor.Size = new System.Drawing.Size(202, 25);
-            this.txtValor.TabIndex = 14;
-            this.txtValor.UseSelectable = true;
-            this.txtValor.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtValor.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lbValor
-            // 
-            this.lbValor.AutoSize = true;
-            this.lbValor.Location = new System.Drawing.Point(17, 284);
-            this.lbValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbValor.Name = "lbValor";
-            this.lbValor.Size = new System.Drawing.Size(38, 19);
-            this.lbValor.TabIndex = 15;
-            this.lbValor.Text = "Valor";
-            // 
-            // btnPesqCodBar
-            // 
-            this.btnPesqCodBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqCodBar.BackgroundImage")));
-            this.btnPesqCodBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesqCodBar.FlatAppearance.BorderSize = 0;
-            this.btnPesqCodBar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesqCodBar.Location = new System.Drawing.Point(431, 23);
-            this.btnPesqCodBar.Name = "btnPesqCodBar";
-            this.btnPesqCodBar.Size = new System.Drawing.Size(44, 25);
-            this.btnPesqCodBar.TabIndex = 20;
-            this.btnPesqCodBar.UseVisualStyleBackColor = true;
-            // 
-            // lbCodBarPesq
-            // 
-            this.lbCodBarPesq.AutoSize = true;
-            this.lbCodBarPesq.Location = new System.Drawing.Point(254, 28);
-            this.lbCodBarPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbCodBarPesq.Name = "lbCodBarPesq";
-            this.lbCodBarPesq.Size = new System.Drawing.Size(78, 19);
-            this.lbCodBarPesq.TabIndex = 19;
-            this.lbCodBarPesq.Text = "Cod. Barras";
-            // 
-            // txtCodBarPesq
-            // 
-            // 
-            // 
-            // 
-            this.txtCodBarPesq.CustomButton.Image = null;
-            this.txtCodBarPesq.CustomButton.Location = new System.Drawing.Point(60, 1);
-            this.txtCodBarPesq.CustomButton.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodBarPesq.CustomButton.Name = "";
-            this.txtCodBarPesq.CustomButton.Size = new System.Drawing.Size(23, 23);
-            this.txtCodBarPesq.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCodBarPesq.CustomButton.TabIndex = 1;
-            this.txtCodBarPesq.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtCodBarPesq.CustomButton.UseSelectable = true;
-            this.txtCodBarPesq.CustomButton.Visible = false;
-            this.txtCodBarPesq.Lines = new string[0];
-            this.txtCodBarPesq.Location = new System.Drawing.Point(340, 23);
-            this.txtCodBarPesq.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodBarPesq.MaxLength = 60;
-            this.txtCodBarPesq.Name = "txtCodBarPesq";
-            this.txtCodBarPesq.PasswordChar = '\0';
-            this.txtCodBarPesq.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtCodBarPesq.SelectedText = "";
-            this.txtCodBarPesq.SelectionLength = 0;
-            this.txtCodBarPesq.SelectionStart = 0;
-            this.txtCodBarPesq.ShortcutsEnabled = true;
-            this.txtCodBarPesq.Size = new System.Drawing.Size(84, 25);
-            this.txtCodBarPesq.TabIndex = 18;
-            this.txtCodBarPesq.UseSelectable = true;
-            this.txtCodBarPesq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtCodBarPesq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.GridProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProdutos_CellContentClick);
+            this.GridProdutos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProdutos_CellDoubleClick);
             // 
             // colunaId
             // 
@@ -613,7 +618,7 @@
             // 
             // ColunaDescontinuado
             // 
-            this.ColunaDescontinuado.HeaderText = "Descontinuado";
+            this.ColunaDescontinuado.HeaderText = "Situação";
             this.ColunaDescontinuado.Name = "ColunaDescontinuado";
             this.ColunaDescontinuado.ReadOnly = true;
             // 
@@ -627,6 +632,7 @@
             this.Controls.Add(this.GridProdutos);
             this.Name = "FormProduto";
             this.Text = "Produto";
+            this.Load += new System.EventHandler(this.FormProduto_Load);
             this.gpBoxCadastrar.ResumeLayout(false);
             this.gpBoxCadastrar.PerformLayout();
             this.gpBoxPesq.ResumeLayout(false);
@@ -651,7 +657,7 @@
         private MetroFramework.Controls.MetroLabel lbUnidade;
         private System.Windows.Forms.GroupBox gpBoxPesq;
         private System.Windows.Forms.Button btnPesqId;
-        private System.Windows.Forms.Button btnPesqCpf;
+        private System.Windows.Forms.Button btnPesqValor;
         private MetroFramework.Controls.MetroLabel lbValorPesq;
         private MetroFramework.Controls.MetroTextBox txtValorPesq;
         private MetroFramework.Controls.MetroLabel lbIdPesq;

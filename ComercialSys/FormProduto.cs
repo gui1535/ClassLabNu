@@ -29,7 +29,7 @@ namespace ComercialSys
 
                 // Linhas 
                 GridProdutos.Rows.Add();
-                GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.id; // ID
+                GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // ID
                 GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Descricao; // Descricao
                 GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaUnidade.Index].Value = i.Unidade; // Unidade
                 GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaCodBar.Index].Value = i.Codbar; // CodBar
@@ -70,6 +70,95 @@ namespace ComercialSys
                  Convert.ToDouble(txtDesconto.Text)
                  );
             p.Inserir();
+        }
+
+        private void GridProdutos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Variaveis para objeto Cliente
+            int id;
+            string unidade, codbar, nome;
+            double valor, desconto;
+
+            // Valores para variaveis
+            id = Convert.ToInt32(GridProdutos["colunaId", e.RowIndex].Value);
+            nome = Convert.ToString(GridProdutos["colunaNome", e.RowIndex].Value);
+            unidade = Convert.ToString(GridProdutos["colunaUnidade", e.RowIndex].Value);
+            codbar = Convert.ToString(GridProdutos["colunaCodBar", e.RowIndex].Value);
+            valor = Convert.ToInt32(GridProdutos["colunaValor", e.RowIndex].Value);
+            desconto = Convert.ToInt32(GridProdutos["colunaDesconto", e.RowIndex].Value);
+
+
+            // Objeto Produto
+            Produto produto = new Produto(id, nome, unidade, codbar, valor, desconto);
+
+            // Atributos
+            txtId.Text = produto.Id.ToString();
+            txtNome.Text = produto.Descricao;
+            txtunidade.Text = produto.Unidade;
+            txtCodBar.Text = produto.Codbar;
+            txtValor.Text = produto.Valor.ToString();
+            txtDesconto.Text = produto.Desconto.ToString();
+        }
+
+        private void GridProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnPesqId_Click(object sender, EventArgs e)
+        {
+            // Objeto Cliente
+            Produto produto = new Produto();
+
+            // Metodo Consulta por ID
+            produto.ConsultarPorId(int.Parse(txtIdPesq.Text));
+
+            // Atributos
+            txtId.Text = produto.Id.ToString();
+            txtNome.Text = produto.Descricao;
+            txtunidade.Text = produto.Unidade;
+            txtCodBar.Text = produto.Codbar;
+            txtValor.Text = produto.Valor.ToString();
+            txtDesconto.Text = produto.Desconto.ToString();
+        }
+
+        private void btnPesqValor_Click(object sender, EventArgs e)
+        {
+            // Objeto Cliente
+            Produto produto = new Produto();
+
+            // Metodo Consulta por ID
+            produto.ConsultarPorValor(int.Parse(txtValorPesq.Text));
+
+            // Atributos
+            txtId.Text = produto.Id.ToString();
+            txtNome.Text = produto.Descricao;
+            txtunidade.Text = produto.Unidade;
+            txtCodBar.Text = produto.Codbar;
+            txtValor.Text = produto.Valor.ToString();
+            txtDesconto.Text = produto.Desconto.ToString();
+        }
+
+        private void btnPesqCodBar_Click(object sender, EventArgs e)
+        {
+            // Objeto Cliente
+            Produto produto = new Produto();
+
+            // Metodo Consulta por ID
+            produto.ConsultarPorCodbar(Convert.ToString(txtCodBarPesq.Text));
+
+            // Atributos
+            txtId.Text = produto.Id.ToString();
+            txtNome.Text = produto.Descricao;
+            txtunidade.Text = produto.Unidade;
+            txtCodBar.Text = produto.Codbar;
+            txtValor.Text = Convert.ToString(produto.Valor);
+            txtDesconto.Text = Convert.ToString(produto.Desconto.ToString());
+        }
+
+        private void FormProduto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

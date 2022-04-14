@@ -156,6 +156,21 @@ namespace ComercialSys
             txtIdPesq.Clear();
             txtCpfPsq.Clear();
         }
+
+        private void btnInserirImg_Click(object sender, EventArgs e)
+        {
+            // Instancia do open file dialog
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            // Filtrar arquivos de imagem
+            dialog.Filter = "JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png|AllFiles(*.*)|*.*";
+
+            // Condição
+            if (dialog.ShowDialog() == DialogResult.OK) // Se o dialogo for aberto e reconhecer que o usuario clicou em OK
+            {
+
+            }
+        }
     }
 }
 

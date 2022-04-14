@@ -49,11 +49,11 @@
             this.lbIdPesq = new MetroFramework.Controls.MetroLabel();
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
             this.gpBoxPesq = new System.Windows.Forms.GroupBox();
+            this.btnPesqId = new System.Windows.Forms.Button();
+            this.btnPesqCpf = new System.Windows.Forms.Button();
             this.lbCpfPesq = new MetroFramework.Controls.MetroLabel();
             this.txtCpfPsq = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnPesqCpf = new System.Windows.Forms.Button();
-            this.btnPesqId = new System.Windows.Forms.Button();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.gpBoxPesq.SuspendLayout();
@@ -257,6 +257,7 @@
             this.GridCliente.RowHeadersWidth = 51;
             this.GridCliente.Size = new System.Drawing.Size(804, 314);
             this.GridCliente.TabIndex = 10;
+            this.GridCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCliente_CellDoubleClick);
             // 
             // colunaId
             // 
@@ -373,6 +374,32 @@
             this.gpBoxPesq.TabStop = false;
             this.gpBoxPesq.Text = "Pesquisar";
             // 
+            // btnPesqId
+            // 
+            this.btnPesqId.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqId.BackgroundImage")));
+            this.btnPesqId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesqId.FlatAppearance.BorderSize = 0;
+            this.btnPesqId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesqId.Location = new System.Drawing.Point(173, 24);
+            this.btnPesqId.Name = "btnPesqId";
+            this.btnPesqId.Size = new System.Drawing.Size(44, 25);
+            this.btnPesqId.TabIndex = 17;
+            this.btnPesqId.UseVisualStyleBackColor = true;
+            this.btnPesqId.Click += new System.EventHandler(this.btnPesqId_Click);
+            // 
+            // btnPesqCpf
+            // 
+            this.btnPesqCpf.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqCpf.BackgroundImage")));
+            this.btnPesqCpf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesqCpf.FlatAppearance.BorderSize = 0;
+            this.btnPesqCpf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesqCpf.Location = new System.Drawing.Point(273, 57);
+            this.btnPesqCpf.Name = "btnPesqCpf";
+            this.btnPesqCpf.Size = new System.Drawing.Size(44, 25);
+            this.btnPesqCpf.TabIndex = 16;
+            this.btnPesqCpf.UseVisualStyleBackColor = true;
+            this.btnPesqCpf.Click += new System.EventHandler(this.btnPesqCpf_Click);
+            // 
             // lbCpfPesq
             // 
             this.lbCpfPesq.AutoSize = true;
@@ -433,31 +460,6 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
-            // 
-            // btnPesqCpf
-            // 
-            this.btnPesqCpf.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqCpf.BackgroundImage")));
-            this.btnPesqCpf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesqCpf.FlatAppearance.BorderSize = 0;
-            this.btnPesqCpf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesqCpf.Location = new System.Drawing.Point(273, 57);
-            this.btnPesqCpf.Name = "btnPesqCpf";
-            this.btnPesqCpf.Size = new System.Drawing.Size(44, 25);
-            this.btnPesqCpf.TabIndex = 16;
-            this.btnPesqCpf.UseVisualStyleBackColor = true;
-            // 
-            // btnPesqId
-            // 
-            this.btnPesqId.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqId.BackgroundImage")));
-            this.btnPesqId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesqId.FlatAppearance.BorderSize = 0;
-            this.btnPesqId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesqId.Location = new System.Drawing.Point(173, 24);
-            this.btnPesqId.Name = "btnPesqId";
-            this.btnPesqId.Size = new System.Drawing.Size(44, 25);
-            this.btnPesqId.TabIndex = 17;
-            this.btnPesqId.UseVisualStyleBackColor = true;
-            this.btnPesqId.Click += new System.EventHandler(this.btnPesqId_Click);
             // 
             // metroButton1
             // 

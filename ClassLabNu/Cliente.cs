@@ -48,6 +48,13 @@ namespace ClassLabNu
             this.dataCad = dataCad;
             this.Ativo = ativo;
         }
+        public Cliente(int id, string nome, string cpf, string email)
+        {
+            this.Id = id;
+            this.Nome = nome;
+            this.Cpf = cpf;
+            this.Email = email;
+        }
 
 
         public Cliente(string nome, string cpf, string email)
@@ -88,9 +95,16 @@ namespace ClassLabNu
 
         }
 
-        public bool Alterar(Cliente cliente)
+        public void Alterar(Cliente cliente)
         {
-            return true;
+            // Abre conexao
+            var banco = Banco.Abrir();
+
+            // Comandos SQL
+            banco.CommandType = System.Data.CommandType.StoredProcedure;
+            banco.CommandText = $"UPDATE clientes SET nome = '{Nome}' WHERE idcli = {Id}";
+
+            banco.ExecuteNonQuery();
         }
 
         public void ConsultarPorId(int _id)
@@ -120,12 +134,26 @@ namespace ClassLabNu
 
         public void ConsultarPorCpf(string _cpf)
         {
-            // Abre conexão com banco
+            // Abre conexao com banco
             var cmd = Banco.Abrir();
 
             // Comandos SQL
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "select * from clientes where cpf = " + _cpf;
+            cmd.CommandText = $"select * from clientes where cpf = {_cpf}";
+
+            // Var para leitura
+            var dr = cmd.ExecuteReader();
+
+            // Consulta
+            while (dr.Read())
+            {
+                Id = dr.GetInt32(0);
+                Nome = dr.GetString(1);
+                Cpf = dr.GetString(2);
+                Email = dr.GetString(3);
+                dataCad = dr.GetString(4);
+                Ativo = dr.GetBoolean(5);
+            }
 
 
         }

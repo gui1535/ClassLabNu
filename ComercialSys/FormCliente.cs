@@ -16,7 +16,6 @@ namespace ComercialSys
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
@@ -100,16 +99,48 @@ namespace ComercialSys
             // Metodo Consulta por ID
             cliente.ConsultarPorId(int.Parse(txtIdPesq.Text));
 
+            // Atributos
             txtId.Text = Convert.ToString(cliente.Id);
             txtNome.Text = cliente.Nome;
             txtEmail.Text = cliente.Email;
             txtCpf.Text = cliente.Cpf;
         }
+
         private void GridCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Variaveis para objeto Cliente
             int id;
-            id = (int)GridCliente["Id", e.RowIndex].Value;
-            
+            string nome, email,cpf;
+
+            // Valores para variaveis
+            id = Convert.ToInt32(GridCliente["colunaId", e.RowIndex].Value);
+            nome = Convert.ToString(GridCliente["colunaNome", e.RowIndex].Value);
+            email = Convert.ToString(GridCliente["colunaEmail", e.RowIndex].Value);
+            cpf = Convert.ToString(GridCliente["colunaCpf", e.RowIndex].Value);
+
+            // Objeto Cliente
+            Cliente cliente = new Cliente(id, nome, email, cpf);
+
+            // Atributos
+            txtId.Text = cliente.Id.ToString();
+            txtNome.Text = cliente.Nome;
+            txtEmail.Text = cliente.Email;
+            txtCpf.Text = cliente.Cpf;
+        }
+
+        private void btnPesqCpf_Click(object sender, EventArgs e)
+        {
+            // Objeto Cliente
+            Cliente cliente = new Cliente();
+
+            // Metodo Consulta por ID
+            cliente.ConsultarPorCpf(txtCpfPsq.Text);
+
+            // Atributos
+            txtId.Text = Convert.ToString(cliente.Id);
+            txtNome.Text = cliente.Nome;
+            txtEmail.Text = cliente.Email;
+            txtCpf.Text = cliente.Cpf;
         }
     }
 }

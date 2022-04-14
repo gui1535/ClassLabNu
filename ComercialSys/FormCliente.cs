@@ -1,6 +1,6 @@
 ﻿using ClassLabNu;
 using System;
-using System.Data;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ComercialSys
@@ -168,9 +168,42 @@ namespace ComercialSys
             // Condição
             if (dialog.ShowDialog() == DialogResult.OK) // Se o dialogo for aberto e reconhecer que o usuario clicou em OK
             {
+                // Guardar diretorio da imagem
+                string foto = dialog.FileName.ToString();
+
+                // Guardar foto no TextBos
+                txtDirImg.Text = foto;
+
+                // Colocar diretorio setado da variavel foto
+                picImgCliente.ImageLocation = foto;
+
 
             }
         }
+
+        private void SalvaImg()
+        {
+            // Array de bytes
+            byte[] imagem_byte = null;
+
+            // Diretorio da imagem e propriedades
+            FileStream fstream = new FileStream(this.txtDirImg.Text, FileMode.Open, FileAccess.Read);
+
+            // Instancia de uma leitura binaria
+            BinaryReader br = new BinaryReader(fstream);
+
+            // Leitura binaria do tamanho da 'fstream'
+            imagem_byte = br.ReadBytes(Convert.ToInt32(fstream.Length));
+
+            // Abre conexao com banco
+            var cmd = Banco.Abrir();
+
+            // Comandos SQL
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = $"insert into clientes(foto) values (@foto)";
+
+
+        } 
     }
 }
 

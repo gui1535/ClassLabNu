@@ -18,7 +18,6 @@ namespace ClassLabNu
 
         // Construtores ----------------------------------------------------------------
 
-
         public Cliente()
         {
         }

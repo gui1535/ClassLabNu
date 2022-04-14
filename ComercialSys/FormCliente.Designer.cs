@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCliente));
             this.txtId = new MetroFramework.Controls.MetroTextBox();
             this.txtNome = new MetroFramework.Controls.MetroTextBox();
             this.txtCpf = new MetroFramework.Controls.MetroTextBox();
@@ -47,14 +48,15 @@
             this.btnListar = new MetroFramework.Controls.MetroButton();
             this.lbIdPesq = new MetroFramework.Controls.MetroLabel();
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnPesqCpf = new MetroFramework.Controls.MetroButton();
-            this.btnPesquisarId = new MetroFramework.Controls.MetroButton();
+            this.gpBoxPesq = new System.Windows.Forms.GroupBox();
             this.lbCpfPesq = new MetroFramework.Controls.MetroLabel();
             this.txtCpfPsq = new MetroFramework.Controls.MetroTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPesqCpf = new System.Windows.Forms.Button();
+            this.btnPesqId = new System.Windows.Forms.Button();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gpBoxPesq.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -253,7 +255,7 @@
             this.GridCliente.Name = "GridCliente";
             this.GridCliente.ReadOnly = true;
             this.GridCliente.RowHeadersWidth = 51;
-            this.GridCliente.Size = new System.Drawing.Size(670, 314);
+            this.GridCliente.Size = new System.Drawing.Size(804, 314);
             this.GridCliente.TabIndex = 10;
             // 
             // colunaId
@@ -356,40 +358,20 @@
             this.txtIdPesq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtIdPesq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // groupBox1
+            // gpBoxPesq
             // 
-            this.groupBox1.Controls.Add(this.btnPesqCpf);
-            this.groupBox1.Controls.Add(this.btnPesquisarId);
-            this.groupBox1.Controls.Add(this.lbCpfPesq);
-            this.groupBox1.Controls.Add(this.txtCpfPsq);
-            this.groupBox1.Controls.Add(this.lbIdPesq);
-            this.groupBox1.Controls.Add(this.txtIdPesq);
-            this.groupBox1.Location = new System.Drawing.Point(462, 39);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(670, 98);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pesquisar";
-            // 
-            // btnPesqCpf
-            // 
-            this.btnPesqCpf.Location = new System.Drawing.Point(273, 57);
-            this.btnPesqCpf.Name = "btnPesqCpf";
-            this.btnPesqCpf.Size = new System.Drawing.Size(93, 25);
-            this.btnPesqCpf.TabIndex = 16;
-            this.btnPesqCpf.Text = "Pesquisar";
-            this.btnPesqCpf.UseSelectable = true;
-            this.btnPesqCpf.Click += new System.EventHandler(this.btnPesqCpf_Click);
-            // 
-            // btnPesquisarId
-            // 
-            this.btnPesquisarId.Location = new System.Drawing.Point(173, 24);
-            this.btnPesquisarId.Name = "btnPesquisarId";
-            this.btnPesquisarId.Size = new System.Drawing.Size(93, 25);
-            this.btnPesquisarId.TabIndex = 15;
-            this.btnPesquisarId.Text = "Pesquisar";
-            this.btnPesquisarId.UseSelectable = true;
-            this.btnPesquisarId.Click += new System.EventHandler(this.btnPesquisarId_Click);
+            this.gpBoxPesq.Controls.Add(this.btnPesqId);
+            this.gpBoxPesq.Controls.Add(this.btnPesqCpf);
+            this.gpBoxPesq.Controls.Add(this.lbCpfPesq);
+            this.gpBoxPesq.Controls.Add(this.txtCpfPsq);
+            this.gpBoxPesq.Controls.Add(this.lbIdPesq);
+            this.gpBoxPesq.Controls.Add(this.txtIdPesq);
+            this.gpBoxPesq.Location = new System.Drawing.Point(462, 39);
+            this.gpBoxPesq.Name = "gpBoxPesq";
+            this.gpBoxPesq.Size = new System.Drawing.Size(804, 98);
+            this.gpBoxPesq.TabIndex = 14;
+            this.gpBoxPesq.TabStop = false;
+            this.gpBoxPesq.Text = "Pesquisar";
             // 
             // lbCpfPesq
             // 
@@ -452,13 +434,48 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
             // 
+            // btnPesqCpf
+            // 
+            this.btnPesqCpf.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqCpf.BackgroundImage")));
+            this.btnPesqCpf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesqCpf.FlatAppearance.BorderSize = 0;
+            this.btnPesqCpf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesqCpf.Location = new System.Drawing.Point(273, 57);
+            this.btnPesqCpf.Name = "btnPesqCpf";
+            this.btnPesqCpf.Size = new System.Drawing.Size(44, 25);
+            this.btnPesqCpf.TabIndex = 16;
+            this.btnPesqCpf.UseVisualStyleBackColor = true;
+            // 
+            // btnPesqId
+            // 
+            this.btnPesqId.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqId.BackgroundImage")));
+            this.btnPesqId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesqId.FlatAppearance.BorderSize = 0;
+            this.btnPesqId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesqId.Location = new System.Drawing.Point(173, 24);
+            this.btnPesqId.Name = "btnPesqId";
+            this.btnPesqId.Size = new System.Drawing.Size(44, 25);
+            this.btnPesqId.TabIndex = 17;
+            this.btnPesqId.UseVisualStyleBackColor = true;
+            this.btnPesqId.Click += new System.EventHandler(this.btnPesqId_Click);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(144, 496);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(161, 38);
+            this.metroButton1.TabIndex = 12;
+            this.metroButton1.Text = "Listar";
+            this.metroButton1.UseSelectable = true;
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1161, 668);
+            this.ClientSize = new System.Drawing.Size(1305, 668);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gpBoxPesq);
             this.Controls.Add(this.GridCliente);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -467,8 +484,8 @@
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gpBoxPesq.ResumeLayout(false);
+            this.gpBoxPesq.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -490,18 +507,19 @@
         private MetroFramework.Controls.MetroButton btnListar;
         private MetroFramework.Controls.MetroLabel lbIdPesq;
         private MetroFramework.Controls.MetroTextBox txtIdPesq;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gpBoxPesq;
         private MetroFramework.Controls.MetroLabel lbCpfPesq;
         private MetroFramework.Controls.MetroTextBox txtCpfPsq;
-        private MetroFramework.Controls.MetroButton btnPesquisarId;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroButton btnPesqCpf;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaCpf;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaAtivo;
+        private System.Windows.Forms.Button btnPesqId;
+        private System.Windows.Forms.Button btnPesqCpf;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
 

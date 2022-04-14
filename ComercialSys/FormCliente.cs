@@ -1,7 +1,5 @@
 ﻿using ClassLabNu;
-using MySql.Data.MySqlClient;
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace ComercialSys
@@ -92,42 +90,27 @@ namespace ComercialSys
 
             });
 
-
-
         }
 
-        private void btnPesquisarId_Click(object sender, EventArgs e)
+        private void btnPesqId_Click(object sender, EventArgs e)
         {
-            // Abre conexão com banco
-            var banco = Banco.Abrir();
+            // Objeto Cliente
+            Cliente cliente = new Cliente();
 
-            // Comandos SQL
-            banco.CommandType = CommandType.Text;
-            banco.CommandText = $"select * from clientes where idcli ='{txtIdPesq.Text}'";
+            // Metodo Consulta por ID
+            cliente.ConsultarPorId(int.Parse(txtIdPesq.Text));
 
-            var da = new MySqlDataAdapter(banco);
-
-            DataTable dt = new DataTable();
-
-            da.Fill(dt);
-            GridCliente.DataSource = dt;
+            txtId.Text = Convert.ToString(cliente.Id);
+            txtNome.Text = cliente.Nome;
+            txtEmail.Text = cliente.Email;
+            txtCpf.Text = cliente.Cpf;
         }
-
-        private void btnPesqCpf_Click(object sender, EventArgs e)
+        private void GridCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Abre conexão com banco
-            var banco = Banco.Abrir();
-
-            // Comandos SQL
-            banco.CommandType = CommandType.Text;
-            banco.CommandText = $"select * from clientes where cpf ='{txtCpfPsq.Text}'";
-
-            var da = new MySqlDataAdapter(banco);
-
-            DataTable dt = new DataTable();
-
-            da.Fill(dt);
-            GridCliente.DataSource = dt;
+            int id;
+            id = (int)GridCliente["Id", e.RowIndex].Value;
+            
         }
     }
 }
+

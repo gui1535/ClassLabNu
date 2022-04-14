@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
@@ -94,15 +93,28 @@ namespace ClassLabNu
             return true;
         }
 
-        public void ConsultarPorId(string _id)
+        public void ConsultarPorId(int _id)
         {
-
-            // Abre conexão com banco
+            // Abre conexao com banco
             var cmd = Banco.Abrir();
 
             // Comandos SQL
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"select * from clientes where idcli ='{Id}'";
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = $"select * from clientes where idcli = {_id}";
+
+            // Var para leitura
+            var dr = cmd.ExecuteReader();
+
+            // Consulta
+            while (dr.Read())
+            {
+                Id = dr.GetInt32(0);
+                Nome = dr.GetString(1);
+                Cpf = dr.GetString(2);
+                Email = dr.GetString(3);
+                dataCad = dr.GetString(4);
+                Ativo = dr.GetBoolean(5);
+            }
 
         }
 
@@ -115,10 +127,10 @@ namespace ClassLabNu
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = "select * from clientes where cpf = " + _cpf;
 
-           
+
         }
 
-        public List<Cliente> ListarClientes(int inicio= 0, int limite = 0)
+        public List<Cliente> ListarClientes(int inicio = 0, int limite = 0)
         {
             // Nova lista
             List<Cliente> lista = new List<Cliente>();

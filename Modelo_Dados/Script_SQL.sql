@@ -231,3 +231,22 @@ values (_descricao, _unidade, _codbar, _desconto, _valor);
 select * from produtos where idprod = (select @@identity);
 end
 |
+
+-- -----------------------------------------------------
+-- PROCEDURES USUARIOS
+-- -----------------------------------------------------
+
+-- INSERIR PRODUTO --
+delimiter |
+create procedure usuario_inserir(
+_nome varchar (60),
+_email varchar (60),
+_senha varchar (32),
+_nivel varchar (15)
+)
+begin
+insert into usuarios(nome, email, senha, nivel, ativo)
+values (_nome, _email, _senha, _nivel, default);
+select * from usuarios where iduser = (select @@identity);
+end
+|

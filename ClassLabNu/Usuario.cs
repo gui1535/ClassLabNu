@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
 
 namespace ClassLabNu
 {
@@ -15,16 +17,26 @@ namespace ClassLabNu
         public string Email { get; set; }
         public string Password { get; }
         public bool Ativo { get; set; }
-        public int Nivel { get; }
+        public string Nivel { get; }
 
         // Metodos Construtores ------------------------------------------------------------------
 
+        /// <summary>
+        /// Construtor vazio para o Usuario
+        /// </summary>
         public Usuario()
         {
 
         }
 
-        public Usuario(string nome, string email, string password, int nivel)
+        /// <summary>
+        /// Construtor para o Usuario
+        /// </summary>
+        /// <param name="nome">VARCHAR(60)</param>
+        /// <param name="email">VARCHAR(60)</param>
+        /// <param name="password">VARCHAR(32)</param>
+        /// <param name="nivel">VARCHAR(15)</param>
+        public Usuario(string nome, string email, string password, string nivel)
         {
             this.Nome = nome;
             this.Email = email;
@@ -33,7 +45,16 @@ namespace ClassLabNu
             this.Nivel = nivel;
         }
 
-        public Usuario(int id, string nome, string email, string password, bool ativo, int nivel)
+        /// <summary>
+        /// Construtor para o Usuario
+        /// </summary>
+        /// <param name="id">INT</param>
+        /// <param name="nome">VARCHAR(60)</param>
+        /// <param name="email">VARCHAR(60)</param>
+        /// <param name="password">VARCHAR(32)</param>
+        /// <param name="ativo">BIT(1)</param>
+        /// <param name="nivel">VARCHAR(15)</param>
+        public Usuario(int id, string nome, string email, string password, bool ativo, string nivel)
         {
             this.Id = id;
             this.Nome = nome;
@@ -43,7 +64,15 @@ namespace ClassLabNu
             this.Nivel = nivel;
         }
 
-        public Usuario(int id, string nome, string email, string password, int nivel)
+        /// <summary>
+        /// Construtor para o Usuario
+        /// </summary>
+        /// <param name="id">INT</param>
+        /// <param name="nome">VARCHAR(60)</param>
+        /// <param name="email">VARCHAR(60)</param>
+        /// <param name="password">VARCHAR(32)</param>
+        /// <param name="nivel">VARCHAR(15)</param>
+        public Usuario(int id, string nome, string email, string password, string nivel)
         {
             Id = id;
             Nome = nome;
@@ -52,84 +81,92 @@ namespace ClassLabNu
             Nivel = nivel;
         }
 
-
-
         // Metodos da Classe ---------------------------------------------------------------------
+
+        /// <summary>
+        /// Metodo para inserir usuario no banco de dados
+        /// </summary>
         public void Inserir()
         {
-            /*
-            // Abre conexão com banco
-            var cmd = Banco.Abrir();
-            // --------------------------------------------------------------------//
-            // Comandos SQL
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert Usuarios values(@id, @nome, @email, @senha)";
-            // ---------------------------------------------------------------------//
-            // Parametros SQL
-            cmd.Parameters.AddWithValue("@id", null);
-            cmd.Parameters.AddWithValue("@nome", Nome);
-            cmd.Parameters.AddWithValue("@email", Email);
-            cmd.Parameters.AddWithValue("@senha", Password);
-            cmd.Parameters.AddWithValue("@senha", Nivel);
-            cmd.ExecuteNonQuery();
-            // --------------------------------------------------------------------//
-            // Pega o ultimo ID criado
-            cmd.CommandText = "select @@identity";
-            // --------------------------------------------------------------------//
-            // Guarda o ultimo ID criado no Id
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
-            // --------------------------------------------------------------------//
-            // Limpar parametros
-            cmd.Parameters.Clear();
-            */
+            try
+            {
+                // Abre conexão com banco
+                var banco = Banco.Abrir();
 
-            // Abrindo conexão
-            var banco = Banco.Abrir();
+                // Comandos SQL
+                banco.CommandType = System.Data.CommandType.StoredProcedure;
+                banco.CommandText = "cliente_inserir";
 
-            // Inserindo dados
-            banco.CommandText = $"INSERT usuarios VALUES (null,'{Nome}', '{Email}', '{Password}', '{Nivel}');";
-            banco.ExecuteNonQuery();
+                // Parametros
+                banco.Parameters.AddWithValue("_nome", Nome);
+                banco.Parameters.AddWithValue("_email", Email);
+                banco.Parameters.AddWithValue("_senha", Password);
+                Id = Convert.ToInt32(banco.ExecuteScalar());
 
-            // Pega o ultimo ID criado
-            banco.CommandText = @"select @@identity";
+                // Fecha Conexão
+                banco.Connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro, verifique os valores digitados {ex}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            // Retorna o ID nas propridades
-            Id = Convert.ToInt32(banco.ExecuteScalar());
+            }
         }
 
+        /// <summary>
+        /// Metodo para efetuar login do usuario
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="senha"></param>
+        /// <returns>Bool</returns>
         public static bool EfetuarLogin(string email, string senha)
         {
             // Realiza validação e devolve verdadeiro ou falso
             return false;
         }
 
-        public static List<Usuario> ListarTodos()
+        /// <summary>
+        /// Metodo para listar todos usuarios
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="l"></param>
+        /// <returns></returns>
+        public List<Usuario> ListarUsuarios(int i = 0, int l = 0)
         {
-            // Listar usuario
-            List<Usuario> usuarios = new List<Usuario>();
+            // Nova lista
+            List<Usuario> lista = new List<Usuario>();
 
-            // Abrindo conexão
+            // Abrir conexão
             var banco = Banco.Abrir();
 
-            // Comando SQL
-            banco.CommandText = "SELECT * FROM usuarios";
+            // Comando
+            banco.CommandType = CommandType.Text;
+            if (l > 0)
+                banco.CommandText = $"select * from usuarios limit {i} , {l}";
+            else
+                banco.CommandText = "select * from usuarios";
 
-            // Var para consultar
-            var ConsultaDados = banco.ExecuteReader();
+            // Var para Consulta
+            var dr = banco.ExecuteReader();
 
             // Consulta
-            while (ConsultaDados.Read())
+            while (dr.Read())
             {
-                usuarios.Add(new Usuario(
-                        ConsultaDados.GetInt32("id"),
-                        ConsultaDados.GetString("nome"),
-                        ConsultaDados.GetString("email"),
-                        ConsultaDados.GetString("password"),
-                        ConsultaDados.GetBoolean("ativo"),
-                        ConsultaDados.GetInt32("nivel")
+                lista.Add(new Usuario(
+                    Convert.ToInt32(dr.GetValue(0)), // ID
+                    dr.GetString(1), // Nome
+                    dr.GetString(2), // Email
+                    dr.GetString(3), // Senha
+                    dr.GetBoolean(4), // Nivel
+                    dr.GetString(5) // Ativo
                     ));
             }
-            return usuarios;
+
+            // Fecha Conexão
+            banco.Connection.Close();
+
+            // Retornando lista
+            return lista;
         }
     }
 }

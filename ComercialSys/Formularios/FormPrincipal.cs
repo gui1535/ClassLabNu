@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComercialSys.Formularios;
+using System;
 
 namespace ComercialSys
 {
@@ -37,6 +38,15 @@ namespace ComercialSys
 
             // Exibe Form
             frmProduto.Show();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Instancia do form Cliente
+            FormUsuario frmUsuario = new FormUsuario(this);
+
+            // Exibe Form
+            frmUsuario.Show();
         }
     }
 }

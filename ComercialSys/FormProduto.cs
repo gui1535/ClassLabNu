@@ -129,8 +129,8 @@ namespace ComercialSys
             // Objeto Cliente
             Produto produto = new Produto();
 
-            // Metodo Consulta por ID
-            produto.ConsultarPorValor(int.Parse(txtValorPesq.Text));
+            // Metodo Consulta por Valor
+            produto.ConsultarPorValor(Convert.ToDouble(txtValorPesq.Text));
 
             // Atributos
             txtId.Text = produto.Id.ToString();
@@ -146,7 +146,7 @@ namespace ComercialSys
             // Objeto Cliente
             Produto produto = new Produto();
 
-            // Metodo Consulta por ID
+            // Metodo Consulta por CodBar
             produto.ConsultarPorCodbar(Convert.ToString(txtCodBarPesq.Text));
 
             // Atributos
@@ -161,6 +161,33 @@ namespace ComercialSys
         private void FormProduto_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtValorPesq_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbValorPesq_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Objeto Cliente
+            Produto produto = new Produto();
+
+            // Metodo Consulta por ID
+            produto.ConsultarPorId(int.Parse(txtIdPesq.Text));
+
+            // Atributos
+            txtId.Text = produto.Id.ToString();
+            txtNome.Text = produto.Descricao;
+            txtunidade.Text = produto.Unidade;
+            txtCodBar.Text = produto.Codbar;
+            txtValor.Text = produto.Valor.ToString();
+            txtDesconto.Text = produto.Desconto.ToString();
         }
     }
 }

@@ -122,11 +122,11 @@ namespace ClassLabNu
                 Codbar = dr.GetString(3);
                 Valor = dr.GetInt32(4);
                 Desconto = dr.GetInt32(5);
-                Descontinuado = dr.GetBoolean(5);
+                Descontinuado = dr.GetBoolean(6);
             }
         }
 
-        public void ConsultarPorValor(int _valor)
+        public void ConsultarPorValor(double _valor)
         {
             // Abre conexao com banco
             var cmd = Banco.Abrir();
@@ -145,10 +145,9 @@ namespace ClassLabNu
                 Descricao = dr.GetString(1);
                 Unidade = dr.GetString(2);
                 Codbar = dr.GetString(3);
-                Valor = dr.GetInt32(4);
-                Desconto = dr.GetInt32(5);
-                Descontinuado = dr.GetBoolean(5);
-
+                Valor = dr.GetDouble(4);
+                Desconto = dr.GetDouble(5);
+                Descontinuado = dr.GetBoolean(6);
             }
         }
 
@@ -172,8 +171,8 @@ namespace ClassLabNu
                 Descricao = dr.GetString(1);
                 Unidade = dr.GetString(2);
                 Codbar = dr.GetString(3);
-                Valor = dr.GetInt32(4);
-                Desconto = dr.GetInt32(5);
+                Valor = dr.GetDouble(4);
+                Desconto = dr.GetDouble(5);
                 Descontinuado = dr.GetBoolean(5);
             }
         }

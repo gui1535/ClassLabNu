@@ -9,35 +9,54 @@ namespace ClassLabNu
     {
         // Atributos  ------------------------------------------------------------------
 
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Cpf { get; set; }
-        public string Email { get; set; }
-        public string dataCad { get; set; }
-        public bool Ativo { get; set; }
+        public int Id { get; set; } // Id do Cliente
+        public string Nome { get; set; } // Nome do Cliente
+        public string Cpf { get; set; } // CPF d Cliente
+        public string Email { get; set; } // Email do Cliente
+        public string dataCad { get; set; } // Data de cadastro do Cliente
+        public bool Ativo { get; set; } // Cliente Ativo
 
         // Construtores ----------------------------------------------------------------
 
+        /// <summary>
+        /// Construtor vazio para o Cliente
+        /// </summary>
         public Cliente()
         {
         }
 
+        /// <summary>
+        /// Construtor para o Cliente
+        /// </summary>
+        /// <param name="id">INT(11)</param>
+        /// <param name="nome">VARCHAR(60)</param>
+        /// <param name="cpf">CHAR(11)</param>
         public Cliente(int id, string nome, string cpf)
         {
             Id = id;
             Nome = nome;
             Cpf = cpf;
-
-            // DataCad = DateTime.Now;
-            // ativo = true;
-
         }
+
+        /// <summary>
+        /// Construtor para o Cliente
+        /// </summary>
+        /// <param name="id">INT</param>
         public Cliente(int id)
         {
             Id = id;
 
         }
 
+        /// <summary>
+        /// Construtor para o Cliente
+        /// </summary>
+        /// <param name="id">INT</param>
+        /// <param name="nome">VARCHAR(60)</param>
+        /// <param name="cpf">CHAR(11)</param>
+        /// <param name="email">VARCHAR(60)</param>
+        /// <param name="dataCad">VARCHAR(60)</param>
+        /// <param name="ativo">BIT(1)</param>
         public Cliente(int id, string nome, string cpf, string email, string dataCad, bool ativo)
         {
             this.Id = id;
@@ -48,6 +67,13 @@ namespace ClassLabNu
             this.Ativo = ativo;
         }
 
+        /// <summary>
+        /// Construtor para o Cliente
+        /// </summary>
+        /// <param name="nome">VARCHAR(60)</param>
+        /// <param name="cpf">CHAR(11)</param>
+        /// <param name="email">VARCHAR(60)</param>
+        /// <param name="ativo">BIT(1)</param>
         public Cliente(string nome, string cpf, string email, bool ativo)
         {
             this.Nome = nome;
@@ -56,12 +82,26 @@ namespace ClassLabNu
             this.Ativo = ativo;
         }
 
+        /// <summary>
+        /// Construtor para o Cliente
+        /// </summary>
+        /// <param name="nome">VARCHAR(60)</param>
+        /// <param name="cpf">CHAR(11)</param>
+        /// <param name="email">VARCHAR(60)</param>
         public Cliente(string nome, string cpf, string email)
         {
             Nome = nome;
             Cpf = cpf;
             Email = email;
         }
+
+        /// <summary>
+        /// Construtor para o Cliente
+        /// </summary>
+        /// <param name="id">INT</param>
+        /// <param name="nome">VARCHAR(60)</param>
+        /// <param name="cpf">CHAR(11)</param>
+        /// <param name="email">VARCHAR(60)</param>
         public Cliente(int id, string nome, string cpf, string email)
         {
             Id = id;
@@ -72,6 +112,9 @@ namespace ClassLabNu
 
         // Metodos ---------------------------------------------------------------------
 
+        /// <summary>
+        /// Metodo para inserir cliente no banco de dados
+        /// </summary>
         public void Inserir()
         {
 
@@ -101,6 +144,10 @@ namespace ClassLabNu
 
         }
 
+        /// <summary>
+        /// Metodo para alterar cliente no banco de dados
+        /// </summary>
+        /// <returns>Bool</returns>
         public bool Alterar()
         {
             var cmd = Banco.Abrir();
@@ -119,6 +166,10 @@ namespace ClassLabNu
 
         }
 
+        /// <summary>
+        /// Metodo para consultar cliente por ID
+        /// </summary>
+        /// <param name="_id">int</param>
         public void ConsultarPorId(int _id)
         {
             // Abre conexao com banco
@@ -143,6 +194,10 @@ namespace ClassLabNu
             }
         }
 
+        /// <summary>
+        /// Metodo para consultar cliente por CPF
+        /// </summary>
+        /// <param name="_cpf">string</param>
         public void ConsultarPorCpf(string _cpf)
         {
             // Abre conexao com banco
@@ -167,6 +222,10 @@ namespace ClassLabNu
             }
         }
 
+        /// <summary>
+        /// Metodo para consultar cliente por Nome
+        /// </summary>
+        /// <param name="_nome">string</param>
         public void ConsultarPorNome(string _nome)
         {
             // Abre conexao com banco
@@ -191,6 +250,12 @@ namespace ClassLabNu
             }
         }
 
+        /// <summary>
+        /// Metodo para listar clientes do banco de dados
+        /// </summary>
+        /// <param name="i">int</param>
+        /// <param name="l">int</param>
+        /// <returns>Lista</returns>
         public List<Cliente> ListarClientes(int i = 0, int l = 0)
         {
             // Nova lista

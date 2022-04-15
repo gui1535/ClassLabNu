@@ -252,8 +252,9 @@ namespace ComercialSys
             // Limpando as TextBox de pesquisa
             txtIdPesq.Clear();
             txtCpfPsq.Clear();
-        }
 
+        }
+        
         /// <summary>
         /// Pesquisar cliente por CPF
         /// </summary>
@@ -264,7 +265,7 @@ namespace ComercialSys
 
             // Objeto Cliente
             Cliente cliente = new Cliente();
-
+            
             // Metodo Consulta por CPF
             cliente.ConsultarPorCpf(Convert.ToString(txtCpfPsq.Text));
 

@@ -1,6 +1,6 @@
 ﻿using ClassLabNu;
 using System;
-using System.IO;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ComercialSys
@@ -59,15 +59,18 @@ namespace ComercialSys
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
+
             // Objeto Cliente
             ClassLabNu.Cliente c = new ClassLabNu.Cliente(
                 txtNome.Text,
                 txtCpf.Text,
-                txtEmail.Text);
+                txtEmail.Text
+                );
 
             c.Inserir();
 
@@ -159,51 +162,22 @@ namespace ComercialSys
 
         private void btnInserirImg_Click(object sender, EventArgs e)
         {
-            // Instancia do open file dialog
-            OpenFileDialog dialog = new OpenFileDialog();
-
-            // Filtrar arquivos de imagem
-            dialog.Filter = "JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png|AllFiles(*.*)|*.*";
-
-            // Condição
-            if (dialog.ShowDialog() == DialogResult.OK) // Se o dialogo for aberto e reconhecer que o usuario clicou em OK
+            try
             {
-                // Guardar diretorio da imagem
-                string foto = dialog.FileName.ToString();
+                FileDialogImg.Filter = "Fotos (*.jpg;*.png;) | *.jpg;*.png";
 
-                // Guardar foto no TextBos
-                txtDirImg.Text = foto;
-
-                // Colocar diretorio setado da variavel foto
-                picImgCliente.ImageLocation = foto;
-
-
+                if (FileDialogImg.ShowDialog() == DialogResult.OK)
+                {
+                    picImgCliente.Image = new Bitmap(FileDialogImg.FileName);
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao carregar imagem", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
-        private void SalvaImg()
-        {
-            // Array de bytes
-            byte[] imagem_byte = null;
-
-            // Diretorio da imagem e propriedades
-            FileStream fstream = new FileStream(this.txtDirImg.Text, FileMode.Open, FileAccess.Read);
-
-            // Instancia de uma leitura binaria
-            BinaryReader br = new BinaryReader(fstream);
-
-            // Leitura binaria do tamanho da 'fstream'
-            imagem_byte = br.ReadBytes(Convert.ToInt32(fstream.Length));
-
-            // Abre conexao com banco
-            var cmd = Banco.Abrir();
-
-            // Comandos SQL
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = $"insert into clientes(foto) values (@foto)";
-
-
-        } 
     }
 }
 

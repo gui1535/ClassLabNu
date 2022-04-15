@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ClassLabNu
@@ -47,17 +48,18 @@ namespace ClassLabNu
             this.dataCad = dataCad;
             this.Ativo = ativo;
         }
-        public Cliente(int id, string nome, string cpf, string email)
-        {
-            this.Id = id;
-            this.Nome = nome;
-            this.Cpf = cpf;
-            this.Email = email;
-        }
+     
 
 
         public Cliente(string nome, string cpf, string email)
         {
+            Nome = nome;
+            Cpf = cpf;
+            Email = email;
+        }
+        public Cliente(int id, string nome, string cpf, string email)
+        {
+            Id = id;
             Nome = nome;
             Cpf = cpf;
             Email = email;

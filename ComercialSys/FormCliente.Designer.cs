@@ -59,7 +59,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.FileDialogImg = new System.Windows.Forms.OpenFileDialog();
             this.picImgCliente = new System.Windows.Forms.PictureBox();
-            this.txtDirImg = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gpBoxImg.SuspendLayout();
@@ -306,7 +305,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtDirImg);
             this.groupBox2.Controls.Add(this.metroButton1);
             this.groupBox2.Controls.Add(this.btnInserirImg);
             this.groupBox2.Controls.Add(this.btnInserir);
@@ -338,7 +336,7 @@
             // 
             // btnInserirImg
             // 
-            this.btnInserirImg.Location = new System.Drawing.Point(20, 234);
+            this.btnInserirImg.Location = new System.Drawing.Point(20, 207);
             this.btnInserirImg.Margin = new System.Windows.Forms.Padding(4);
             this.btnInserirImg.Name = "btnInserirImg";
             this.btnInserirImg.Size = new System.Drawing.Size(201, 23);
@@ -509,43 +507,12 @@
             // 
             // picImgCliente
             // 
+            this.picImgCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picImgCliente.Location = new System.Drawing.Point(6, 26);
             this.picImgCliente.Name = "picImgCliente";
             this.picImgCliente.Size = new System.Drawing.Size(189, 142);
             this.picImgCliente.TabIndex = 18;
             this.picImgCliente.TabStop = false;
-            // 
-            // txtDirImg
-            // 
-            // 
-            // 
-            // 
-            this.txtDirImg.CustomButton.Image = null;
-            this.txtDirImg.CustomButton.Location = new System.Drawing.Point(178, 1);
-            this.txtDirImg.CustomButton.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDirImg.CustomButton.Name = "";
-            this.txtDirImg.CustomButton.Size = new System.Drawing.Size(23, 23);
-            this.txtDirImg.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDirImg.CustomButton.TabIndex = 1;
-            this.txtDirImg.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDirImg.CustomButton.UseSelectable = true;
-            this.txtDirImg.CustomButton.Visible = false;
-            this.txtDirImg.Lines = new string[0];
-            this.txtDirImg.Location = new System.Drawing.Point(19, 201);
-            this.txtDirImg.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDirImg.MaxLength = 12;
-            this.txtDirImg.Name = "txtDirImg";
-            this.txtDirImg.PasswordChar = '\0';
-            this.txtDirImg.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDirImg.SelectedText = "";
-            this.txtDirImg.SelectionLength = 0;
-            this.txtDirImg.SelectionStart = 0;
-            this.txtDirImg.ShortcutsEnabled = true;
-            this.txtDirImg.Size = new System.Drawing.Size(202, 25);
-            this.txtDirImg.TabIndex = 18;
-            this.txtDirImg.UseSelectable = true;
-            this.txtDirImg.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDirImg.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // FormCliente
             // 
@@ -605,7 +572,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.OpenFileDialog FileDialogImg;
         private System.Windows.Forms.PictureBox picImgCliente;
-        private MetroFramework.Controls.MetroTextBox txtDirImg;
     }
 }
 

@@ -55,9 +55,9 @@ namespace ComercialSys
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
             });
         }
-        
+
         /// <summary>
-        /// Metodo 2 clique no DataGrid
+        /// Listar informações do produto nas TextBox quando o usuario clicar 2 vezes na linha do DataGrid
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -236,25 +236,32 @@ namespace ComercialSys
         /// <param name="e"></param>
         private void txtPesqNome_KeyUp(object sender, KeyEventArgs e)
         {
-            // Objeto Cliente
-            Cliente cliente = new Cliente();
+            // Verificando se o valor a pesquisar é vazio
+            if (txtPesqNome.Text == "")
+            {
+            }
+            else
+            {
+                // Objeto Cliente
+                Cliente cliente = new Cliente();
 
-            // Metodo Consulta por Nome
-            cliente.ConsultarPorNome(Convert.ToString(txtPesqNome.Text));
+                // Metodo Consulta por Nome
+                cliente.ConsultarPorNome(Convert.ToString(txtPesqNome.Text));
 
-            // Atributos
-            txtId.Text = Convert.ToString(cliente.Id);
-            txtNome.Text = cliente.Nome;
-            txtEmail.Text = cliente.Email;
-            txtCpf.Text = cliente.Cpf;
-            chkAtivo.Checked = cliente.Ativo;
+                // Atributos
+                txtId.Text = Convert.ToString(cliente.Id);
+                txtNome.Text = cliente.Nome;
+                txtEmail.Text = cliente.Email;
+                txtCpf.Text = cliente.Cpf;
+                chkAtivo.Checked = cliente.Ativo;
 
-            // Limpando as TextBox de pesquisa
-            txtIdPesq.Clear();
-            txtCpfPsq.Clear();
+                // Limpando as TextBox de pesquisa
+                txtIdPesq.Clear();
+                txtCpfPsq.Clear();
+            }
 
         }
-        
+
         /// <summary>
         /// Pesquisar cliente por CPF
         /// </summary>
@@ -262,23 +269,29 @@ namespace ComercialSys
         /// <param name="e"></param>
         private void txtCpfPsq_KeyUp(object sender, KeyEventArgs e)
         {
+            // Verificando se o valor a pesquisar é vazio
+            if (txtCpfPsq.Text == "")
+            {
+            }
+            else
+            {
+                // Objeto Cliente
+                Cliente cliente = new Cliente();
 
-            // Objeto Cliente
-            Cliente cliente = new Cliente();
-            
-            // Metodo Consulta por CPF
-            cliente.ConsultarPorCpf(Convert.ToString(txtCpfPsq.Text));
+                // Metodo Consulta por CPF
+                cliente.ConsultarPorCpf(Convert.ToString(txtCpfPsq.Text));
 
-            // Atributos
-            txtId.Text = Convert.ToString(cliente.Id);
-            txtNome.Text = cliente.Nome;
-            txtEmail.Text = cliente.Email;
-            txtCpf.Text = cliente.Cpf;
-            chkAtivo.Checked = cliente.Ativo;
+                // Atributos
+                txtId.Text = Convert.ToString(cliente.Id);
+                txtNome.Text = cliente.Nome;
+                txtEmail.Text = cliente.Email;
+                txtCpf.Text = cliente.Cpf;
+                chkAtivo.Checked = cliente.Ativo;
 
-            // Limpando as TextBox de pesquisa
-            txtIdPesq.Clear();
-            txtCpfPsq.Clear();
+                // Limpando as TextBox de pesquisa
+                txtIdPesq.Clear();
+                txtPesqNome.Clear();
+            }
         }
 
         /// <summary>
@@ -288,22 +301,29 @@ namespace ComercialSys
         /// <param name="e"></param>
         private void txtIdPesq_KeyUp(object sender, KeyEventArgs e)
         {
-            // Objeto Cliente
-            Cliente cliente = new Cliente();
+            // Verificando se o valor a pesquisar é vazio
+            if (txtIdPesq.Text == "")
+            {
+            }
+            else
+            {
+                // Objeto Cliente
+                Cliente cliente = new Cliente();
 
-            // Metodo Consulta por ID
-            cliente.ConsultarPorId(int.Parse(txtIdPesq.Text));
+                // Metodo Consulta por ID
+                cliente.ConsultarPorId(int.Parse(txtIdPesq.Text));
 
-            // Atributos
-            txtId.Text = Convert.ToString(cliente.Id);
-            txtNome.Text = cliente.Nome;
-            txtEmail.Text = cliente.Email;
-            txtCpf.Text = cliente.Cpf;
-            chkAtivo.Checked = cliente.Ativo;
+                // Atributos
+                txtId.Text = Convert.ToString(cliente.Id);
+                txtNome.Text = cliente.Nome;
+                txtEmail.Text = cliente.Email;
+                txtCpf.Text = cliente.Cpf;
+                chkAtivo.Checked = cliente.Ativo;
 
-            // Limpando as TextBox de pesquisa
-            txtIdPesq.Clear();
-            txtCpfPsq.Clear();
+                // Limpando as TextBox de pesquisa
+                txtCpfPsq.Clear();
+                txtPesqNome.Clear();
+            }
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProduto));
             this.gpBoxCadastrar = new System.Windows.Forms.GroupBox();
             this.btnInserirImg = new MetroFramework.Controls.MetroButton();
             this.gpBoxImg = new System.Windows.Forms.GroupBox();
@@ -59,11 +58,8 @@
             this.lbIdPesq = new MetroFramework.Controls.MetroLabel();
             this.txtValorPesq = new MetroFramework.Controls.MetroTextBox();
             this.lbValorPesq = new MetroFramework.Controls.MetroLabel();
-            this.btnPesqValor = new System.Windows.Forms.Button();
-            this.btnPesqId = new System.Windows.Forms.Button();
             this.txtCodBarPesq = new MetroFramework.Controls.MetroTextBox();
             this.lbCodBarPesq = new MetroFramework.Controls.MetroLabel();
-            this.btnPesqCodBar = new System.Windows.Forms.Button();
             this.gpBoxPesq = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -506,6 +502,7 @@
             this.txtIdPesq.UseSelectable = true;
             this.txtIdPesq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtIdPesq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtIdPesq.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtIdPesq_KeyUp);
             // 
             // lbIdPesq
             // 
@@ -548,7 +545,7 @@
             this.txtValorPesq.UseSelectable = true;
             this.txtValorPesq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtValorPesq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtValorPesq.Click += new System.EventHandler(this.txtValorPesq_Click);
+            this.txtValorPesq.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtValorPesq_KeyUp);
             // 
             // lbValorPesq
             // 
@@ -559,35 +556,6 @@
             this.lbValorPesq.Size = new System.Drawing.Size(39, 20);
             this.lbValorPesq.TabIndex = 15;
             this.lbValorPesq.Text = "Valor";
-            this.lbValorPesq.Click += new System.EventHandler(this.lbValorPesq_Click);
-            // 
-            // btnPesqValor
-            // 
-            this.btnPesqValor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqValor.BackgroundImage")));
-            this.btnPesqValor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesqValor.FlatAppearance.BorderSize = 0;
-            this.btnPesqValor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesqValor.Location = new System.Drawing.Point(110, 184);
-            this.btnPesqValor.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPesqValor.Name = "btnPesqValor";
-            this.btnPesqValor.Size = new System.Drawing.Size(59, 33);
-            this.btnPesqValor.TabIndex = 16;
-            this.btnPesqValor.UseVisualStyleBackColor = true;
-            this.btnPesqValor.Click += new System.EventHandler(this.btnPesqValor_Click);
-            // 
-            // btnPesqId
-            // 
-            this.btnPesqId.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqId.BackgroundImage")));
-            this.btnPesqId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesqId.FlatAppearance.BorderSize = 0;
-            this.btnPesqId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesqId.Location = new System.Drawing.Point(88, 50);
-            this.btnPesqId.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPesqId.Name = "btnPesqId";
-            this.btnPesqId.Size = new System.Drawing.Size(59, 33);
-            this.btnPesqId.TabIndex = 17;
-            this.btnPesqId.UseVisualStyleBackColor = true;
-            this.btnPesqId.Click += new System.EventHandler(this.btnPesqId_Click);
             // 
             // txtCodBarPesq
             // 
@@ -620,6 +588,7 @@
             this.txtCodBarPesq.UseSelectable = true;
             this.txtCodBarPesq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCodBarPesq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCodBarPesq.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodBarPesq_KeyUp);
             // 
             // lbCodBarPesq
             // 
@@ -631,27 +600,10 @@
             this.lbCodBarPesq.TabIndex = 19;
             this.lbCodBarPesq.Text = "Cod. Barras";
             // 
-            // btnPesqCodBar
-            // 
-            this.btnPesqCodBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqCodBar.BackgroundImage")));
-            this.btnPesqCodBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesqCodBar.FlatAppearance.BorderSize = 0;
-            this.btnPesqCodBar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesqCodBar.Location = new System.Drawing.Point(110, 117);
-            this.btnPesqCodBar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPesqCodBar.Name = "btnPesqCodBar";
-            this.btnPesqCodBar.Size = new System.Drawing.Size(59, 33);
-            this.btnPesqCodBar.TabIndex = 20;
-            this.btnPesqCodBar.UseVisualStyleBackColor = true;
-            this.btnPesqCodBar.Click += new System.EventHandler(this.btnPesqCodBar_Click);
-            // 
             // gpBoxPesq
             // 
-            this.gpBoxPesq.Controls.Add(this.btnPesqCodBar);
             this.gpBoxPesq.Controls.Add(this.lbCodBarPesq);
             this.gpBoxPesq.Controls.Add(this.txtCodBarPesq);
-            this.gpBoxPesq.Controls.Add(this.btnPesqId);
-            this.gpBoxPesq.Controls.Add(this.btnPesqValor);
             this.gpBoxPesq.Controls.Add(this.lbValorPesq);
             this.gpBoxPesq.Controls.Add(this.txtValorPesq);
             this.gpBoxPesq.Controls.Add(this.lbIdPesq);
@@ -748,11 +700,8 @@
         private MetroFramework.Controls.MetroLabel lbIdPesq;
         private MetroFramework.Controls.MetroTextBox txtValorPesq;
         private MetroFramework.Controls.MetroLabel lbValorPesq;
-        private System.Windows.Forms.Button btnPesqValor;
-        private System.Windows.Forms.Button btnPesqId;
         private MetroFramework.Controls.MetroTextBox txtCodBarPesq;
         private MetroFramework.Controls.MetroLabel lbCodBarPesq;
-        private System.Windows.Forms.Button btnPesqCodBar;
         private System.Windows.Forms.GroupBox gpBoxPesq;
         private System.Windows.Forms.GroupBox groupBox1;
         private MetroFramework.Controls.MetroButton metroButton1;

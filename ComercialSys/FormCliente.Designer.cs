@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCliente));
             this.txtId = new MetroFramework.Controls.MetroTextBox();
             this.txtNome = new MetroFramework.Controls.MetroTextBox();
             this.txtCpf = new MetroFramework.Controls.MetroTextBox();
@@ -38,7 +37,14 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.GridCliente = new System.Windows.Forms.DataGridView();
+            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.btnInserirImg = new MetroFramework.Controls.MetroButton();
             this.gpBoxImg = new System.Windows.Forms.GroupBox();
             this.picImgCliente = new System.Windows.Forms.PictureBox();
@@ -48,19 +54,12 @@
             this.lbIdPesq = new MetroFramework.Controls.MetroLabel();
             this.txtCpfPsq = new MetroFramework.Controls.MetroTextBox();
             this.lbCpfPesq = new MetroFramework.Controls.MetroLabel();
-            this.btnPesqCpf = new System.Windows.Forms.Button();
-            this.btnPesqId = new System.Windows.Forms.Button();
             this.gpBoxPesq = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.FileDialogImg = new System.Windows.Forms.OpenFileDialog();
             this.btnListar = new MetroFramework.Controls.MetroButton();
-            this.chkAtivo = new System.Windows.Forms.CheckBox();
-            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.txtPesqNome = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gpBoxImg.SuspendLayout();
@@ -263,239 +262,6 @@
             this.GridCliente.TabIndex = 10;
             this.GridCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCliente_CellDoubleClick);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.chkAtivo);
-            this.groupBox2.Controls.Add(this.btnInserirImg);
-            this.groupBox2.Controls.Add(this.gpBoxImg);
-            this.groupBox2.Controls.Add(this.txtCpf);
-            this.groupBox2.Controls.Add(this.txtId);
-            this.groupBox2.Controls.Add(this.txtNome);
-            this.groupBox2.Controls.Add(this.txtEmail);
-            this.groupBox2.Controls.Add(this.metroLabel1);
-            this.groupBox2.Controls.Add(this.metroLabel4);
-            this.groupBox2.Controls.Add(this.metroLabel2);
-            this.groupBox2.Controls.Add(this.metroLabel3);
-            this.groupBox2.Location = new System.Drawing.Point(29, 68);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1008, 197);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cadastrar";
-            // 
-            // btnInserirImg
-            // 
-            this.btnInserirImg.Location = new System.Drawing.Point(720, 159);
-            this.btnInserirImg.Margin = new System.Windows.Forms.Padding(4);
-            this.btnInserirImg.Name = "btnInserirImg";
-            this.btnInserirImg.Size = new System.Drawing.Size(147, 23);
-            this.btnInserirImg.TabIndex = 16;
-            this.btnInserirImg.Text = "Inserir Imagem";
-            this.btnInserirImg.UseSelectable = true;
-            this.btnInserirImg.Click += new System.EventHandler(this.btnInserirImg_Click);
-            // 
-            // gpBoxImg
-            // 
-            this.gpBoxImg.Controls.Add(this.picImgCliente);
-            this.gpBoxImg.Location = new System.Drawing.Point(720, 26);
-            this.gpBoxImg.Name = "gpBoxImg";
-            this.gpBoxImg.Size = new System.Drawing.Size(147, 132);
-            this.gpBoxImg.TabIndex = 16;
-            this.gpBoxImg.TabStop = false;
-            this.gpBoxImg.Text = "Imagem";
-            // 
-            // picImgCliente
-            // 
-            this.picImgCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picImgCliente.Location = new System.Drawing.Point(6, 26);
-            this.picImgCliente.Name = "picImgCliente";
-            this.picImgCliente.Size = new System.Drawing.Size(135, 100);
-            this.picImgCliente.TabIndex = 18;
-            this.picImgCliente.TabStop = false;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(374, 272);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(120, 32);
-            this.btnEditar.TabIndex = 17;
-            this.btnEditar.Text = "&Editar";
-            this.btnEditar.UseSelectable = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnInserir
-            // 
-            this.btnInserir.Location = new System.Drawing.Point(517, 272);
-            this.btnInserir.Margin = new System.Windows.Forms.Padding(4);
-            this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(120, 32);
-            this.btnInserir.TabIndex = 8;
-            this.btnInserir.Text = "&Inserir";
-            this.btnInserir.UseSelectable = true;
-            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
-            // 
-            // txtIdPesq
-            // 
-            // 
-            // 
-            // 
-            this.txtIdPesq.CustomButton.Image = null;
-            this.txtIdPesq.CustomButton.Location = new System.Drawing.Point(46, 1);
-            this.txtIdPesq.CustomButton.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIdPesq.CustomButton.Name = "";
-            this.txtIdPesq.CustomButton.Size = new System.Drawing.Size(23, 23);
-            this.txtIdPesq.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtIdPesq.CustomButton.TabIndex = 1;
-            this.txtIdPesq.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtIdPesq.CustomButton.UseSelectable = true;
-            this.txtIdPesq.CustomButton.Visible = false;
-            this.txtIdPesq.Lines = new string[0];
-            this.txtIdPesq.Location = new System.Drawing.Point(19, 58);
-            this.txtIdPesq.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIdPesq.MaxLength = 60;
-            this.txtIdPesq.Name = "txtIdPesq";
-            this.txtIdPesq.PasswordChar = '\0';
-            this.txtIdPesq.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtIdPesq.SelectedText = "";
-            this.txtIdPesq.SelectionLength = 0;
-            this.txtIdPesq.SelectionStart = 0;
-            this.txtIdPesq.ShortcutsEnabled = true;
-            this.txtIdPesq.Size = new System.Drawing.Size(70, 25);
-            this.txtIdPesq.TabIndex = 12;
-            this.txtIdPesq.UseSelectable = true;
-            this.txtIdPesq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtIdPesq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lbIdPesq
-            // 
-            this.lbIdPesq.AutoSize = true;
-            this.lbIdPesq.Location = new System.Drawing.Point(19, 34);
-            this.lbIdPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbIdPesq.Name = "lbIdPesq";
-            this.lbIdPesq.Size = new System.Drawing.Size(22, 20);
-            this.lbIdPesq.TabIndex = 13;
-            this.lbIdPesq.Text = "ID";
-            // 
-            // txtCpfPsq
-            // 
-            // 
-            // 
-            // 
-            this.txtCpfPsq.CustomButton.Image = null;
-            this.txtCpfPsq.CustomButton.Location = new System.Drawing.Point(58, 1);
-            this.txtCpfPsq.CustomButton.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCpfPsq.CustomButton.Name = "";
-            this.txtCpfPsq.CustomButton.Size = new System.Drawing.Size(23, 23);
-            this.txtCpfPsq.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCpfPsq.CustomButton.TabIndex = 1;
-            this.txtCpfPsq.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtCpfPsq.CustomButton.UseSelectable = true;
-            this.txtCpfPsq.CustomButton.Visible = false;
-            this.txtCpfPsq.Lines = new string[0];
-            this.txtCpfPsq.Location = new System.Drawing.Point(19, 129);
-            this.txtCpfPsq.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCpfPsq.MaxLength = 60;
-            this.txtCpfPsq.Name = "txtCpfPsq";
-            this.txtCpfPsq.PasswordChar = '\0';
-            this.txtCpfPsq.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtCpfPsq.SelectedText = "";
-            this.txtCpfPsq.SelectionLength = 0;
-            this.txtCpfPsq.SelectionStart = 0;
-            this.txtCpfPsq.ShortcutsEnabled = true;
-            this.txtCpfPsq.Size = new System.Drawing.Size(82, 25);
-            this.txtCpfPsq.TabIndex = 14;
-            this.txtCpfPsq.UseSelectable = true;
-            this.txtCpfPsq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtCpfPsq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lbCpfPesq
-            // 
-            this.lbCpfPesq.AutoSize = true;
-            this.lbCpfPesq.Location = new System.Drawing.Point(19, 99);
-            this.lbCpfPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbCpfPesq.Name = "lbCpfPesq";
-            this.lbCpfPesq.Size = new System.Drawing.Size(33, 20);
-            this.lbCpfPesq.TabIndex = 15;
-            this.lbCpfPesq.Text = "CPF";
-            // 
-            // btnPesqCpf
-            // 
-            this.btnPesqCpf.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqCpf.BackgroundImage")));
-            this.btnPesqCpf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesqCpf.FlatAppearance.BorderSize = 0;
-            this.btnPesqCpf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesqCpf.Location = new System.Drawing.Point(108, 129);
-            this.btnPesqCpf.Name = "btnPesqCpf";
-            this.btnPesqCpf.Size = new System.Drawing.Size(44, 25);
-            this.btnPesqCpf.TabIndex = 16;
-            this.btnPesqCpf.UseVisualStyleBackColor = true;
-            this.btnPesqCpf.Click += new System.EventHandler(this.btnPesqCpf_Click);
-            // 
-            // btnPesqId
-            // 
-            this.btnPesqId.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesqId.BackgroundImage")));
-            this.btnPesqId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesqId.FlatAppearance.BorderSize = 0;
-            this.btnPesqId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesqId.Location = new System.Drawing.Point(96, 58);
-            this.btnPesqId.Name = "btnPesqId";
-            this.btnPesqId.Size = new System.Drawing.Size(44, 25);
-            this.btnPesqId.TabIndex = 17;
-            this.btnPesqId.UseVisualStyleBackColor = true;
-            this.btnPesqId.Click += new System.EventHandler(this.btnPesqId_Click);
-            // 
-            // gpBoxPesq
-            // 
-            this.gpBoxPesq.Controls.Add(this.btnPesqId);
-            this.gpBoxPesq.Controls.Add(this.btnPesqCpf);
-            this.gpBoxPesq.Controls.Add(this.lbCpfPesq);
-            this.gpBoxPesq.Controls.Add(this.txtCpfPsq);
-            this.gpBoxPesq.Controls.Add(this.lbIdPesq);
-            this.gpBoxPesq.Controls.Add(this.txtIdPesq);
-            this.gpBoxPesq.Location = new System.Drawing.Point(868, 313);
-            this.gpBoxPesq.Name = "gpBoxPesq";
-            this.gpBoxPesq.Size = new System.Drawing.Size(169, 176);
-            this.gpBoxPesq.TabIndex = 14;
-            this.gpBoxPesq.TabStop = false;
-            this.gpBoxPesq.Text = "Pesquisar";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.GridCliente);
-            this.groupBox1.Location = new System.Drawing.Point(29, 313);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(833, 330);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Clientes";
-            // 
-            // FileDialogImg
-            // 
-            this.FileDialogImg.FileName = "OpenFileDialog";
-            // 
-            // btnListar
-            // 
-            this.btnListar.Location = new System.Drawing.Point(660, 272);
-            this.btnListar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(120, 32);
-            this.btnListar.TabIndex = 22;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseSelectable = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click_1);
-            // 
-            // chkAtivo
-            // 
-            this.chkAtivo.AutoSize = true;
-            this.chkAtivo.Location = new System.Drawing.Point(503, 55);
-            this.chkAtivo.Margin = new System.Windows.Forms.Padding(4);
-            this.chkAtivo.Name = "chkAtivo";
-            this.chkAtivo.Size = new System.Drawing.Size(77, 25);
-            this.chkAtivo.TabIndex = 17;
-            this.chkAtivo.Text = "Ativo";
-            this.chkAtivo.UseVisualStyleBackColor = true;
-            // 
             // colunaId
             // 
             this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -556,6 +322,258 @@
             this.colunaAtivo.ReadOnly = true;
             this.colunaAtivo.Width = 128;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.chkAtivo);
+            this.groupBox2.Controls.Add(this.btnInserirImg);
+            this.groupBox2.Controls.Add(this.gpBoxImg);
+            this.groupBox2.Controls.Add(this.txtCpf);
+            this.groupBox2.Controls.Add(this.txtId);
+            this.groupBox2.Controls.Add(this.txtNome);
+            this.groupBox2.Controls.Add(this.txtEmail);
+            this.groupBox2.Controls.Add(this.metroLabel1);
+            this.groupBox2.Controls.Add(this.metroLabel4);
+            this.groupBox2.Controls.Add(this.metroLabel2);
+            this.groupBox2.Controls.Add(this.metroLabel3);
+            this.groupBox2.Location = new System.Drawing.Point(29, 68);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1017, 197);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cadastrar";
+            // 
+            // chkAtivo
+            // 
+            this.chkAtivo.AutoSize = true;
+            this.chkAtivo.Location = new System.Drawing.Point(503, 55);
+            this.chkAtivo.Margin = new System.Windows.Forms.Padding(4);
+            this.chkAtivo.Name = "chkAtivo";
+            this.chkAtivo.Size = new System.Drawing.Size(77, 25);
+            this.chkAtivo.TabIndex = 17;
+            this.chkAtivo.Text = "Ativo";
+            this.chkAtivo.UseVisualStyleBackColor = true;
+            // 
+            // btnInserirImg
+            // 
+            this.btnInserirImg.Location = new System.Drawing.Point(720, 159);
+            this.btnInserirImg.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInserirImg.Name = "btnInserirImg";
+            this.btnInserirImg.Size = new System.Drawing.Size(147, 23);
+            this.btnInserirImg.TabIndex = 16;
+            this.btnInserirImg.Text = "Inserir Imagem";
+            this.btnInserirImg.UseSelectable = true;
+            this.btnInserirImg.Click += new System.EventHandler(this.btnInserirImg_Click);
+            // 
+            // gpBoxImg
+            // 
+            this.gpBoxImg.Controls.Add(this.picImgCliente);
+            this.gpBoxImg.Location = new System.Drawing.Point(720, 26);
+            this.gpBoxImg.Name = "gpBoxImg";
+            this.gpBoxImg.Size = new System.Drawing.Size(147, 132);
+            this.gpBoxImg.TabIndex = 16;
+            this.gpBoxImg.TabStop = false;
+            this.gpBoxImg.Text = "Imagem";
+            // 
+            // picImgCliente
+            // 
+            this.picImgCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picImgCliente.Location = new System.Drawing.Point(6, 26);
+            this.picImgCliente.Name = "picImgCliente";
+            this.picImgCliente.Size = new System.Drawing.Size(135, 100);
+            this.picImgCliente.TabIndex = 18;
+            this.picImgCliente.TabStop = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(374, 272);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(120, 32);
+            this.btnEditar.TabIndex = 17;
+            this.btnEditar.Text = "&Editar";
+            this.btnEditar.UseSelectable = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnInserir
+            // 
+            this.btnInserir.Location = new System.Drawing.Point(517, 272);
+            this.btnInserir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(120, 32);
+            this.btnInserir.TabIndex = 8;
+            this.btnInserir.Text = "&Inserir";
+            this.btnInserir.UseSelectable = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
+            // 
+            // txtIdPesq
+            // 
+            // 
+            // 
+            // 
+            this.txtIdPesq.CustomButton.Image = null;
+            this.txtIdPesq.CustomButton.Location = new System.Drawing.Point(35, 1);
+            this.txtIdPesq.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdPesq.CustomButton.Name = "";
+            this.txtIdPesq.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtIdPesq.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtIdPesq.CustomButton.TabIndex = 1;
+            this.txtIdPesq.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtIdPesq.CustomButton.UseSelectable = true;
+            this.txtIdPesq.CustomButton.Visible = false;
+            this.txtIdPesq.Lines = new string[0];
+            this.txtIdPesq.Location = new System.Drawing.Point(19, 58);
+            this.txtIdPesq.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdPesq.MaxLength = 60;
+            this.txtIdPesq.Name = "txtIdPesq";
+            this.txtIdPesq.PasswordChar = '\0';
+            this.txtIdPesq.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtIdPesq.SelectedText = "";
+            this.txtIdPesq.SelectionLength = 0;
+            this.txtIdPesq.SelectionStart = 0;
+            this.txtIdPesq.ShortcutsEnabled = true;
+            this.txtIdPesq.Size = new System.Drawing.Size(59, 25);
+            this.txtIdPesq.TabIndex = 12;
+            this.txtIdPesq.UseSelectable = true;
+            this.txtIdPesq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtIdPesq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtIdPesq.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtIdPesq_KeyUp);
+            // 
+            // lbIdPesq
+            // 
+            this.lbIdPesq.AutoSize = true;
+            this.lbIdPesq.Location = new System.Drawing.Point(19, 34);
+            this.lbIdPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbIdPesq.Name = "lbIdPesq";
+            this.lbIdPesq.Size = new System.Drawing.Size(22, 20);
+            this.lbIdPesq.TabIndex = 13;
+            this.lbIdPesq.Text = "ID";
+            // 
+            // txtCpfPsq
+            // 
+            // 
+            // 
+            // 
+            this.txtCpfPsq.CustomButton.Image = null;
+            this.txtCpfPsq.CustomButton.Location = new System.Drawing.Point(75, 1);
+            this.txtCpfPsq.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCpfPsq.CustomButton.Name = "";
+            this.txtCpfPsq.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtCpfPsq.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtCpfPsq.CustomButton.TabIndex = 1;
+            this.txtCpfPsq.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtCpfPsq.CustomButton.UseSelectable = true;
+            this.txtCpfPsq.CustomButton.Visible = false;
+            this.txtCpfPsq.Lines = new string[0];
+            this.txtCpfPsq.Location = new System.Drawing.Point(19, 135);
+            this.txtCpfPsq.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCpfPsq.MaxLength = 60;
+            this.txtCpfPsq.Name = "txtCpfPsq";
+            this.txtCpfPsq.PasswordChar = '\0';
+            this.txtCpfPsq.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCpfPsq.SelectedText = "";
+            this.txtCpfPsq.SelectionLength = 0;
+            this.txtCpfPsq.SelectionStart = 0;
+            this.txtCpfPsq.ShortcutsEnabled = true;
+            this.txtCpfPsq.Size = new System.Drawing.Size(99, 25);
+            this.txtCpfPsq.TabIndex = 14;
+            this.txtCpfPsq.UseSelectable = true;
+            this.txtCpfPsq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtCpfPsq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCpfPsq.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCpfPsq_KeyUp);
+            // 
+            // lbCpfPesq
+            // 
+            this.lbCpfPesq.AutoSize = true;
+            this.lbCpfPesq.Location = new System.Drawing.Point(19, 108);
+            this.lbCpfPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCpfPesq.Name = "lbCpfPesq";
+            this.lbCpfPesq.Size = new System.Drawing.Size(33, 20);
+            this.lbCpfPesq.TabIndex = 15;
+            this.lbCpfPesq.Text = "CPF";
+            // 
+            // gpBoxPesq
+            // 
+            this.gpBoxPesq.Controls.Add(this.metroLabel5);
+            this.gpBoxPesq.Controls.Add(this.txtPesqNome);
+            this.gpBoxPesq.Controls.Add(this.lbCpfPesq);
+            this.gpBoxPesq.Controls.Add(this.txtCpfPsq);
+            this.gpBoxPesq.Controls.Add(this.lbIdPesq);
+            this.gpBoxPesq.Controls.Add(this.txtIdPesq);
+            this.gpBoxPesq.Location = new System.Drawing.Point(868, 313);
+            this.gpBoxPesq.Name = "gpBoxPesq";
+            this.gpBoxPesq.Size = new System.Drawing.Size(178, 253);
+            this.gpBoxPesq.TabIndex = 14;
+            this.gpBoxPesq.TabStop = false;
+            this.gpBoxPesq.Text = "Pesquisar";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.GridCliente);
+            this.groupBox1.Location = new System.Drawing.Point(29, 313);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(833, 330);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Clientes";
+            // 
+            // FileDialogImg
+            // 
+            this.FileDialogImg.FileName = "OpenFileDialog";
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(660, 272);
+            this.btnListar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(120, 32);
+            this.btnListar.TabIndex = 22;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseSelectable = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click_1);
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(19, 182);
+            this.metroLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(48, 20);
+            this.metroLabel5.TabIndex = 19;
+            this.metroLabel5.Text = "Nome";
+            // 
+            // txtPesqNome
+            // 
+            // 
+            // 
+            // 
+            this.txtPesqNome.CustomButton.Image = null;
+            this.txtPesqNome.CustomButton.Location = new System.Drawing.Point(75, 1);
+            this.txtPesqNome.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPesqNome.CustomButton.Name = "";
+            this.txtPesqNome.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtPesqNome.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPesqNome.CustomButton.TabIndex = 1;
+            this.txtPesqNome.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPesqNome.CustomButton.UseSelectable = true;
+            this.txtPesqNome.CustomButton.Visible = false;
+            this.txtPesqNome.Lines = new string[0];
+            this.txtPesqNome.Location = new System.Drawing.Point(19, 212);
+            this.txtPesqNome.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPesqNome.MaxLength = 60;
+            this.txtPesqNome.Name = "txtPesqNome";
+            this.txtPesqNome.PasswordChar = '\0';
+            this.txtPesqNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPesqNome.SelectedText = "";
+            this.txtPesqNome.SelectionLength = 0;
+            this.txtPesqNome.SelectionStart = 0;
+            this.txtPesqNome.ShortcutsEnabled = true;
+            this.txtPesqNome.Size = new System.Drawing.Size(99, 25);
+            this.txtPesqNome.TabIndex = 18;
+            this.txtPesqNome.UseSelectable = true;
+            this.txtPesqNome.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPesqNome.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPesqNome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPesqNome_KeyUp);
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -605,8 +623,6 @@
         private MetroFramework.Controls.MetroLabel lbIdPesq;
         private MetroFramework.Controls.MetroTextBox txtCpfPsq;
         private MetroFramework.Controls.MetroLabel lbCpfPesq;
-        private System.Windows.Forms.Button btnPesqCpf;
-        private System.Windows.Forms.Button btnPesqId;
         private System.Windows.Forms.GroupBox gpBoxPesq;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.OpenFileDialog FileDialogImg;
@@ -619,6 +635,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colunaAtivo;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroTextBox txtPesqNome;
     }
 }
 

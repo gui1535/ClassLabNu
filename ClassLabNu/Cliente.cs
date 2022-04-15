@@ -141,9 +141,6 @@ namespace ClassLabNu
                 dataCad = dr.GetString(4);
                 Ativo = dr.GetBoolean(5);
             }
-
-
-
         }
 
         public void ConsultarPorCpf(string _cpf)
@@ -177,7 +174,7 @@ namespace ClassLabNu
 
             // Comandos SQL
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = $"select * from clientes where nome = {_nome}";
+            cmd.CommandText = $"select * from clientes where nome = '{_nome}'";
 
             // Var para leitura
             var dr = cmd.ExecuteReader();

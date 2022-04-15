@@ -14,9 +14,18 @@ namespace ComercialSys
             //MdiParent
             MdiParent = parent;
 
+            // Lista DataGrid
             ListarDataGrid();
+        }
+
+        // Form Load ---------------------------------------------------------------------------------------------------------------
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
+
+        // DataGrid Clientes ---------------------------------------------------------------------------------------------------------------
 
         private void ListarDataGrid()
         {
@@ -28,85 +37,20 @@ namespace ComercialSys
 
             // Var para Listar clientes
             var lista = cliente.ListarClientes();
+
+            // Listando clientes no DataGrid
             lista.ForEach(i =>
             {
 
                 // Linhas 
                 GridCliente.Rows.Add();
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // ID
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Nome
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Email
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // CPF
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // DataCad
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox Ativo
-
-
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // Text -> ID
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Text -> Nome
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Text -> Email
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // Text -> CPF
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // Text -> DataCad
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
             });
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LimparTodosCampos()
-        {
-            txtCpf.Clear();
-            txtEmail.Clear();
-            txtId.Clear();
-            txtNome.Clear();
-        }
-
-        private void btnInserir_Click(object sender, EventArgs e)
-        {
-
-            // Objeto Cliente
-            ClassLabNu.Cliente c = new ClassLabNu.Cliente(
-                txtNome.Text,
-                txtCpf.Text,
-                txtEmail.Text
-                );
-
-            c.Inserir();
-
-            if (c.Id > 0)
-            {
-                // Verificação se email é valido
-                if (Validacao.EmailValido(txtEmail.Text))
-                {
-                    txtId.Text = c.Id.ToString();
-                    MessageBox.Show($"Cliente {c.Id} inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show($"Email invalido do cliente {c.Id}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Falha ao inserir cliente", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnPesqId_Click(object sender, EventArgs e)
-        {
-            // Objeto Cliente
-            Cliente cliente = new Cliente();
-
-            // Metodo Consulta por ID
-            cliente.ConsultarPorId(int.Parse(txtIdPesq.Text));
-
-            // Atributos
-            txtId.Text = Convert.ToString(cliente.Id);
-            txtNome.Text = cliente.Nome;
-            txtEmail.Text = cliente.Email;
-            txtCpf.Text = cliente.Cpf;
-            chkAtivo.Checked = cliente.Ativo;
-
-            // Limpando as TextBox de pesquisa
-            txtIdPesq.Clear();
-            txtCpfPsq.Clear();
-
         }
 
         private void GridCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -129,25 +73,55 @@ namespace ComercialSys
             chkAtivo.Checked = c.Ativo;
         }
 
-        private void btnPesqCpf_Click(object sender, EventArgs e)
+
+        // Limpar Campos ---------------------------------------------------------------------------------------------------------------
+
+        private void LimparTodosCampos()
         {
-            // Objeto Cliente
-            Cliente cliente = new Cliente();
-
-            // Metodo Consulta por ID
-            cliente.ConsultarPorCpf(Convert.ToString(txtCpfPsq.Text));
-
-            // Atributos
-            txtId.Text = Convert.ToString(cliente.Id);
-            txtNome.Text = cliente.Nome;
-            txtEmail.Text = cliente.Email;
-            txtCpf.Text = cliente.Cpf;
-            chkAtivo.Checked = cliente.Ativo;
-
-            // Limpando as TextBox de pesquisa
-            txtIdPesq.Clear();
-            txtCpfPsq.Clear();
+            // Limpa campos
+            txtCpf.Clear();
+            txtEmail.Clear();
+            txtId.Clear();
+            txtNome.Clear();
         }
+
+        // Inserir Clientes ---------------------------------------------------------------------------------------------------------------
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+
+            // Objeto Cliente
+            ClassLabNu.Cliente c = new ClassLabNu.Cliente(
+                txtNome.Text,
+                txtCpf.Text,
+                txtEmail.Text
+                );
+
+            c.Inserir();
+
+            // Se ID for maior que 0
+            if (c.Id > 0)
+            {
+                // Verificação se email é valido
+                if (Validacao.EmailValido(txtEmail.Text))
+                {
+                    txtId.Text = c.Id.ToString();
+                    MessageBox.Show($"Cliente {c.Id} inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // Email Invalido
+                    MessageBox.Show($"Email invalido do cliente {c.Id}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                // Falha ao inserir cliente
+                MessageBox.Show("Falha ao inserir cliente", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Inserir imagem Clientes ---------------------------------------------------------------------------------------------------------------
 
         private void btnInserirImg_Click(object sender, EventArgs e)
         {
@@ -167,12 +141,15 @@ namespace ComercialSys
 
         }
 
+        // Listar Clientes ---------------------------------------------------------------------------------------------------------------
+
         private void btnListar_Click_1(object sender, EventArgs e)
         {
             // Listando Clientes
             ListarDataGrid();
         }
 
+        // Editar Clientes ---------------------------------------------------------------------------------------------------------------
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -188,6 +165,7 @@ namespace ComercialSys
 
             if (Validacao.EmailValido(txtEmail.Text))
             {
+                // Condição se usuario deseja mesmo fazer a alteração
                 if (MessageBox.Show("Você tem certeza que deseja alterar?", "SysComercial", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     // Condição
@@ -211,8 +189,72 @@ namespace ComercialSys
             }
             else
             {
+                // Email Invalido
                 MessageBox.Show($"Email do cliente {cliente.Id} invalido", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        // Pesquisar Clientes ---------------------------------------------------------------------------------------------------------------
+
+        private void txtPesqNome_KeyUp(object sender, KeyEventArgs e)
+        {
+            // Objeto Cliente
+            Cliente cliente = new Cliente();
+
+            // Metodo Consulta por Nome
+            cliente.ConsultarPorNome(Convert.ToString(txtPesqNome.Text));
+
+            // Atributos
+            txtId.Text = Convert.ToString(cliente.Id);
+            txtNome.Text = cliente.Nome;
+            txtEmail.Text = cliente.Email;
+            txtCpf.Text = cliente.Cpf;
+            chkAtivo.Checked = cliente.Ativo;
+
+            // Limpando as TextBox de pesquisa
+            txtIdPesq.Clear();
+            txtCpfPsq.Clear();
+        }
+
+        private void txtCpfPsq_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            // Objeto Cliente
+            Cliente cliente = new Cliente();
+
+            // Metodo Consulta por CPF
+            cliente.ConsultarPorCpf(Convert.ToString(txtCpfPsq.Text));
+
+            // Atributos
+            txtId.Text = Convert.ToString(cliente.Id);
+            txtNome.Text = cliente.Nome;
+            txtEmail.Text = cliente.Email;
+            txtCpf.Text = cliente.Cpf;
+            chkAtivo.Checked = cliente.Ativo;
+
+            // Limpando as TextBox de pesquisa
+            txtIdPesq.Clear();
+            txtCpfPsq.Clear();
+        }
+
+        private void txtIdPesq_KeyUp(object sender, KeyEventArgs e)
+        {
+            // Objeto Cliente
+            Cliente cliente = new Cliente();
+
+            // Metodo Consulta por ID
+            cliente.ConsultarPorId(int.Parse(txtIdPesq.Text));
+
+            // Atributos
+            txtId.Text = Convert.ToString(cliente.Id);
+            txtNome.Text = cliente.Nome;
+            txtEmail.Text = cliente.Email;
+            txtCpf.Text = cliente.Cpf;
+            chkAtivo.Checked = cliente.Ativo;
+
+            // Limpando as TextBox de pesquisa
+            txtIdPesq.Clear();
+            txtCpfPsq.Clear();
         }
     }
 }

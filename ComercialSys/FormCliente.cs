@@ -27,6 +27,9 @@ namespace ComercialSys
 
         // DataGrid Clientes ---------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Listar DataGrid de clientes
+        /// </summary>
         private void ListarDataGrid()
         {
             // Limpar Grid
@@ -52,9 +55,15 @@ namespace ComercialSys
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
             });
         }
-
+        
+        /// <summary>
+        /// Metodo 2 clique no DataGrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
             // Variaveis para objeto Cliente
             Cliente c = new Cliente();
 
@@ -76,6 +85,9 @@ namespace ComercialSys
 
         // Limpar Campos ---------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Metodo limpar todos campos
+        /// </summary>
         private void LimparTodosCampos()
         {
             // Limpa campos
@@ -85,8 +97,14 @@ namespace ComercialSys
             txtNome.Clear();
         }
 
+
         // Inserir Clientes ---------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Botao inserir Cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInserir_Click(object sender, EventArgs e)
         {
 
@@ -123,6 +141,11 @@ namespace ComercialSys
 
         // Inserir imagem Clientes ---------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Botao inserir imagem Cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnInserirImg_Click(object sender, EventArgs e)
         {
             try
@@ -143,6 +166,11 @@ namespace ComercialSys
 
         // Listar Clientes ---------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Botao listar Cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnListar_Click_1(object sender, EventArgs e)
         {
             // Listando Clientes
@@ -151,6 +179,11 @@ namespace ComercialSys
 
         // Editar Clientes ---------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Botao editar Cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditar_Click(object sender, EventArgs e)
         {
             // Objeto Cliente
@@ -196,6 +229,11 @@ namespace ComercialSys
 
         // Pesquisar Clientes ---------------------------------------------------------------------------------------------------------------
 
+        /// <summary>
+        /// Pesquisar cliente por nome
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtPesqNome_KeyUp(object sender, KeyEventArgs e)
         {
             // Objeto Cliente
@@ -216,6 +254,11 @@ namespace ComercialSys
             txtCpfPsq.Clear();
         }
 
+        /// <summary>
+        /// Pesquisar cliente por CPF
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtCpfPsq_KeyUp(object sender, KeyEventArgs e)
         {
 
@@ -237,6 +280,11 @@ namespace ComercialSys
             txtCpfPsq.Clear();
         }
 
+        /// <summary>
+        /// Pesquisar cliente por ID
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtIdPesq_KeyUp(object sender, KeyEventArgs e)
         {
             // Objeto Cliente

@@ -337,7 +337,7 @@
             this.groupBox2.Controls.Add(this.metroLabel3);
             this.groupBox2.Location = new System.Drawing.Point(29, 68);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1017, 197);
+            this.groupBox2.Size = new System.Drawing.Size(986, 197);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
@@ -501,7 +501,7 @@
             this.gpBoxPesq.Controls.Add(this.txtIdPesq);
             this.gpBoxPesq.Location = new System.Drawing.Point(868, 313);
             this.gpBoxPesq.Name = "gpBoxPesq";
-            this.gpBoxPesq.Size = new System.Drawing.Size(178, 253);
+            this.gpBoxPesq.Size = new System.Drawing.Size(147, 253);
             this.gpBoxPesq.TabIndex = 14;
             this.gpBoxPesq.TabStop = false;
             this.gpBoxPesq.Text = "Pesquisar";
@@ -578,7 +578,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1075, 666);
+            this.ClientSize = new System.Drawing.Size(1041, 666);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.gpBoxPesq);

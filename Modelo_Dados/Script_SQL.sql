@@ -236,7 +236,7 @@ end
 -- PROCEDURES USUARIOS
 -- -----------------------------------------------------
 
--- INSERIR PRODUTO --
+-- INSERIR USUARIO --
 delimiter |
 create procedure usuario_inserir(
 _nome varchar (60),

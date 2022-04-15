@@ -208,7 +208,7 @@ _email varchar(60)
 begin
 insert into clientes(nome, cpf, email, datacad, ativo)
 values (_nome, _cpf, _email, default, default);
-select * from cliente where id = (select @@identity);
+select * from cliente where idcli = (select @@identity);
 end
 |
 

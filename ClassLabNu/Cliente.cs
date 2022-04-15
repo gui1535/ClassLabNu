@@ -150,20 +150,22 @@ namespace ClassLabNu
         /// <returns>Bool</returns>
         public bool Alterar()
         {
+            // Abrir conexao
             var cmd = Banco.Abrir();
+
+            // Comando SQL
             cmd.CommandText = $"update clientes set nome = '{Nome}', cpf = '{Cpf}', email = '{Email}', ativo = {Ativo} where idcli = {Id}";
             int ret = cmd.ExecuteNonQuery();
+
+            // Retornando valor
             if (ret == 1)
             {
                 return true;
-
-
             }
             else
             {
                 return false;
             }
-
         }
 
         /// <summary>

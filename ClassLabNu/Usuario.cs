@@ -13,11 +13,11 @@ namespace ClassLabNu
         // Atributos -----------------------------------------------------------------------------
 
         public int Id { get; set; }
-        public string Nome { get; }
+        public string Nome { get; set; }
         public string Email { get; set; }
-        public string Password { get; }
+        public string Password { get; set; }
         public bool Ativo { get; set; }
-        public string Nivel { get; }
+        public string Nivel { get; set; }
 
         // Metodos Construtores ------------------------------------------------------------------
 
@@ -54,7 +54,7 @@ namespace ClassLabNu
         /// <param name="password">VARCHAR(32)</param>
         /// <param name="ativo">BIT(1)</param>
         /// <param name="nivel">VARCHAR(15)</param>
-        public Usuario(int id, string nome, string email, string password, bool ativo, string nivel)
+        public Usuario(int id, string nome, string email, string password, string nivel, bool ativo)
         {
             this.Id = id;
             this.Nome = nome;
@@ -95,12 +95,13 @@ namespace ClassLabNu
 
                 // Comandos SQL
                 banco.CommandType = System.Data.CommandType.StoredProcedure;
-                banco.CommandText = "cliente_inserir";
+                banco.CommandText = "usuario_inserir";
 
                 // Parametros
                 banco.Parameters.AddWithValue("_nome", Nome);
                 banco.Parameters.AddWithValue("_email", Email);
                 banco.Parameters.AddWithValue("_senha", Password);
+                banco.Parameters.AddWithValue("_nivel", Nivel);
                 Id = Convert.ToInt32(banco.ExecuteScalar());
 
                 // Fecha Conexão
@@ -157,16 +158,95 @@ namespace ClassLabNu
                     dr.GetString(1), // Nome
                     dr.GetString(2), // Email
                     dr.GetString(3), // Senha
-                    dr.GetBoolean(4), // Nivel
-                    dr.GetString(5) // Ativo
+                    dr.GetString(4), // Nivel
+                    dr.GetBoolean(5) // Ativo
                     ));
             }
-
             // Fecha Conexão
             banco.Connection.Close();
 
             // Retornando lista
             return lista;
+        }
+
+        /// <summary>
+        /// Metodo para alterar usuario no banco de dados
+        /// </summary>
+        /// <returns></returns>
+        public bool Alterar()
+        {
+            // Abrir conexao
+            var cmd = Banco.Abrir();
+
+            // Comando SQL
+            cmd.CommandText = $"update usuarios set nome = '{Nome}', senha = '{Password}', email = '{Email}', ativo = {Ativo}, nivel = '{Nivel}' where iduser = {Id}";
+            int ret = cmd.ExecuteNonQuery();
+
+            // Retornando valor
+            if (ret == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Metodo para consultar usuario por ID
+        /// </summary>
+        /// <param name="_id"></param>
+        public void ConsultarPorId(int _id)
+        {
+            // Abre conexao com banco
+            var cmd = Banco.Abrir();
+
+            // Comandos SQL
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"select * from usuarios where iduser = '{_id}'";
+
+            // Var para leitura
+            var dr = cmd.ExecuteReader();
+
+            // Consulta
+            while (dr.Read())
+            {
+                Id = dr.GetInt32(0);
+                Nome = dr.GetString(1);
+                Email = dr.GetString(2);
+                Password = dr.GetString(3);
+                Nivel = dr.GetString(4);
+                Ativo = dr.GetBoolean(5);
+            }
+        }
+
+        /// <summary>
+        /// Metodo para consultar usuario por Nome
+        /// </summary>
+        /// <param name="_nome"></param>
+        public void ConsultarPorNome(string _nome)
+        {
+            // Abre conexao com banco
+            var cmd = Banco.Abrir();
+
+            // Comandos SQL
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"select * from usuarios where nome = '{_nome}'";
+
+            // Var para leitura
+            var dr = cmd.ExecuteReader();
+
+            // Consulta
+            while (dr.Read())
+            {
+                Id = dr.GetInt32(0);
+                Nome = dr.GetString(1);
+                Email = dr.GetString(2);
+                Password = dr.GetString(3);
+                Nivel = dr.GetString(4);
+                Ativo = dr.GetBoolean(5);
+            }
         }
     }
 }

@@ -196,6 +196,7 @@ namespace ComercialSys
             cliente.Email = txtEmail.Text;
             cliente.Ativo = chkAtivo.Checked;
 
+            // Validação do email
             if (Validacao.EmailValido(txtEmail.Text))
             {
                 // Condição se usuario deseja mesmo fazer a alteração
@@ -211,7 +212,7 @@ namespace ComercialSys
                         LimparTodosCampos();
 
                         // Lista denovo
-                        btnListar_Click_1(sender, e);
+                        ListarDataGrid();
                     }
                     else // Senão
                     {

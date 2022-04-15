@@ -38,12 +38,6 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.GridCliente = new System.Windows.Forms.DataGridView();
-            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnInserirImg = new MetroFramework.Controls.MetroButton();
             this.gpBoxImg = new System.Windows.Forms.GroupBox();
@@ -60,7 +54,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.FileDialogImg = new System.Windows.Forms.OpenFileDialog();
             this.btnListar = new MetroFramework.Controls.MetroButton();
-            this.chkAtivo = new MetroFramework.Controls.MetroCheckBox();
+            this.chkAtivo = new System.Windows.Forms.CheckBox();
+            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gpBoxImg.SuspendLayout();
@@ -262,48 +262,6 @@
             this.GridCliente.Size = new System.Drawing.Size(820, 298);
             this.GridCliente.TabIndex = 10;
             this.GridCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCliente_CellDoubleClick);
-            // 
-            // colunaId
-            // 
-            this.colunaId.HeaderText = "Id";
-            this.colunaId.MinimumWidth = 6;
-            this.colunaId.Name = "colunaId";
-            this.colunaId.ReadOnly = true;
-            // 
-            // colunaNome
-            // 
-            this.colunaNome.HeaderText = "Nome";
-            this.colunaNome.MinimumWidth = 6;
-            this.colunaNome.Name = "colunaNome";
-            this.colunaNome.ReadOnly = true;
-            // 
-            // colunaCpf
-            // 
-            this.colunaCpf.HeaderText = "CPF";
-            this.colunaCpf.MinimumWidth = 6;
-            this.colunaCpf.Name = "colunaCpf";
-            this.colunaCpf.ReadOnly = true;
-            // 
-            // colunaEmail
-            // 
-            this.colunaEmail.HeaderText = "Email";
-            this.colunaEmail.MinimumWidth = 6;
-            this.colunaEmail.Name = "colunaEmail";
-            this.colunaEmail.ReadOnly = true;
-            // 
-            // colunaDataCad
-            // 
-            this.colunaDataCad.HeaderText = "DataCad";
-            this.colunaDataCad.MinimumWidth = 6;
-            this.colunaDataCad.Name = "colunaDataCad";
-            this.colunaDataCad.ReadOnly = true;
-            // 
-            // colunaAtivo
-            // 
-            this.colunaAtivo.HeaderText = "Ativo";
-            this.colunaAtivo.MinimumWidth = 6;
-            this.colunaAtivo.Name = "colunaAtivo";
-            this.colunaAtivo.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -530,12 +488,73 @@
             // chkAtivo
             // 
             this.chkAtivo.AutoSize = true;
-            this.chkAtivo.Location = new System.Drawing.Point(488, 55);
+            this.chkAtivo.Location = new System.Drawing.Point(503, 55);
+            this.chkAtivo.Margin = new System.Windows.Forms.Padding(4);
             this.chkAtivo.Name = "chkAtivo";
-            this.chkAtivo.Size = new System.Drawing.Size(53, 17);
+            this.chkAtivo.Size = new System.Drawing.Size(77, 25);
             this.chkAtivo.TabIndex = 17;
             this.chkAtivo.Text = "Ativo";
-            this.chkAtivo.UseSelectable = true;
+            this.chkAtivo.UseVisualStyleBackColor = true;
+            // 
+            // colunaId
+            // 
+            this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colunaId.Frozen = true;
+            this.colunaId.HeaderText = "Id";
+            this.colunaId.MinimumWidth = 6;
+            this.colunaId.Name = "colunaId";
+            this.colunaId.ReadOnly = true;
+            this.colunaId.Width = 128;
+            // 
+            // colunaNome
+            // 
+            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colunaNome.Frozen = true;
+            this.colunaNome.HeaderText = "Nome";
+            this.colunaNome.MinimumWidth = 6;
+            this.colunaNome.Name = "colunaNome";
+            this.colunaNome.ReadOnly = true;
+            this.colunaNome.Width = 128;
+            // 
+            // colunaCpf
+            // 
+            this.colunaCpf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colunaCpf.Frozen = true;
+            this.colunaCpf.HeaderText = "CPF";
+            this.colunaCpf.MinimumWidth = 6;
+            this.colunaCpf.Name = "colunaCpf";
+            this.colunaCpf.ReadOnly = true;
+            this.colunaCpf.Width = 128;
+            // 
+            // colunaEmail
+            // 
+            this.colunaEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colunaEmail.Frozen = true;
+            this.colunaEmail.HeaderText = "Email";
+            this.colunaEmail.MinimumWidth = 6;
+            this.colunaEmail.Name = "colunaEmail";
+            this.colunaEmail.ReadOnly = true;
+            this.colunaEmail.Width = 127;
+            // 
+            // colunaDataCad
+            // 
+            this.colunaDataCad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colunaDataCad.Frozen = true;
+            this.colunaDataCad.HeaderText = "DataCad";
+            this.colunaDataCad.MinimumWidth = 6;
+            this.colunaDataCad.Name = "colunaDataCad";
+            this.colunaDataCad.ReadOnly = true;
+            this.colunaDataCad.Width = 128;
+            // 
+            // colunaAtivo
+            // 
+            this.colunaAtivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colunaAtivo.Frozen = true;
+            this.colunaAtivo.HeaderText = "Ativo";
+            this.colunaAtivo.MinimumWidth = 6;
+            this.colunaAtivo.Name = "colunaAtivo";
+            this.colunaAtivo.ReadOnly = true;
+            this.colunaAtivo.Width = 128;
             // 
             // FormCliente
             // 
@@ -578,12 +597,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.DataGridView GridCliente;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaCpf;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaAtivo;
         private System.Windows.Forms.GroupBox gpBoxImg;
         private MetroFramework.Controls.MetroButton btnInserirImg;
         private MetroFramework.Controls.MetroButton btnEditar;
@@ -599,7 +612,13 @@
         private System.Windows.Forms.OpenFileDialog FileDialogImg;
         private System.Windows.Forms.PictureBox picImgCliente;
         private MetroFramework.Controls.MetroButton btnListar;
-        private MetroFramework.Controls.MetroCheckBox chkAtivo;
+        private System.Windows.Forms.CheckBox chkAtivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaCpf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colunaAtivo;
     }
 }
 

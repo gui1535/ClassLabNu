@@ -15,6 +15,7 @@ namespace ComercialSys
             MdiParent = parent;
 
             ListarDataGrid();
+
         }
 
         private void ListarDataGrid()
@@ -37,22 +38,8 @@ namespace ComercialSys
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Email
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // CPF
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // DataCad
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox Ativo
 
-                // Verificação para Ativo ou Inativo
-                if ((i.Ativo == true))
-                {
-
-                    // Se Ativo for igual a 'True' -> 1
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = "Ativo"; // Ativo
-
-                }
-                else if (i.Ativo == false)
-                {
-
-                    // Se Ativo for igual a 'False' -> 0
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = "Inativo"; // Inativo
-
-                }
 
             });
         }
@@ -88,11 +75,11 @@ namespace ComercialSys
                 if (Validacao.EmailValido(txtEmail.Text))
                 {
                     txtId.Text = c.Id.ToString();
-                    MessageBox.Show("Cliente inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Cliente {c.Id} inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Email invalido", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show($"Email invalido do cliente {c.Id}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else
@@ -114,6 +101,7 @@ namespace ComercialSys
             txtNome.Text = cliente.Nome;
             txtEmail.Text = cliente.Email;
             txtCpf.Text = cliente.Cpf;
+            chkAtivo.Checked = cliente.Ativo;
 
             // Limpando as TextBox de pesquisa
             txtIdPesq.Clear();
@@ -124,23 +112,21 @@ namespace ComercialSys
         private void GridCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // Variaveis para objeto Cliente
-            int id;
-            string nome, email, cpf;
+            Cliente c = new Cliente();
 
-            // Valores para variaveis
-            id = Convert.ToInt32(GridCliente["colunaId", e.RowIndex].Value);
-            nome = Convert.ToString(GridCliente["colunaNome", e.RowIndex].Value);
-            email = Convert.ToString(GridCliente["colunaEmail", e.RowIndex].Value);
-            cpf = Convert.ToString(GridCliente["colunaCpf", e.RowIndex].Value);
-
-            // Objeto Cliente
-            Cliente cliente = new Cliente(id, nome, email, cpf);
+            // Valores para o objeto
+            c.Id = Convert.ToInt32(GridCliente["colunaId", e.RowIndex].Value);
+            c.Nome = Convert.ToString(GridCliente["colunaNome", e.RowIndex].Value);
+            c.Email = Convert.ToString(GridCliente["colunaEmail", e.RowIndex].Value);
+            c.Cpf = Convert.ToString(GridCliente["colunaCpf", e.RowIndex].Value);
+            c.Ativo = Convert.ToBoolean(GridCliente["colunaAtivo", e.RowIndex].Value);
 
             // Atributos
-            txtId.Text = cliente.Id.ToString();
-            txtNome.Text = cliente.Nome;
-            txtEmail.Text = cliente.Email;
-            txtCpf.Text = cliente.Cpf;
+            txtId.Text = c.Id.ToString();
+            txtNome.Text = c.Nome;
+            txtEmail.Text = c.Email;
+            txtCpf.Text = c.Cpf;
+            chkAtivo.Checked = c.Ativo;
         }
 
         private void btnPesqCpf_Click(object sender, EventArgs e)
@@ -156,6 +142,7 @@ namespace ComercialSys
             txtNome.Text = cliente.Nome;
             txtEmail.Text = cliente.Email;
             txtCpf.Text = cliente.Cpf;
+            chkAtivo.Checked = cliente.Ativo;
 
             // Limpando as TextBox de pesquisa
             txtIdPesq.Clear();
@@ -186,10 +173,6 @@ namespace ComercialSys
             ListarDataGrid();
         }
 
-        private void BloquearProp()
-        {
-
-        }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -203,22 +186,32 @@ namespace ComercialSys
             cliente.Email = txtEmail.Text;
             cliente.Ativo = chkAtivo.Checked;
 
-            // Condição
-            if (cliente.Alterar()) // Se cliente alterar for igual a TRUE
+            if (Validacao.EmailValido(txtEmail.Text))
             {
-                // Mensagem Box
-                MessageBox.Show("Cliente alterado com sucesso!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (MessageBox.Show("Você tem certeza que deseja alterar?", "SysComercial", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    // Condição
+                    if (cliente.Alterar()) // Se cliente alterar for igual a TRUE
+                    {
+                        // Mensagem Box
+                        MessageBox.Show("Cliente alterado com sucesso!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Limpa todos campos
-                LimparTodosCampos();
+                        // Limpa todos campos
+                        LimparTodosCampos();
 
-                // Lista denovo
-                btnListar_Click_1(sender, e);
+                        // Lista denovo
+                        btnListar_Click_1(sender, e);
+                    }
+                    else // Senão
+                    {
+                        // Mensagem Box
+                        MessageBox.Show("Falha ao alterar o cliente!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-            else // Senão
+            else
             {
-                // Mensagem Box
-                MessageBox.Show("Falha ao alterar o cliente!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Email do cliente {cliente.Id} invalido", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

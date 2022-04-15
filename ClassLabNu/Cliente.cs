@@ -48,7 +48,13 @@ namespace ClassLabNu
             this.Ativo = ativo;
         }
 
-
+        public Cliente(string nome, string cpf, string email, bool ativo)
+        {
+            this.Nome = nome;
+            this.Cpf = cpf;
+            this.Email = email;
+            this.Ativo = ativo;
+        }
 
         public Cliente(string nome, string cpf, string email)
         {

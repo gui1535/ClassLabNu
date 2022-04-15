@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ClassLabNu
@@ -48,7 +47,7 @@ namespace ClassLabNu
             this.dataCad = dataCad;
             this.Ativo = ativo;
         }
-     
+
 
 
         public Cliente(string nome, string cpf, string email)
@@ -96,9 +95,22 @@ namespace ClassLabNu
 
         }
 
-        public void Alterar(Cliente cliente)
+        public bool Alterar()
         {
-            //
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"update clientes set nome = '{Nome}', cpf = '{Cpf}', email = '{Email}', ativo = {Ativo} where idcli = {Id}";
+            int ret = cmd.ExecuteNonQuery();
+            if (ret == 1)
+            {
+                return true;
+
+
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         public void ConsultarPorId(int _id)

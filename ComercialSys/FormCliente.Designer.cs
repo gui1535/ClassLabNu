@@ -45,11 +45,11 @@
             this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.btnInserirImg = new MetroFramework.Controls.MetroButton();
-            this.btnInserir = new MetroFramework.Controls.MetroButton();
             this.gpBoxImg = new System.Windows.Forms.GroupBox();
             this.picImgCliente = new System.Windows.Forms.PictureBox();
+            this.btnEditar = new MetroFramework.Controls.MetroButton();
+            this.btnInserir = new MetroFramework.Controls.MetroButton();
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
             this.lbIdPesq = new MetroFramework.Controls.MetroLabel();
             this.txtCpfPsq = new MetroFramework.Controls.MetroTextBox();
@@ -60,6 +60,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.FileDialogImg = new System.Windows.Forms.OpenFileDialog();
             this.btnListar = new MetroFramework.Controls.MetroButton();
+            this.chkAtivo = new MetroFramework.Controls.MetroCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gpBoxImg.SuspendLayout();
@@ -306,6 +307,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkAtivo);
             this.groupBox2.Controls.Add(this.btnInserirImg);
             this.groupBox2.Controls.Add(this.gpBoxImg);
             this.groupBox2.Controls.Add(this.txtCpf);
@@ -323,16 +325,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
             // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(374, 272);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(120, 32);
-            this.metroButton1.TabIndex = 17;
-            this.metroButton1.Text = "&Editar";
-            this.metroButton1.UseSelectable = true;
-            // 
             // btnInserirImg
             // 
             this.btnInserirImg.Location = new System.Drawing.Point(720, 159);
@@ -343,17 +335,6 @@
             this.btnInserirImg.Text = "Inserir Imagem";
             this.btnInserirImg.UseSelectable = true;
             this.btnInserirImg.Click += new System.EventHandler(this.btnInserirImg_Click);
-            // 
-            // btnInserir
-            // 
-            this.btnInserir.Location = new System.Drawing.Point(517, 272);
-            this.btnInserir.Margin = new System.Windows.Forms.Padding(4);
-            this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(120, 32);
-            this.btnInserir.TabIndex = 8;
-            this.btnInserir.Text = "&Inserir";
-            this.btnInserir.UseSelectable = true;
-            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // gpBoxImg
             // 
@@ -373,6 +354,28 @@
             this.picImgCliente.Size = new System.Drawing.Size(135, 100);
             this.picImgCliente.TabIndex = 18;
             this.picImgCliente.TabStop = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(374, 272);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(120, 32);
+            this.btnEditar.TabIndex = 17;
+            this.btnEditar.Text = "&Editar";
+            this.btnEditar.UseSelectable = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnInserir
+            // 
+            this.btnInserir.Location = new System.Drawing.Point(517, 272);
+            this.btnInserir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(120, 32);
+            this.btnInserir.TabIndex = 8;
+            this.btnInserir.Text = "&Inserir";
+            this.btnInserir.UseSelectable = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // txtIdPesq
             // 
@@ -522,6 +525,17 @@
             this.btnListar.TabIndex = 22;
             this.btnListar.Text = "Listar";
             this.btnListar.UseSelectable = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click_1);
+            // 
+            // chkAtivo
+            // 
+            this.chkAtivo.AutoSize = true;
+            this.chkAtivo.Location = new System.Drawing.Point(488, 52);
+            this.chkAtivo.Name = "chkAtivo";
+            this.chkAtivo.Size = new System.Drawing.Size(53, 17);
+            this.chkAtivo.TabIndex = 17;
+            this.chkAtivo.Text = "Ativo";
+            this.chkAtivo.UseSelectable = true;
             // 
             // FormCliente
             // 
@@ -529,7 +543,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1075, 666);
             this.Controls.Add(this.btnListar);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.gpBoxPesq);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnInserir);
@@ -572,7 +586,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaAtivo;
         private System.Windows.Forms.GroupBox gpBoxImg;
         private MetroFramework.Controls.MetroButton btnInserirImg;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnEditar;
         private MetroFramework.Controls.MetroButton btnInserir;
         private MetroFramework.Controls.MetroTextBox txtIdPesq;
         private MetroFramework.Controls.MetroLabel lbIdPesq;
@@ -585,6 +599,7 @@
         private System.Windows.Forms.OpenFileDialog FileDialogImg;
         private System.Windows.Forms.PictureBox picImgCliente;
         private MetroFramework.Controls.MetroButton btnListar;
+        private MetroFramework.Controls.MetroCheckBox chkAtivo;
     }
 }
 

@@ -62,6 +62,14 @@ namespace ComercialSys
 
         }
 
+        private void LimparTodosCampos()
+        {
+            txtCpf.Clear();
+            txtEmail.Clear();
+            txtId.Clear();
+            txtNome.Clear();
+        }
+
         private void btnInserir_Click(object sender, EventArgs e)
         {
 
@@ -91,15 +99,8 @@ namespace ComercialSys
             {
                 MessageBox.Show("Falha ao inserir cliente", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
         }
 
-        private void btnListar_Click(object sender, EventArgs e)
-        {
-            ListarDataGrid();
-        }
         private void btnPesqId_Click(object sender, EventArgs e)
         {
             // Objeto Cliente
@@ -117,6 +118,7 @@ namespace ComercialSys
             // Limpando as TextBox de pesquisa
             txtIdPesq.Clear();
             txtCpfPsq.Clear();
+
         }
 
         private void GridCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -178,6 +180,47 @@ namespace ComercialSys
 
         }
 
+        private void btnListar_Click_1(object sender, EventArgs e)
+        {
+            // Listando Clientes
+            ListarDataGrid();
+        }
+
+        private void BloquearProp()
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            // Objeto Cliente
+            Cliente cliente = new Cliente();
+
+            // Atributos do objeto
+            cliente.Id = int.Parse(txtId.Text);
+            cliente.Nome = txtNome.Text;
+            cliente.Cpf = txtCpf.Text;
+            cliente.Email = txtEmail.Text;
+            cliente.Ativo = chkAtivo.Checked;
+
+            // Condição
+            if (cliente.Alterar()) // Se cliente alterar for igual a TRUE
+            {
+                // Mensagem Box
+                MessageBox.Show("Cliente alterado com sucesso!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpa todos campos
+                LimparTodosCampos();
+
+                // Lista denovo
+                btnListar_Click_1(sender, e);
+            }
+            else // Senão
+            {
+                // Mensagem Box
+                MessageBox.Show("Falha ao alterar o cliente!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
 

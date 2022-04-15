@@ -530,7 +530,7 @@
             // chkAtivo
             // 
             this.chkAtivo.AutoSize = true;
-            this.chkAtivo.Location = new System.Drawing.Point(488, 52);
+            this.chkAtivo.Location = new System.Drawing.Point(488, 55);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(53, 17);
             this.chkAtivo.TabIndex = 17;

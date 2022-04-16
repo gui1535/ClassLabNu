@@ -25,7 +25,6 @@ namespace ComercialSys.Formularios
         /// </summary>
         private void LiberarCampos()
         {
-            txtId.Enabled = true;
             txtNome.Enabled = true;
             txtEmail.Enabled = true;
             txtSenha.Enabled = true;
@@ -54,7 +53,6 @@ namespace ComercialSys.Formularios
         /// </summary>
         private void BloquearCampos()
         {
-            txtId.Enabled = false;
             txtNome.Enabled = false;
             txtEmail.Enabled = false;
             txtSenha.Enabled = false;
@@ -314,11 +312,10 @@ namespace ComercialSys.Formularios
                 txtSenha.Text = usuario.Password;
                 cmbNivel.Text = usuario.Nivel;
                 chkAtivo.Checked = usuario.Ativo;
-
-                // Limpando as TextBox de pesquisa
-                txtPesqNome.Clear();
             }
-            BloquearCampos();
+
+            // Limpando as TextBox de pesquisa
+            txtPesqNome.Clear();
         }
 
         private void txtPesqNome_KeyUp(object sender, KeyEventArgs e)
@@ -342,11 +339,10 @@ namespace ComercialSys.Formularios
                 txtSenha.Text = usuario.Password;
                 cmbNivel.Text = usuario.Nivel;
                 chkAtivo.Checked = usuario.Ativo;
-
-                // Limpando as TextBox de pesquisa
-                txtIdPesq.Clear();
             }
-            BloquearCampos();
+
+            // Limpando as TextBox de pesquisa
+            txtIdPesq.Clear();
         }
     }
 }

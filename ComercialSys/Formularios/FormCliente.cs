@@ -25,6 +25,60 @@ namespace ComercialSys
 
         }
 
+        // Liberar Campos -----------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Metodo para liberar todos os campos
+        /// </summary>
+        private void LiberarCampos()
+        {
+            txtNome.Enabled = true;
+            txtEmail.Enabled = true;
+            txtCpf.Enabled = true;
+            chkAtivo.Enabled = true;
+        }
+
+        /// <summary>
+        /// Botao para liberar campos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void  btnBloq_Click(object sender, EventArgs e)
+        {
+            btnBloq.Visible = false;
+            btnDesbloq.Visible = true;
+            btnEditar.Enabled = false;
+            btnInserir.Enabled = false;
+            BloquearCampos();
+        }
+
+        // Bloquear Campos -----------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Metodo para bloquear campos
+        /// </summary>
+        private void BloquearCampos()
+        {
+            txtNome.Enabled = false;
+            txtEmail.Enabled = false;
+            txtCpf.Enabled = false;
+            chkAtivo.Enabled = false;
+        }
+
+        /// <summary>
+        /// Botao para bloquear campos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDesbloq_Click(object sender, EventArgs e)
+        {
+            btnDesbloq.Visible = false;
+            btnBloq.Visible = true;
+            btnEditar.Enabled = true;
+            btnInserir.Enabled = true;
+            LiberarCampos();
+        }
+
         // DataGrid Clientes ---------------------------------------------------------------------------------------------------------------
 
         /// <summary>
@@ -255,11 +309,11 @@ namespace ComercialSys
                 txtEmail.Text = cliente.Email;
                 txtCpf.Text = cliente.Cpf;
                 chkAtivo.Checked = cliente.Ativo;
-
-                // Limpando as TextBox de pesquisa
-                txtIdPesq.Clear();
-                txtCpfPsq.Clear();
             }
+
+            // Limpando as TextBox de pesquisa
+            txtIdPesq.Clear();
+            txtCpfPsq.Clear();
 
         }
 
@@ -288,11 +342,11 @@ namespace ComercialSys
                 txtEmail.Text = cliente.Email;
                 txtCpf.Text = cliente.Cpf;
                 chkAtivo.Checked = cliente.Ativo;
-
-                // Limpando as TextBox de pesquisa
-                txtIdPesq.Clear();
-                txtPesqNome.Clear();
             }
+
+            // Limpando as TextBox de pesquisa
+            txtIdPesq.Clear();
+            txtPesqNome.Clear();
         }
 
         /// <summary>
@@ -320,11 +374,11 @@ namespace ComercialSys
                 txtEmail.Text = cliente.Email;
                 txtCpf.Text = cliente.Cpf;
                 chkAtivo.Checked = cliente.Ativo;
-
-                // Limpando as TextBox de pesquisa
-                txtCpfPsq.Clear();
-                txtPesqNome.Clear();
             }
+
+            // Limpando as TextBox de pesquisa
+            txtCpfPsq.Clear();
+            txtPesqNome.Clear();
         }
     }
 }

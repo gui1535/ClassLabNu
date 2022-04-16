@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCliente));
             this.txtId = new MetroFramework.Controls.MetroTextBox();
             this.txtNome = new MetroFramework.Controls.MetroTextBox();
             this.txtCpf = new MetroFramework.Controls.MetroTextBox();
@@ -44,6 +45,8 @@
             this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnBloq = new System.Windows.Forms.Button();
+            this.btnDesbloq = new System.Windows.Forms.Button();
             this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.btnInserirImg = new MetroFramework.Controls.MetroButton();
             this.gpBoxImg = new System.Windows.Forms.GroupBox();
@@ -55,11 +58,11 @@
             this.txtCpfPsq = new MetroFramework.Controls.MetroTextBox();
             this.lbCpfPesq = new MetroFramework.Controls.MetroLabel();
             this.gpBoxPesq = new System.Windows.Forms.GroupBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.txtPesqNome = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.FileDialogImg = new System.Windows.Forms.OpenFileDialog();
             this.btnListar = new MetroFramework.Controls.MetroButton();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.txtPesqNome = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gpBoxImg.SuspendLayout();
@@ -116,6 +119,7 @@
             this.txtNome.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtNome.CustomButton.UseSelectable = true;
             this.txtNome.CustomButton.Visible = false;
+            this.txtNome.Enabled = false;
             this.txtNome.Lines = new string[0];
             this.txtNome.Location = new System.Drawing.Point(108, 55);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
@@ -148,6 +152,7 @@
             this.txtCpf.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtCpf.CustomButton.UseSelectable = true;
             this.txtCpf.CustomButton.Visible = false;
+            this.txtCpf.Enabled = false;
             this.txtCpf.Lines = new string[0];
             this.txtCpf.Location = new System.Drawing.Point(297, 119);
             this.txtCpf.Margin = new System.Windows.Forms.Padding(4);
@@ -180,6 +185,7 @@
             this.txtEmail.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtEmail.CustomButton.UseSelectable = true;
             this.txtEmail.CustomButton.Visible = false;
+            this.txtEmail.Enabled = false;
             this.txtEmail.Lines = new string[0];
             this.txtEmail.Location = new System.Drawing.Point(7, 119);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
@@ -324,6 +330,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnBloq);
+            this.groupBox2.Controls.Add(this.btnDesbloq);
             this.groupBox2.Controls.Add(this.chkAtivo);
             this.groupBox2.Controls.Add(this.btnInserirImg);
             this.groupBox2.Controls.Add(this.gpBoxImg);
@@ -342,9 +350,40 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
             // 
+            // btnBloq
+            // 
+            this.btnBloq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBloq.BackgroundImage")));
+            this.btnBloq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBloq.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBloq.FlatAppearance.BorderSize = 0;
+            this.btnBloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBloq.Location = new System.Drawing.Point(583, 130);
+            this.btnBloq.Name = "btnBloq";
+            this.btnBloq.Size = new System.Drawing.Size(38, 42);
+            this.btnBloq.TabIndex = 23;
+            this.btnBloq.UseVisualStyleBackColor = true;
+            this.btnBloq.Visible = false;
+            this.btnBloq.Click += new System.EventHandler(this.btnBloq_Click);
+            // 
+            // btnDesbloq
+            // 
+            this.btnDesbloq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDesbloq.BackgroundImage")));
+            this.btnDesbloq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDesbloq.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDesbloq.FlatAppearance.BorderSize = 0;
+            this.btnDesbloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesbloq.Location = new System.Drawing.Point(583, 130);
+            this.btnDesbloq.Name = "btnDesbloq";
+            this.btnDesbloq.Size = new System.Drawing.Size(38, 42);
+            this.btnDesbloq.TabIndex = 22;
+            this.btnDesbloq.UseVisualStyleBackColor = true;
+            this.btnDesbloq.Click += new System.EventHandler(this.btnDesbloq_Click);
+            // 
             // chkAtivo
             // 
             this.chkAtivo.AutoSize = true;
+            this.chkAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkAtivo.Enabled = false;
             this.chkAtivo.Location = new System.Drawing.Point(503, 55);
             this.chkAtivo.Margin = new System.Windows.Forms.Padding(4);
             this.chkAtivo.Name = "chkAtivo";
@@ -355,6 +394,7 @@
             // 
             // btnInserirImg
             // 
+            this.btnInserirImg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInserirImg.Location = new System.Drawing.Point(720, 159);
             this.btnInserirImg.Margin = new System.Windows.Forms.Padding(4);
             this.btnInserirImg.Name = "btnInserirImg";
@@ -385,6 +425,8 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.Enabled = false;
             this.btnEditar.Location = new System.Drawing.Point(374, 272);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
@@ -396,6 +438,8 @@
             // 
             // btnInserir
             // 
+            this.btnInserir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInserir.Enabled = false;
             this.btnInserir.Location = new System.Drawing.Point(517, 272);
             this.btnInserir.Margin = new System.Windows.Forms.Padding(4);
             this.btnInserir.Name = "btnInserir";
@@ -506,31 +550,6 @@
             this.gpBoxPesq.TabStop = false;
             this.gpBoxPesq.Text = "Pesquisar";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.GridCliente);
-            this.groupBox1.Location = new System.Drawing.Point(29, 313);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(833, 330);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Clientes";
-            // 
-            // FileDialogImg
-            // 
-            this.FileDialogImg.FileName = "OpenFileDialog";
-            // 
-            // btnListar
-            // 
-            this.btnListar.Location = new System.Drawing.Point(660, 272);
-            this.btnListar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(120, 32);
-            this.btnListar.TabIndex = 22;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseSelectable = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click_1);
-            // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
@@ -573,6 +592,32 @@
             this.txtPesqNome.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPesqNome.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtPesqNome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPesqNome_KeyUp);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.GridCliente);
+            this.groupBox1.Location = new System.Drawing.Point(29, 313);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(833, 330);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Clientes";
+            // 
+            // FileDialogImg
+            // 
+            this.FileDialogImg.FileName = "OpenFileDialog";
+            // 
+            // btnListar
+            // 
+            this.btnListar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnListar.Location = new System.Drawing.Point(660, 272);
+            this.btnListar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(120, 32);
+            this.btnListar.TabIndex = 22;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseSelectable = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click_1);
             // 
             // FormCliente
             // 
@@ -637,6 +682,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colunaAtivo;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroTextBox txtPesqNome;
+        private System.Windows.Forms.Button btnBloq;
+        private System.Windows.Forms.Button btnDesbloq;
     }
 }
 

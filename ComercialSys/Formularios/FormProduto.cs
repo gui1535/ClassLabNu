@@ -24,6 +24,62 @@ namespace ComercialSys
 
         }
 
+        // Liberar Campos -----------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Metodo para liberar todos os campos
+        /// </summary>
+        private void LiberarCampos()
+        {
+            txtNome.Enabled = true;
+            txtCodBar.Enabled = true;
+            txtunidade.Enabled = true;
+            txtDesconto.Enabled = true;
+            txtValor.Enabled = true;
+        }
+
+        /// <summary>
+        /// Botao para liberar campos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnBloq_Click(object sender, EventArgs e)
+        {
+            btnBloq.Visible = false;
+            btnDesbloq.Visible = true;
+            btnEditar.Enabled = false;
+            btnInserir.Enabled = false;
+            BloquearCampos();
+        }
+
+        // Bloquear Campos -----------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Metodo para bloquear campos
+        /// </summary>
+        private void BloquearCampos()
+        {
+            txtNome.Enabled = false;
+            txtCodBar.Enabled = false;
+            txtunidade.Enabled = false;
+            txtDesconto.Enabled = false;
+            txtValor.Enabled = false;
+        }
+
+        /// <summary>
+        /// Botao para bloquear campos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDesbloq_Click(object sender, EventArgs e)
+        {
+            btnDesbloq.Visible = false;
+            btnBloq.Visible = true;
+            btnEditar.Enabled = true;
+            btnInserir.Enabled = true;
+            LiberarCampos();
+        }
+
         // Listar Produtos ---------------------------------------------------------------------------------------------------------------
 
         /// <summary>

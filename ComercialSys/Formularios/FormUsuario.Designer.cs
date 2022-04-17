@@ -46,13 +46,14 @@
             this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnInserir = new MetroFramework.Controls.MetroButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.btnBloq = new System.Windows.Forms.Button();
             this.btnDesbloq = new System.Windows.Forms.Button();
             this.cmbNivel = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.btnInserirImg = new MetroFramework.Controls.MetroButton();
             this.gpBoxImg = new System.Windows.Forms.GroupBox();
-            this.picImgCliente = new System.Windows.Forms.PictureBox();
+            this.picImg = new System.Windows.Forms.PictureBox();
             this.txtSenha = new MetroFramework.Controls.MetroTextBox();
             this.txtId = new MetroFramework.Controls.MetroTextBox();
             this.txtNome = new MetroFramework.Controls.MetroTextBox();
@@ -62,20 +63,20 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.FileDialogImg = new System.Windows.Forms.OpenFileDialog();
-            this.chkAtivo = new System.Windows.Forms.CheckBox();
+            this.txtDir = new MetroFramework.Controls.MetroTextBox();
             this.gpBoxPesq.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridUsuarios)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gpBoxImg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImgCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
             this.SuspendLayout();
             // 
             // btnListar
             // 
             this.btnListar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListar.Location = new System.Drawing.Point(829, 315);
-            this.btnListar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnListar.Margin = new System.Windows.Forms.Padding(5);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(150, 40);
             this.btnListar.TabIndex = 28;
@@ -88,7 +89,7 @@
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.Enabled = false;
             this.btnEditar.Location = new System.Drawing.Point(471, 315);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(5);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(150, 40);
             this.btnEditar.TabIndex = 26;
@@ -103,9 +104,9 @@
             this.gpBoxPesq.Controls.Add(this.lbIdPesq);
             this.gpBoxPesq.Controls.Add(this.txtIdPesq);
             this.gpBoxPesq.Location = new System.Drawing.Point(1078, 356);
-            this.gpBoxPesq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpBoxPesq.Margin = new System.Windows.Forms.Padding(4);
             this.gpBoxPesq.Name = "gpBoxPesq";
-            this.gpBoxPesq.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpBoxPesq.Padding = new System.Windows.Forms.Padding(4);
             this.gpBoxPesq.Size = new System.Drawing.Size(184, 226);
             this.gpBoxPesq.TabIndex = 24;
             this.gpBoxPesq.TabStop = false;
@@ -127,10 +128,10 @@
             // 
             // 
             this.txtPesqNome.CustomButton.Image = null;
-            this.txtPesqNome.CustomButton.Location = new System.Drawing.Point(118, 1);
-            this.txtPesqNome.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPesqNome.CustomButton.Location = new System.Drawing.Point(94, 1);
+            this.txtPesqNome.CustomButton.Margin = new System.Windows.Forms.Padding(5);
             this.txtPesqNome.CustomButton.Name = "";
-            this.txtPesqNome.CustomButton.Size = new System.Drawing.Size(36, 36);
+            this.txtPesqNome.CustomButton.Size = new System.Drawing.Size(29, 29);
             this.txtPesqNome.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtPesqNome.CustomButton.TabIndex = 1;
             this.txtPesqNome.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -138,7 +139,7 @@
             this.txtPesqNome.CustomButton.Visible = false;
             this.txtPesqNome.Lines = new string[0];
             this.txtPesqNome.Location = new System.Drawing.Point(24, 163);
-            this.txtPesqNome.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPesqNome.Margin = new System.Windows.Forms.Padding(5);
             this.txtPesqNome.MaxLength = 60;
             this.txtPesqNome.Name = "txtPesqNome";
             this.txtPesqNome.PasswordChar = '\0';
@@ -170,10 +171,10 @@
             // 
             // 
             this.txtIdPesq.CustomButton.Image = null;
-            this.txtIdPesq.CustomButton.Location = new System.Drawing.Point(55, 1);
-            this.txtIdPesq.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtIdPesq.CustomButton.Location = new System.Drawing.Point(44, 1);
+            this.txtIdPesq.CustomButton.Margin = new System.Windows.Forms.Padding(5);
             this.txtIdPesq.CustomButton.Name = "";
-            this.txtIdPesq.CustomButton.Size = new System.Drawing.Size(36, 36);
+            this.txtIdPesq.CustomButton.Size = new System.Drawing.Size(29, 29);
             this.txtIdPesq.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtIdPesq.CustomButton.TabIndex = 1;
             this.txtIdPesq.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -181,7 +182,7 @@
             this.txtIdPesq.CustomButton.Visible = false;
             this.txtIdPesq.Lines = new string[0];
             this.txtIdPesq.Location = new System.Drawing.Point(24, 72);
-            this.txtIdPesq.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtIdPesq.Margin = new System.Windows.Forms.Padding(5);
             this.txtIdPesq.MaxLength = 60;
             this.txtIdPesq.Name = "txtIdPesq";
             this.txtIdPesq.PasswordChar = '\0';
@@ -201,9 +202,9 @@
             // 
             this.groupBox1.Controls.Add(this.GridUsuarios);
             this.groupBox1.Location = new System.Drawing.Point(29, 356);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1041, 344);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
@@ -223,7 +224,7 @@
             this.colunaAtivo});
             this.GridUsuarios.GridColor = System.Drawing.Color.Black;
             this.GridUsuarios.Location = new System.Drawing.Point(9, 32);
-            this.GridUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GridUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.GridUsuarios.Name = "GridUsuarios";
             this.GridUsuarios.ReadOnly = true;
             this.GridUsuarios.RowHeadersWidth = 51;
@@ -291,7 +292,7 @@
             this.btnInserir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInserir.Enabled = false;
             this.btnInserir.Location = new System.Drawing.Point(650, 315);
-            this.btnInserir.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnInserir.Margin = new System.Windows.Forms.Padding(5);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(150, 40);
             this.btnInserir.TabIndex = 23;
@@ -301,6 +302,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtDir);
             this.groupBox2.Controls.Add(this.chkAtivo);
             this.groupBox2.Controls.Add(this.btnBloq);
             this.groupBox2.Controls.Add(this.btnDesbloq);
@@ -317,13 +319,26 @@
             this.groupBox2.Controls.Add(this.metroLabel2);
             this.groupBox2.Controls.Add(this.metroLabel3);
             this.groupBox2.Location = new System.Drawing.Point(29, 63);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1232, 243);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
+            // 
+            // chkAtivo
+            // 
+            this.chkAtivo.AutoSize = true;
+            this.chkAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkAtivo.Enabled = false;
+            this.chkAtivo.Location = new System.Drawing.Point(610, 64);
+            this.chkAtivo.Margin = new System.Windows.Forms.Padding(5);
+            this.chkAtivo.Name = "chkAtivo";
+            this.chkAtivo.Size = new System.Drawing.Size(77, 25);
+            this.chkAtivo.TabIndex = 22;
+            this.chkAtivo.Text = "Ativo";
+            this.chkAtivo.UseVisualStyleBackColor = true;
             // 
             // btnBloq
             // 
@@ -333,7 +348,7 @@
             this.btnBloq.FlatAppearance.BorderSize = 0;
             this.btnBloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBloq.Location = new System.Drawing.Point(800, 173);
-            this.btnBloq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBloq.Margin = new System.Windows.Forms.Padding(4);
             this.btnBloq.Name = "btnBloq";
             this.btnBloq.Size = new System.Drawing.Size(48, 52);
             this.btnBloq.TabIndex = 21;
@@ -349,7 +364,7 @@
             this.btnDesbloq.FlatAppearance.BorderSize = 0;
             this.btnDesbloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesbloq.Location = new System.Drawing.Point(800, 173);
-            this.btnDesbloq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDesbloq.Margin = new System.Windows.Forms.Padding(4);
             this.btnDesbloq.Name = "btnDesbloq";
             this.btnDesbloq.Size = new System.Drawing.Size(48, 52);
             this.btnDesbloq.TabIndex = 20;
@@ -367,7 +382,7 @@
             "Vendedor",
             "Gerente"});
             this.cmbNivel.Location = new System.Drawing.Point(609, 141);
-            this.cmbNivel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbNivel.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNivel.Name = "cmbNivel";
             this.cmbNivel.Size = new System.Drawing.Size(150, 30);
             this.cmbNivel.TabIndex = 19;
@@ -387,8 +402,8 @@
             // btnInserirImg
             // 
             this.btnInserirImg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInserirImg.Location = new System.Drawing.Point(900, 196);
-            this.btnInserirImg.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnInserirImg.Location = new System.Drawing.Point(900, 206);
+            this.btnInserirImg.Margin = new System.Windows.Forms.Padding(5);
             this.btnInserirImg.Name = "btnInserirImg";
             this.btnInserirImg.Size = new System.Drawing.Size(184, 28);
             this.btnInserirImg.TabIndex = 16;
@@ -398,25 +413,26 @@
             // 
             // gpBoxImg
             // 
-            this.gpBoxImg.Controls.Add(this.picImgCliente);
-            this.gpBoxImg.Location = new System.Drawing.Point(900, 32);
-            this.gpBoxImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpBoxImg.Controls.Add(this.picImg);
+            this.gpBoxImg.Location = new System.Drawing.Point(900, 15);
+            this.gpBoxImg.Margin = new System.Windows.Forms.Padding(4);
             this.gpBoxImg.Name = "gpBoxImg";
-            this.gpBoxImg.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpBoxImg.Padding = new System.Windows.Forms.Padding(4);
             this.gpBoxImg.Size = new System.Drawing.Size(184, 163);
             this.gpBoxImg.TabIndex = 16;
             this.gpBoxImg.TabStop = false;
             this.gpBoxImg.Text = "Imagem";
             // 
-            // picImgCliente
+            // picImg
             // 
-            this.picImgCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picImgCliente.Location = new System.Drawing.Point(8, 32);
-            this.picImgCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.picImgCliente.Name = "picImgCliente";
-            this.picImgCliente.Size = new System.Drawing.Size(169, 124);
-            this.picImgCliente.TabIndex = 18;
-            this.picImgCliente.TabStop = false;
+            this.picImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picImg.InitialImage = ((System.Drawing.Image)(resources.GetObject("picImg.InitialImage")));
+            this.picImg.Location = new System.Drawing.Point(8, 32);
+            this.picImg.Margin = new System.Windows.Forms.Padding(4);
+            this.picImg.Name = "picImg";
+            this.picImg.Size = new System.Drawing.Size(169, 124);
+            this.picImg.TabIndex = 18;
+            this.picImg.TabStop = false;
             // 
             // txtSenha
             // 
@@ -424,10 +440,10 @@
             // 
             // 
             this.txtSenha.CustomButton.Image = null;
-            this.txtSenha.CustomButton.Location = new System.Drawing.Point(206, 1);
-            this.txtSenha.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtSenha.CustomButton.Location = new System.Drawing.Point(165, 1);
+            this.txtSenha.CustomButton.Margin = new System.Windows.Forms.Padding(5);
             this.txtSenha.CustomButton.Name = "";
-            this.txtSenha.CustomButton.Size = new System.Drawing.Size(36, 36);
+            this.txtSenha.CustomButton.Size = new System.Drawing.Size(29, 29);
             this.txtSenha.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtSenha.CustomButton.TabIndex = 1;
             this.txtSenha.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -436,7 +452,7 @@
             this.txtSenha.Enabled = false;
             this.txtSenha.Lines = new string[0];
             this.txtSenha.Location = new System.Drawing.Point(372, 147);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(5);
             this.txtSenha.MaxLength = 12;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -457,10 +473,10 @@
             // 
             // 
             this.txtId.CustomButton.Image = null;
-            this.txtId.CustomButton.Location = new System.Drawing.Point(65, 1);
-            this.txtId.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtId.CustomButton.Location = new System.Drawing.Point(52, 1);
+            this.txtId.CustomButton.Margin = new System.Windows.Forms.Padding(5);
             this.txtId.CustomButton.Name = "";
-            this.txtId.CustomButton.Size = new System.Drawing.Size(36, 36);
+            this.txtId.CustomButton.Size = new System.Drawing.Size(29, 29);
             this.txtId.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtId.CustomButton.TabIndex = 1;
             this.txtId.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -469,7 +485,7 @@
             this.txtId.Enabled = false;
             this.txtId.Lines = new string[0];
             this.txtId.Location = new System.Drawing.Point(9, 68);
-            this.txtId.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtId.Margin = new System.Windows.Forms.Padding(5);
             this.txtId.MaxLength = 32767;
             this.txtId.Name = "txtId";
             this.txtId.PasswordChar = '\0';
@@ -490,10 +506,10 @@
             // 
             // 
             this.txtNome.CustomButton.Image = null;
-            this.txtNome.CustomButton.Location = new System.Drawing.Point(501, 1);
-            this.txtNome.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtNome.CustomButton.Location = new System.Drawing.Point(401, 1);
+            this.txtNome.CustomButton.Margin = new System.Windows.Forms.Padding(5);
             this.txtNome.CustomButton.Name = "";
-            this.txtNome.CustomButton.Size = new System.Drawing.Size(36, 36);
+            this.txtNome.CustomButton.Size = new System.Drawing.Size(29, 29);
             this.txtNome.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtNome.CustomButton.TabIndex = 1;
             this.txtNome.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -502,7 +518,7 @@
             this.txtNome.Enabled = false;
             this.txtNome.Lines = new string[0];
             this.txtNome.Location = new System.Drawing.Point(135, 68);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(5);
             this.txtNome.MaxLength = 60;
             this.txtNome.Name = "txtNome";
             this.txtNome.PasswordChar = '\0';
@@ -523,10 +539,10 @@
             // 
             // 
             this.txtEmail.CustomButton.Image = null;
-            this.txtEmail.CustomButton.Location = new System.Drawing.Point(376, 1);
-            this.txtEmail.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtEmail.CustomButton.Location = new System.Drawing.Point(301, 1);
+            this.txtEmail.CustomButton.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmail.CustomButton.Name = "";
-            this.txtEmail.CustomButton.Size = new System.Drawing.Size(36, 36);
+            this.txtEmail.CustomButton.Size = new System.Drawing.Size(29, 29);
             this.txtEmail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtEmail.CustomButton.TabIndex = 1;
             this.txtEmail.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -535,7 +551,7 @@
             this.txtEmail.Enabled = false;
             this.txtEmail.Lines = new string[0];
             this.txtEmail.Location = new System.Drawing.Point(9, 147);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmail.MaxLength = 60;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -598,18 +614,39 @@
             // 
             this.FileDialogImg.FileName = "Imagem";
             // 
-            // chkAtivo
+            // txtDir
             // 
-            this.chkAtivo.AutoSize = true;
-            this.chkAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkAtivo.Enabled = false;
-            this.chkAtivo.Location = new System.Drawing.Point(610, 64);
-            this.chkAtivo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.chkAtivo.Name = "chkAtivo";
-            this.chkAtivo.Size = new System.Drawing.Size(77, 25);
-            this.chkAtivo.TabIndex = 22;
-            this.chkAtivo.Text = "Ativo";
-            this.chkAtivo.UseVisualStyleBackColor = true;
+            // 
+            // 
+            // 
+            this.txtDir.CustomButton.Image = null;
+            this.txtDir.CustomButton.Location = new System.Drawing.Point(166, 1);
+            this.txtDir.CustomButton.Margin = new System.Windows.Forms.Padding(5);
+            this.txtDir.CustomButton.Name = "";
+            this.txtDir.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.txtDir.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDir.CustomButton.TabIndex = 1;
+            this.txtDir.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDir.CustomButton.UseSelectable = true;
+            this.txtDir.CustomButton.Visible = false;
+            this.txtDir.Enabled = false;
+            this.txtDir.Lines = new string[0];
+            this.txtDir.Location = new System.Drawing.Point(900, 180);
+            this.txtDir.Margin = new System.Windows.Forms.Padding(5);
+            this.txtDir.MaxLength = 60;
+            this.txtDir.Multiline = true;
+            this.txtDir.Name = "txtDir";
+            this.txtDir.PasswordChar = '\0';
+            this.txtDir.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDir.SelectedText = "";
+            this.txtDir.SelectionLength = 0;
+            this.txtDir.SelectionStart = 0;
+            this.txtDir.ShortcutsEnabled = true;
+            this.txtDir.Size = new System.Drawing.Size(184, 19);
+            this.txtDir.TabIndex = 20;
+            this.txtDir.UseSelectable = true;
+            this.txtDir.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDir.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // FormUsuario
             // 
@@ -623,7 +660,7 @@
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormUsuario";
             this.Padding = new System.Windows.Forms.Padding(25, 79, 25, 26);
             this.Text = "Usuario";
@@ -635,7 +672,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.gpBoxImg.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picImgCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -655,7 +692,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private MetroFramework.Controls.MetroButton btnInserirImg;
         private System.Windows.Forms.GroupBox gpBoxImg;
-        private System.Windows.Forms.PictureBox picImgCliente;
+        private System.Windows.Forms.PictureBox picImg;
         private MetroFramework.Controls.MetroTextBox txtSenha;
         private MetroFramework.Controls.MetroTextBox txtId;
         private MetroFramework.Controls.MetroTextBox txtNome;
@@ -676,5 +713,6 @@
         private System.Windows.Forms.Button btnDesbloq;
         private System.Windows.Forms.Button btnBloq;
         private System.Windows.Forms.CheckBox chkAtivo;
+        private MetroFramework.Controls.MetroTextBox txtDir;
     }
 }

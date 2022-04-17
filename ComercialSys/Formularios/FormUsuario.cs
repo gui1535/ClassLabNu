@@ -1,6 +1,8 @@
 ﻿using ClassLabNu;
+using MySql.Data.MySqlClient;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ComercialSys.Formularios
@@ -43,6 +45,7 @@ namespace ComercialSys.Formularios
             btnDesbloq.Visible = true;
             btnEditar.Enabled = false;
             btnInserir.Enabled = false;
+            btnInserirImg.Enabled = false;
             BloquearCampos();
         }
 
@@ -71,6 +74,7 @@ namespace ComercialSys.Formularios
             btnBloq.Visible = true;
             btnEditar.Enabled = true;
             btnInserir.Enabled = true;
+            btnInserirImg.Enabled = true;
             LiberarCampos();
         }
 
@@ -161,12 +165,23 @@ namespace ComercialSys.Formularios
         /// <param name="e"></param>
         private void btnInserir_Click(object sender, EventArgs e)
         {
+            byte[] imgByte;
+
+            
+            // Armazenar Bytes
+            FileStream fstream = new FileStream(txtDir.Text, FileMode.Open, FileAccess.Read);
+
+            // Leitura de bytes
+            BinaryReader br = new BinaryReader(fstream);
+            imgByte = br.ReadBytes((int)fstream.Length);
+
             // Objeto Usuario
             Usuario u = new Usuario(
                 txtNome.Text,
                 txtEmail.Text,
                 txtSenha.Text,
-                cmbNivel.Text
+                cmbNivel.Text,
+                Convert.ToByte(imgByte)
                 );
 
             u.Inserir();
@@ -196,6 +211,7 @@ namespace ComercialSys.Formularios
             }
             BloquearCampos();
 
+
         }
 
         // Inserir imagem Clientes ---------------------------------------------------------------------------------------------------------------
@@ -207,18 +223,24 @@ namespace ComercialSys.Formularios
         /// <param name="e"></param>
         private void btnInserirImg_Click(object sender, EventArgs e)
         {
-            try
-            {
-                FileDialogImg.Filter = "Fotos (*.jpg;*.png;) | *.jpg;*.png";
+            // Instancia do File Dialog
+            OpenFileDialog dialog = new OpenFileDialog();
 
-                if (FileDialogImg.ShowDialog() == DialogResult.OK)
-                {
-                    picImgCliente.Image = new Bitmap(FileDialogImg.FileName);
-                }
-            }
-            catch (Exception)
+            // Filtrar arquivos JPG / PNG / AllFiles
+            dialog.Filter = "JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png|AllFiles(*.*)|*.*";
+
+            // Se o resultado do dialog quando estiver aberto for igual a OK
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Erro ao carregar imagem", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Variavel para pegar o diretorio da foto
+                string diretorioFoto = dialog.FileName.ToString();
+
+                // Salvando diretorio no TextBox
+                txtDir.Text = diretorioFoto;
+
+                // Salva foto na PictureBox
+                picImg.ImageLocation = diretorioFoto;
+
             }
         }
 
@@ -293,6 +315,8 @@ namespace ComercialSys.Formularios
         /// <param name="e"></param>
         private void txtIdPesq_KeyUp(object sender, KeyEventArgs e)
         {
+
+           
             // Verificando se o valor a pesquisar é vazio
             if (txtIdPesq.Text == "")
             {
@@ -301,9 +325,6 @@ namespace ComercialSys.Formularios
             {
                 // Objeto Cliente
                 Usuario usuario = new Usuario();
-
-                // Metodo Consulta por Nome
-                usuario.ConsultarPorId(int.Parse(txtIdPesq.Text)); ;
 
                 // Atributos
                 txtId.Text = Convert.ToString(usuario.Id);

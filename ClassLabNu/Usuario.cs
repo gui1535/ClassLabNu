@@ -18,7 +18,7 @@ namespace ClassLabNu
         public string Password { get; set; }
         public bool Ativo { get; set; }
         public string Nivel { get; set; }
-
+        public byte Foto { get; set; }
         // Metodos Construtores ------------------------------------------------------------------
 
         /// <summary>
@@ -44,6 +44,15 @@ namespace ClassLabNu
             this.Ativo = true;
             this.Nivel = nivel;
         }
+        public Usuario(string nome, string email, string password, string nivel, byte foto)
+        {
+            this.Nome = nome;
+            this.Email = email;
+            this.Password = password;
+            this.Ativo = true;
+            this.Nivel = nivel;
+            this.Foto = foto;
+        }
 
         /// <summary>
         /// Construtor para o Usuario
@@ -54,6 +63,16 @@ namespace ClassLabNu
         /// <param name="password">VARCHAR(32)</param>
         /// <param name="ativo">BIT(1)</param>
         /// <param name="nivel">VARCHAR(15)</param>
+        public Usuario(int id, string nome, string email, string password, string nivel, bool ativo, byte foto)
+        {
+            this.Id = id;
+            this.Nome = nome;
+            this.Email = email;
+            this.Password = password;
+            this.Ativo = ativo;
+            this.Nivel = nivel;
+            Foto = foto;
+        }
         public Usuario(int id, string nome, string email, string password, string nivel, bool ativo)
         {
             this.Id = id;
@@ -102,6 +121,7 @@ namespace ClassLabNu
                 banco.Parameters.AddWithValue("_email", Email);
                 banco.Parameters.AddWithValue("_senha", Password);
                 banco.Parameters.AddWithValue("_nivel", Nivel);
+                banco.Parameters.AddWithValue("_foto", Foto);
                 Id = Convert.ToInt32(banco.ExecuteScalar());
 
                 // Fecha Conexão
@@ -218,6 +238,7 @@ namespace ClassLabNu
                 Password = dr.GetString(3);
                 Nivel = dr.GetString(4);
                 Ativo = dr.GetBoolean(5);
+                Foto = dr.GetByte(6);
             }
         }
 

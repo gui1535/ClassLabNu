@@ -237,16 +237,15 @@ end
 -- -----------------------------------------------------
 
 -- INSERIR USUARIO --
-delimiter |
-create procedure usuario_inserir(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `usuario_inserir`(
 _nome varchar (60),
 _email varchar (60),
 _senha varchar (32),
-_nivel varchar (15)
+_nivel varchar (15),
+_foto VARBINARY(9000)
 )
 begin
-insert into usuarios(nome, email, senha, nivel, ativo)
-values (_nome, _email, _senha, _nivel, default);
+insert into usuarios(nome, email, senha, nivel, ativo, foto)
+values (_nome, _email, (md5(_senha)), _nivel, default, _foto);
 select * from usuarios where iduser = (select @@identity);
 end
-|

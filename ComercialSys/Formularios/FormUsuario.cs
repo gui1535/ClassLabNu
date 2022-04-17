@@ -271,6 +271,7 @@ namespace ComercialSys.Formularios
             usuario.Email = txtEmail.Text;
             usuario.Nivel = cmbNivel.Text;
             usuario.Ativo = chkAtivo.Checked;
+            usuario.Foto = picImg.Image;
 
             // Validação do email
             if (Validacao.EmailValido(txtEmail.Text))

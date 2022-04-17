@@ -249,6 +249,7 @@ namespace ComercialSys
             cliente.Cpf = txtCpf.Text;
             cliente.Email = txtEmail.Text;
             cliente.Ativo = chkAtivo.Checked;
+            cliente.Fo
 
             // Validação do email
             if (Validacao.EmailValido(txtEmail.Text))

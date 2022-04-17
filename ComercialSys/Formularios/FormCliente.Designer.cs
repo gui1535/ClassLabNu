@@ -49,8 +49,6 @@
             this.btnDesbloq = new System.Windows.Forms.Button();
             this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.btnInserirImg = new MetroFramework.Controls.MetroButton();
-            this.gpBoxImg = new System.Windows.Forms.GroupBox();
-            this.picImgCliente = new System.Windows.Forms.PictureBox();
             this.btnEditar = new MetroFramework.Controls.MetroButton();
             this.btnInserir = new MetroFramework.Controls.MetroButton();
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
@@ -63,12 +61,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.FileDialogImg = new System.Windows.Forms.OpenFileDialog();
             this.btnListar = new MetroFramework.Controls.MetroButton();
+            this.picImgCliente = new System.Windows.Forms.PictureBox();
+            this.gpBoxImg = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.gpBoxImg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImgCliente)).BeginInit();
             this.gpBoxPesq.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImgCliente)).BeginInit();
+            this.gpBoxImg.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtId
@@ -404,25 +404,6 @@
             this.btnInserirImg.UseSelectable = true;
             this.btnInserirImg.Click += new System.EventHandler(this.btnInserirImg_Click);
             // 
-            // gpBoxImg
-            // 
-            this.gpBoxImg.Controls.Add(this.picImgCliente);
-            this.gpBoxImg.Location = new System.Drawing.Point(720, 26);
-            this.gpBoxImg.Name = "gpBoxImg";
-            this.gpBoxImg.Size = new System.Drawing.Size(147, 132);
-            this.gpBoxImg.TabIndex = 16;
-            this.gpBoxImg.TabStop = false;
-            this.gpBoxImg.Text = "Imagem";
-            // 
-            // picImgCliente
-            // 
-            this.picImgCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picImgCliente.Location = new System.Drawing.Point(6, 26);
-            this.picImgCliente.Name = "picImgCliente";
-            this.picImgCliente.Size = new System.Drawing.Size(135, 100);
-            this.picImgCliente.TabIndex = 18;
-            this.picImgCliente.TabStop = false;
-            // 
             // btnEditar
             // 
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -619,6 +600,25 @@
             this.btnListar.UseSelectable = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click_1);
             // 
+            // picImgCliente
+            // 
+            this.picImgCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picImgCliente.Location = new System.Drawing.Point(6, 26);
+            this.picImgCliente.Name = "picImgCliente";
+            this.picImgCliente.Size = new System.Drawing.Size(135, 100);
+            this.picImgCliente.TabIndex = 18;
+            this.picImgCliente.TabStop = false;
+            // 
+            // gpBoxImg
+            // 
+            this.gpBoxImg.Controls.Add(this.picImgCliente);
+            this.gpBoxImg.Location = new System.Drawing.Point(720, 26);
+            this.gpBoxImg.Name = "gpBoxImg";
+            this.gpBoxImg.Size = new System.Drawing.Size(147, 132);
+            this.gpBoxImg.TabIndex = 16;
+            this.gpBoxImg.TabStop = false;
+            this.gpBoxImg.Text = "Imagem";
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -639,11 +639,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.gpBoxImg.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picImgCliente)).EndInit();
             this.gpBoxPesq.ResumeLayout(false);
             this.gpBoxPesq.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picImgCliente)).EndInit();
+            this.gpBoxImg.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -660,7 +660,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.DataGridView GridCliente;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox gpBoxImg;
         private MetroFramework.Controls.MetroButton btnInserirImg;
         private MetroFramework.Controls.MetroButton btnEditar;
         private MetroFramework.Controls.MetroButton btnInserir;
@@ -671,7 +670,6 @@
         private System.Windows.Forms.GroupBox gpBoxPesq;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.OpenFileDialog FileDialogImg;
-        private System.Windows.Forms.PictureBox picImgCliente;
         private MetroFramework.Controls.MetroButton btnListar;
         private System.Windows.Forms.CheckBox chkAtivo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
@@ -684,6 +682,8 @@
         private MetroFramework.Controls.MetroTextBox txtPesqNome;
         private System.Windows.Forms.Button btnBloq;
         private System.Windows.Forms.Button btnDesbloq;
+        private System.Windows.Forms.GroupBox gpBoxImg;
+        private System.Windows.Forms.PictureBox picImgCliente;
     }
 }
 

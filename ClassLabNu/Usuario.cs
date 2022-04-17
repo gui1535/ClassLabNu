@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ClassLabNu
@@ -173,14 +174,18 @@ namespace ClassLabNu
             // Consulta
             while (dr.Read())
             {
+                byte[] imagem = (byte[])(dr["foto"]);
+                // Objeto responsavel por guardar quantidades de bytes na memoria
+                MemoryStream mstream = new MemoryStream(Foto);
+
                 lista.Add(new Usuario(
-                    Convert.ToInt32(dr.GetValue(0)), // ID
-                    dr.GetString(1), // Nome
-                    dr.GetString(2), // Email
-                    dr.GetString(3), // Senha
-                    dr.GetString(4), // Nivel
-                    dr.GetBoolean(5) // Ativo
-                    ));
+                Convert.ToInt32(dr.GetValue(0)), // ID
+                dr.GetString(1), // Nome
+                dr.GetString(2), // Email
+                dr.GetString(3), // Senha
+                dr.GetString(4), // Nivel
+                dr.GetBoolean(5) // Ativo
+                ));
             }
             // Fecha Conexão
             banco.Connection.Close();
@@ -199,7 +204,7 @@ namespace ClassLabNu
             var cmd = Banco.Abrir();
 
             // Comando SQL
-            cmd.CommandText = $"update usuarios set nome = '{Nome}', senha = '{Password}', email = '{Email}', ativo = {Ativo}, nivel = '{Nivel}' where iduser = {Id}";
+            cmd.CommandText = $"update usuarios set nome = '{Nome}', senha = '{Password}', email = '{Email}', ativo = {Ativo}, nivel = '{Nivel}', foto = {Foto} where iduser = {Id}";
             int ret = cmd.ExecuteNonQuery();
 
             // Retornando valor
@@ -239,7 +244,7 @@ namespace ClassLabNu
                 Nivel = dr.GetString(4);
                 Ativo = dr.GetBoolean(5);
                 byte[] imagem = (byte[])(dr["foto"]);
-                
+
             }
         }
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
 using System.Windows.Forms;
 
 namespace ClassLabNu
@@ -200,7 +199,7 @@ namespace ClassLabNu
             var cmd = Banco.Abrir();
 
             // Comando SQL
-            cmd.CommandText = $"update usuarios set nome = '{Nome}', senha = '{Password}', email = '{Email}', ativo = {Ativo}, nivel = '{Nivel}', foto = {Foto} where iduser = {Id}";
+            cmd.CommandText = $"update usuarios set nome = '{Nome}', senha = '{Password}', email = '{Email}', ativo = {Ativo}, nivel = '{Nivel}' where iduser = {Id}";
             int ret = cmd.ExecuteNonQuery();
 
             // Retornando valor
@@ -241,7 +240,7 @@ namespace ClassLabNu
                 Nivel = dr.GetString(4);
                 Ativo = dr.GetBoolean(5);
 
-                
+
             }
         }
 

@@ -1,6 +1,5 @@
 ﻿using ClassLabNu;
 using System;
-using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
@@ -44,7 +43,6 @@ namespace ComercialSys.Formularios
             btnDesbloq.Visible = true;
             btnEditar.Enabled = false;
             btnInserir.Enabled = false;
-            btnInserirImg.Enabled = false;
             BloquearCampos();
         }
 
@@ -73,7 +71,6 @@ namespace ComercialSys.Formularios
             btnBloq.Visible = true;
             btnEditar.Enabled = true;
             btnInserir.Enabled = true;
-            btnInserirImg.Enabled = true;
             LiberarCampos();
         }
 
@@ -102,6 +99,7 @@ namespace ComercialSys.Formularios
             // Listando usuarios no DataGrid
             lista.ForEach(i =>
             {
+
                 // Linhas 
                 GridUsuarios.Rows.Add();
                 GridUsuarios.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // Text -> ID
@@ -165,22 +163,12 @@ namespace ComercialSys.Formularios
         /// <param name="e"></param>
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            byte[] imgByte;
-
-            // Armazenar Bytes
-            FileStream fstream = new FileStream(txtDir.Text, FileMode.Open, FileAccess.Read);
-
-            // Leitura de bytes
-            BinaryReader br = new BinaryReader(fstream);
-            imgByte = br.ReadBytes((int)fstream.Length);
-
             // Objeto Usuario
             Usuario u = new Usuario(
                 txtNome.Text,
                 txtEmail.Text,
                 txtSenha.Text,
-                cmbNivel.Text,
-                imgByte
+                cmbNivel.Text
                 );
 
             u.Inserir();
@@ -211,36 +199,6 @@ namespace ComercialSys.Formularios
             BloquearCampos();
 
 
-        }
-
-        // Inserir imagem Clientes ---------------------------------------------------------------------------------------------------------------
-
-        /// <summary>
-        /// Botao inserir imagem Cliente
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnInserirImg_Click(object sender, EventArgs e)
-        {
-            // Instancia do File Dialog
-            OpenFileDialog dialog = new OpenFileDialog();
-
-            // Filtrar arquivos JPG / PNG / AllFiles
-            dialog.Filter = "JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png|AllFiles(*.*)|*.*";
-
-            // Se o resultado do dialog quando estiver aberto for igual a OK
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                // Variavel para pegar o diretorio da foto
-                string diretorioFoto = dialog.FileName.ToString();
-
-                // Salvando diretorio no TextBox
-                txtDir.Text = diretorioFoto;
-
-                // Salva foto na PictureBox
-                picImg.ImageLocation = diretorioFoto;
-
-            }
         }
 
         // Listar Usuarios ---------------------------------------------------------------------------------------------------------------
@@ -332,9 +290,6 @@ namespace ComercialSys.Formularios
                 txtEmail.Text = usuario.Email;
                 txtSenha.Text = usuario.Password;
                 cmbNivel.Text = usuario.Nivel;
-                // Objeto responsavel por guardar quantidades de bytes na memoria
-                MemoryStream mstream = new MemoryStream(usuario.Foto);
-                picImg.Image = System.Drawing.Image.FromStream(mstream);
             }
         }
 

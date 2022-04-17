@@ -40,15 +40,11 @@
             this.GridUsuarios = new System.Windows.Forms.DataGridView();
             this.btnInserir = new MetroFramework.Controls.MetroButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtDir = new MetroFramework.Controls.MetroTextBox();
             this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.btnBloq = new System.Windows.Forms.Button();
             this.btnDesbloq = new System.Windows.Forms.Button();
             this.cmbNivel = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.btnInserirImg = new MetroFramework.Controls.MetroButton();
-            this.gpBoxImg = new System.Windows.Forms.GroupBox();
-            this.picImg = new System.Windows.Forms.PictureBox();
             this.txtSenha = new MetroFramework.Controls.MetroTextBox();
             this.txtId = new MetroFramework.Controls.MetroTextBox();
             this.txtNome = new MetroFramework.Controls.MetroTextBox();
@@ -68,14 +64,12 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridUsuarios)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.gpBoxImg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
             this.SuspendLayout();
             // 
             // btnListar
             // 
             this.btnListar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnListar.Location = new System.Drawing.Point(829, 315);
+            this.btnListar.Location = new System.Drawing.Point(817, 315);
             this.btnListar.Margin = new System.Windows.Forms.Padding(5);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(150, 40);
@@ -88,7 +82,7 @@
             // 
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.Enabled = false;
-            this.btnEditar.Location = new System.Drawing.Point(471, 315);
+            this.btnEditar.Location = new System.Drawing.Point(459, 315);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(5);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(150, 40);
@@ -103,11 +97,11 @@
             this.gpBoxPesq.Controls.Add(this.txtPesqNome);
             this.gpBoxPesq.Controls.Add(this.lbIdPesq);
             this.gpBoxPesq.Controls.Add(this.txtIdPesq);
-            this.gpBoxPesq.Location = new System.Drawing.Point(1078, 356);
+            this.gpBoxPesq.Location = new System.Drawing.Point(886, 63);
             this.gpBoxPesq.Margin = new System.Windows.Forms.Padding(4);
             this.gpBoxPesq.Name = "gpBoxPesq";
             this.gpBoxPesq.Padding = new System.Windows.Forms.Padding(4);
-            this.gpBoxPesq.Size = new System.Drawing.Size(184, 226);
+            this.gpBoxPesq.Size = new System.Drawing.Size(184, 243);
             this.gpBoxPesq.TabIndex = 24;
             this.gpBoxPesq.TabStop = false;
             this.gpBoxPesq.Text = "Pesquisar";
@@ -236,7 +230,7 @@
             // 
             this.btnInserir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInserir.Enabled = false;
-            this.btnInserir.Location = new System.Drawing.Point(650, 315);
+            this.btnInserir.Location = new System.Drawing.Point(638, 315);
             this.btnInserir.Margin = new System.Windows.Forms.Padding(5);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(150, 40);
@@ -247,14 +241,11 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtDir);
             this.groupBox2.Controls.Add(this.chkAtivo);
             this.groupBox2.Controls.Add(this.btnBloq);
             this.groupBox2.Controls.Add(this.btnDesbloq);
             this.groupBox2.Controls.Add(this.cmbNivel);
             this.groupBox2.Controls.Add(this.metroLabel6);
-            this.groupBox2.Controls.Add(this.btnInserirImg);
-            this.groupBox2.Controls.Add(this.gpBoxImg);
             this.groupBox2.Controls.Add(this.txtSenha);
             this.groupBox2.Controls.Add(this.txtId);
             this.groupBox2.Controls.Add(this.txtNome);
@@ -267,48 +258,10 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1232, 243);
+            this.groupBox2.Size = new System.Drawing.Size(849, 243);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
-            // 
-            // txtDir
-            // 
-            // 
-            // 
-            // 
-            this.txtDir.CustomButton.Image = null;
-            this.txtDir.CustomButton.Location = new System.Drawing.Point(166, 1);
-            this.txtDir.CustomButton.Margin = new System.Windows.Forms.Padding(5);
-            this.txtDir.CustomButton.Name = "";
-            this.txtDir.CustomButton.Size = new System.Drawing.Size(17, 17);
-            this.txtDir.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDir.CustomButton.TabIndex = 1;
-            this.txtDir.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDir.CustomButton.UseSelectable = true;
-            this.txtDir.CustomButton.Visible = false;
-            this.txtDir.Enabled = false;
-            this.txtDir.Lines = new string[] {
-        "C:\\Users\\Guilherme\\3D Objects\\nomes_engracados_para_cachorros_pequenos_22493_1_60" +
-            "0.jpg"};
-            this.txtDir.Location = new System.Drawing.Point(900, 180);
-            this.txtDir.Margin = new System.Windows.Forms.Padding(5);
-            this.txtDir.MaxLength = 60;
-            this.txtDir.Multiline = true;
-            this.txtDir.Name = "txtDir";
-            this.txtDir.PasswordChar = '\0';
-            this.txtDir.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDir.SelectedText = "";
-            this.txtDir.SelectionLength = 0;
-            this.txtDir.SelectionStart = 0;
-            this.txtDir.ShortcutsEnabled = true;
-            this.txtDir.Size = new System.Drawing.Size(184, 19);
-            this.txtDir.TabIndex = 20;
-            this.txtDir.Text = "C:\\Users\\Guilherme\\3D Objects\\nomes_engracados_para_cachorros_pequenos_22493_1_60" +
-    "0.jpg";
-            this.txtDir.UseSelectable = true;
-            this.txtDir.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDir.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // chkAtivo
             // 
@@ -330,7 +283,7 @@
             this.btnBloq.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBloq.FlatAppearance.BorderSize = 0;
             this.btnBloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBloq.Location = new System.Drawing.Point(800, 173);
+            this.btnBloq.Location = new System.Drawing.Point(782, 183);
             this.btnBloq.Margin = new System.Windows.Forms.Padding(4);
             this.btnBloq.Name = "btnBloq";
             this.btnBloq.Size = new System.Drawing.Size(48, 52);
@@ -346,7 +299,7 @@
             this.btnDesbloq.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesbloq.FlatAppearance.BorderSize = 0;
             this.btnDesbloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesbloq.Location = new System.Drawing.Point(800, 173);
+            this.btnDesbloq.Location = new System.Drawing.Point(782, 183);
             this.btnDesbloq.Margin = new System.Windows.Forms.Padding(4);
             this.btnDesbloq.Name = "btnDesbloq";
             this.btnDesbloq.Size = new System.Drawing.Size(48, 52);
@@ -381,43 +334,6 @@
             this.metroLabel6.Size = new System.Drawing.Size(43, 20);
             this.metroLabel6.TabIndex = 18;
             this.metroLabel6.Text = "Nivel";
-            // 
-            // btnInserirImg
-            // 
-            this.btnInserirImg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInserirImg.Location = new System.Drawing.Point(900, 206);
-            this.btnInserirImg.Margin = new System.Windows.Forms.Padding(5);
-            this.btnInserirImg.Name = "btnInserirImg";
-            this.btnInserirImg.Size = new System.Drawing.Size(184, 28);
-            this.btnInserirImg.TabIndex = 16;
-            this.btnInserirImg.Text = "Inserir Imagem";
-            this.btnInserirImg.UseSelectable = true;
-            this.btnInserirImg.Click += new System.EventHandler(this.btnInserirImg_Click);
-            // 
-            // gpBoxImg
-            // 
-            this.gpBoxImg.Controls.Add(this.picImg);
-            this.gpBoxImg.Location = new System.Drawing.Point(900, 15);
-            this.gpBoxImg.Margin = new System.Windows.Forms.Padding(4);
-            this.gpBoxImg.Name = "gpBoxImg";
-            this.gpBoxImg.Padding = new System.Windows.Forms.Padding(4);
-            this.gpBoxImg.Size = new System.Drawing.Size(184, 163);
-            this.gpBoxImg.TabIndex = 16;
-            this.gpBoxImg.TabStop = false;
-            this.gpBoxImg.Text = "Imagem";
-            // 
-            // picImg
-            // 
-            this.picImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picImg.Image = ((System.Drawing.Image)(resources.GetObject("picImg.Image")));
-            this.picImg.InitialImage = ((System.Drawing.Image)(resources.GetObject("picImg.InitialImage")));
-            this.picImg.Location = new System.Drawing.Point(8, 32);
-            this.picImg.Margin = new System.Windows.Forms.Padding(4);
-            this.picImg.Name = "picImg";
-            this.picImg.Size = new System.Drawing.Size(169, 124);
-            this.picImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picImg.TabIndex = 18;
-            this.picImg.TabStop = false;
             // 
             // txtSenha
             // 
@@ -654,7 +570,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 708);
+            this.ClientSize = new System.Drawing.Size(1105, 708);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.gpBoxPesq);
@@ -673,8 +589,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridUsuarios)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.gpBoxImg.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -692,9 +606,6 @@
         private System.Windows.Forms.DataGridView GridUsuarios;
         private MetroFramework.Controls.MetroButton btnInserir;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroButton btnInserirImg;
-        private System.Windows.Forms.GroupBox gpBoxImg;
-        private System.Windows.Forms.PictureBox picImg;
         private MetroFramework.Controls.MetroTextBox txtSenha;
         private MetroFramework.Controls.MetroTextBox txtId;
         private MetroFramework.Controls.MetroTextBox txtNome;
@@ -709,7 +620,6 @@
         private System.Windows.Forms.Button btnDesbloq;
         private System.Windows.Forms.Button btnBloq;
         private System.Windows.Forms.CheckBox chkAtivo;
-        private MetroFramework.Controls.MetroTextBox txtDir;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;

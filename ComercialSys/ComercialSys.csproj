@@ -104,6 +104,12 @@
     <Compile Include="Formularios\FormCliente.Designer.cs">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormPedido.Designer.cs">
+      <DependentUpon>FormPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

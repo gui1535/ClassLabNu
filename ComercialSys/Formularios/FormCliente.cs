@@ -202,19 +202,6 @@ namespace ComercialSys
         /// <param name="e"></param>
         private void btnInserirImg_Click(object sender, EventArgs e)
         {
-            try
-            {
-                FileDialogImg.Filter = "Fotos (*.jpg;*.png;) | *.jpg;*.png";
-
-                if (FileDialogImg.ShowDialog() == DialogResult.OK)
-                {
-                    picImgCliente.Image = new Bitmap(FileDialogImg.FileName);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Erro ao carregar imagem", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
         }
 
@@ -249,7 +236,6 @@ namespace ComercialSys
             cliente.Cpf = txtCpf.Text;
             cliente.Email = txtEmail.Text;
             cliente.Ativo = chkAtivo.Checked;
-            cliente.Fo
 
             // Validação do email
             if (Validacao.EmailValido(txtEmail.Text))

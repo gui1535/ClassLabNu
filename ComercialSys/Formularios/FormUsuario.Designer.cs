@@ -38,14 +38,9 @@
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.GridUsuarios = new System.Windows.Forms.DataGridView();
-            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaSenha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaNivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnInserir = new MetroFramework.Controls.MetroButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDir = new MetroFramework.Controls.MetroTextBox();
             this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.btnBloq = new System.Windows.Forms.Button();
             this.btnDesbloq = new System.Windows.Forms.Button();
@@ -63,7 +58,12 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.FileDialogImg = new System.Windows.Forms.OpenFileDialog();
-            this.txtDir = new MetroFramework.Controls.MetroTextBox();
+            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaSenhaInv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gpBoxPesq.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridUsuarios)).BeginInit();
@@ -219,7 +219,7 @@
             this.colunaId,
             this.colunaNome,
             this.colunaEmail,
-            this.colunaSenha,
+            this.colunaSenhaInv,
             this.colunaNivel,
             this.colunaAtivo});
             this.GridUsuarios.GridColor = System.Drawing.Color.Black;
@@ -231,61 +231,6 @@
             this.GridUsuarios.Size = new System.Drawing.Size(1025, 304);
             this.GridUsuarios.TabIndex = 10;
             this.GridUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridUsuarios_CellDoubleClick);
-            // 
-            // colunaId
-            // 
-            this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colunaId.Frozen = true;
-            this.colunaId.HeaderText = "Id";
-            this.colunaId.MinimumWidth = 6;
-            this.colunaId.Name = "colunaId";
-            this.colunaId.ReadOnly = true;
-            this.colunaId.Width = 128;
-            // 
-            // colunaNome
-            // 
-            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colunaNome.Frozen = true;
-            this.colunaNome.HeaderText = "Nome";
-            this.colunaNome.MinimumWidth = 6;
-            this.colunaNome.Name = "colunaNome";
-            this.colunaNome.ReadOnly = true;
-            this.colunaNome.Width = 128;
-            // 
-            // colunaEmail
-            // 
-            this.colunaEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colunaEmail.Frozen = true;
-            this.colunaEmail.HeaderText = "Email";
-            this.colunaEmail.MinimumWidth = 6;
-            this.colunaEmail.Name = "colunaEmail";
-            this.colunaEmail.ReadOnly = true;
-            this.colunaEmail.Width = 127;
-            // 
-            // colunaSenha
-            // 
-            this.colunaSenha.HeaderText = "Senha";
-            this.colunaSenha.MinimumWidth = 6;
-            this.colunaSenha.Name = "colunaSenha";
-            this.colunaSenha.ReadOnly = true;
-            // 
-            // colunaNivel
-            // 
-            this.colunaNivel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colunaNivel.HeaderText = "Nivel";
-            this.colunaNivel.MinimumWidth = 6;
-            this.colunaNivel.Name = "colunaNivel";
-            this.colunaNivel.ReadOnly = true;
-            this.colunaNivel.Width = 128;
-            // 
-            // colunaAtivo
-            // 
-            this.colunaAtivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colunaAtivo.HeaderText = "Ativo";
-            this.colunaAtivo.MinimumWidth = 6;
-            this.colunaAtivo.Name = "colunaAtivo";
-            this.colunaAtivo.ReadOnly = true;
-            this.colunaAtivo.Width = 128;
             // 
             // btnInserir
             // 
@@ -326,6 +271,44 @@
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
+            // 
+            // txtDir
+            // 
+            // 
+            // 
+            // 
+            this.txtDir.CustomButton.Image = null;
+            this.txtDir.CustomButton.Location = new System.Drawing.Point(166, 1);
+            this.txtDir.CustomButton.Margin = new System.Windows.Forms.Padding(5);
+            this.txtDir.CustomButton.Name = "";
+            this.txtDir.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.txtDir.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDir.CustomButton.TabIndex = 1;
+            this.txtDir.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDir.CustomButton.UseSelectable = true;
+            this.txtDir.CustomButton.Visible = false;
+            this.txtDir.Enabled = false;
+            this.txtDir.Lines = new string[] {
+        "C:\\Users\\Guilherme\\3D Objects\\nomes_engracados_para_cachorros_pequenos_22493_1_60" +
+            "0.jpg"};
+            this.txtDir.Location = new System.Drawing.Point(900, 180);
+            this.txtDir.Margin = new System.Windows.Forms.Padding(5);
+            this.txtDir.MaxLength = 60;
+            this.txtDir.Multiline = true;
+            this.txtDir.Name = "txtDir";
+            this.txtDir.PasswordChar = '\0';
+            this.txtDir.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDir.SelectedText = "";
+            this.txtDir.SelectionLength = 0;
+            this.txtDir.SelectionStart = 0;
+            this.txtDir.ShortcutsEnabled = true;
+            this.txtDir.Size = new System.Drawing.Size(184, 19);
+            this.txtDir.TabIndex = 20;
+            this.txtDir.Text = "C:\\Users\\Guilherme\\3D Objects\\nomes_engracados_para_cachorros_pequenos_22493_1_60" +
+    "0.jpg";
+            this.txtDir.UseSelectable = true;
+            this.txtDir.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDir.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // chkAtivo
             // 
@@ -426,11 +409,13 @@
             // picImg
             // 
             this.picImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picImg.Image = ((System.Drawing.Image)(resources.GetObject("picImg.Image")));
             this.picImg.InitialImage = ((System.Drawing.Image)(resources.GetObject("picImg.InitialImage")));
             this.picImg.Location = new System.Drawing.Point(8, 32);
             this.picImg.Margin = new System.Windows.Forms.Padding(4);
             this.picImg.Name = "picImg";
             this.picImg.Size = new System.Drawing.Size(169, 124);
+            this.picImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImg.TabIndex = 18;
             this.picImg.TabStop = false;
             // 
@@ -455,7 +440,7 @@
             this.txtSenha.Margin = new System.Windows.Forms.Padding(5);
             this.txtSenha.MaxLength = 12;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.PasswordChar = '\0';
             this.txtSenha.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtSenha.SelectedText = "";
             this.txtSenha.SelectionLength = 0;
@@ -614,39 +599,56 @@
             // 
             this.FileDialogImg.FileName = "Imagem";
             // 
-            // txtDir
+            // colunaId
             // 
+            this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colunaId.Frozen = true;
+            this.colunaId.HeaderText = "Id";
+            this.colunaId.MinimumWidth = 6;
+            this.colunaId.Name = "colunaId";
+            this.colunaId.ReadOnly = true;
+            this.colunaId.Width = 128;
             // 
+            // colunaNome
             // 
+            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaNome.HeaderText = "Nome";
+            this.colunaNome.MinimumWidth = 6;
+            this.colunaNome.Name = "colunaNome";
+            this.colunaNome.ReadOnly = true;
             // 
-            this.txtDir.CustomButton.Image = null;
-            this.txtDir.CustomButton.Location = new System.Drawing.Point(166, 1);
-            this.txtDir.CustomButton.Margin = new System.Windows.Forms.Padding(5);
-            this.txtDir.CustomButton.Name = "";
-            this.txtDir.CustomButton.Size = new System.Drawing.Size(17, 17);
-            this.txtDir.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDir.CustomButton.TabIndex = 1;
-            this.txtDir.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDir.CustomButton.UseSelectable = true;
-            this.txtDir.CustomButton.Visible = false;
-            this.txtDir.Enabled = false;
-            this.txtDir.Lines = new string[0];
-            this.txtDir.Location = new System.Drawing.Point(900, 180);
-            this.txtDir.Margin = new System.Windows.Forms.Padding(5);
-            this.txtDir.MaxLength = 60;
-            this.txtDir.Multiline = true;
-            this.txtDir.Name = "txtDir";
-            this.txtDir.PasswordChar = '\0';
-            this.txtDir.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDir.SelectedText = "";
-            this.txtDir.SelectionLength = 0;
-            this.txtDir.SelectionStart = 0;
-            this.txtDir.ShortcutsEnabled = true;
-            this.txtDir.Size = new System.Drawing.Size(184, 19);
-            this.txtDir.TabIndex = 20;
-            this.txtDir.UseSelectable = true;
-            this.txtDir.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDir.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // colunaEmail
+            // 
+            this.colunaEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaEmail.HeaderText = "Email";
+            this.colunaEmail.MinimumWidth = 6;
+            this.colunaEmail.Name = "colunaEmail";
+            this.colunaEmail.ReadOnly = true;
+            // 
+            // colunaSenhaInv
+            // 
+            this.colunaSenhaInv.HeaderText = "SenhaInv";
+            this.colunaSenhaInv.MinimumWidth = 6;
+            this.colunaSenhaInv.Name = "colunaSenhaInv";
+            this.colunaSenhaInv.ReadOnly = true;
+            this.colunaSenhaInv.Visible = false;
+            // 
+            // colunaNivel
+            // 
+            this.colunaNivel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaNivel.HeaderText = "Nivel";
+            this.colunaNivel.MinimumWidth = 6;
+            this.colunaNivel.Name = "colunaNivel";
+            this.colunaNivel.ReadOnly = true;
+            // 
+            // colunaAtivo
+            // 
+            this.colunaAtivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colunaAtivo.HeaderText = "Ativo";
+            this.colunaAtivo.MinimumWidth = 6;
+            this.colunaAtivo.Name = "colunaAtivo";
+            this.colunaAtivo.ReadOnly = true;
+            this.colunaAtivo.Width = 61;
             // 
             // FormUsuario
             // 
@@ -703,16 +705,16 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroComboBox cmbNivel;
         private MetroFramework.Controls.MetroLabel metroLabel6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaSenha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNivel;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colunaAtivo;
         private System.Windows.Forms.OpenFileDialog FileDialogImg;
         private System.Windows.Forms.Button btnDesbloq;
         private System.Windows.Forms.Button btnBloq;
         private System.Windows.Forms.CheckBox chkAtivo;
         private MetroFramework.Controls.MetroTextBox txtDir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaSenhaInv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNivel;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colunaAtivo;
     }
 }

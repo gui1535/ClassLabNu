@@ -1,7 +1,6 @@
 ﻿using ClassLabNu;
-using MySql.Data.MySqlClient;
 using System;
-using System.Drawing;
+using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
@@ -108,9 +107,10 @@ namespace ComercialSys.Formularios
                 GridUsuarios.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // Text -> ID
                 GridUsuarios.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Text -> Nome
                 GridUsuarios.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Text -> Email
-                GridUsuarios.Rows[lista.IndexOf(i)].Cells[colunaSenha.Index].Value = i.Password; // Text -> Password
+                GridUsuarios.Rows[lista.IndexOf(i)].Cells[colunaSenhaInv.Index].Value = i.Password; // Text Invisivel -> Password
                 GridUsuarios.Rows[lista.IndexOf(i)].Cells[colunaNivel.Index].Value = i.Nivel; // Text -> Nivel
                 GridUsuarios.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
+
             });
             BloquearCampos();
         }
@@ -129,7 +129,7 @@ namespace ComercialSys.Formularios
             u.Id = Convert.ToInt32(GridUsuarios["colunaId", e.RowIndex].Value);
             u.Nome = Convert.ToString(GridUsuarios["colunaNome", e.RowIndex].Value);
             u.Email = Convert.ToString(GridUsuarios["colunaEmail", e.RowIndex].Value);
-            u.Password = Convert.ToString(GridUsuarios["colunaSenha", e.RowIndex].Value);
+            u.Password = Convert.ToString(GridUsuarios["colunaSenhaInv", e.RowIndex].Value);
             u.Ativo = Convert.ToBoolean(GridUsuarios["colunaAtivo", e.RowIndex].Value);
             u.Nivel = Convert.ToString(GridUsuarios["colunaNivel", e.RowIndex].Value);
 
@@ -167,7 +167,6 @@ namespace ComercialSys.Formularios
         {
             byte[] imgByte;
 
-            
             // Armazenar Bytes
             FileStream fstream = new FileStream(txtDir.Text, FileMode.Open, FileAccess.Read);
 
@@ -181,7 +180,7 @@ namespace ComercialSys.Formularios
                 txtEmail.Text,
                 txtSenha.Text,
                 cmbNivel.Text,
-                Convert.ToByte(imgByte)
+                imgByte
                 );
 
             u.Inserir();
@@ -315,28 +314,48 @@ namespace ComercialSys.Formularios
         /// <param name="e"></param>
         private void txtIdPesq_KeyUp(object sender, KeyEventArgs e)
         {
+            // Abre conexao com banco
+            var cmd = Banco.Abrir();
 
-           
-            // Verificando se o valor a pesquisar é vazio
-            if (txtIdPesq.Text == "")
+            // Comandos SQL
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"select * from usuarios where iduser = '{txtIdPesq.Text}'";
+
+            try
             {
+                // Var para leitura
+                var meuReader = cmd.ExecuteReader();
+
+
+
+                while (meuReader.Read())
+                {
+
+                    string nome = meuReader.GetString("nome");
+
+                    txtNome.Text = nome.ToString();
+                    byte[] imagem = (byte[])(meuReader["foto"]);
+
+
+                    if ((imagem == null))
+                    {
+                        picImg.Image = null;
+                    }
+                    else
+                    {
+                        // Objeto responsavel por guardar quantidades de bytes na memoria
+                        MemoryStream mstream = new MemoryStream(imagem);
+
+                        // Colocar imagem que ta dentro do mstream
+                        picImg.Image = System.Drawing.Image.FromStream(mstream);
+                    }
+                }
+
             }
-            else
+            catch (Exception E)
             {
-                // Objeto Cliente
-                Usuario usuario = new Usuario();
-
-                // Atributos
-                txtId.Text = Convert.ToString(usuario.Id);
-                txtNome.Text = usuario.Nome;
-                txtEmail.Text = usuario.Email;
-                txtSenha.Text = usuario.Password;
-                cmbNivel.Text = usuario.Nivel;
-                chkAtivo.Checked = usuario.Ativo;
+                MessageBox.Show(E.Message.ToString());
             }
-
-            // Limpando as TextBox de pesquisa
-            txtPesqNome.Clear();
         }
 
         private void txtPesqNome_KeyUp(object sender, KeyEventArgs e)
@@ -364,6 +383,11 @@ namespace ComercialSys.Formularios
 
             // Limpando as TextBox de pesquisa
             txtIdPesq.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

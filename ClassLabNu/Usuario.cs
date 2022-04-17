@@ -18,7 +18,7 @@ namespace ClassLabNu
         public string Password { get; set; }
         public bool Ativo { get; set; }
         public string Nivel { get; set; }
-        public byte Foto { get; set; }
+        public byte[] Foto { get; set; }
         // Metodos Construtores ------------------------------------------------------------------
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace ClassLabNu
             this.Ativo = true;
             this.Nivel = nivel;
         }
-        public Usuario(string nome, string email, string password, string nivel, byte foto)
+        public Usuario(string nome, string email, string password, string nivel, byte[] foto)
         {
             this.Nome = nome;
             this.Email = email;
@@ -63,7 +63,7 @@ namespace ClassLabNu
         /// <param name="password">VARCHAR(32)</param>
         /// <param name="ativo">BIT(1)</param>
         /// <param name="nivel">VARCHAR(15)</param>
-        public Usuario(int id, string nome, string email, string password, string nivel, bool ativo, byte foto)
+        public Usuario(int id, string nome, string email, string password, string nivel, bool ativo, byte[] foto)
         {
             this.Id = id;
             this.Nome = nome;
@@ -238,7 +238,8 @@ namespace ClassLabNu
                 Password = dr.GetString(3);
                 Nivel = dr.GetString(4);
                 Ativo = dr.GetBoolean(5);
-                Foto = dr.GetByte(6);
+                byte[] imagem = (byte[])(dr["foto"]);
+                
             }
         }
 

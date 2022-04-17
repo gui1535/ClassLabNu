@@ -174,18 +174,14 @@ namespace ClassLabNu
             // Consulta
             while (dr.Read())
             {
-                byte[] imagem = (byte[])(dr["foto"]);
-                // Objeto responsavel por guardar quantidades de bytes na memoria
-                MemoryStream mstream = new MemoryStream(Foto);
-
                 lista.Add(new Usuario(
-                Convert.ToInt32(dr.GetValue(0)), // ID
-                dr.GetString(1), // Nome
-                dr.GetString(2), // Email
-                dr.GetString(3), // Senha
-                dr.GetString(4), // Nivel
-                dr.GetBoolean(5) // Ativo
-                ));
+                    Convert.ToInt32(dr.GetValue(0)), // ID
+                    dr.GetString(1), // Nome
+                    dr.GetString(2), // Email
+                    dr.GetString(3), // Senha
+                    dr.GetString(4), // Nivel
+                    dr.GetBoolean(5) // Ativo
+                    ));
             }
             // Fecha Conexão
             banco.Connection.Close();
@@ -237,14 +233,15 @@ namespace ClassLabNu
             // Consulta
             while (dr.Read())
             {
+                Foto = (byte[])(dr["foto"]);
                 Id = dr.GetInt32(0);
                 Nome = dr.GetString(1);
                 Email = dr.GetString(2);
                 Password = dr.GetString(3);
                 Nivel = dr.GetString(4);
                 Ativo = dr.GetBoolean(5);
-                byte[] imagem = (byte[])(dr["foto"]);
 
+                
             }
         }
 

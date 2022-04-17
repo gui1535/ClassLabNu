@@ -271,7 +271,6 @@ namespace ComercialSys.Formularios
             usuario.Email = txtEmail.Text;
             usuario.Nivel = cmbNivel.Text;
             usuario.Ativo = chkAtivo.Checked;
-            usuario.Foto = picImg.Image;
 
             // Validação do email
             if (Validacao.EmailValido(txtEmail.Text))
@@ -315,47 +314,27 @@ namespace ComercialSys.Formularios
         /// <param name="e"></param>
         private void txtIdPesq_KeyUp(object sender, KeyEventArgs e)
         {
-            // Abre conexao com banco
-            var cmd = Banco.Abrir();
-
-            // Comandos SQL
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"select * from usuarios where iduser = '{txtIdPesq.Text}'";
-
-            try
+            // Verificando se o valor a pesquisar é vazio
+            if (txtIdPesq.Text == "")
             {
-                // Var para leitura
-                var meuReader = cmd.ExecuteReader();
-
-
-
-                while (meuReader.Read())
-                {
-
-                    string nome = meuReader.GetString("nome");
-
-                    txtNome.Text = nome.ToString();
-                    byte[] imagem = (byte[])(meuReader["foto"]);
-
-
-                    if ((imagem == null))
-                    {
-                        picImg.Image = null;
-                    }
-                    else
-                    {
-                        // Objeto responsavel por guardar quantidades de bytes na memoria
-                        MemoryStream mstream = new MemoryStream(imagem);
-
-                        // Colocar imagem que ta dentro do mstream
-                        picImg.Image = System.Drawing.Image.FromStream(mstream);
-                    }
-                }
-
             }
-            catch (Exception E)
+            else
             {
-                MessageBox.Show(E.Message.ToString());
+                // Objeto Cliente
+                Usuario usuario = new Usuario();
+
+                // Metodo Consulta por ID
+                usuario.ConsultarPorId(int.Parse(txtIdPesq.Text));
+
+                // Atributos
+                txtId.Text = usuario.Id.ToString();
+                txtNome.Text = usuario.Nome;
+                txtEmail.Text = usuario.Email;
+                txtSenha.Text = usuario.Password;
+                cmbNivel.Text = usuario.Nivel;
+                // Objeto responsavel por guardar quantidades de bytes na memoria
+                MemoryStream mstream = new MemoryStream(usuario.Foto);
+                picImg.Image = System.Drawing.Image.FromStream(mstream);
             }
         }
 

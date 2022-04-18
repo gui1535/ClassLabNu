@@ -232,24 +232,6 @@ select * from produtos where idprod = (select @@identity);
 end
 |
 
--- -----------------------------------------------------
--- PROCEDURES USUARIOS
--- -----------------------------------------------------
-
--- INSERIR USUARIO --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `usuario_inserir`(
-_nome varchar (60),
-_email varchar (60),
-_senha varchar (32),
-_nivel varchar (15),
-_foto VARBINARY(9000)
-)
-begin
-insert into usuarios(nome, email, senha, nivel, ativo, foto)
-values (_nome, _email, (md5(_senha)), _nivel, default, _foto);
-select * from usuarios where iduser = (select @@identity);
-end
-
 -- EDITAR PRODUTO --
 delimiter |
 create procedure cliente_alterar(
@@ -259,5 +241,24 @@ _email char(60)
 )
 begin
 	update clientes set nome = _nome, email = _email where idcli = _id;
+end
+|
+
+-- -----------------------------------------------------
+-- PROCEDURES USUARIOS
+-- -----------------------------------------------------
+
+-- INSERIR USUARIO --
+delimiter |
+create procedure usuario_inserir(
+_nome varchar (60),
+_email varchar (60),
+_senha varchar (32),
+_nivel varchar (15)
+)
+begin
+	insert into usuarios (nome, email, senha, nivel, ativo)
+	values (_nome, _email, (md5(_senha)), _nivel, default);
+	select * from usuarios where iduser = (select @@identity);
 end
 |

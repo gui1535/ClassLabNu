@@ -249,3 +249,15 @@ insert into usuarios(nome, email, senha, nivel, ativo, foto)
 values (_nome, _email, (md5(_senha)), _nivel, default, _foto);
 select * from usuarios where iduser = (select @@identity);
 end
+
+-- EDITAR PRODUTO --
+delimiter |
+create procedure cliente_alterar(
+_id int,
+_nome varchar (60),
+_email char(60)
+)
+begin
+	update clientes set nome = _nome, email = _email where idcli = _id;
+end
+|

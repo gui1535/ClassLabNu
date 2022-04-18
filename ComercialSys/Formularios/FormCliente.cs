@@ -1,6 +1,5 @@
 ﻿using ClassLabNu;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ComercialSys
@@ -22,48 +21,73 @@ namespace ComercialSys
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
-        // Liberar Campos -----------------------------------------------------------------------------------------------------------
-
         /// <summary>
-        /// Metodo para liberar todos os campos
+        /// Limpar campos de pesquisas
         /// </summary>
-        private void LiberarCampos()
-        {;
+        private void LimpaCampoPesquisa()
+        {
+            // Limpar campos de pesquisa
+            txtIdPesq.Clear();
+            txtPesqNome.Clear();
+            txtCpfPsq.Clear();
         }
-
         /// <summary>
-        /// Botao para liberar campos
+        /// Desbloquear campos para inserir/editar cliente
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void  btnBloq_Click(object sender, EventArgs e)
+        private void btnDesbloquear_Click(object sender, EventArgs e)
         {
+            // Verificar se vai habilitar o botao EDITAR ou não
+            if (Convert.ToInt32(txtId.Text) > 0)
+            {
+                // Habilitando / Desabilitando campos
+                gpBoxPesq.Enabled = false;
+                btnEditar.Enabled = true;
+                btnInserir.Enabled = false;
+                txtNome.Enabled = true;
+                txtEmail.Enabled = true;
+
+                // Limpar campos de pesquisa
+                LimpaCampoPesquisa();
+            }
+            else if (Convert.ToInt32(txtId.Text) == 0)
+            {
+                // Habilitando / Desabilitando campos
+                gpBoxPesq.Enabled = false;
+                btnInserir.Enabled = true;
+                txtNome.Enabled = true;
+                txtEmail.Enabled = true;
+                txtCpf.Enabled = true;
+
+                // Limpar campos de pesquisa
+                LimpaCampoPesquisa();
+            }
+
+            btnDesbloquear.Visible = false;
+            btnBloquear.Visible = true;
         }
 
-        // Bloquear Campos -----------------------------------------------------------------------------------------------------------
-
         /// <summary>
-        /// Metodo para bloquear campos
-        /// </summary>
-        private void BloquearCampos()
-        {
-        }
-
-        /// <summary>
-        /// Botao para bloquear campos
+        /// Bloquear campos para inserir/editar cliente
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDesbloq_Click(object sender, EventArgs e)
+        private void btnBloquear_Click(object sender, EventArgs e)
         {
-          //  btnAtivar.Visible = false;
-           // btnDesativar.Visible = true;
-            btnEditar.Enabled = true;
-            btnInserir.Enabled = true;
-            LiberarCampos();
+
+            // Habilitando / Desabilitando campos
+            gpBoxPesq.Enabled = true;
+            btnEditar.Enabled = false;
+            btnInserir.Enabled = false;
+            txtNome.Enabled = false;
+            txtEmail.Enabled = false;
+            txtCpf.Enabled = false;
+
+            btnBloquear.Visible = false;
+            btnDesbloquear.Visible = true;
         }
 
         // DataGrid Clientes ---------------------------------------------------------------------------------------------------------------
@@ -106,22 +130,23 @@ namespace ComercialSys
         {
 
             // Variaveis para objeto Cliente
-            Cliente c = new Cliente();
+            Cliente cliente = new Cliente();
 
             // Valores para o objeto
-            c.Id = Convert.ToInt32(GridCliente["colunaId", e.RowIndex].Value);
-            c.Nome = Convert.ToString(GridCliente["colunaNome", e.RowIndex].Value);
-            c.Email = Convert.ToString(GridCliente["colunaEmail", e.RowIndex].Value);
-            c.Cpf = Convert.ToString(GridCliente["colunaCpf", e.RowIndex].Value);
-            c.Ativo = Convert.ToBoolean(GridCliente["colunaAtivo", e.RowIndex].Value);
-            c.dataCad = Convert.ToString(GridCliente["colunaDataCad", e.RowIndex].Value);
+            cliente.Id = Convert.ToInt32(GridCliente["colunaId", e.RowIndex].Value);
+            cliente.Nome = Convert.ToString(GridCliente["colunaNome", e.RowIndex].Value);
+            cliente.Email = Convert.ToString(GridCliente["colunaEmail", e.RowIndex].Value);
+            cliente.Cpf = Convert.ToString(GridCliente["colunaCpf", e.RowIndex].Value);
+            cliente.Ativo = Convert.ToBoolean(GridCliente["colunaAtivo", e.RowIndex].Value);
+            cliente.dataCad = Convert.ToString(GridCliente["colunaDataCad", e.RowIndex].Value);
 
             // Atributos
-            txtId.Text = c.Id.ToString();
-            txtNome.Text = c.Nome;
-            txtEmail.Text = c.Email;
-            txtCpf.Text = c.Cpf;
-            chkAtivo.Checked = c.Ativo;
+            txtId.Text = cliente.Id.ToString();
+            txtNome.Text = cliente.Nome;
+            txtEmail.Text = cliente.Email;
+            txtCpf.Text = cliente.Cpf;
+            chkAtivo.Checked = cliente.Ativo;
+            txtDataCad.Text = cliente.dataCad;
         }
 
 
@@ -179,6 +204,7 @@ namespace ComercialSys
                 // Falha ao inserir cliente
                 MessageBox.Show("Falha ao inserir cliente", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            btnBloquear_Click(sender, e);
         }
 
         // Inserir imagem Clientes ---------------------------------------------------------------------------------------------------------------
@@ -255,6 +281,7 @@ namespace ComercialSys
                 // Email Invalido
                 MessageBox.Show($"Email do cliente {cliente.Id} invalido", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            btnBloquear_Click(sender, e);
         }
 
         // Pesquisar Clientes ---------------------------------------------------------------------------------------------------------------
@@ -284,6 +311,7 @@ namespace ComercialSys
                 txtEmail.Text = cliente.Email;
                 txtCpf.Text = cliente.Cpf;
                 chkAtivo.Checked = cliente.Ativo;
+                txtDataCad.Text = cliente.dataCad;
             }
 
             // Limpando as TextBox de pesquisa
@@ -317,6 +345,7 @@ namespace ComercialSys
                 txtEmail.Text = cliente.Email;
                 txtCpf.Text = cliente.Cpf;
                 chkAtivo.Checked = cliente.Ativo;
+                txtDataCad.Text = cliente.dataCad;
             }
 
             // Limpando as TextBox de pesquisa
@@ -349,47 +378,12 @@ namespace ComercialSys
                 txtEmail.Text = cliente.Email;
                 txtCpf.Text = cliente.Cpf;
                 chkAtivo.Checked = cliente.Ativo;
+                txtDataCad.Text = cliente.dataCad;
+
+                btnInserir.Enabled = false;
             }
 
 
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            if (metroButton1.Text == "...")
-            {
-                txtId.Enabled = true;
-                txtId.Focus();
-                metroButton1.Text = "Buscar";
-            }
-            else
-            {
-                Cliente cliente = new Cliente();
-
-                cliente.ConsultarPorId(int.Parse(metroButton1.Text));
-
-                if (cliente.Id > 0)
-                {
-                    txtCpf.Text = cliente.Cpf.ToString();
-                    txtNome.Text = cliente.Nome.ToString();
-                    txtDataCad.Text = cliente.dataCad.ToString();
-                    txtEmail.Text = cliente.Email.ToString();
-                    chkAtivo.Checked = cliente.Ativo;
-
-                    metroButton1.Text = "...";
-
-                    txtId.Enabled = false;
-
-                    metroButton1.Enabled = true;
-
-                    txtCpf.ReadOnly = true;
-                }
-                else
-                {
-                    MessageBox.Show("Cliente nao encontrado", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-                }
-
-            }
         }
     }
 }

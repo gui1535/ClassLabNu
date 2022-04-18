@@ -155,13 +155,13 @@ namespace ClassLabNu
             var cmd = Banco.Abrir();
 
             // Comando SQL
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = $"cliente_alterar";
 
             // Parametros
-            cmd.Parameters.AddWithValue("_nome", Id);
+            cmd.Parameters.AddWithValue("_id", Id);
             cmd.Parameters.AddWithValue("_nome", Nome);
             cmd.Parameters.AddWithValue("_email", Email);
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
 
             // Variavel para receber retorno
             int retorna = cmd.ExecuteNonQuery();

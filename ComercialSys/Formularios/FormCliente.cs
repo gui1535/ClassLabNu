@@ -31,11 +31,7 @@ namespace ComercialSys
         /// Metodo para liberar todos os campos
         /// </summary>
         private void LiberarCampos()
-        {
-            txtNome.Enabled = true;
-            txtEmail.Enabled = true;
-            txtCpf.Enabled = true;
-            chkAtivo.Enabled = true;
+        {;
         }
 
         /// <summary>
@@ -45,11 +41,6 @@ namespace ComercialSys
         /// <param name="e"></param>
         private void  btnBloq_Click(object sender, EventArgs e)
         {
-            btnBloq.Visible = false;
-            btnDesbloq.Visible = true;
-            btnEditar.Enabled = false;
-            btnInserir.Enabled = false;
-            BloquearCampos();
         }
 
         // Bloquear Campos -----------------------------------------------------------------------------------------------------------
@@ -59,10 +50,6 @@ namespace ComercialSys
         /// </summary>
         private void BloquearCampos()
         {
-            txtNome.Enabled = false;
-            txtEmail.Enabled = false;
-            txtCpf.Enabled = false;
-            chkAtivo.Enabled = false;
         }
 
         /// <summary>
@@ -72,8 +59,8 @@ namespace ComercialSys
         /// <param name="e"></param>
         private void btnDesbloq_Click(object sender, EventArgs e)
         {
-            btnDesbloq.Visible = false;
-            btnBloq.Visible = true;
+          //  btnAtivar.Visible = false;
+           // btnDesativar.Visible = true;
             btnEditar.Enabled = true;
             btnInserir.Enabled = true;
             LiberarCampos();
@@ -127,6 +114,7 @@ namespace ComercialSys
             c.Email = Convert.ToString(GridCliente["colunaEmail", e.RowIndex].Value);
             c.Cpf = Convert.ToString(GridCliente["colunaCpf", e.RowIndex].Value);
             c.Ativo = Convert.ToBoolean(GridCliente["colunaAtivo", e.RowIndex].Value);
+            c.dataCad = Convert.ToString(GridCliente["colunaDataCad", e.RowIndex].Value);
 
             // Atributos
             txtId.Text = c.Id.ToString();
@@ -363,9 +351,45 @@ namespace ComercialSys
                 chkAtivo.Checked = cliente.Ativo;
             }
 
-            // Limpando as TextBox de pesquisa
-            txtCpfPsq.Clear();
-            txtPesqNome.Clear();
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            if (metroButton1.Text == "...")
+            {
+                txtId.Enabled = true;
+                txtId.Focus();
+                metroButton1.Text = "Buscar";
+            }
+            else
+            {
+                Cliente cliente = new Cliente();
+
+                cliente.ConsultarPorId(int.Parse(metroButton1.Text));
+
+                if (cliente.Id > 0)
+                {
+                    txtCpf.Text = cliente.Cpf.ToString();
+                    txtNome.Text = cliente.Nome.ToString();
+                    txtDataCad.Text = cliente.dataCad.ToString();
+                    txtEmail.Text = cliente.Email.ToString();
+                    chkAtivo.Checked = cliente.Ativo;
+
+                    metroButton1.Text = "...";
+
+                    txtId.Enabled = false;
+
+                    metroButton1.Enabled = true;
+
+                    txtCpf.ReadOnly = true;
+                }
+                else
+                {
+                    MessageBox.Show("Cliente nao encontrado", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                }
+
+            }
         }
     }
 }

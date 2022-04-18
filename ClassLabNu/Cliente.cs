@@ -138,7 +138,7 @@ namespace ClassLabNu
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocorreu um erro, verifique os valores digitados {ex}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocorreu um erro {ex}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -150,15 +150,26 @@ namespace ClassLabNu
         /// <returns>Bool</returns>
         public bool Alterar()
         {
+
             // Abrir conexao
             var cmd = Banco.Abrir();
 
             // Comando SQL
-            cmd.CommandText = $"update clientes set nome = '{Nome}', cpf = '{Cpf}', email = '{Email}', ativo = {Ativo} where idcli = {Id}";
-            int ret = cmd.ExecuteNonQuery();
+            cmd.CommandText = $"cliente_alterar";
+
+            // Parametros
+            cmd.Parameters.AddWithValue("_nome", Id);
+            cmd.Parameters.AddWithValue("_nome", Nome);
+            cmd.Parameters.AddWithValue("_email", Email);
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+
+            // Variavel para receber retorno
+            int retorna = cmd.ExecuteNonQuery();
+
+            cmd.Connection.Close();
 
             // Retornando valor
-            if (ret == 1)
+            if (retorna == 1)
             {
                 return true;
             }
@@ -166,6 +177,7 @@ namespace ClassLabNu
             {
                 return false;
             }
+
         }
 
         /// <summary>
@@ -174,11 +186,12 @@ namespace ClassLabNu
         /// <param name="_id">int</param>
         public void ConsultarPorId(int _id)
         {
+
             // Abre conexao com banco
             var cmd = Banco.Abrir();
 
             // Comandos SQL
-            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandType = CommandType.Text;
             cmd.CommandText = $"select * from clientes where idcli = {_id}";
 
             // Var para leitura
@@ -194,6 +207,7 @@ namespace ClassLabNu
                 dataCad = dr.GetString(4);
                 Ativo = dr.GetBoolean(5);
             }
+
         }
 
         /// <summary>
@@ -269,9 +283,9 @@ namespace ClassLabNu
             // Comando
             banco.CommandType = CommandType.Text;
             if (l > 0)
-                banco.CommandText = $"select * from clientes limit {i} , {l}";
+                banco.CommandText = $"select * from clientes where ativo = 1 limit {i}, {l}";
             else
-                banco.CommandText = "select * from clientes";
+                banco.CommandText = "select * from clientes where ativo = 1";
 
             // Var para Consulta
             var dr = banco.ExecuteReader();
@@ -294,6 +308,27 @@ namespace ClassLabNu
 
             // Retornando lista
             return lista;
+        }
+
+        /// <summary>
+        /// Desativar cliente
+        /// </summary>
+        /// <param name="_id">int</param>
+        public void Desativar(int _id)
+        {
+            // Abrir conexao
+            var cmd = Banco.Abrir();
+
+            // Comandos SQL
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"update clientes set ativo = 0 where idcli = {_id}";
+
+            // Leitura
+            cmd.ExecuteReader();
+
+            // Fecha conexao
+            cmd.Connection.Close();
+
         }
     }
 }

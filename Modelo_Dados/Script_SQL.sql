@@ -211,6 +211,18 @@ values (_nome, _cpf, _email, default, default);
 select * from cliente where idcli = (select @@identity);
 end
 |
+-- ALTERAR CLIENTE --
+delimiter |
+create procedure alterar_cliente(
+_id int,
+_nome varchar (60),
+_email char(60),
+_ativo bit(1)
+)
+begin
+	update clientes set nome = _nome, email = _email, ativo = _ativo where idcli = _id;
+end
+|
 
 -- -----------------------------------------------------
 -- PROCEDURES PRODUTOS
@@ -232,17 +244,6 @@ select * from produtos where idprod = (select @@identity);
 end
 |
 
--- EDITAR PRODUTO --
-delimiter |
-create procedure cliente_alterar(
-_id int,
-_nome varchar (60),
-_email char(60)
-)
-begin
-	update clientes set nome = _nome, email = _email where idcli = _id;
-end
-|
 
 -- -----------------------------------------------------
 -- PROCEDURES USUARIOS

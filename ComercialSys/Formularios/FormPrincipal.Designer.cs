@@ -44,7 +44,7 @@
             this.cadastrosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(10, 60);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1356, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(1356, 30);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -55,27 +55,27 @@
             this.produtosToolStripMenuItem,
             this.usuariosToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(141, 31);
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(115, 26);
             this.cadastrosToolStripMenuItem.Text = "&Cadastros";
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.clientesToolStripMenuItem.Text = "&Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.produtosToolStripMenuItem.Text = "&Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.usuariosToolStripMenuItem.Text = "&Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -90,7 +90,6 @@
             this.Padding = new System.Windows.Forms.Padding(10, 60, 10, 10);
             this.Text = "SysComercial";
             this.TransparencyKey = System.Drawing.Color.Empty;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

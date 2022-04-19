@@ -209,7 +209,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(7, 31);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(24, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(23, 19);
             this.metroLabel1.TabIndex = 4;
             this.metroLabel1.Text = "ID";
             // 
@@ -220,7 +220,7 @@
             this.metroLabel2.Location = new System.Drawing.Point(100, 31);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(50, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(46, 19);
             this.metroLabel2.TabIndex = 5;
             this.metroLabel2.Text = "Nome";
             // 
@@ -231,7 +231,7 @@
             this.metroLabel3.Location = new System.Drawing.Point(333, 116);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(33, 20);
+            this.metroLabel3.Size = new System.Drawing.Size(33, 19);
             this.metroLabel3.TabIndex = 6;
             this.metroLabel3.Text = "CPF";
             // 
@@ -242,7 +242,7 @@
             this.metroLabel4.Location = new System.Drawing.Point(7, 116);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(46, 20);
+            this.metroLabel4.Size = new System.Drawing.Size(41, 19);
             this.metroLabel4.TabIndex = 7;
             this.metroLabel4.Text = "Email";
             // 
@@ -277,7 +277,7 @@
             this.colunaId.MinimumWidth = 6;
             this.colunaId.Name = "colunaId";
             this.colunaId.ReadOnly = true;
-            this.colunaId.Width = 56;
+            this.colunaId.Width = 45;
             // 
             // colunaNome
             // 
@@ -320,7 +320,7 @@
             this.colunaAtivo.MinimumWidth = 6;
             this.colunaAtivo.Name = "colunaAtivo";
             this.colunaAtivo.ReadOnly = true;
-            this.colunaAtivo.Width = 61;
+            this.colunaAtivo.Width = 48;
             // 
             // groupBox2
             // 
@@ -349,9 +349,9 @@
             this.txtDataCad.Enabled = false;
             this.txtDataCad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtDataCad.Location = new System.Drawing.Point(333, 55);
-            this.txtDataCad.MinimumSize = new System.Drawing.Size(0, 30);
+            this.txtDataCad.MinimumSize = new System.Drawing.Size(0, 29);
             this.txtDataCad.Name = "txtDataCad";
-            this.txtDataCad.Size = new System.Drawing.Size(156, 30);
+            this.txtDataCad.Size = new System.Drawing.Size(156, 29);
             this.txtDataCad.TabIndex = 28;
             // 
             // btnDesbloquear
@@ -375,7 +375,7 @@
             this.metroLabel6.Location = new System.Drawing.Point(333, 31);
             this.metroLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(104, 20);
+            this.metroLabel6.Size = new System.Drawing.Size(97, 19);
             this.metroLabel6.TabIndex = 25;
             this.metroLabel6.Text = "Data Cadastro";
             // 
@@ -387,7 +387,7 @@
             this.chkAtivo.Location = new System.Drawing.Point(505, 55);
             this.chkAtivo.Margin = new System.Windows.Forms.Padding(4);
             this.chkAtivo.Name = "chkAtivo";
-            this.chkAtivo.Size = new System.Drawing.Size(77, 25);
+            this.chkAtivo.Size = new System.Drawing.Size(61, 21);
             this.chkAtivo.TabIndex = 17;
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
@@ -473,7 +473,7 @@
             this.lbIdPesq.Location = new System.Drawing.Point(19, 34);
             this.lbIdPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbIdPesq.Name = "lbIdPesq";
-            this.lbIdPesq.Size = new System.Drawing.Size(22, 20);
+            this.lbIdPesq.Size = new System.Drawing.Size(21, 19);
             this.lbIdPesq.TabIndex = 13;
             this.lbIdPesq.Text = "ID";
             // 
@@ -516,7 +516,7 @@
             this.lbCpfPesq.Location = new System.Drawing.Point(116, 31);
             this.lbCpfPesq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCpfPesq.Name = "lbCpfPesq";
-            this.lbCpfPesq.Size = new System.Drawing.Size(33, 20);
+            this.lbCpfPesq.Size = new System.Drawing.Size(33, 19);
             this.lbCpfPesq.TabIndex = 15;
             this.lbCpfPesq.Text = "CPF";
             // 
@@ -541,7 +541,7 @@
             this.metroLabel5.Location = new System.Drawing.Point(19, 110);
             this.metroLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(48, 20);
+            this.metroLabel5.Size = new System.Drawing.Size(46, 19);
             this.metroLabel5.TabIndex = 19;
             this.metroLabel5.Text = "Nome";
             // 
@@ -606,7 +606,7 @@
             // 
             // FormCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(903, 666);
             this.Controls.Add(this.btnListar);

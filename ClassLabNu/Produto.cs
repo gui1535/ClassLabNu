@@ -221,8 +221,8 @@ namespace ClassLabNu
                     dr.GetString(1), // Descricao
                     dr.GetString(2), // Unidade
                     dr.GetString(3), // CodBar
+                dr.GetDouble(4), // Valor
                     dr.GetDouble(5), // Desconto
-                    dr.GetDouble(4), // Valor
                      dr.GetBoolean(6) // Descontinuado
                     ));
             }
@@ -261,8 +261,8 @@ namespace ClassLabNu
                     dr.GetString(1), // Descricao
                     dr.GetString(2), // Unidade
                     dr.GetString(3), // CodBar
-                  dr.GetDouble(5), // Desconto
-                    dr.GetDouble(4), // Valor
+                dr.GetDouble(4), // Valor
+                    dr.GetDouble(5), // Desconto
                      dr.GetBoolean(6) // Descontinuado
                     ));
             }
@@ -301,8 +301,8 @@ namespace ClassLabNu
                     dr.GetString(1), // Descricao
                     dr.GetString(2), // Unidade
                     dr.GetString(3), // CodBar
-                  dr.GetDouble(5), // Desconto
-                    dr.GetDouble(4), // Valor
+                dr.GetDouble(4), // Valor
+                    dr.GetDouble(5), // Desconto
                      dr.GetBoolean(6) // Descontinuado
                     ));
             }
@@ -346,7 +346,7 @@ namespace ClassLabNu
                     dr.GetString(1), // Descricao
                     dr.GetString(2), // Unidade
                     dr.GetString(3), // CodBar
-                    dr.GetDouble(4), // Valor
+                dr.GetDouble(4), // Valor
                     dr.GetDouble(5), // Desconto
                      dr.GetBoolean(6) // Descontinuado
                     ));

@@ -200,8 +200,8 @@ namespace ComercialSys
                      txtNome.Text,
                      txtunidade.Text,
                      txtCodBar.Text,
-                     Convert.ToDouble(txtValor.Text),
                      Convert.ToDouble(txtDesconto.Text),
+                     Convert.ToDouble(txtValor.Text),
                      Convert.ToBoolean(chkDescontinuado.Checked)
                      );
 
@@ -210,11 +210,11 @@ namespace ComercialSys
 
                 MessageBox.Show($"Produto {produto.Id} inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Bloqueando campos
-                btnBloquear_Click(sender, e);
-
                 //Listando DataGrid
                 ListarProdutos();
+
+                // Bloqueando campos
+                btnBloquear_Click(sender, e);
             }
             catch (Exception)
             {
@@ -326,8 +326,8 @@ namespace ComercialSys
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Descricao; // Descricao
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaUnidade.Index].Value = i.Unidade; // Unidade
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaCodBar.Index].Value = i.Codbar; // CodBar
-                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaValor.Index].Value = i.Valor; // Valor
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaDesconto.Index].Value = i.Desconto; // Desconto
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaValor.Index].Value = i.Valor; // Valor
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[ColunaDescontinuado.Index].Value = i.Descontinuado; // Descontinuado
 
                     // Atributos
@@ -383,8 +383,8 @@ namespace ComercialSys
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Descricao; // Descricao
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaUnidade.Index].Value = i.Unidade; // Unidade
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaCodBar.Index].Value = i.Codbar; // CodBar
-                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaValor.Index].Value = i.Valor; // Valor
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaDesconto.Index].Value = i.Desconto; // Desconto
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaValor.Index].Value = i.Valor; // Valor
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[ColunaDescontinuado.Index].Value = i.Descontinuado; // Descontinuado
                 });
             }

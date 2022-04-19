@@ -104,9 +104,9 @@
             this.chkDescontinuado.Location = new System.Drawing.Point(536, 44);
             this.chkDescontinuado.Margin = new System.Windows.Forms.Padding(4);
             this.chkDescontinuado.Name = "chkDescontinuado";
-            this.chkDescontinuado.Size = new System.Drawing.Size(137, 23);
+            this.chkDescontinuado.Size = new System.Drawing.Size(144, 29);
             this.chkDescontinuado.TabIndex = 30;
-            this.chkDescontinuado.Text = "Descontinuado";
+            this.chkDescontinuado.Text = "Continuado";
             this.chkDescontinuado.UseVisualStyleBackColor = true;
             this.chkDescontinuado.Click += new System.EventHandler(this.chkDescontinuado_click);
             // 
@@ -669,6 +669,7 @@
             this.btnEditar.TabIndex = 22;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseSelectable = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // FormProduto
             // 

@@ -171,9 +171,9 @@ namespace ClassLabNu
             cmd.CommandText = $"alterar_produto";
 
             // Parametros
+            cmd.Parameters.AddWithValue("_id", Id);
             cmd.Parameters.AddWithValue("_descricao", Descricao);
             cmd.Parameters.AddWithValue("_unidade", Unidade);
-            cmd.Parameters.AddWithValue("_codbar", Codbar);
             cmd.Parameters.AddWithValue("_desconto", Desconto);
             cmd.Parameters.AddWithValue("_valor", Valor);
             cmd.Parameters.AddWithValue("_descontinuado", Descontinuado);

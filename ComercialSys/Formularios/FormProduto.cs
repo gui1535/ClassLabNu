@@ -61,8 +61,12 @@ namespace ComercialSys
             txtunidade.Text = "0";
             txtDesconto.Text = "0";
 
+            // Botao visiveis
             btnBloquear.Visible = false;
             btnDesbloquear.Visible = true;
+
+            // Listar DataGrid
+            ListarProdutos();
         }
 
         /// <summary>
@@ -81,7 +85,6 @@ namespace ComercialSys
                 btnInserir.Enabled = false;
                 txtNome.Enabled = true;
                 txtValor.Enabled = true;
-                txtCodBar.Enabled = true;
                 txtunidade.Enabled = true;
                 txtDesconto.Enabled = true;
                 chkDescontinuado.Enabled = true;
@@ -235,9 +238,21 @@ namespace ComercialSys
             if (txtIdPesq.Text == "")
             {
                 ListarProdutos();
+
+                // Limpando TextBox
+                txtId.Text = "0";
+                txtNome.Clear();
+                txtValor.Text = "0";
+                txtCodBar.Clear();
+                txtunidade.Text = "0";
+                txtDesconto.Text = "0";
             }
             else
             {
+                // Limpando TextBox Pesquisa
+                txtCodBarPesq.Clear();
+                txtValorPesq.Clear();
+
                 // Limpar Grid
                 GridProdutos.Rows.Clear();
 
@@ -257,15 +272,15 @@ namespace ComercialSys
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaValor.Index].Value = i.Valor; // Valor
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaDesconto.Index].Value = i.Desconto; // Desconto
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[ColunaDescontinuado.Index].Value = i.Descontinuado; // Descontinuado
+                                                                                                                  // Atributos
+                    txtId.Text = i.Id.ToString();
+                    txtNome.Text = i.Descricao;
+                    txtunidade.Text = i.Unidade;
+                    txtCodBar.Text = i.Codbar;
+                    txtValor.Text = i.Valor.ToString();
+                    txtDesconto.Text = i.Desconto.ToString();
+                    chkDescontinuado.Checked = i.Descontinuado;
                 });
-
-                // Atributos
-                txtId.Text = produto.Id.ToString();
-                txtNome.Text = produto.Descricao;
-                txtunidade.Text = produto.Unidade;
-                txtCodBar.Text = produto.Codbar;
-                txtValor.Text = produto.Valor.ToString();
-                txtDesconto.Text = produto.Desconto.ToString();
             }
         }
 
@@ -280,9 +295,21 @@ namespace ComercialSys
             if (txtCodBarPesq.Text == "")
             {
                 ListarProdutos();
+
+                // Limpando TextBox
+                txtId.Text = "0";
+                txtNome.Clear();
+                txtValor.Text = "0";
+                txtCodBar.Clear();
+                txtunidade.Text = "0";
+                txtDesconto.Text = "0";
             }
             else
             {
+                // Limpando TextBox Pesquisa
+                txtIdPesq.Clear();
+                txtValorPesq.Clear();
+
                 // Limpar Grid
                 GridProdutos.Rows.Clear();
 
@@ -303,15 +330,14 @@ namespace ComercialSys
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaDesconto.Index].Value = i.Desconto; // Desconto
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[ColunaDescontinuado.Index].Value = i.Descontinuado; // Descontinuado
 
+                    // Atributos
+                    txtId.Text = i.Id.ToString();
+                    txtNome.Text = i.Descricao;
+                    txtunidade.Text = i.Unidade;
+                    txtCodBar.Text = i.Codbar;
+                    txtValor.Text = i.Valor.ToString();
+                    txtDesconto.Text = i.Desconto.ToString();
                 });
-
-                // Atributos
-                txtId.Text = produto.Id.ToString();
-                txtNome.Text = produto.Descricao;
-                txtunidade.Text = produto.Unidade;
-                txtCodBar.Text = produto.Codbar;
-                txtValor.Text = produto.Valor.ToString();
-                txtDesconto.Text = produto.Desconto.ToString();
             }
         }
 
@@ -326,9 +352,21 @@ namespace ComercialSys
             if (txtValorPesq.Text == "")
             {
                 ListarProdutos();
+
+                // Limpando TextBox
+                txtId.Text = "0";
+                txtNome.Clear();
+                txtValor.Text = "0";
+                txtCodBar.Clear();
+                txtunidade.Text = "0";
+                txtDesconto.Text = "0";
             }
             else
             {
+                // Limpando TextBox Pesquisa
+                txtIdPesq.Clear();
+                txtCodBarPesq.Clear();
+
                 // Limpar Grid
                 GridProdutos.Rows.Clear();
 
@@ -349,14 +387,6 @@ namespace ComercialSys
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaDesconto.Index].Value = i.Desconto; // Desconto
                     GridProdutos.Rows[lista.IndexOf(i)].Cells[ColunaDescontinuado.Index].Value = i.Descontinuado; // Descontinuado
                 });
-
-                // Atributos
-                txtId.Text = produto.Id.ToString();
-                txtNome.Text = produto.Descricao;
-                txtunidade.Text = produto.Unidade;
-                txtCodBar.Text = produto.Codbar;
-                txtValor.Text = produto.Valor.ToString();
-                txtDesconto.Text = produto.Desconto.ToString();
             }
         }
 
@@ -388,6 +418,39 @@ namespace ComercialSys
                     chkDescontinuado.Checked = false;
                 }
             }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            // Objeto Produto
+            Produto produto = new Produto();
+
+            // Atributos do objeto
+            produto.Id = int.Parse(txtId.Text);
+            produto.Descricao = txtNome.Text;
+            produto.Valor = Convert.ToDouble(txtValor.Text);
+            produto.Unidade = txtunidade.Text;
+            produto.Desconto = Convert.ToDouble(txtDesconto.Text);
+            produto.Descontinuado = chkDescontinuado.Checked;
+
+            // Condição
+            if (produto.Alterar()) // Se cliente alterar for igual a TRUE
+            {
+                // Mensagem Box
+                MessageBox.Show("Produto alterado com sucesso!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else // Senão
+            {
+                // Mensagem Box
+                MessageBox.Show("Falha ao alterar o produto!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            //Listar DataGrid
+            ListarProdutos();
+
+            // BLoquear campos
+            btnBloquear_Click(sender, e);
         }
     }
 }

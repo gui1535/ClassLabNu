@@ -26,7 +26,7 @@ As técnicas e tecnologias utilizadas pra isso são:
 
 <!-- Tela de detalhes do produto -->
 
-![Detalhes](https://github.com/gui1535/ClassLabNu/blob/master/Img_Principal.png)
+<!-- ![Detalhes](https://github.com/gui1535/ClassLabNu/blob/master/Img_Principal.png) -->
 
 <!-- [Você pode conferir o resultado do desafio neste commit](https://github.com/alura-cursos/android-com-kotlin-personalizando-ui/commit/3188f27a627592715e7de62b6da450696e401f18). -->
 

@@ -195,25 +195,72 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- PROCEDURES CLIENTES
+-- PROCEDURES CAIXA
 -- -----------------------------------------------------
-
--- INSERIR CLIENTE --
 delimiter |
-create procedure cliente_inserir(
-_nome varchar (60),
-_cpf varchar (11),
-_email varchar(60)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `caixa_alterar`(
+_id int,
+_status_caixa varchar(32),
+_iduser int
 )
 begin
-insert into clientes(nome, cpf, email, datacad, ativo)
-values (_nome, _cpf, _email, default, default);
-select * from cliente where idcli = (select @@identity);
+	update caixas set status_caixa = _status_caixa, iduser = _iduser where idcx = _idcx;
 end
 |
--- ALTERAR CLIENTE --
+
 delimiter |
-create procedure alterar_cliente(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `caixa_inserir`(
+_data_abertura timestamp,
+_status_caixa varchar(32),
+_iduser int
+)
+begin
+	insert into caixas(data_abertura, status_caixa, iduser)
+	values (_data_abertura, _status_caixa, _iduser);
+	select * from caixas where idcx = (select @@identity);
+end
+|
+
+-- -----------------------------------------------------
+-- PROCEDURES PRODUTO
+-- -----------------------------------------------------
+
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `produto_alterar`(
+_id int,
+_descricao varchar (100),
+_unidade varchar (14),
+_codbar char(13),
+_desconto DECIMAL(10,2),
+_valor DECIMAL(10,2),
+_descontinuado bit
+)
+begin
+	update produtos set descricao = _descricao, unidade = _unidade, codbar = _codbar, desconto = _desconto, valor = _valor, descontinuado = _descontinuado where idnv = _id;
+end
+|
+
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pedido_inserir`(
+_data datetime,
+_status_ped varchar(10),
+_desconto decimal(10,2),
+_idcli int,
+_iduser int
+)
+begin
+	insert into pedidos (data, status_ped, _desconto, _idcli, _iduser)
+	values (_data,_status_ped, _desconto, _idcli, _iduser );
+	select * from pedidos where idped = (select @@identity);
+end
+|
+
+-- -----------------------------------------------------
+-- PROCEDURES CLIENTE
+-- -----------------------------------------------------
+
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `cliente_alterar`(
 _id int,
 _nome varchar (60),
 _email char(60),
@@ -224,42 +271,217 @@ begin
 end
 |
 
--- -----------------------------------------------------
--- PROCEDURES PRODUTOS
--- -----------------------------------------------------
-
--- INSERIR PRODUTO --
 delimiter |
-create procedure produto_inserir(
-_descricao varchar (100),
-_unidade varchar (14),
-_codbar char(13),
-_desconto DECIMAL(10,2),
-_valor DECIMAL(10,2)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `cliente_inserir`(
+_nome varchar (60),
+_cpf varchar (11),
+_email varchar(60)
 )
 begin
-insert into produtos(descricao, unidade, codbar, desconto, valor)
-values (_descricao, _unidade, _codbar, _desconto, _valor);
-select * from produtos where idprod = (select @@identity);
+insert into clientes(nome, cpf, email, datacad, ativo)
+values (_nome, _cpf, _email, default, default);
+select * from clientes where idcli = (select @@identity);
 end
 |
 
-
 -- -----------------------------------------------------
--- PROCEDURES USUARIOS
+-- PROCEDURES ITEMPEDIDO
 -- -----------------------------------------------------
 
--- INSERIR USUARIO --
 delimiter |
-create procedure usuario_inserir(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `itempedido_inserir`(
+_idped int,
+_idprod int,
+_quantidade decimal(10,2),
+_valor decimal(10,2),
+_desconto decimal(10,2)
+)
+begin
+	insert into itempedido(idped, idprod, quantidade,_valor, _desconto )
+	values (_idped, _idprod, _quantidade,_valor,_desconto  );
+end
+|
+
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `itempedido_alterar`(
+_idped int,
+_idprod int,
+_quantidade decimal(10,2),
+_valor decimal(10,2),
+_desconto decimal(10,2)
+)
+begin
+	update pedidos set idped = _idped, idprod = _idprod, quantidade = _quantidade, valor = _valor, desconto = _desconto where idped = _idped and idprod = _idprod;
+end
+|
+
+-- -----------------------------------------------------
+-- PROCEDURES NIVEL
+-- -----------------------------------------------------
+
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `nivel_inserir`(
+_id int,
+_nome varchar (45)
+)
+begin
+	insert into nivel (nome)
+	values (_nome);
+	select * from nivel where idnv = (select @@identity);
+end
+|
+
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `nivel_alterar`(
+_id int,
+_nome varchar (45)
+)
+begin
+	update nivel set nome = _nome where idnv = _id;
+end
+|
+
+-- -----------------------------------------------------
+-- PROCEDURES PAGAMENTO
+-- -----------------------------------------------------
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pagamento_alterar`(
+_id int,
+_valor decimal(10,2),
+_idvnd int,
+_idtipo int
+)
+begin
+	update pedidos set valor = _valor, idvnd = _idvnd, idtipo = _idtipo where idpag = _id;
+end
+|
+
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pagamento_inserir`(
+_valor decimal(10,2),
+_idvnd int,
+_idtipo int
+)
+begin
+	insert into pagamentos(valor, idvnd, idtipo)
+	values (_valor, _idvnd, _idtipo);
+	select * from pagamentos where idpag = (select @@identity);
+end
+|
+
+-- -----------------------------------------------------
+-- PROCEDURES PEDIDO
+-- -----------------------------------------------------
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pedido_alterar`(
+_id int,
+_status_ped varchar(10),
+_desconto decimal(10,2),
+_idcli int,
+_iduser int
+)
+begin
+	update pedidos set status_ped = _status_ped, desconto = _desconto, idcli = _idcli, iduser = _iduser where idped = _id;
+end
+|
+
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pedido_inserir`(
+_data datetime,
+_status_ped varchar(10),
+_desconto decimal(10,2),
+_idcli int,
+_iduser int
+)
+begin
+	insert into pedidos (data, status_ped, _desconto, _idcli, _iduser)
+	values (_data,_status_ped, _desconto, _idcli, _iduser );
+	select * from pedidos where idped = (select @@identity);
+end
+|
+-- -----------------------------------------------------
+-- PROCEDURES TIPOSPAG
+-- -----------------------------------------------------
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `tipospag_alterar`(
+_id int,
+_nome varchar(200),
+_sigla varchar(10)
+)
+begin
+	update tipospag set nome = _nome, sigla = _sigla where idtipo = _id;
+end
+|
+
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `tipospag_inserir`(
+_nome varchar(200),
+_sigla varchar(10)
+)
+begin
+	insert into tipospag(nome, sigla)
+	values (_nome, _sigla);
+	select * from tipospag where idtipo = (select @@identity);
+end
+|
+
+-- -----------------------------------------------------
+-- PROCEDURES USUARIO
+-- -----------------------------------------------------
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `usuario_alterar`(
+_id int,
 _nome varchar (60),
 _email varchar (60),
 _senha varchar (32),
-_nivel varchar (15)
+_idnv int
 )
 begin
-	insert into usuarios (nome, email, senha, nivel, ativo)
-	values (_nome, _email, (md5(_senha)), _nivel, default);
+	update usuarios set nome = _nome, email = _email, senha = (md5(_senha)), idnv = _idnv where iduser = _id;
+end
+|
+
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `usuario_inserir`(
+_nome varchar (60),
+_email varchar (60),
+_senha varchar (32),
+_idnv int
+)
+begin
+	insert into usuarios (nome, email, senha, idnv, ativo)
+	values (_nome, _email, (md5(_senha)), _idnv, default);
 	select * from usuarios where iduser = (select @@identity);
+end
+|
+
+-- -----------------------------------------------------
+-- PROCEDURES VENDA
+-- -----------------------------------------------------
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `venda_alterar`(
+_id int,
+_status_vnd varchar(15),
+_desconto decimal(10,2),
+_idcx int,
+_idped int
+)
+begin
+	update vendas set status_vnd = _status_vnd, desconto = _desconto, idcx = _idcx, idped = _idped where idvnd = _id;
+end
+|
+
+delimiter |
+CREATE DEFINER=`root`@`localhost` PROCEDURE `venda_inserir`(
+_data_vnd timestamp,
+_status_vnd varchar(15),
+_desconto decimal(10,2),
+_idcx int,
+_idped int
+)
+begin
+	insert into vendas(data_vnd, status_vnd, desconto, idcx, idped)
+	values (_data_vnd, _status_vnd,_desconto,_idcx ,_idped );
+	select * from vendas where idvnd = (select @@identity);
 end
 |

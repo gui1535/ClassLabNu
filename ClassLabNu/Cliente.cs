@@ -185,29 +185,40 @@ namespace ClassLabNu
         /// Metodo para consultar cliente por ID
         /// </summary>
         /// <param name="_id">int</param>
-        public void ConsultarPorId(int _id)
+        public List<Cliente> ListarPorId(int _id)
         {
 
-            // Abre conexao com banco
-            var cmd = Banco.Abrir();
+            // Nova lista
+            List<Cliente> lista = new List<Cliente>();
 
-            // Comandos SQL
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"select * from clientes where idcli = {_id}";
+            // Abrir conexão
+            var banco = Banco.Abrir();
 
-            // Var para leitura
-            var dr = cmd.ExecuteReader();
+            // Comando
+            banco.CommandType = CommandType.Text;
+            banco.CommandText = $"select * from clientes where idcli = {_id}";
+
+            // Var para Consulta
+            var dr = banco.ExecuteReader();
 
             // Consulta
             while (dr.Read())
             {
-                Id = dr.GetInt32(0);
-                Nome = dr.GetString(1);
-                Cpf = dr.GetString(2);
-                Email = dr.GetString(3);
-                dataCad = dr.GetString(4);
-                Ativo = dr.GetBoolean(5);
+                lista.Add(new Cliente(
+                    Convert.ToInt32(dr.GetValue(0)), // ID
+                    dr.GetString(1), // Nome
+                    dr.GetString(2), // Cpf
+                    dr.GetString(3), // Email
+                    dr.GetString(4), // Datacad
+                    dr.GetBoolean(5) // Ativo
+                    ));
             }
+
+            // Fecha Conexão
+            banco.Connection.Close();
+
+            // Retornando lista
+            return lista;
 
         }
 
@@ -215,56 +226,78 @@ namespace ClassLabNu
         /// Metodo para consultar cliente por CPF
         /// </summary>
         /// <param name="_cpf">string</param>
-        public void ConsultarPorCpf(string _cpf)
+        public List<Cliente> ListarPorCpf(string _cpf)
         {
-            // Abre conexao com banco
-            var cmd = Banco.Abrir();
+            // Nova lista
+            List<Cliente> lista = new List<Cliente>();
 
-            // Comandos SQL
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = $"select * from clientes where cpf = {_cpf}";
+            // Abrir conexão
+            var banco = Banco.Abrir();
 
-            // Var para leitura
-            var dr = cmd.ExecuteReader();
+            // Comando
+            banco.CommandType = CommandType.Text;
+            banco.CommandText = $"select * from clientes where cpf = {_cpf}";
+
+            // Var para Consulta
+            var dr = banco.ExecuteReader();
 
             // Consulta
             while (dr.Read())
             {
-                Id = dr.GetInt32(0);
-                Nome = dr.GetString(1);
-                Cpf = dr.GetString(2);
-                Email = dr.GetString(3);
-                dataCad = dr.GetString(4);
-                Ativo = dr.GetBoolean(5);
+                lista.Add(new Cliente(
+                    Convert.ToInt32(dr.GetValue(0)), // ID
+                    dr.GetString(1), // Nome
+                    dr.GetString(2), // Cpf
+                    dr.GetString(3), // Email
+                    dr.GetString(4), // Datacad
+                    dr.GetBoolean(5) // Ativo
+                    ));
             }
+
+            // Fecha Conexão
+            banco.Connection.Close();
+
+            // Retornando lista
+            return lista;
         }
 
         /// <summary>
         /// Metodo para consultar cliente por Nome
         /// </summary>
         /// <param name="_nome">string</param>
-        public void ConsultarPorNome(string _nome)
+        public List<Cliente> ListarPorNome(string _nome)
         {
-            // Abre conexao com banco
-            var cmd = Banco.Abrir();
+            // Nova lista
+            List<Cliente> lista = new List<Cliente>();
 
-            // Comandos SQL
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = $"select * from clientes where nome = '{_nome}'";
+            // Abrir conexão
+            var banco = Banco.Abrir();
 
-            // Var para leitura
-            var dr = cmd.ExecuteReader();
+            // Comando
+            banco.CommandType = CommandType.Text;
+            banco.CommandText = $"select * from clientes where nome = '{_nome}'";
+
+            // Var para Consulta
+            var dr = banco.ExecuteReader();
 
             // Consulta
             while (dr.Read())
             {
-                Id = dr.GetInt32(0);
-                Nome = dr.GetString(1);
-                Cpf = dr.GetString(2);
-                Email = dr.GetString(3);
-                dataCad = dr.GetString(4);
-                Ativo = dr.GetBoolean(5);
+                lista.Add(new Cliente(
+                    Convert.ToInt32(dr.GetValue(0)), // ID
+                    dr.GetString(1), // Nome
+                    dr.GetString(2), // Cpf
+                    dr.GetString(3), // Email
+                    dr.GetString(4), // Datacad
+                    dr.GetBoolean(5) // Ativo
+                    ));
             }
+
+            // Fecha Conexão
+            banco.Connection.Close();
+
+            // Retornando lista
+            return lista;
         }
 
         /// <summary>

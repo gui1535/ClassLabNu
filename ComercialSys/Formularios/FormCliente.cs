@@ -90,6 +90,12 @@ namespace ComercialSys
             txtCpf.Enabled = false;
             chkAtivo.Enabled = false;
 
+            // Limpando TextBox
+            txtId.Text = "0";
+            txtNome.Clear();
+            txtEmail.Clear();
+            txtCpf.Clear();
+
             btnBloquear.Visible = false;
             btnDesbloquear.Visible = true;
         }
@@ -304,27 +310,48 @@ namespace ComercialSys
             // Verificando se o valor a pesquisar é vazio
             if (txtPesqNome.Text == "")
             {
+                ListarDataGrid();
+
+                // Limpando TextBox
+                txtId.Text = "0";
+                txtNome.Clear();
+                txtEmail.Clear();
+                txtCpf.Clear();
             }
             else
             {
-                // Objeto Cliente
+                // Limpando TextBox Pesquisa
+                txtIdPesq.Clear();
+                txtCpfPsq.Clear();
+
+                // Limpar Grid
+                GridCliente.Rows.Clear();
+
+                // Novo objeto Cliente
                 Cliente cliente = new Cliente();
 
-                // Metodo Consulta por Nome
-                cliente.ConsultarPorNome(Convert.ToString(txtPesqNome.Text));
+                // Var para Listar clientes
+                var lista = cliente.ListarPorNome(txtPesqNome.Text);
+                lista.ForEach(i =>
+                {
 
-                // Atributos
-                txtId.Text = Convert.ToString(cliente.Id);
-                txtNome.Text = cliente.Nome;
-                txtEmail.Text = cliente.Email;
-                txtCpf.Text = cliente.Cpf;
-                chkAtivo.Checked = cliente.Ativo;
-                txtDataCad.Text = cliente.dataCad;
+                    // Linhas 
+                    GridCliente.Rows.Add();
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // Text -> ID
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Text -> Nome
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Text -> Email
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // Text -> CPF
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // Text -> DataCad
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
+                                                                                                 // Atributos
+                    txtId.Text = i.Id.ToString();
+                    txtNome.Text = i.Nome;
+                    txtDataCad.Text = i.dataCad;
+                    txtEmail.Text = i.Email;
+                    txtCpf.Text = i.Cpf;
+                    chkAtivo.Checked = i.Ativo;
+                });
             }
-
-            // Limpando as TextBox de pesquisa
-            txtIdPesq.Clear();
-            txtCpfPsq.Clear();
 
         }
 
@@ -338,27 +365,48 @@ namespace ComercialSys
             // Verificando se o valor a pesquisar é vazio
             if (txtCpfPsq.Text == "")
             {
+                ListarDataGrid();
+
+                // Limpando TextBox
+                txtId.Text = "0";
+                txtNome.Clear();
+                txtEmail.Clear();
+                txtCpf.Clear();
             }
             else
             {
-                // Objeto Cliente
+                // Limpando TextBox Pesquisa
+                txtIdPesq.Clear();
+                txtPesqNome.Clear();
+
+                // Limpar Grid
+                GridCliente.Rows.Clear();
+
+                // Novo objeto Cliente
                 Cliente cliente = new Cliente();
 
-                // Metodo Consulta por CPF
-                cliente.ConsultarPorCpf(Convert.ToString(txtCpfPsq.Text));
+                // Var para Listar clientes
+                var lista = cliente.ListarPorCpf(txtCpfPsq.Text);
+                lista.ForEach(i =>
+                {
 
-                // Atributos
-                txtId.Text = Convert.ToString(cliente.Id);
-                txtNome.Text = cliente.Nome;
-                txtEmail.Text = cliente.Email;
-                txtCpf.Text = cliente.Cpf;
-                chkAtivo.Checked = cliente.Ativo;
-                txtDataCad.Text = cliente.dataCad;
+                    // Linhas 
+                    GridCliente.Rows.Add();
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // Text -> ID
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Text -> Nome
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Text -> Email
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // Text -> CPF
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // Text -> DataCad
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
+                                                                                                 // Atributos
+                    txtId.Text = i.Id.ToString();
+                    txtNome.Text = i.Nome;
+                    txtDataCad.Text = i.dataCad;
+                    txtEmail.Text = i.Email;
+                    txtCpf.Text = i.Cpf;
+                    chkAtivo.Checked = i.Ativo;
+                });
             }
-
-            // Limpando as TextBox de pesquisa
-            txtIdPesq.Clear();
-            txtPesqNome.Clear();
         }
 
         /// <summary>
@@ -371,26 +419,48 @@ namespace ComercialSys
             // Verificando se o valor a pesquisar é vazio
             if (txtIdPesq.Text == "")
             {
+                ListarDataGrid();
+
+                // Limpando TextBox
+                txtId.Text = "0";
+                txtNome.Clear();
+                txtEmail.Clear();
+                txtCpf.Clear();
             }
             else
             {
-                // Objeto Cliente
+                // Limpando TextBox Pesquisa
+                txtCpfPsq.Clear();
+                txtPesqNome.Clear();
+
+                // Limpar Grid
+                GridCliente.Rows.Clear();
+
+                // Novo objeto Cliente
                 Cliente cliente = new Cliente();
 
-                // Metodo Consulta por ID
-                cliente.ConsultarPorId(int.Parse(txtIdPesq.Text));
+                // Var para Listar clientes
+                var lista = cliente.ListarPorId(int.Parse(txtIdPesq.Text));
+                lista.ForEach(i =>
+                {
 
-                // Atributos
-                txtId.Text = Convert.ToString(cliente.Id);
-                txtNome.Text = cliente.Nome;
-                txtEmail.Text = cliente.Email;
-                txtCpf.Text = cliente.Cpf;
-                chkAtivo.Checked = cliente.Ativo;
-                txtDataCad.Text = cliente.dataCad;
-
-                btnInserir.Enabled = false;
+                    // Linhas 
+                    GridCliente.Rows.Add();
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // Text -> ID
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Text -> Nome
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Text -> Email
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // Text -> CPF
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // Text -> DataCad
+                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
+                                                                                                 // Atributos
+                    txtId.Text = i.Id.ToString();
+                    txtNome.Text = i.Nome;
+                    txtDataCad.Text = i.dataCad;
+                    txtEmail.Text = i.Email;
+                    txtCpf.Text = i.Cpf;
+                    chkAtivo.Checked = i.Ativo;
+                });
             }
-
 
         }
 

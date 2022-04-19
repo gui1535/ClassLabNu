@@ -1,5 +1,5 @@
 
-  ![Thumbnail GitHub](https://www.marceloortega.com.br/images/artigos/647ec3c9-negociacao-de-alto-impacto.jpg) 
+<!--   ![Thumbnail GitHub](https://www.marceloortega.com.br/images/artigos/647ec3c9-negociacao-de-alto-impacto.jpg)  -->
 
 
 ![](https://img.shields.io/github/license/alura-cursos/android-com-kotlin-personalizando-ui)

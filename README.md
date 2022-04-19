@@ -1,4 +1,6 @@
-<!-- ![Thumbnail GitHub](https://user-images.githubusercontent.com/8989346/123294187-ff901300-d4ea-11eb-963c-ac1561afac6f.png) -->
+
+  ![Thumbnail GitHub](https://www.marceloortega.com.br/images/artigos/647ec3c9-negociacao-de-alto-impacto.jpg) 
+
 
 ![](https://img.shields.io/github/license/alura-cursos/android-com-kotlin-personalizando-ui)
 
@@ -15,10 +17,10 @@ No momento, o sistema lista, cadastra e armazena em um banco de dados relacional
 
 As técnicas e tecnologias utilizadas pra isso são:
 
-- `MetroFramework`: Deixar visual do sistema mais atrativo
-- `DataGridView`: listagem de produtos, clientes e usuarios de forma mais interativa
+- `MetroFramework`: Deixar visual do sistema mais moderno
+- `DataGridView`: Listagem de produtos, clientes e usuarios de forma mais interativa
 - `Procedures`: Facilitar a manipulação de dados
-- `Biblioteca de classes`: Facilitar a reusabilidade em sistemas futuros
+- `Biblioteca de classes`: Prover a reusabilidade em sistemas futuros
 
 <!-- ## 🎯 Desafio -->
 

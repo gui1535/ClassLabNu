@@ -45,10 +45,11 @@
             this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnBloquear = new System.Windows.Forms.Button();
+            this.txtDataCad = new MetroFramework.Controls.MetroDateTime();
             this.btnDesbloquear = new System.Windows.Forms.Button();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.chkAtivo = new System.Windows.Forms.CheckBox();
+            this.btnBloquear = new System.Windows.Forms.Button();
             this.btnEditar = new MetroFramework.Controls.MetroButton();
             this.btnInserir = new MetroFramework.Controls.MetroButton();
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
@@ -61,7 +62,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.FileDialogImg = new System.Windows.Forms.OpenFileDialog();
             this.btnListar = new MetroFramework.Controls.MetroButton();
-            this.txtDataCad = new MetroFramework.Controls.MetroDateTime();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gpBoxPesq.SuspendLayout();
@@ -153,7 +153,7 @@
             this.txtCpf.CustomButton.Visible = false;
             this.txtCpf.Enabled = false;
             this.txtCpf.Lines = new string[0];
-            this.txtCpf.Location = new System.Drawing.Point(333, 119);
+            this.txtCpf.Location = new System.Drawing.Point(333, 140);
             this.txtCpf.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpf.MaxLength = 12;
             this.txtCpf.Name = "txtCpf";
@@ -186,7 +186,7 @@
             this.txtEmail.CustomButton.Visible = false;
             this.txtEmail.Enabled = false;
             this.txtEmail.Lines = new string[0];
-            this.txtEmail.Location = new System.Drawing.Point(7, 119);
+            this.txtEmail.Location = new System.Drawing.Point(7, 140);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.MaxLength = 60;
             this.txtEmail.Name = "txtEmail";
@@ -228,7 +228,7 @@
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(333, 95);
+            this.metroLabel3.Location = new System.Drawing.Point(333, 116);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(33, 20);
@@ -239,7 +239,7 @@
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(7, 95);
+            this.metroLabel4.Location = new System.Drawing.Point(7, 116);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(46, 20);
@@ -344,19 +344,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
             // 
-            // btnBloquear
+            // txtDataCad
             // 
-            this.btnBloquear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBloquear.BackgroundImage")));
-            this.btnBloquear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBloquear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBloquear.FlatAppearance.BorderSize = 0;
-            this.btnBloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBloquear.Location = new System.Drawing.Point(516, 110);
-            this.btnBloquear.Name = "btnBloquear";
-            this.btnBloquear.Size = new System.Drawing.Size(44, 49);
-            this.btnBloquear.TabIndex = 27;
-            this.btnBloquear.UseVisualStyleBackColor = true;
-            this.btnBloquear.Click += new System.EventHandler(this.btnBloquear_Click);
+            this.txtDataCad.Enabled = false;
+            this.txtDataCad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtDataCad.Location = new System.Drawing.Point(333, 55);
+            this.txtDataCad.MinimumSize = new System.Drawing.Size(0, 30);
+            this.txtDataCad.Name = "txtDataCad";
+            this.txtDataCad.Size = new System.Drawing.Size(156, 30);
+            this.txtDataCad.TabIndex = 28;
             // 
             // btnDesbloquear
             // 
@@ -365,7 +361,7 @@
             this.btnDesbloquear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesbloquear.FlatAppearance.BorderSize = 0;
             this.btnDesbloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesbloquear.Location = new System.Drawing.Point(516, 110);
+            this.btnDesbloquear.Location = new System.Drawing.Point(519, 116);
             this.btnDesbloquear.Name = "btnDesbloquear";
             this.btnDesbloquear.Size = new System.Drawing.Size(44, 49);
             this.btnDesbloquear.TabIndex = 26;
@@ -388,13 +384,29 @@
             this.chkAtivo.AutoSize = true;
             this.chkAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkAtivo.Enabled = false;
-            this.chkAtivo.Location = new System.Drawing.Point(503, 55);
+            this.chkAtivo.Location = new System.Drawing.Point(505, 55);
             this.chkAtivo.Margin = new System.Windows.Forms.Padding(4);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(77, 25);
             this.chkAtivo.TabIndex = 17;
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
+            this.chkAtivo.CheckedChanged += new System.EventHandler(this.chkAtivo_CheckedChanged);
+            this.chkAtivo.Click += new System.EventHandler(this.chkAtivo_Click);
+            // 
+            // btnBloquear
+            // 
+            this.btnBloquear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBloquear.BackgroundImage")));
+            this.btnBloquear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBloquear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBloquear.FlatAppearance.BorderSize = 0;
+            this.btnBloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBloquear.Location = new System.Drawing.Point(519, 116);
+            this.btnBloquear.Name = "btnBloquear";
+            this.btnBloquear.Size = new System.Drawing.Size(44, 49);
+            this.btnBloquear.TabIndex = 27;
+            this.btnBloquear.UseVisualStyleBackColor = true;
+            this.btnBloquear.Click += new System.EventHandler(this.btnBloquear_Click);
             // 
             // btnEditar
             // 
@@ -592,16 +604,6 @@
             this.btnListar.UseSelectable = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click_1);
             // 
-            // txtDataCad
-            // 
-            this.txtDataCad.Enabled = false;
-            this.txtDataCad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtDataCad.Location = new System.Drawing.Point(333, 55);
-            this.txtDataCad.MinimumSize = new System.Drawing.Size(0, 30);
-            this.txtDataCad.Name = "txtDataCad";
-            this.txtDataCad.Size = new System.Drawing.Size(156, 30);
-            this.txtDataCad.TabIndex = 28;
-            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -614,6 +616,7 @@
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCliente";
             this.Padding = new System.Windows.Forms.Padding(26, 79, 26, 26);

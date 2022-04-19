@@ -24,62 +24,92 @@ namespace ComercialSys
 
         }
 
-        // Liberar Campos -----------------------------------------------------------------------------------------------------------
-
         /// <summary>
-        /// Metodo para liberar todos os campos
+        /// Limpar campos de pesquisas
         /// </summary>
-        private void LiberarCampos()
+        private void LimpaCampoPesquisa()
         {
-            txtNome.Enabled = true;
-            txtCodBar.Enabled = true;
-            txtunidade.Enabled = true;
-            txtDesconto.Enabled = true;
-            txtValor.Enabled = true;
+            // Limpar campos de pesquisa
+            txtIdPesq.Clear();
+            txtValorPesq.Clear();
+            txtCodBarPesq.Clear();
         }
 
         /// <summary>
-        /// Botao para liberar campos
+        /// Bloquear campos para inserir/editar cliente
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnBloq_Click(object sender, EventArgs e)
+        private void btnBloquear_Click(object sender, EventArgs e)
         {
-            btnBloq.Visible = false;
-            btnDesbloq.Visible = true;
+            // Habilitando / Desabilitando campos
+            gpBoxPesq.Enabled = true;
             btnEditar.Enabled = false;
             btnInserir.Enabled = false;
-            BloquearCampos();
-        }
-
-        // Bloquear Campos -----------------------------------------------------------------------------------------------------------
-
-        /// <summary>
-        /// Metodo para bloquear campos
-        /// </summary>
-        private void BloquearCampos()
-        {
             txtNome.Enabled = false;
+            txtValor.Enabled = false;
             txtCodBar.Enabled = false;
             txtunidade.Enabled = false;
             txtDesconto.Enabled = false;
-            txtValor.Enabled = false;
+            chkDescontinuado.Enabled = false;
+
+            // Limpando TextBox
+            txtId.Text = "0";
+            txtNome.Clear();
+            txtValor.Text = "0";
+            txtCodBar.Clear();
+            txtunidade.Text = "0";
+            txtDesconto.Text = "0";
+
+            btnBloquear.Visible = false;
+            btnDesbloquear.Visible = true;
         }
 
         /// <summary>
-        /// Botao para bloquear campos
+        /// Desbloquear campos para inserir/editar produto
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDesbloq_Click(object sender, EventArgs e)
+        private void btnDesbloquear_Click(object sender, EventArgs e)
         {
-            btnDesbloq.Visible = false;
-            btnBloq.Visible = true;
-            btnEditar.Enabled = true;
-            btnInserir.Enabled = true;
-            LiberarCampos();
-        }
+            // Verificar se vai habilitar o botao EDITAR ou não
+            if (Convert.ToInt32(txtId.Text) > 0)
+            {
+                // Habilitando / Desabilitando campos
+                gpBoxPesq.Enabled = false;
+                btnEditar.Enabled = true;
+                btnInserir.Enabled = false;
+                txtNome.Enabled = true;
+                txtValor.Enabled = true;
+                txtCodBar.Enabled = true;
+                txtunidade.Enabled = true;
+                txtDesconto.Enabled = true;
+                chkDescontinuado.Enabled = true;
 
+                // Limpar campos de pesquisa
+                LimpaCampoPesquisa();
+            }
+            else if (Convert.ToInt32(txtId.Text) == 0)
+            {
+                // Habilitando / Desabilitando campos
+                gpBoxPesq.Enabled = false;
+                btnEditar.Enabled = false;
+                btnInserir.Enabled = true;
+                txtNome.Enabled = true;
+                txtValor.Enabled = true;
+                txtCodBar.Enabled = true;
+                txtunidade.Enabled = true;
+                txtDesconto.Enabled = true;
+                chkDescontinuado.Enabled = true;
+                chkDescontinuado.Checked = true;
+
+                // Limpar campos de pesquisa
+                LimpaCampoPesquisa();
+            }
+
+            btnDesbloquear.Visible = false;
+            btnBloquear.Visible = true;
+        }
         // Listar Produtos ---------------------------------------------------------------------------------------------------------------
 
         /// <summary>
@@ -108,23 +138,6 @@ namespace ComercialSys
                 GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaDesconto.Index].Value = i.Desconto; // Desconto
                 GridProdutos.Rows[lista.IndexOf(i)].Cells[ColunaDescontinuado.Index].Value = i.Descontinuado; // Descontinuado
 
-
-                // Verificação para Ativo ou Inativo
-                if ((i.Descontinuado == true))
-                {
-
-                    // Se Ativo for igual a 'True' -> 1
-                    GridProdutos.Rows[lista.IndexOf(i)].Cells[ColunaDescontinuado.Index].Value = "Continuado"; // Descontinuado
-
-                }
-                else if (i.Descontinuado == false)
-                {
-
-                    // Se Ativo for igual a 'False' -> 0
-                    GridProdutos.Rows[lista.IndexOf(i)].Cells[ColunaDescontinuado.Index].Value = "Descontinuado"; // Descontinuado
-
-                }
-
             });
         }
 
@@ -136,29 +149,25 @@ namespace ComercialSys
         private void GridProdutos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // Variaveis para objeto Produto
-            int id;
-            string unidade, codbar, nome;
-            double valor, desconto;
+            Produto PAtributos = new Produto();
 
             // Valores para variaveis
-            id = Convert.ToInt32(GridProdutos["colunaId", e.RowIndex].Value);
-            nome = Convert.ToString(GridProdutos["colunaNome", e.RowIndex].Value);
-            unidade = Convert.ToString(GridProdutos["colunaUnidade", e.RowIndex].Value);
-            codbar = Convert.ToString(GridProdutos["colunaCodBar", e.RowIndex].Value);
-            valor = Convert.ToInt32(GridProdutos["colunaValor", e.RowIndex].Value);
-            desconto = Convert.ToInt32(GridProdutos["colunaDesconto", e.RowIndex].Value);
-
-
-            // Objeto Produto
-            Produto produto = new Produto(id, nome, unidade, codbar, valor, desconto);
+            PAtributos.Id = Convert.ToInt32(GridProdutos["colunaId", e.RowIndex].Value);
+            PAtributos.Descricao = Convert.ToString(GridProdutos["colunaNome", e.RowIndex].Value);
+            PAtributos.Unidade = Convert.ToString(GridProdutos["colunaUnidade", e.RowIndex].Value);
+            PAtributos.Codbar = Convert.ToString(GridProdutos["colunaCodBar", e.RowIndex].Value);
+            PAtributos.Valor = Convert.ToInt32(GridProdutos["colunaValor", e.RowIndex].Value);
+            PAtributos.Desconto = Convert.ToInt32(GridProdutos["colunaDesconto", e.RowIndex].Value);
+            PAtributos.Descontinuado = Convert.ToBoolean(GridProdutos["ColunaDescontinuado", e.RowIndex].Value);
 
             // Atributos
-            txtId.Text = produto.Id.ToString();
-            txtNome.Text = produto.Descricao;
-            txtunidade.Text = produto.Unidade;
-            txtCodBar.Text = produto.Codbar;
-            txtValor.Text = produto.Valor.ToString();
-            txtDesconto.Text = produto.Desconto.ToString();
+            txtId.Text = PAtributos.Id.ToString();
+            txtNome.Text = PAtributos.Descricao;
+            txtunidade.Text = PAtributos.Unidade;
+            txtCodBar.Text = PAtributos.Codbar;
+            txtValor.Text = PAtributos.Valor.ToString();
+            txtDesconto.Text = PAtributos.Desconto.ToString();
+            chkDescontinuado.Checked = PAtributos.Descontinuado;
         }
 
         /// <summary>
@@ -181,19 +190,40 @@ namespace ComercialSys
         /// <param name="e"></param>
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            // Objeto Produto
-            Produto p = new Produto(
-                 txtNome.Text,
-                 txtunidade.Text,
-                 txtCodBar.Text,
-                 Convert.ToDouble(txtValor.Text),
-                 Convert.ToDouble(txtDesconto.Text)
-                 );
-            p.Inserir(); ;
+            try
+            {
+                // Objeto Produto
+                Produto produto = new Produto(
+                     txtNome.Text,
+                     txtunidade.Text,
+                     txtCodBar.Text,
+                     Convert.ToDouble(txtValor.Text),
+                     Convert.ToDouble(txtDesconto.Text),
+                     Convert.ToBoolean(chkDescontinuado.Checked)
+                     );
+
+                // Inserindo produtoo
+                produto.Inserir();
+
+                MessageBox.Show($"Produto {produto.Id} inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Bloqueando campos
+                btnBloquear_Click(sender, e);
+
+                //Listando DataGrid
+                ListarProdutos();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
         }
 
         // Pesquisar Produtos ---------------------------------------------------------------------------------------------------------------
-        
+
         /// <summary>
         /// Pesquisar produtos por ID
         /// </summary>
@@ -204,14 +234,30 @@ namespace ComercialSys
             // Verificando se o valor a pesquisar é vazio
             if (txtIdPesq.Text == "")
             {
+                ListarProdutos();
             }
             else
             {
-                // Objeto Cliente
+                // Limpar Grid
+                GridProdutos.Rows.Clear();
+
+                // Novo objeto Cliente
                 Produto produto = new Produto();
 
-                // Metodo Consulta por ID
-                produto.ConsultarPorId(int.Parse(txtIdPesq.Text));
+                // Var para Listar clientes
+                var lista = produto.ListarPorId(int.Parse(txtIdPesq.Text));
+                lista.ForEach(i =>
+                {
+                    // Linhas 
+                    GridProdutos.Rows.Add();
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // ID
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Descricao; // Descricao
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaUnidade.Index].Value = i.Unidade; // Unidade
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaCodBar.Index].Value = i.Codbar; // CodBar
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaValor.Index].Value = i.Valor; // Valor
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaDesconto.Index].Value = i.Desconto; // Desconto
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[ColunaDescontinuado.Index].Value = i.Descontinuado; // Descontinuado
+                });
 
                 // Atributos
                 txtId.Text = produto.Id.ToString();
@@ -221,10 +267,6 @@ namespace ComercialSys
                 txtValor.Text = produto.Valor.ToString();
                 txtDesconto.Text = produto.Desconto.ToString();
             }
-
-            // Limpar Campos
-            txtCodBarPesq.Clear();
-            txtValorPesq.Clear();
         }
 
         /// <summary>
@@ -237,27 +279,40 @@ namespace ComercialSys
             // Verificando se o valor a pesquisar é vazio
             if (txtCodBarPesq.Text == "")
             {
+                ListarProdutos();
             }
             else
             {
-                // Objeto Cliente
+                // Limpar Grid
+                GridProdutos.Rows.Clear();
+
+                // Novo objeto Cliente
                 Produto produto = new Produto();
 
-                // Metodo Consulta por CodBar
-                produto.ConsultarPorCodbar(Convert.ToString(txtCodBarPesq.Text));
+                // Var para Listar clientes
+                var lista = produto.ListarPorCodbar(Convert.ToString(txtCodBarPesq.Text));
+                lista.ForEach(i =>
+                {
+                    // Linhas 
+                    GridProdutos.Rows.Add();
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // ID
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Descricao; // Descricao
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaUnidade.Index].Value = i.Unidade; // Unidade
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaCodBar.Index].Value = i.Codbar; // CodBar
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaValor.Index].Value = i.Valor; // Valor
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaDesconto.Index].Value = i.Desconto; // Desconto
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[ColunaDescontinuado.Index].Value = i.Descontinuado; // Descontinuado
+
+                });
 
                 // Atributos
                 txtId.Text = produto.Id.ToString();
                 txtNome.Text = produto.Descricao;
                 txtunidade.Text = produto.Unidade;
                 txtCodBar.Text = produto.Codbar;
-                txtValor.Text = Convert.ToString(produto.Valor);
-                txtDesconto.Text = Convert.ToString(produto.Desconto.ToString());
+                txtValor.Text = produto.Valor.ToString();
+                txtDesconto.Text = produto.Desconto.ToString();
             }
-
-            // Limpar Campos
-            txtIdPesq.Clear();
-            txtValorPesq.Clear();
         }
 
         /// <summary>
@@ -270,14 +325,30 @@ namespace ComercialSys
             // Verificando se o valor a pesquisar é vazio
             if (txtValorPesq.Text == "")
             {
+                ListarProdutos();
             }
             else
             {
-                // Objeto Cliente
+                // Limpar Grid
+                GridProdutos.Rows.Clear();
+
+                // Novo objeto Cliente
                 Produto produto = new Produto();
 
-                // Metodo Consulta por Valor
-                produto.ConsultarPorValor(Convert.ToDouble(txtValorPesq.Text));
+                // Var para Listar clientes
+                var lista = produto.ListarPorValor(Convert.ToDouble(txtValorPesq.Text));
+                lista.ForEach(i =>
+                {
+                    // Linhas 
+                    GridProdutos.Rows.Add();
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // ID
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Descricao; // Descricao
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaUnidade.Index].Value = i.Unidade; // Unidade
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaCodBar.Index].Value = i.Codbar; // CodBar
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaValor.Index].Value = i.Valor; // Valor
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[colunaDesconto.Index].Value = i.Desconto; // Desconto
+                    GridProdutos.Rows[lista.IndexOf(i)].Cells[ColunaDescontinuado.Index].Value = i.Descontinuado; // Descontinuado
+                });
 
                 // Atributos
                 txtId.Text = produto.Id.ToString();
@@ -287,10 +358,36 @@ namespace ComercialSys
                 txtValor.Text = produto.Valor.ToString();
                 txtDesconto.Text = produto.Desconto.ToString();
             }
+        }
 
-            // Limpar Campos
-            txtIdPesq.Clear();
-            txtCodBarPesq.Clear();
+        private void chkDescontinuado_click(object sender, EventArgs e)
+        {
+            // Se o usuario clicar no checkbox que esta em false
+            if (chkDescontinuado.Checked == false)
+            {
+                // Confirmando certeza do usuario
+                if (MessageBox.Show("Você tem certeza que deseja descontinuar o produto?", "SysComercial", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    chkDescontinuado.Checked = false;
+                }
+                else
+                {
+                    chkDescontinuado.Checked = true;
+                }
+            }
+            // Se o usuario clicar no checkbox que esta em true
+            else if (chkDescontinuado.Checked == true)
+            {
+                // Confirmando certeza do usuario
+                if (MessageBox.Show("Você tem certeza que deseja continuar o produto?", "SysComercial", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    chkDescontinuado.Checked = true;
+                }
+                else
+                {
+                    chkDescontinuado.Checked = false;
+                }
+            }
         }
     }
 }

@@ -162,6 +162,7 @@ namespace ClassLabNu
             cmd.Parameters.AddWithValue("_id", Id);
             cmd.Parameters.AddWithValue("_nome", Nome);
             cmd.Parameters.AddWithValue("_email", Email);
+            cmd.Parameters.AddWithValue("_ativo", Ativo);
 
             // Variavel para receber retorno
             int retorna = cmd.ExecuteNonQuery();

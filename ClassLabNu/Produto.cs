@@ -50,6 +50,25 @@ namespace ClassLabNu
         /// <summary>
         /// Construtor para o Produto
         /// </summary>
+        /// <param name="descricao">VARCHAR(100)</param>
+        /// <param name="unidade">VARCHAR(14)</param>
+        /// <param name="codbar">CHAR(13)</param>
+        /// <param name="valor">DOUBLE</param>
+        /// <param name="desconto">DOUBLE</param>
+        /// <param name="descontinuado">BIT(1)</param>
+        public Produto(string descricao, string unidade, string codbar, double valor, double desconto, bool descontinuado)
+        {
+            this.Descricao = descricao;
+            this.Unidade = unidade;
+            this.Codbar = codbar;
+            this.Valor = valor;
+            this.Desconto = desconto;
+            this.Descontinuado = descontinuado;
+        }
+
+        /// <summary>
+        /// Construtor para o Produto
+        /// </summary>
         /// <param name="id">INT(11)</param>
         /// <param name="descricao">VARCHAR(100)</param>
         /// <param name="unidade">VARCHAR(14)</param>
@@ -125,14 +144,15 @@ namespace ClassLabNu
                 banco.Parameters.AddWithValue("_codbar", Codbar);
                 banco.Parameters.AddWithValue("_desconto", Desconto);
                 banco.Parameters.AddWithValue("_valor", Valor);
+                banco.Parameters.AddWithValue("_descontinuado", Descontinuado);
                 Id = Convert.ToInt32(banco.ExecuteScalar());
 
                 // Fecha Conexão
                 banco.Connection.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro, verifique os valores digitados", "SysComercial", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocorreu um erro {ex}", "SysComercial", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -142,95 +162,156 @@ namespace ClassLabNu
         /// <returns>Bool</returns>
         public bool Alterar()
         {
-            return true;
+
+            // Abrir conexao
+            var cmd = Banco.Abrir();
+
+            // Comando SQL
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = $"alterar_produto";
+
+            // Parametros
+            cmd.Parameters.AddWithValue("_descricao", Descricao);
+            cmd.Parameters.AddWithValue("_unidade", Unidade);
+            cmd.Parameters.AddWithValue("_codbar", Codbar);
+            cmd.Parameters.AddWithValue("_desconto", Desconto);
+            cmd.Parameters.AddWithValue("_valor", Valor);
+            cmd.Parameters.AddWithValue("_descontinuado", Descontinuado);
+
+            // Variavel para receber retorno
+            int retorna = cmd.ExecuteNonQuery();
+
+            cmd.Connection.Close();
+
+            // Retornando valor
+            if (retorna == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
         /// Metodo para consultar produtos por ID
         /// </summary>
         /// <param name="_id"></param>
-        public void ConsultarPorId(int _id)
+        public List<Produto> ListarPorId(int _id)
         {
-            // Abre conexao com banco
-            var cmd = Banco.Abrir();
+            // Nova lista
+            List<Produto> lista = new List<Produto>();
 
-            // Comandos SQL
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = $"select * from produtos where idprod = {_id}";
+            // Abrir conexão
+            var banco = Banco.Abrir();
 
-            // Var para leitura
-            var dr = cmd.ExecuteReader();
+            // Comando
+            banco.CommandType = CommandType.Text;
+            banco.CommandText = $"select * from produtos where idprod = {_id}";
+
+            // Var para Consulta
+            var dr = banco.ExecuteReader();
 
             // Consulta
             while (dr.Read())
             {
-                Id = dr.GetInt32(0);
-                Descricao = dr.GetString(1);
-                Unidade = dr.GetString(2);
-                Codbar = dr.GetString(3);
-                Valor = dr.GetInt32(4);
-                Desconto = dr.GetInt32(5);
-                Descontinuado = dr.GetBoolean(6);
+                lista.Add(new Produto(
+                    Convert.ToInt32(dr.GetValue(0)), // ID
+                    dr.GetString(1), // Descricao
+                    dr.GetString(2), // Unidade
+                    dr.GetString(3), // CodBar
+                    dr.GetDouble(5), // Desconto
+                    dr.GetDouble(4), // Valor
+                     dr.GetBoolean(6) // Descontinuado
+                    ));
             }
+
+            // Fecha Conexão
+            banco.Connection.Close();
+
+            // Retornando lista
+            return lista;
         }
 
         /// <summary>
         /// Metodo para consultar produto por valor
         /// </summary>
         /// <param name="_valor"></param>
-        public void ConsultarPorValor(double _valor)
+        public List<Produto> ListarPorValor(double _valor)
         {
-            // Abre conexao com banco
-            var cmd = Banco.Abrir();
+            // Nova lista
+            List<Produto> lista = new List<Produto>();
 
-            // Comandos SQL
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = $"select * from produtos where valor = {_valor}";
+            // Abrir conexão
+            var banco = Banco.Abrir();
 
-            // Var para leitura
-            var dr = cmd.ExecuteReader();
+            // Comando
+            banco.CommandType = CommandType.Text;
+            banco.CommandText = $"select * from produtos where valor = {_valor}";
+
+            // Var para Consulta
+            var dr = banco.ExecuteReader();
 
             // Consulta
             while (dr.Read())
             {
-                Id = dr.GetInt32(0);
-                Descricao = dr.GetString(1);
-                Unidade = dr.GetString(2);
-                Codbar = dr.GetString(3);
-                Valor = dr.GetDouble(4);
-                Desconto = dr.GetDouble(5);
-                Descontinuado = dr.GetBoolean(6);
+                lista.Add(new Produto(
+                    Convert.ToInt32(dr.GetValue(0)), // ID
+                    dr.GetString(1), // Descricao
+                    dr.GetString(2), // Unidade
+                    dr.GetString(3), // CodBar
+                  dr.GetDouble(5), // Desconto
+                    dr.GetDouble(4), // Valor
+                     dr.GetBoolean(6) // Descontinuado
+                    ));
             }
+
+            // Fecha Conexão
+            banco.Connection.Close();
+
+            // Retornando lista
+            return lista;
         }
 
         /// <summary>
         /// Metodo para consultar produto por codigo de barras
         /// </summary>
         /// <param name="_codbar"></param>
-        public void ConsultarPorCodbar(string _codbar)
+        public List<Produto> ListarPorCodbar(string _codbar)
         {
+            // Nova lista
+            List<Produto> lista = new List<Produto>();
 
-            // Abre conexao com banco
-            var cmd = Banco.Abrir();
+            // Abrir conexão
+            var banco = Banco.Abrir();
 
-            // Comandos SQL
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = $"select * from produtos where valor = {_codbar}";
+            // Comando
+            banco.CommandType = CommandType.Text;
+            banco.CommandText = $"select * from produtos where codbar = {_codbar}";
 
-            // Var para leitura
-            var dr = cmd.ExecuteReader();
+            // Var para Consulta
+            var dr = banco.ExecuteReader();
 
             // Consulta
             while (dr.Read())
             {
-                Id = dr.GetInt32(0);
-                Descricao = dr.GetString(1);
-                Unidade = dr.GetString(2);
-                Codbar = dr.GetString(3);
-                Valor = dr.GetDouble(4);
-                Desconto = dr.GetDouble(5);
-                Descontinuado = dr.GetBoolean(5);
+                lista.Add(new Produto(
+                    Convert.ToInt32(dr.GetValue(0)), // ID
+                    dr.GetString(1), // Descricao
+                    dr.GetString(2), // Unidade
+                    dr.GetString(3), // CodBar
+                  dr.GetDouble(5), // Desconto
+                    dr.GetDouble(4), // Valor
+                     dr.GetBoolean(6) // Descontinuado
+                    ));
             }
+
+            // Fecha Conexão
+            banco.Connection.Close();
+
+            // Retornando lista
+            return lista;
         }
 
         /// <summary>
@@ -250,9 +331,9 @@ namespace ClassLabNu
             // Comando
             banco.CommandType = CommandType.Text;
             if (l > 0)
-                banco.CommandText = $"select * from produtos limit {i} , {l}";
+                banco.CommandText = $"select * from produtos where descontinuado = 1 limit {i} , {l}";
             else
-                banco.CommandText = "select * from produtos";
+                banco.CommandText = "select * from produtos where descontinuado = 1";
 
             // Var para Consulta
             var dr = banco.ExecuteReader();

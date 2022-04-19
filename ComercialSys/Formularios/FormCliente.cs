@@ -49,6 +49,7 @@ namespace ComercialSys
                 btnInserir.Enabled = false;
                 txtNome.Enabled = true;
                 txtEmail.Enabled = true;
+                chkAtivo.Enabled = true;
 
                 // Limpar campos de pesquisa
                 LimpaCampoPesquisa();
@@ -61,6 +62,8 @@ namespace ComercialSys
                 txtNome.Enabled = true;
                 txtEmail.Enabled = true;
                 txtCpf.Enabled = true;
+                chkAtivo.Enabled = true;
+                chkAtivo.Checked = true;
 
                 // Limpar campos de pesquisa
                 LimpaCampoPesquisa();
@@ -85,6 +88,7 @@ namespace ComercialSys
             txtNome.Enabled = false;
             txtEmail.Enabled = false;
             txtCpf.Enabled = false;
+            chkAtivo.Enabled = false;
 
             btnBloquear.Visible = false;
             btnDesbloquear.Visible = true;
@@ -205,6 +209,7 @@ namespace ComercialSys
                 MessageBox.Show("Falha ao inserir cliente", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             btnBloquear_Click(sender, e);
+            ListarDataGrid();
         }
 
         // Inserir imagem Clientes ---------------------------------------------------------------------------------------------------------------
@@ -281,7 +286,10 @@ namespace ComercialSys
                 // Email Invalido
                 MessageBox.Show($"Email do cliente {cliente.Id} invalido", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            // Bloqueando campos
             btnBloquear_Click(sender, e);
+            // Listando DataGrid
+            ListarDataGrid();
         }
 
         // Pesquisar Clientes ---------------------------------------------------------------------------------------------------------------
@@ -384,6 +392,40 @@ namespace ComercialSys
             }
 
 
+        }
+
+        private void chkAtivo_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void chkAtivo_Click(object sender, EventArgs e)
+        {
+            // Se o usuario clicar no checkbox que esta em false
+            if (chkAtivo.Checked == false)
+            {
+                // Confirmando certeza do usuario
+                if (MessageBox.Show("Você tem certeza que deseja inativar o cliente?", "SysComercial", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    chkAtivo.Checked = false;
+                }
+                else
+                {
+                    chkAtivo.Checked = true;
+                }
+            }
+            // Se o usuario clicar no checkbox que esta em true
+            else if (chkAtivo.Checked == true)
+            {
+                // Confirmando certeza do usuario
+                if (MessageBox.Show("Você tem certeza que deseja ativar o cliente?", "SysComercial", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    chkAtivo.Checked = true;
+                }
+                else
+                {
+                    chkAtivo.Checked = false;
+                }
+            }
         }
     }
 }

@@ -23,7 +23,6 @@ As técnicas e tecnologias utilizadas pra isso são:
 - `Biblioteca de classes`: Prover a reusabilidade em sistemas futuros
 
 <!-- ## 🎯 Desafio -->
-
 <!-- Tela de detalhes do produto -->
 
 <!-- ![Detalhes](https://github.com/gui1535/ClassLabNu/blob/master/Img_Principal.png) -->

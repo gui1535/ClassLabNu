@@ -2,7 +2,7 @@
 <!--   ![Thumbnail GitHub](https://www.marceloortega.com.br/images/artigos/647ec3c9-negociacao-de-alto-impacto.jpg)  -->
 
 
-![](https://img.shields.io/github/license/alura-cursos/android-com-kotlin-personalizando-ui)
+<!-- ![](https://img.shields.io/github/license/alura-cursos/android-com-kotlin-personalizando-ui) -->
 
 # Orgs
 Projeto em andamento, sistema de vendas de produtos.
@@ -26,7 +26,7 @@ As técnicas e tecnologias utilizadas pra isso são:
 
 <!-- Tela de detalhes do produto -->
 
-<!-- ![orgs-desafio-detalhes](https://user-images.githubusercontent.com/8989346/124600562-3a743e00-de3d-11eb-9d45-15e8a8d2976f.gif) -->
+![Detalhes](https://github.com/gui1535/ClassLabNu/blob/master/Img_Principal.png)
 
 <!-- [Você pode conferir o resultado do desafio neste commit](https://github.com/alura-cursos/android-com-kotlin-personalizando-ui/commit/3188f27a627592715e7de62b6da450696e401f18). -->
 

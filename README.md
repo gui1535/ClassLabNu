@@ -31,7 +31,7 @@ As técnicas e tecnologias utilizadas pra isso são:
 
 ## 📁 Acesso ao projeto
 
-Você pode [acessar o código fonte do projeto inicial](https://github.com/gui1535/ClassLabNu) ou [baixá-lo](https://github.com/gui1535/ClassLabNu/archive/refs/heads/master.zip).
+Você pode [acessar o código fonte do projeto](https://github.com/gui1535/ClassLabNu) ou [baixá-lo](https://github.com/gui1535/ClassLabNu/archive/refs/heads/master.zip).
 
 ## 🛠️ Abrir e rodar o projeto
 

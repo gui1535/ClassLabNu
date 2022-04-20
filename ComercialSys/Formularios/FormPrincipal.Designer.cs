@@ -90,6 +90,7 @@
             this.Padding = new System.Windows.Forms.Padding(10, 60, 10, 10);
             this.Text = "SysComercial";
             this.TransparencyKey = System.Drawing.Color.Empty;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

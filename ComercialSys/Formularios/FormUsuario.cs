@@ -1,6 +1,6 @@
 ﻿using ClassLabNu;
 using System;
-using System.IO;
+using System.Data;
 using System.Windows.Forms;
 
 namespace ComercialSys.Formularios
@@ -78,6 +78,11 @@ namespace ComercialSys.Formularios
 
         private void FormUsuario_Load(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            dt.Load(Nivel.ConsultarNivel());
+            cmbNivel.DataSource = dt;
+            cmbNivel.ValueMember = "nome";
+            cmbNivel.DisplayMember = "idnv";
         }
 
         // DataGrid Usuarios ---------------------------------------------------------------------------------------------------------------
@@ -320,9 +325,8 @@ namespace ComercialSys.Formularios
             txtIdPesq.Clear();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cmbNivel_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

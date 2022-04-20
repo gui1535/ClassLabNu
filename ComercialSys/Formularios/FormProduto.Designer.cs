@@ -104,7 +104,7 @@
             this.chkDescontinuado.Location = new System.Drawing.Point(536, 44);
             this.chkDescontinuado.Margin = new System.Windows.Forms.Padding(4);
             this.chkDescontinuado.Name = "chkDescontinuado";
-            this.chkDescontinuado.Size = new System.Drawing.Size(144, 29);
+            this.chkDescontinuado.Size = new System.Drawing.Size(92, 20);
             this.chkDescontinuado.TabIndex = 30;
             this.chkDescontinuado.Text = "Continuado";
             this.chkDescontinuado.UseVisualStyleBackColor = true;
@@ -179,7 +179,7 @@
             this.lbValor.Location = new System.Drawing.Point(370, 19);
             this.lbValor.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbValor.Name = "lbValor";
-            this.lbValor.Size = new System.Drawing.Size(39, 20);
+            this.lbValor.Size = new System.Drawing.Size(38, 19);
             this.lbValor.TabIndex = 15;
             this.lbValor.Text = "Valor";
             // 
@@ -224,7 +224,7 @@
             this.lbDesconto.Location = new System.Drawing.Point(370, 89);
             this.lbDesconto.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbDesconto.Name = "lbDesconto";
-            this.lbDesconto.Size = new System.Drawing.Size(68, 20);
+            this.lbDesconto.Size = new System.Drawing.Size(63, 19);
             this.lbDesconto.TabIndex = 13;
             this.lbDesconto.Text = "Desconto";
             // 
@@ -370,7 +370,7 @@
             this.lbId.Location = new System.Drawing.Point(11, 19);
             this.lbId.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(22, 20);
+            this.lbId.Size = new System.Drawing.Size(21, 19);
             this.lbId.TabIndex = 4;
             this.lbId.Text = "ID";
             // 
@@ -380,7 +380,7 @@
             this.lbCodBar.Location = new System.Drawing.Point(8, 89);
             this.lbCodBar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbCodBar.Name = "lbCodBar";
-            this.lbCodBar.Size = new System.Drawing.Size(79, 20);
+            this.lbCodBar.Size = new System.Drawing.Size(78, 19);
             this.lbCodBar.TabIndex = 7;
             this.lbCodBar.Text = "Cod. Barras";
             // 
@@ -390,7 +390,7 @@
             this.lbNome.Location = new System.Drawing.Point(109, 19);
             this.lbNome.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(48, 20);
+            this.lbNome.Size = new System.Drawing.Size(46, 19);
             this.lbNome.TabIndex = 5;
             this.lbNome.Text = "Nome";
             // 
@@ -400,7 +400,7 @@
             this.lbUnidade.Location = new System.Drawing.Point(225, 89);
             this.lbUnidade.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbUnidade.Name = "lbUnidade";
-            this.lbUnidade.Size = new System.Drawing.Size(61, 20);
+            this.lbUnidade.Size = new System.Drawing.Size(58, 19);
             this.lbUnidade.TabIndex = 6;
             this.lbUnidade.Text = "Unidade";
             // 
@@ -446,7 +446,7 @@
             this.GridProdutos.ReadOnly = true;
             this.GridProdutos.RowHeadersVisible = false;
             this.GridProdutos.RowHeadersWidth = 51;
-            this.GridProdutos.Size = new System.Drawing.Size(899, 243);
+            this.GridProdutos.Size = new System.Drawing.Size(899, 324);
             this.GridProdutos.TabIndex = 16;
             this.GridProdutos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProdutos_CellDoubleClick);
             // 
@@ -540,7 +540,7 @@
             this.lbIdPesq.Location = new System.Drawing.Point(9, 19);
             this.lbIdPesq.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbIdPesq.Name = "lbIdPesq";
-            this.lbIdPesq.Size = new System.Drawing.Size(22, 20);
+            this.lbIdPesq.Size = new System.Drawing.Size(21, 19);
             this.lbIdPesq.TabIndex = 13;
             this.lbIdPesq.Text = "ID";
             // 
@@ -583,7 +583,7 @@
             this.lbValorPesq.Location = new System.Drawing.Point(117, 15);
             this.lbValorPesq.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbValorPesq.Name = "lbValorPesq";
-            this.lbValorPesq.Size = new System.Drawing.Size(39, 20);
+            this.lbValorPesq.Size = new System.Drawing.Size(38, 19);
             this.lbValorPesq.TabIndex = 15;
             this.lbValorPesq.Text = "Valor";
             // 
@@ -626,7 +626,7 @@
             this.lbCodBarPesq.Location = new System.Drawing.Point(9, 89);
             this.lbCodBarPesq.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbCodBarPesq.Name = "lbCodBarPesq";
-            this.lbCodBarPesq.Size = new System.Drawing.Size(79, 20);
+            this.lbCodBarPesq.Size = new System.Drawing.Size(78, 19);
             this.lbCodBarPesq.TabIndex = 19;
             this.lbCodBarPesq.Text = "Cod. Barras";
             // 
@@ -654,7 +654,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(915, 275);
+            this.groupBox1.Size = new System.Drawing.Size(915, 356);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Produtos";
@@ -673,9 +673,9 @@
             // 
             // FormProduto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 573);
+            this.ClientSize = new System.Drawing.Size(951, 666);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gpBoxCadastrar);

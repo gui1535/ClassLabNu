@@ -21,6 +21,9 @@ namespace ComercialSys
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string usuario = System.Environment.UserName;
+
+            this.Text += usuario;
         }
 
         /// <summary>

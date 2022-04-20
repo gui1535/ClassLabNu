@@ -38,6 +38,12 @@
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.GridUsuarios = new System.Windows.Forms.DataGridView();
+            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaSenhaInv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnInserir = new MetroFramework.Controls.MetroButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkAtivo = new System.Windows.Forms.CheckBox();
@@ -54,12 +60,6 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.FileDialogImg = new System.Windows.Forms.OpenFileDialog();
-            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaSenhaInv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaNivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gpBoxPesq.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridUsuarios)).BeginInit();
@@ -112,7 +112,7 @@
             this.metroLabel5.Location = new System.Drawing.Point(24, 126);
             this.metroLabel5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(48, 20);
+            this.metroLabel5.Size = new System.Drawing.Size(46, 19);
             this.metroLabel5.TabIndex = 19;
             this.metroLabel5.Text = "Nome";
             // 
@@ -155,7 +155,7 @@
             this.lbIdPesq.Location = new System.Drawing.Point(24, 42);
             this.lbIdPesq.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbIdPesq.Name = "lbIdPesq";
-            this.lbIdPesq.Size = new System.Drawing.Size(22, 20);
+            this.lbIdPesq.Size = new System.Drawing.Size(21, 19);
             this.lbIdPesq.TabIndex = 13;
             this.lbIdPesq.Text = "ID";
             // 
@@ -226,6 +226,57 @@
             this.GridUsuarios.TabIndex = 10;
             this.GridUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridUsuarios_CellDoubleClick);
             // 
+            // colunaId
+            // 
+            this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colunaId.Frozen = true;
+            this.colunaId.HeaderText = "Id";
+            this.colunaId.MinimumWidth = 6;
+            this.colunaId.Name = "colunaId";
+            this.colunaId.ReadOnly = true;
+            this.colunaId.Width = 128;
+            // 
+            // colunaNome
+            // 
+            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaNome.HeaderText = "Nome";
+            this.colunaNome.MinimumWidth = 6;
+            this.colunaNome.Name = "colunaNome";
+            this.colunaNome.ReadOnly = true;
+            // 
+            // colunaEmail
+            // 
+            this.colunaEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaEmail.HeaderText = "Email";
+            this.colunaEmail.MinimumWidth = 6;
+            this.colunaEmail.Name = "colunaEmail";
+            this.colunaEmail.ReadOnly = true;
+            // 
+            // colunaSenhaInv
+            // 
+            this.colunaSenhaInv.HeaderText = "SenhaInv";
+            this.colunaSenhaInv.MinimumWidth = 6;
+            this.colunaSenhaInv.Name = "colunaSenhaInv";
+            this.colunaSenhaInv.ReadOnly = true;
+            this.colunaSenhaInv.Visible = false;
+            // 
+            // colunaNivel
+            // 
+            this.colunaNivel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaNivel.HeaderText = "Nivel";
+            this.colunaNivel.MinimumWidth = 6;
+            this.colunaNivel.Name = "colunaNivel";
+            this.colunaNivel.ReadOnly = true;
+            // 
+            // colunaAtivo
+            // 
+            this.colunaAtivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colunaAtivo.HeaderText = "Ativo";
+            this.colunaAtivo.MinimumWidth = 6;
+            this.colunaAtivo.Name = "colunaAtivo";
+            this.colunaAtivo.ReadOnly = true;
+            this.colunaAtivo.Width = 48;
+            // 
             // btnInserir
             // 
             this.btnInserir.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -271,7 +322,7 @@
             this.chkAtivo.Location = new System.Drawing.Point(610, 64);
             this.chkAtivo.Margin = new System.Windows.Forms.Padding(5);
             this.chkAtivo.Name = "chkAtivo";
-            this.chkAtivo.Size = new System.Drawing.Size(77, 25);
+            this.chkAtivo.Size = new System.Drawing.Size(61, 21);
             this.chkAtivo.TabIndex = 22;
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
@@ -312,17 +363,14 @@
             this.cmbNivel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbNivel.Enabled = false;
             this.cmbNivel.FormattingEnabled = true;
-            this.cmbNivel.ItemHeight = 24;
-            this.cmbNivel.Items.AddRange(new object[] {
-            "Caixa",
-            "Vendedor",
-            "Gerente"});
+            this.cmbNivel.ItemHeight = 23;
             this.cmbNivel.Location = new System.Drawing.Point(609, 141);
             this.cmbNivel.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNivel.Name = "cmbNivel";
-            this.cmbNivel.Size = new System.Drawing.Size(150, 30);
+            this.cmbNivel.Size = new System.Drawing.Size(150, 29);
             this.cmbNivel.TabIndex = 19;
             this.cmbNivel.UseSelectable = true;
+            this.cmbNivel.SelectedIndexChanged += new System.EventHandler(this.cmbNivel_SelectedIndexChanged);
             // 
             // metroLabel6
             // 
@@ -331,7 +379,7 @@
             this.metroLabel6.Location = new System.Drawing.Point(609, 112);
             this.metroLabel6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(43, 20);
+            this.metroLabel6.Size = new System.Drawing.Size(39, 19);
             this.metroLabel6.TabIndex = 18;
             this.metroLabel6.Text = "Nivel";
             // 
@@ -474,7 +522,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(9, 38);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(24, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(23, 19);
             this.metroLabel1.TabIndex = 4;
             this.metroLabel1.Text = "ID";
             // 
@@ -485,7 +533,7 @@
             this.metroLabel4.Location = new System.Drawing.Point(9, 117);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(46, 20);
+            this.metroLabel4.Size = new System.Drawing.Size(41, 19);
             this.metroLabel4.TabIndex = 7;
             this.metroLabel4.Text = "Email";
             // 
@@ -496,7 +544,7 @@
             this.metroLabel2.Location = new System.Drawing.Point(135, 38);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(50, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(46, 19);
             this.metroLabel2.TabIndex = 5;
             this.metroLabel2.Text = "Nome";
             // 
@@ -507,7 +555,7 @@
             this.metroLabel3.Location = new System.Drawing.Point(371, 117);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(49, 20);
+            this.metroLabel3.Size = new System.Drawing.Size(46, 19);
             this.metroLabel3.TabIndex = 6;
             this.metroLabel3.Text = "Senha";
             // 
@@ -515,60 +563,9 @@
             // 
             this.FileDialogImg.FileName = "Imagem";
             // 
-            // colunaId
-            // 
-            this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colunaId.Frozen = true;
-            this.colunaId.HeaderText = "Id";
-            this.colunaId.MinimumWidth = 6;
-            this.colunaId.Name = "colunaId";
-            this.colunaId.ReadOnly = true;
-            this.colunaId.Width = 128;
-            // 
-            // colunaNome
-            // 
-            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaNome.HeaderText = "Nome";
-            this.colunaNome.MinimumWidth = 6;
-            this.colunaNome.Name = "colunaNome";
-            this.colunaNome.ReadOnly = true;
-            // 
-            // colunaEmail
-            // 
-            this.colunaEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaEmail.HeaderText = "Email";
-            this.colunaEmail.MinimumWidth = 6;
-            this.colunaEmail.Name = "colunaEmail";
-            this.colunaEmail.ReadOnly = true;
-            // 
-            // colunaSenhaInv
-            // 
-            this.colunaSenhaInv.HeaderText = "SenhaInv";
-            this.colunaSenhaInv.MinimumWidth = 6;
-            this.colunaSenhaInv.Name = "colunaSenhaInv";
-            this.colunaSenhaInv.ReadOnly = true;
-            this.colunaSenhaInv.Visible = false;
-            // 
-            // colunaNivel
-            // 
-            this.colunaNivel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaNivel.HeaderText = "Nivel";
-            this.colunaNivel.MinimumWidth = 6;
-            this.colunaNivel.Name = "colunaNivel";
-            this.colunaNivel.ReadOnly = true;
-            // 
-            // colunaAtivo
-            // 
-            this.colunaAtivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colunaAtivo.HeaderText = "Ativo";
-            this.colunaAtivo.MinimumWidth = 6;
-            this.colunaAtivo.Name = "colunaAtivo";
-            this.colunaAtivo.ReadOnly = true;
-            this.colunaAtivo.Width = 61;
-            // 
             // FormUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1105, 708);
             this.Controls.Add(this.btnListar);

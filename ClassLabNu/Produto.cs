@@ -37,7 +37,7 @@ namespace ClassLabNu
         /// <param name="codbar">CHAR(13)</param>
         /// <param name="valor">DOUBLE</param>
         /// <param name="desconto">DOUBLE</param>
-        public Produto(int id, string descricao, string unidade, string codbar, double valor, double desconto)
+        public Produto(int id, string descricao, string unidade, string codbar,double desconto,double valor)
         {
             Id = id;
             this.Descricao = descricao;
@@ -136,7 +136,7 @@ namespace ClassLabNu
 
                 // Comandos SQL
                 banco.CommandType = CommandType.StoredProcedure;
-                banco.CommandText = "produto_inserir";
+                banco.CommandText = "inserir_produto";
 
                 // Parametros
                 banco.Parameters.AddWithValue("_descricao", Descricao);
@@ -168,7 +168,7 @@ namespace ClassLabNu
 
             // Comando SQL
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = $"alterar_produto";
+            cmd.CommandText = $"produto_alterar";
 
             // Parametros
             cmd.Parameters.AddWithValue("_id", Id);

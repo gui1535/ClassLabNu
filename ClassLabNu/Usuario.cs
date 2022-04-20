@@ -44,15 +44,6 @@ namespace ClassLabNu
             this.Ativo = true;
             this.Nivel = nivel;
         }
-        public Usuario(string nome, string email, string password, string nivel, byte[] foto)
-        {
-            this.Nome = nome;
-            this.Email = email;
-            this.Password = password;
-            this.Ativo = true;
-            this.Nivel = nivel;
-            this.Foto = foto;
-        }
 
         /// <summary>
         /// Construtor para o Usuario
@@ -120,8 +111,7 @@ namespace ClassLabNu
                 banco.Parameters.AddWithValue("_nome", Nome);
                 banco.Parameters.AddWithValue("_email", Email);
                 banco.Parameters.AddWithValue("_senha", Password);
-                banco.Parameters.AddWithValue("_nivel", Nivel);
-                banco.Parameters.AddWithValue("_foto", Foto);
+                banco.Parameters.AddWithValue("_idnv", Nivel);
                 Id = Convert.ToInt32(banco.ExecuteScalar());
 
                 // Fecha Conexão
@@ -232,7 +222,6 @@ namespace ClassLabNu
             // Consulta
             while (dr.Read())
             {
-                Foto = (byte[])(dr["foto"]);
                 Id = dr.GetInt32(0);
                 Nome = dr.GetString(1);
                 Email = dr.GetString(2);

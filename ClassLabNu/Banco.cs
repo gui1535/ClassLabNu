@@ -16,7 +16,7 @@ namespace ClassLabNu
             MySqlCommand cmdSQL = new MySqlCommand();
 
             // String de conexão
-            string stringDeConexao = @"server=localhost;database=comercial;user id=root;password=;port=3306";
+            string stringDeConexao = @"server=localhost;database=comercialdb0191;user id=root;password=;port=3306";
 
             // Conectando
             MySqlConnection conexao = new MySqlConnection(stringDeConexao);

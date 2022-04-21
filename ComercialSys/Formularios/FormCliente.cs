@@ -542,13 +542,18 @@ namespace ComercialSys
             if (txtCep.Text.Length == 8)
             {
                 // Bloco
-                using (var ws = new WSCorreios.AtendeClienteClient())
+                using (var srvCorreio = new WSCorreios.AtendeClienteClient())
                 {
                     // Tratamento de erro
                     try
                     {
                         // Consultando CEP e removendo espaços, se tiver
-                        var endereco = ws.consultaCEP(txtCep.Text.Trim());
+                        var endereco = srvCorreio.consultaCEP(txtCep.Text.Trim());
+
+                        txtEstado.Text = endereco.uf;
+                        txtCidade.Text = endereco.cidade;
+                        txtBairro.Text = endereco.bairro;
+                        txtLogradouro.Text = endereco.end;
 
                         //
                     }

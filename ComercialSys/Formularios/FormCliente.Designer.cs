@@ -905,6 +905,7 @@
             this.txtBairro.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtBairro.CustomButton.UseSelectable = true;
             this.txtBairro.CustomButton.Visible = false;
+            this.txtBairro.Enabled = false;
             this.txtBairro.Lines = new string[0];
             this.txtBairro.Location = new System.Drawing.Point(202, 114);
             this.txtBairro.Margin = new System.Windows.Forms.Padding(4);
@@ -937,6 +938,7 @@
             this.txtEstado.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtEstado.CustomButton.UseSelectable = true;
             this.txtEstado.CustomButton.Visible = false;
+            this.txtEstado.Enabled = false;
             this.txtEstado.Lines = new string[0];
             this.txtEstado.Location = new System.Drawing.Point(366, 46);
             this.txtEstado.Margin = new System.Windows.Forms.Padding(4);
@@ -969,6 +971,7 @@
             this.txtCidade.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtCidade.CustomButton.UseSelectable = true;
             this.txtCidade.CustomButton.Visible = false;
+            this.txtCidade.Enabled = false;
             this.txtCidade.Lines = new string[0];
             this.txtCidade.Location = new System.Drawing.Point(20, 114);
             this.txtCidade.Margin = new System.Windows.Forms.Padding(4);
@@ -1001,6 +1004,7 @@
             this.txtLogradouro.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtLogradouro.CustomButton.UseSelectable = true;
             this.txtLogradouro.CustomButton.Visible = false;
+            this.txtLogradouro.Enabled = false;
             this.txtLogradouro.Lines = new string[0];
             this.txtLogradouro.Location = new System.Drawing.Point(126, 46);
             this.txtLogradouro.Margin = new System.Windows.Forms.Padding(4);
@@ -1068,7 +1072,7 @@
             this.txtCep.Lines = new string[0];
             this.txtCep.Location = new System.Drawing.Point(20, 46);
             this.txtCep.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCep.MaxLength = 60;
+            this.txtCep.MaxLength = 8;
             this.txtCep.Name = "txtCep";
             this.txtCep.PasswordChar = '\0';
             this.txtCep.ScrollBars = System.Windows.Forms.ScrollBars.None;

@@ -46,12 +46,23 @@ namespace ComercialSys
             // Verificar se vai habilitar o botao EDITAR ou não
             if (Convert.ToInt32(txtId.Text) > 0)
             {
-                // Habilitando / Desabilitando campos
+
+                // GroupBox
                 gpBoxPesq.Enabled = false;
+                gpboxEnderecos.Enabled = true;
+                gpboxNumeros.Enabled = true;
+
+                // Botao
                 btnEditar.Enabled = true;
                 btnInserir.Enabled = false;
+
+                // TextBox
+                txtObs.Enabled = true;
                 txtNome.Enabled = true;
+                txtNomeFant.Enabled = true;
                 txtEmail.Enabled = true;
+
+                //CheckBox
                 chkAtivo.Enabled = true;
 
                 // Limpar campos de pesquisa
@@ -59,12 +70,21 @@ namespace ComercialSys
             }
             else if (Convert.ToInt32(txtId.Text) == 0)
             {
-                // Habilitando / Desabilitando campos
+
+                // GroupBox
                 gpBoxPesq.Enabled = false;
+                gpboxEnderecos.Enabled = true;
+                gpboxNumeros.Enabled = true;
+
+                // Botao
                 btnInserir.Enabled = true;
+
+                // TextBox
                 txtNome.Enabled = true;
                 txtEmail.Enabled = true;
                 txtCpf.Enabled = true;
+
+                //CheckBox
                 chkAtivo.Enabled = true;
                 chkAtivo.Checked = true;
 
@@ -85,12 +105,22 @@ namespace ComercialSys
         {
 
             // Habilitando / Desabilitando campos
+
+            // GroupBox
             gpBoxPesq.Enabled = true;
+            gpboxEnderecos.Enabled = false;
+            gpboxNumeros.Enabled = false;
+
+            // Botao
             btnEditar.Enabled = false;
             btnInserir.Enabled = false;
+
+            // TextBox
             txtNome.Enabled = false;
             txtEmail.Enabled = false;
             txtCpf.Enabled = false;
+
+            // CheckBox
             chkAtivo.Enabled = false;
 
             // Limpando TextBox
@@ -499,6 +529,21 @@ namespace ComercialSys
                     chkAtivo.Checked = false;
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtCep_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void btnCancelCep_Click(object sender, EventArgs e)
+        {
+            txtCep.Text = String.Empty;
         }
     }
 }

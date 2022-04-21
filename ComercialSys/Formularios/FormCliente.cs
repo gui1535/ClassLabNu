@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ComercialSys
 {
-    public partial class FormCliente : MetroFramework.Forms.MetroForm
+    public partial class FormCliente : Form
     {
         public FormCliente(Form parent)
         {

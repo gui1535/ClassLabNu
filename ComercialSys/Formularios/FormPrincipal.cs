@@ -1,9 +1,10 @@
 ﻿using ComercialSys.Formularios;
 using System;
+using System.Windows.Forms;
 
 namespace ComercialSys
 {
-    public partial class FormPrincipal : MetroFramework.Forms.MetroForm
+    public partial class FormPrincipal : Form
     {
         public FormPrincipal()
         {

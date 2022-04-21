@@ -43,18 +43,17 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metroTextBox10 = new MetroFramework.Controls.MetroTextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.btnBloquear = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.metroTextBox9 = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnDesbloquear = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.txtDataCad = new MetroFramework.Controls.MetroDateTime();
-            this.btnEditar = new MetroFramework.Controls.MetroButton();
+            this.btnDesbloquear = new System.Windows.Forms.Button();
+            this.btnBloquear = new System.Windows.Forms.Button();
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
             this.txtCpfPsq = new MetroFramework.Controls.MetroTextBox();
             this.gpBoxPesq = new System.Windows.Forms.GroupBox();
@@ -63,8 +62,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtPesqNome = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnListar = new MetroFramework.Controls.MetroButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -82,26 +82,14 @@
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.label23 = new System.Windows.Forms.Label();
             this.metroComboBox4 = new MetroFramework.Controls.MetroComboBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.metroComboBox5 = new MetroFramework.Controls.MetroComboBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.metroComboBox5 = new MetroFramework.Controls.MetroComboBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,8 +99,17 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnInserir = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gpBoxPesq.SuspendLayout();
@@ -129,10 +126,10 @@
             // 
             // 
             this.txtId.CustomButton.Image = null;
-            this.txtId.CustomButton.Location = new System.Drawing.Point(41, 2);
-            this.txtId.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId.CustomButton.Location = new System.Drawing.Point(46, 2);
+            this.txtId.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.CustomButton.Name = "";
-            this.txtId.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.txtId.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.txtId.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtId.CustomButton.TabIndex = 1;
             this.txtId.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -142,7 +139,7 @@
             this.txtId.Lines = new string[] {
         "0"};
             this.txtId.Location = new System.Drawing.Point(24, 45);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.MaxLength = 32767;
             this.txtId.Name = "txtId";
             this.txtId.PasswordChar = '\0';
@@ -164,10 +161,10 @@
             // 
             // 
             this.txtNome.CustomButton.Image = null;
-            this.txtNome.CustomButton.Location = new System.Drawing.Point(165, 2);
-            this.txtNome.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNome.CustomButton.Location = new System.Drawing.Point(183, 2);
+            this.txtNome.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.CustomButton.Name = "";
-            this.txtNome.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.txtNome.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.txtNome.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtNome.CustomButton.TabIndex = 1;
             this.txtNome.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -176,7 +173,7 @@
             this.txtNome.Enabled = false;
             this.txtNome.Lines = new string[0];
             this.txtNome.Location = new System.Drawing.Point(24, 97);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.MaxLength = 60;
             this.txtNome.Name = "txtNome";
             this.txtNome.PasswordChar = '\0';
@@ -197,10 +194,10 @@
             // 
             // 
             this.txtCpf.CustomButton.Image = null;
-            this.txtCpf.CustomButton.Location = new System.Drawing.Point(127, 2);
-            this.txtCpf.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCpf.CustomButton.Location = new System.Drawing.Point(141, 2);
+            this.txtCpf.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpf.CustomButton.Name = "";
-            this.txtCpf.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.txtCpf.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.txtCpf.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCpf.CustomButton.TabIndex = 1;
             this.txtCpf.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -209,7 +206,7 @@
             this.txtCpf.Enabled = false;
             this.txtCpf.Lines = new string[0];
             this.txtCpf.Location = new System.Drawing.Point(25, 149);
-            this.txtCpf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCpf.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpf.MaxLength = 12;
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.PasswordChar = '\0';
@@ -230,10 +227,10 @@
             // 
             // 
             this.txtEmail.CustomButton.Image = null;
-            this.txtEmail.CustomButton.Location = new System.Drawing.Point(232, 2);
-            this.txtEmail.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.CustomButton.Location = new System.Drawing.Point(258, 2);
+            this.txtEmail.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.CustomButton.Name = "";
-            this.txtEmail.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.txtEmail.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.txtEmail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtEmail.CustomButton.TabIndex = 1;
             this.txtEmail.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -242,7 +239,7 @@
             this.txtEmail.Enabled = false;
             this.txtEmail.Lines = new string[0];
             this.txtEmail.Location = new System.Drawing.Point(196, 150);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.MaxLength = 60;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -273,12 +270,12 @@
             this.colunaAtivo});
             this.GridCliente.GridColor = System.Drawing.Color.Black;
             this.GridCliente.Location = new System.Drawing.Point(13, 30);
-            this.GridCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GridCliente.Margin = new System.Windows.Forms.Padding(2);
             this.GridCliente.Name = "GridCliente";
             this.GridCliente.ReadOnly = true;
             this.GridCliente.RowHeadersVisible = false;
             this.GridCliente.RowHeadersWidth = 51;
-            this.GridCliente.Size = new System.Drawing.Size(1084, 136);
+            this.GridCliente.Size = new System.Drawing.Size(612, 165);
             this.GridCliente.TabIndex = 10;
             this.GridCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCliente_CellDoubleClick);
             // 
@@ -354,9 +351,9 @@
             this.groupBox2.Controls.Add(this.btnDesbloquear);
             this.groupBox2.Controls.Add(this.btnBloquear);
             this.groupBox2.Location = new System.Drawing.Point(29, 104);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(488, 258);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
@@ -369,7 +366,7 @@
             // 
             this.metroTextBox10.CustomButton.Image = null;
             this.metroTextBox10.CustomButton.Location = new System.Drawing.Point(285, 1);
-            this.metroTextBox10.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox10.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox10.CustomButton.Name = "";
             this.metroTextBox10.CustomButton.Size = new System.Drawing.Size(41, 41);
             this.metroTextBox10.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -380,7 +377,7 @@
             this.metroTextBox10.Enabled = false;
             this.metroTextBox10.Lines = new string[0];
             this.metroTextBox10.Location = new System.Drawing.Point(24, 201);
-            this.metroTextBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox10.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox10.MaxLength = 60;
             this.metroTextBox10.Multiline = true;
             this.metroTextBox10.Name = "metroTextBox10";
@@ -406,21 +403,6 @@
             this.label19.TabIndex = 36;
             this.label19.Text = "Observações";
             // 
-            // btnBloquear
-            // 
-            this.btnBloquear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBloquear.BackgroundImage")));
-            this.btnBloquear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBloquear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBloquear.FlatAppearance.BorderSize = 0;
-            this.btnBloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBloquear.Location = new System.Drawing.Point(390, 196);
-            this.btnBloquear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnBloquear.Name = "btnBloquear";
-            this.btnBloquear.Size = new System.Drawing.Size(40, 47);
-            this.btnBloquear.TabIndex = 27;
-            this.btnBloquear.UseVisualStyleBackColor = true;
-            this.btnBloquear.Click += new System.EventHandler(this.btnBloquear_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -437,10 +419,10 @@
             // 
             // 
             this.metroTextBox9.CustomButton.Image = null;
-            this.metroTextBox9.CustomButton.Location = new System.Drawing.Point(194, 2);
-            this.metroTextBox9.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox9.CustomButton.Location = new System.Drawing.Point(216, 2);
+            this.metroTextBox9.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox9.CustomButton.Name = "";
-            this.metroTextBox9.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.metroTextBox9.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.metroTextBox9.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox9.CustomButton.TabIndex = 1;
             this.metroTextBox9.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -449,7 +431,7 @@
             this.metroTextBox9.Enabled = false;
             this.metroTextBox9.Lines = new string[0];
             this.metroTextBox9.Location = new System.Drawing.Point(240, 95);
-            this.metroTextBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox9.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox9.MaxLength = 60;
             this.metroTextBox9.Name = "metroTextBox9";
             this.metroTextBox9.PasswordChar = '\0';
@@ -494,21 +476,6 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "Email";
             // 
-            // btnDesbloquear
-            // 
-            this.btnDesbloquear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDesbloquear.BackgroundImage")));
-            this.btnDesbloquear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDesbloquear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDesbloquear.FlatAppearance.BorderSize = 0;
-            this.btnDesbloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesbloquear.Location = new System.Drawing.Point(390, 196);
-            this.btnDesbloquear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnDesbloquear.Name = "btnDesbloquear";
-            this.btnDesbloquear.Size = new System.Drawing.Size(40, 47);
-            this.btnDesbloquear.TabIndex = 26;
-            this.btnDesbloquear.UseVisualStyleBackColor = true;
-            this.btnDesbloquear.Click += new System.EventHandler(this.btnDesbloquear_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -535,7 +502,7 @@
             this.chkAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkAtivo.Enabled = false;
             this.chkAtivo.Location = new System.Drawing.Point(370, 39);
-            this.chkAtivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkAtivo.Margin = new System.Windows.Forms.Padding(4);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(70, 24);
             this.chkAtivo.TabIndex = 17;
@@ -549,24 +516,41 @@
             this.txtDataCad.Enabled = false;
             this.txtDataCad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtDataCad.Location = new System.Drawing.Point(124, 39);
-            this.txtDataCad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDataCad.Margin = new System.Windows.Forms.Padding(2);
             this.txtDataCad.MinimumSize = new System.Drawing.Size(0, 30);
             this.txtDataCad.Name = "txtDataCad";
             this.txtDataCad.Size = new System.Drawing.Size(201, 30);
             this.txtDataCad.TabIndex = 28;
             // 
-            // btnEditar
+            // btnDesbloquear
             // 
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.Enabled = false;
-            this.btnEditar.Location = new System.Drawing.Point(817, 705);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(108, 30);
-            this.btnEditar.TabIndex = 17;
-            this.btnEditar.Text = "&Editar";
-            this.btnEditar.UseSelectable = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnDesbloquear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDesbloquear.BackgroundImage")));
+            this.btnDesbloquear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDesbloquear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDesbloquear.FlatAppearance.BorderSize = 0;
+            this.btnDesbloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesbloquear.Location = new System.Drawing.Point(390, 196);
+            this.btnDesbloquear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDesbloquear.Name = "btnDesbloquear";
+            this.btnDesbloquear.Size = new System.Drawing.Size(40, 47);
+            this.btnDesbloquear.TabIndex = 26;
+            this.btnDesbloquear.UseVisualStyleBackColor = true;
+            this.btnDesbloquear.Click += new System.EventHandler(this.btnDesbloquear_Click);
+            // 
+            // btnBloquear
+            // 
+            this.btnBloquear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBloquear.BackgroundImage")));
+            this.btnBloquear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBloquear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBloquear.FlatAppearance.BorderSize = 0;
+            this.btnBloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBloquear.Location = new System.Drawing.Point(390, 196);
+            this.btnBloquear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBloquear.Name = "btnBloquear";
+            this.btnBloquear.Size = new System.Drawing.Size(40, 47);
+            this.btnBloquear.TabIndex = 27;
+            this.btnBloquear.UseVisualStyleBackColor = true;
+            this.btnBloquear.Click += new System.EventHandler(this.btnBloquear_Click);
             // 
             // txtIdPesq
             // 
@@ -574,10 +558,10 @@
             // 
             // 
             this.txtIdPesq.CustomButton.Image = null;
-            this.txtIdPesq.CustomButton.Location = new System.Drawing.Point(47, 2);
-            this.txtIdPesq.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdPesq.CustomButton.Location = new System.Drawing.Point(52, 2);
+            this.txtIdPesq.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdPesq.CustomButton.Name = "";
-            this.txtIdPesq.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.txtIdPesq.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.txtIdPesq.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtIdPesq.CustomButton.TabIndex = 1;
             this.txtIdPesq.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -585,7 +569,7 @@
             this.txtIdPesq.CustomButton.Visible = false;
             this.txtIdPesq.Lines = new string[0];
             this.txtIdPesq.Location = new System.Drawing.Point(9, 46);
-            this.txtIdPesq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdPesq.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdPesq.MaxLength = 60;
             this.txtIdPesq.Name = "txtIdPesq";
             this.txtIdPesq.PasswordChar = '\0';
@@ -607,10 +591,10 @@
             // 
             // 
             this.txtCpfPsq.CustomButton.Image = null;
-            this.txtCpfPsq.CustomButton.Location = new System.Drawing.Point(97, 2);
-            this.txtCpfPsq.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCpfPsq.CustomButton.Location = new System.Drawing.Point(108, 2);
+            this.txtCpfPsq.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpfPsq.CustomButton.Name = "";
-            this.txtCpfPsq.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.txtCpfPsq.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.txtCpfPsq.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCpfPsq.CustomButton.TabIndex = 1;
             this.txtCpfPsq.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -618,7 +602,7 @@
             this.txtCpfPsq.CustomButton.Visible = false;
             this.txtCpfPsq.Lines = new string[0];
             this.txtCpfPsq.Location = new System.Drawing.Point(106, 46);
-            this.txtCpfPsq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCpfPsq.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpfPsq.MaxLength = 60;
             this.txtCpfPsq.Name = "txtCpfPsq";
             this.txtCpfPsq.PasswordChar = '\0';
@@ -643,9 +627,9 @@
             this.gpBoxPesq.Controls.Add(this.txtPesqNome);
             this.gpBoxPesq.Controls.Add(this.txtIdPesq);
             this.gpBoxPesq.Location = new System.Drawing.Point(29, 7);
-            this.gpBoxPesq.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gpBoxPesq.Margin = new System.Windows.Forms.Padding(2);
             this.gpBoxPesq.Name = "gpBoxPesq";
-            this.gpBoxPesq.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gpBoxPesq.Padding = new System.Windows.Forms.Padding(2);
             this.gpBoxPesq.Size = new System.Drawing.Size(488, 93);
             this.gpBoxPesq.TabIndex = 14;
             this.gpBoxPesq.TabStop = false;
@@ -687,10 +671,10 @@
             // 
             // 
             this.txtPesqNome.CustomButton.Image = null;
-            this.txtPesqNome.CustomButton.Location = new System.Drawing.Point(174, 2);
-            this.txtPesqNome.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPesqNome.CustomButton.Location = new System.Drawing.Point(193, 2);
+            this.txtPesqNome.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtPesqNome.CustomButton.Name = "";
-            this.txtPesqNome.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.txtPesqNome.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.txtPesqNome.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtPesqNome.CustomButton.TabIndex = 1;
             this.txtPesqNome.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -698,7 +682,7 @@
             this.txtPesqNome.CustomButton.Visible = false;
             this.txtPesqNome.Lines = new string[0];
             this.txtPesqNome.Location = new System.Drawing.Point(263, 46);
-            this.txtPesqNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPesqNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtPesqNome.MaxLength = 60;
             this.txtPesqNome.Name = "txtPesqNome";
             this.txtPesqNome.PasswordChar = '\0';
@@ -718,25 +702,13 @@
             // 
             this.groupBox1.Controls.Add(this.GridCliente);
             this.groupBox1.Location = new System.Drawing.Point(29, 366);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1102, 170);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(639, 209);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Clientes";
-            // 
-            // btnListar
-            // 
-            this.btnListar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnListar.Location = new System.Drawing.Point(968, 705);
-            this.btnListar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(108, 30);
-            this.btnListar.TabIndex = 22;
-            this.btnListar.Text = "&Listar";
-            this.btnListar.UseSelectable = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click_1);
             // 
             // groupBox3
             // 
@@ -759,13 +731,41 @@
             this.groupBox3.Controls.Add(this.metroTextBox2);
             this.groupBox3.Controls.Add(this.metroTextBox1);
             this.groupBox3.Location = new System.Drawing.Point(538, 7);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(593, 194);
             this.groupBox3.TabIndex = 29;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Endereço";
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Location = new System.Drawing.Point(520, 136);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(53, 49);
+            this.button7.TabIndex = 68;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(463, 135);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(53, 49);
+            this.button6.TabIndex = 67;
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
@@ -852,7 +852,7 @@
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 24;
             this.metroComboBox1.Location = new System.Drawing.Point(227, 146);
-            this.metroComboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroComboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(206, 30);
             this.metroComboBox1.TabIndex = 30;
@@ -865,7 +865,7 @@
             // 
             this.metroTextBox8.CustomButton.Image = null;
             this.metroTextBox8.CustomButton.Location = new System.Drawing.Point(174, 2);
-            this.metroTextBox8.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox8.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox8.CustomButton.Name = "";
             this.metroTextBox8.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.metroTextBox8.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -875,7 +875,7 @@
             this.metroTextBox8.CustomButton.Visible = false;
             this.metroTextBox8.Lines = new string[0];
             this.metroTextBox8.Location = new System.Drawing.Point(18, 146);
-            this.metroTextBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox8.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox8.MaxLength = 60;
             this.metroTextBox8.Name = "metroTextBox8";
             this.metroTextBox8.PasswordChar = '\0';
@@ -896,10 +896,10 @@
             // 
             // 
             this.metroTextBox6.CustomButton.Image = null;
-            this.metroTextBox6.CustomButton.Location = new System.Drawing.Point(205, 2);
-            this.metroTextBox6.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox6.CustomButton.Location = new System.Drawing.Point(228, 2);
+            this.metroTextBox6.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox6.CustomButton.Name = "";
-            this.metroTextBox6.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.metroTextBox6.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.metroTextBox6.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox6.CustomButton.TabIndex = 1;
             this.metroTextBox6.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -907,7 +907,7 @@
             this.metroTextBox6.CustomButton.Visible = false;
             this.metroTextBox6.Lines = new string[0];
             this.metroTextBox6.Location = new System.Drawing.Point(224, 96);
-            this.metroTextBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox6.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox6.MaxLength = 60;
             this.metroTextBox6.Name = "metroTextBox6";
             this.metroTextBox6.PasswordChar = '\0';
@@ -928,10 +928,10 @@
             // 
             // 
             this.metroTextBox5.CustomButton.Image = null;
-            this.metroTextBox5.CustomButton.Location = new System.Drawing.Point(144, 2);
-            this.metroTextBox5.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox5.CustomButton.Location = new System.Drawing.Point(160, 2);
+            this.metroTextBox5.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox5.CustomButton.Name = "";
-            this.metroTextBox5.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.metroTextBox5.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.metroTextBox5.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox5.CustomButton.TabIndex = 1;
             this.metroTextBox5.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -939,7 +939,7 @@
             this.metroTextBox5.CustomButton.Visible = false;
             this.metroTextBox5.Lines = new string[0];
             this.metroTextBox5.Location = new System.Drawing.Point(406, 44);
-            this.metroTextBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox5.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox5.MaxLength = 60;
             this.metroTextBox5.Name = "metroTextBox5";
             this.metroTextBox5.PasswordChar = '\0';
@@ -960,10 +960,10 @@
             // 
             // 
             this.metroTextBox4.CustomButton.Image = null;
-            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(158, 2);
-            this.metroTextBox4.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(175, 2);
+            this.metroTextBox4.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox4.CustomButton.Name = "";
-            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox4.CustomButton.TabIndex = 1;
             this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -971,7 +971,7 @@
             this.metroTextBox4.CustomButton.Visible = false;
             this.metroTextBox4.Lines = new string[0];
             this.metroTextBox4.Location = new System.Drawing.Point(18, 97);
-            this.metroTextBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox4.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox4.MaxLength = 60;
             this.metroTextBox4.Name = "metroTextBox4";
             this.metroTextBox4.PasswordChar = '\0';
@@ -992,10 +992,10 @@
             // 
             // 
             this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(224, 2);
-            this.metroTextBox3.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(249, 2);
+            this.metroTextBox3.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox3.CustomButton.Name = "";
-            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox3.CustomButton.TabIndex = 1;
             this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1003,7 +1003,7 @@
             this.metroTextBox3.CustomButton.Visible = false;
             this.metroTextBox3.Lines = new string[0];
             this.metroTextBox3.Location = new System.Drawing.Point(124, 44);
-            this.metroTextBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox3.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox3.MaxLength = 60;
             this.metroTextBox3.Name = "metroTextBox3";
             this.metroTextBox3.PasswordChar = '\0';
@@ -1024,10 +1024,10 @@
             // 
             // 
             this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(76, 2);
-            this.metroTextBox2.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(84, 2);
+            this.metroTextBox2.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox2.CustomButton.TabIndex = 1;
             this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1035,7 +1035,7 @@
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Lines = new string[0];
             this.metroTextBox2.Location = new System.Drawing.Point(482, 96);
-            this.metroTextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox2.MaxLength = 60;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
@@ -1056,10 +1056,10 @@
             // 
             // 
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(68, 2);
-            this.metroTextBox1.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(76, 2);
+            this.metroTextBox1.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(17, 18);
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.CustomButton.TabIndex = 1;
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1067,7 +1067,7 @@
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[0];
             this.metroTextBox1.Location = new System.Drawing.Point(18, 44);
-            this.metroTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox1.MaxLength = 60;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -1084,191 +1084,30 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.maskedTextBox4);
-            this.groupBox4.Controls.Add(this.label25);
-            this.groupBox4.Controls.Add(this.metroComboBox5);
-            this.groupBox4.Controls.Add(this.label26);
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.maskedTextBox3);
-            this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Controls.Add(this.metroComboBox4);
-            this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.metroComboBox2);
+            this.groupBox4.Controls.Add(this.metroComboBox3);
+            this.groupBox4.Controls.Add(this.maskedTextBox1);
+            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.maskedTextBox2);
             this.groupBox4.Controls.Add(this.label21);
-            this.groupBox4.Controls.Add(this.metroComboBox3);
             this.groupBox4.Controls.Add(this.label22);
-            this.groupBox4.Controls.Add(this.maskedTextBox1);
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.metroComboBox2);
-            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Controls.Add(this.metroComboBox4);
+            this.groupBox4.Controls.Add(this.metroComboBox5);
+            this.groupBox4.Controls.Add(this.maskedTextBox4);
+            this.groupBox4.Controls.Add(this.label25);
+            this.groupBox4.Controls.Add(this.label26);
+            this.groupBox4.Controls.Add(this.maskedTextBox3);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.label24);
             this.groupBox4.Location = new System.Drawing.Point(536, 205);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(590, 157);
             this.groupBox4.TabIndex = 29;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Numeros";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(13, 50);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maskedTextBox1.Mask = "(00) 00000-9999";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(107, 26);
-            this.maskedTextBox1.TabIndex = 51;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(533, 39);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 94);
-            this.button1.TabIndex = 46;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(121, 24);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(37, 20);
-            this.label20.TabIndex = 45;
-            this.label20.Text = "Tipo";
-            // 
-            // metroComboBox2
-            // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 24;
-            this.metroComboBox2.Items.AddRange(new object[] {
-            "Residencial",
-            "Comercial",
-            "Celular"});
-            this.metroComboBox2.Location = new System.Drawing.Point(125, 48);
-            this.metroComboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(95, 30);
-            this.metroComboBox2.TabIndex = 44;
-            this.metroComboBox2.UseSelectable = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(8, 24);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(71, 20);
-            this.label18.TabIndex = 43;
-            this.label18.Text = "Telefone";
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(224, 107);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 26);
-            this.button2.TabIndex = 52;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(13, 108);
-            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maskedTextBox2.Mask = "(00) 00000-9999";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(107, 26);
-            this.maskedTextBox2.TabIndex = 56;
-            this.maskedTextBox2.Visible = false;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(121, 82);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(37, 20);
-            this.label21.TabIndex = 55;
-            this.label21.Text = "Tipo";
-            this.label21.Visible = false;
-            // 
-            // metroComboBox3
-            // 
-            this.metroComboBox3.FormattingEnabled = true;
-            this.metroComboBox3.ItemHeight = 24;
-            this.metroComboBox3.Items.AddRange(new object[] {
-            "Residencial",
-            "Comercial",
-            "Celular"});
-            this.metroComboBox3.Location = new System.Drawing.Point(125, 105);
-            this.metroComboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.metroComboBox3.Name = "metroComboBox3";
-            this.metroComboBox3.Size = new System.Drawing.Size(95, 30);
-            this.metroComboBox3.TabIndex = 54;
-            this.metroComboBox3.UseSelectable = true;
-            this.metroComboBox3.Visible = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(8, 82);
-            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(71, 20);
-            this.label22.TabIndex = 53;
-            this.label22.Text = "Telefone";
-            this.label22.Visible = false;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(493, 49);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(25, 26);
-            this.button3.TabIndex = 57;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
-            // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(281, 50);
-            this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maskedTextBox3.Mask = "(00) 00000-9999";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(107, 26);
-            this.maskedTextBox3.TabIndex = 61;
-            this.maskedTextBox3.Visible = false;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(389, 24);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(37, 20);
-            this.label23.TabIndex = 60;
-            this.label23.Text = "Tipo";
-            this.label23.Visible = false;
             // 
             // metroComboBox4
             // 
@@ -1278,60 +1117,13 @@
             "Residencial",
             "Comercial",
             "Celular"});
-            this.metroComboBox4.Location = new System.Drawing.Point(393, 48);
-            this.metroComboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroComboBox4.Location = new System.Drawing.Point(447, 115);
+            this.metroComboBox4.Margin = new System.Windows.Forms.Padding(2);
             this.metroComboBox4.Name = "metroComboBox4";
-            this.metroComboBox4.Size = new System.Drawing.Size(95, 30);
-            this.metroComboBox4.TabIndex = 59;
+            this.metroComboBox4.Size = new System.Drawing.Size(100, 30);
+            this.metroComboBox4.TabIndex = 68;
             this.metroComboBox4.UseSelectable = true;
             this.metroComboBox4.Visible = false;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(276, 24);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(71, 20);
-            this.label24.TabIndex = 58;
-            this.label24.Text = "Telefone";
-            this.label24.Visible = false;
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(493, 110);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(25, 26);
-            this.button4.TabIndex = 62;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
-            // 
-            // maskedTextBox4
-            // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(281, 110);
-            this.maskedTextBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.maskedTextBox4.Mask = "(00) 00000-9999";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(107, 26);
-            this.maskedTextBox4.TabIndex = 66;
-            this.maskedTextBox4.Visible = false;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(389, 85);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(37, 20);
-            this.label25.TabIndex = 65;
-            this.label25.Text = "Tipo";
-            this.label25.Visible = false;
             // 
             // metroComboBox5
             // 
@@ -1341,33 +1133,85 @@
             "Residencial",
             "Comercial",
             "Celular"});
-            this.metroComboBox5.Location = new System.Drawing.Point(393, 107);
-            this.metroComboBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroComboBox5.Location = new System.Drawing.Point(447, 51);
+            this.metroComboBox5.Margin = new System.Windows.Forms.Padding(2);
             this.metroComboBox5.Name = "metroComboBox5";
-            this.metroComboBox5.Size = new System.Drawing.Size(95, 30);
-            this.metroComboBox5.TabIndex = 64;
+            this.metroComboBox5.Size = new System.Drawing.Size(100, 30);
+            this.metroComboBox5.TabIndex = 67;
             this.metroComboBox5.UseSelectable = true;
-            this.metroComboBox5.Visible = false;
+            // 
+            // maskedTextBox4
+            // 
+            this.maskedTextBox4.Location = new System.Drawing.Point(305, 115);
+            this.maskedTextBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBox4.Mask = "(00) 00000-9999";
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(121, 26);
+            this.maskedTextBox4.TabIndex = 66;
+            this.maskedTextBox4.Visible = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(443, 93);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(37, 20);
+            this.label25.TabIndex = 65;
+            this.label25.Text = "Tipo";
+            this.label25.Visible = false;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(276, 85);
+            this.label26.Location = new System.Drawing.Point(301, 93);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(71, 20);
+            this.label26.Size = new System.Drawing.Size(92, 20);
             this.label26.TabIndex = 63;
-            this.label26.Text = "Telefone";
+            this.label26.Text = "Telefone - 4";
             this.label26.Visible = false;
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Location = new System.Drawing.Point(305, 52);
+            this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBox3.Mask = "(00) 00000-9999";
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(121, 26);
+            this.maskedTextBox3.TabIndex = 61;
+            this.maskedTextBox3.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(443, 29);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(37, 20);
+            this.label23.TabIndex = 60;
+            this.label23.Text = "Tipo";
+            this.label23.Visible = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(301, 26);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(92, 20);
+            this.label24.TabIndex = 58;
+            this.label24.Text = "Telefone - 2";
+            this.label24.Visible = false;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.dataGridView1);
-            this.groupBox5.Location = new System.Drawing.Point(29, 540);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Location = new System.Drawing.Point(684, 366);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox5.Size = new System.Drawing.Size(1102, 134);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox5.Size = new System.Drawing.Size(442, 209);
             this.groupBox5.TabIndex = 22;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Endereços";
@@ -1388,12 +1232,12 @@
             this.dataGridViewCheckBoxColumn1});
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
             this.dataGridView1.Location = new System.Drawing.Point(13, 30);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1084, 100);
+            this.dataGridView1.Size = new System.Drawing.Size(414, 165);
             this.dataGridView1.TabIndex = 10;
             // 
             // dataGridViewTextBoxColumn1
@@ -1454,61 +1298,181 @@
             this.btnInserir.FlatAppearance.BorderSize = 0;
             this.btnInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInserir.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir.Image")));
-            this.btnInserir.Location = new System.Drawing.Point(661, 674);
+            this.btnInserir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnInserir.Location = new System.Drawing.Point(419, 579);
             this.btnInserir.Margin = new System.Windows.Forms.Padding(2);
             this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(67, 80);
+            this.btnInserir.Size = new System.Drawing.Size(98, 102);
             this.btnInserir.TabIndex = 67;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnInserir.UseVisualStyleBackColor = true;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
-            // button6
+            // metroComboBox2
             // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(463, 135);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(53, 49);
-            this.button6.TabIndex = 67;
-            this.button6.UseVisualStyleBackColor = true;
+            this.metroComboBox2.FormattingEnabled = true;
+            this.metroComboBox2.ItemHeight = 24;
+            this.metroComboBox2.Items.AddRange(new object[] {
+            "Residencial",
+            "Comercial",
+            "Celular"});
+            this.metroComboBox2.Location = new System.Drawing.Point(162, 113);
+            this.metroComboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.metroComboBox2.Name = "metroComboBox2";
+            this.metroComboBox2.Size = new System.Drawing.Size(100, 30);
+            this.metroComboBox2.TabIndex = 76;
+            this.metroComboBox2.UseSelectable = true;
+            this.metroComboBox2.Visible = false;
             // 
-            // button7
+            // metroComboBox3
             // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(520, 136);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(53, 49);
-            this.button7.TabIndex = 68;
-            this.button7.UseVisualStyleBackColor = true;
+            this.metroComboBox3.FormattingEnabled = true;
+            this.metroComboBox3.ItemHeight = 24;
+            this.metroComboBox3.Items.AddRange(new object[] {
+            "Residencial",
+            "Comercial",
+            "Celular"});
+            this.metroComboBox3.Location = new System.Drawing.Point(162, 49);
+            this.metroComboBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.metroComboBox3.Name = "metroComboBox3";
+            this.metroComboBox3.Size = new System.Drawing.Size(100, 30);
+            this.metroComboBox3.TabIndex = 75;
+            this.metroComboBox3.UseSelectable = true;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(20, 113);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBox1.Mask = "(00) 00000-9999";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(121, 26);
+            this.maskedTextBox1.TabIndex = 74;
+            this.maskedTextBox1.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(158, 91);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(37, 20);
+            this.label18.TabIndex = 73;
+            this.label18.Text = "Tipo";
+            this.label18.Visible = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(16, 91);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(92, 20);
+            this.label20.TabIndex = 72;
+            this.label20.Text = "Telefone - 3";
+            this.label20.Visible = false;
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(20, 50);
+            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBox2.Mask = "(00) 00000-9999";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(121, 26);
+            this.maskedTextBox2.TabIndex = 71;
+            this.maskedTextBox2.Visible = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(158, 27);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(37, 20);
+            this.label21.TabIndex = 70;
+            this.label21.Text = "Tipo";
+            this.label21.Visible = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(16, 24);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(92, 20);
+            this.label22.TabIndex = 69;
+            this.label22.Text = "Telefone - 1";
+            this.label22.Visible = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEditar.Location = new System.Drawing.Point(585, 579);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(98, 102);
+            this.btnEditar.TabIndex = 68;
+            this.btnEditar.Text = "Inserir";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnListar
+            // 
+            this.btnListar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnListar.FlatAppearance.BorderSize = 0;
+            this.btnListar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListar.Image = ((System.Drawing.Image)(resources.GetObject("btnListar.Image")));
+            this.btnListar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnListar.Location = new System.Drawing.Point(751, 579);
+            this.btnListar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(98, 102);
+            this.btnListar.TabIndex = 69;
+            this.btnListar.Text = "Listar";
+            this.btnListar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(917, 579);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 102);
+            this.button1.TabIndex = 70;
+            this.button1.Text = "Sair";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1235, 764);
+            this.ClientSize = new System.Drawing.Size(1235, 778);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnListar);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.btnListar);
             this.Controls.Add(this.gpBoxPesq);
-            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCliente";
             this.Padding = new System.Windows.Forms.Padding(23, 75, 23, 25);
             this.Text = "Cliente";
@@ -1537,12 +1501,10 @@
         private MetroFramework.Controls.MetroTextBox txtEmail;
         private System.Windows.Forms.DataGridView GridCliente;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroButton btnEditar;
         private MetroFramework.Controls.MetroTextBox txtIdPesq;
         private MetroFramework.Controls.MetroTextBox txtCpfPsq;
         private System.Windows.Forms.GroupBox gpBoxPesq;
         private System.Windows.Forms.GroupBox groupBox1;
-        private MetroFramework.Controls.MetroButton btnListar;
         private System.Windows.Forms.CheckBox chkAtivo;
         private MetroFramework.Controls.MetroTextBox txtPesqNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
@@ -1582,28 +1544,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label20;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
-        private System.Windows.Forms.Label label18;
         private MetroFramework.Controls.MetroTextBox metroTextBox10;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.MaskedTextBox maskedTextBox4;
         private System.Windows.Forms.Label label25;
-        private MetroFramework.Controls.MetroComboBox metroComboBox5;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.Label label23;
-        private MetroFramework.Controls.MetroComboBox metroComboBox4;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.Label label21;
-        private MetroFramework.Controls.MetroComboBox metroComboBox3;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -1615,6 +1563,19 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnInserir;
+        private MetroFramework.Controls.MetroComboBox metroComboBox4;
+        private MetroFramework.Controls.MetroComboBox metroComboBox5;
+        private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private MetroFramework.Controls.MetroComboBox metroComboBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button button1;
     }
 }
 

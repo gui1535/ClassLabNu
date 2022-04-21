@@ -21,7 +21,7 @@ As técnicas e tecnologias utilizadas pra isso são:
 - `DataGridView`: Listagem de produtos, clientes e usuarios de forma mais interativa
 - `Procedures`: Facilitar a manipulação de dados
 - `Biblioteca de classes`: Prover a reusabilidade em sistemas futuros
-- `Web Service Correio`: Consultando CEP do clientes atraves de um Web Service
+- `Web Service Correio`: Consultando CEP do clientes atraves de um Web Service dos Correios
 
 <!-- ## 🎯 Desafio -->
 <!-- Tela de detalhes do produto -->

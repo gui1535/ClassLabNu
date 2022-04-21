@@ -124,7 +124,7 @@ namespace ClassLabNu
                 var banco = Banco.Abrir();
 
                 // Comandos SQL
-                banco.CommandType = System.Data.CommandType.StoredProcedure;
+                banco.CommandType = CommandType.StoredProcedure;
                 banco.CommandText = "cliente_inserir";
 
                 // Parametros

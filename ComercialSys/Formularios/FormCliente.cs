@@ -538,12 +538,40 @@ namespace ComercialSys
 
         private void txtCep_KeyUp(object sender, KeyEventArgs e)
         {
+            // Verificando para pesquisar só se tiver 8 valores
+            if (txtCep.Text.Length == 8)
+            {
+                // Bloco
+                using (var ws = new WSCorreios.AtendeClienteClient())
+                {
+                    // Tratamento de erro
+                    try
+                    {
+                        // Consultando CEP e removendo espaços, se tiver
+                        var endereco = ws.consultaCEP(txtCep.Text.Trim());
 
+                        //
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+            }
         }
 
         private void btnCancelCep_Click(object sender, EventArgs e)
         {
             txtCep.Text = String.Empty;
+            txtEstado.Text = String.Empty;
+            txtLogradouro.Text = String.Empty;
+            txtCidade.Text = String.Empty;
+            txtBairro.Text = String.Empty;
+            txtComplemento.Text = String.Empty;
+            cmbTipo.Text = String.Empty;
         }
     }
 }

@@ -34,7 +34,15 @@
             this.txtCpf = new MetroFramework.Controls.MetroTextBox();
             this.txtEmail = new MetroFramework.Controls.MetroTextBox();
             this.GridCliente = new System.Windows.Forms.DataGridView();
+            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnLimparCampos = new MetroFramework.Controls.MetroButton();
             this.txtObs = new MetroFramework.Controls.MetroTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,8 +63,6 @@
             this.txtPesqNome = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gpboxEnderecos = new System.Windows.Forms.GroupBox();
-            this.btnCancelCep = new System.Windows.Forms.Button();
-            this.btnAddCep = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -74,22 +80,10 @@
             this.txtNumero = new MetroFramework.Controls.MetroTextBox();
             this.txtCep = new MetroFramework.Controls.MetroTextBox();
             this.gpboxNumeros = new System.Windows.Forms.GroupBox();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.metroComboBox4 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox5 = new MetroFramework.Controls.MetroComboBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.GridEndereco = new System.Windows.Forms.DataGridView();
             this.colunaCep = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,13 +94,21 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnAddCep = new System.Windows.Forms.Button();
+            this.btnCancelCep = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.metroComboBox5 = new MetroFramework.Controls.MetroComboBox();
+            this.metroComboBox4 = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gpBoxPesq.SuspendLayout();
@@ -277,8 +279,68 @@
             this.GridCliente.TabIndex = 10;
             this.GridCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCliente_CellDoubleClick);
             // 
+            // colunaId
+            // 
+            this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colunaId.HeaderText = "Id";
+            this.colunaId.MinimumWidth = 6;
+            this.colunaId.Name = "colunaId";
+            this.colunaId.ReadOnly = true;
+            this.colunaId.Width = 53;
+            // 
+            // colunaObs
+            // 
+            this.colunaObs.HeaderText = "Observações";
+            this.colunaObs.MinimumWidth = 6;
+            this.colunaObs.Name = "colunaObs";
+            this.colunaObs.ReadOnly = true;
+            // 
+            // colunaNome
+            // 
+            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.colunaNome.HeaderText = "Nome";
+            this.colunaNome.MinimumWidth = 6;
+            this.colunaNome.Name = "colunaNome";
+            this.colunaNome.ReadOnly = true;
+            this.colunaNome.Width = 6;
+            // 
+            // colunaCpf
+            // 
+            this.colunaCpf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.colunaCpf.HeaderText = "CPF";
+            this.colunaCpf.MinimumWidth = 6;
+            this.colunaCpf.Name = "colunaCpf";
+            this.colunaCpf.ReadOnly = true;
+            this.colunaCpf.Width = 6;
+            // 
+            // colunaEmail
+            // 
+            this.colunaEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaEmail.HeaderText = "Email";
+            this.colunaEmail.MinimumWidth = 6;
+            this.colunaEmail.Name = "colunaEmail";
+            this.colunaEmail.ReadOnly = true;
+            // 
+            // colunaDataCad
+            // 
+            this.colunaDataCad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaDataCad.HeaderText = "DataCad";
+            this.colunaDataCad.MinimumWidth = 6;
+            this.colunaDataCad.Name = "colunaDataCad";
+            this.colunaDataCad.ReadOnly = true;
+            // 
+            // colunaAtivo
+            // 
+            this.colunaAtivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colunaAtivo.HeaderText = "Ativo";
+            this.colunaAtivo.MinimumWidth = 6;
+            this.colunaAtivo.Name = "colunaAtivo";
+            this.colunaAtivo.ReadOnly = true;
+            this.colunaAtivo.Width = 54;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnLimparCampos);
             this.groupBox2.Controls.Add(this.txtObs);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.txtId);
@@ -302,6 +364,19 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cliente";
+            // 
+            // btnLimparCampos
+            // 
+            this.btnLimparCampos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimparCampos.Enabled = false;
+            this.btnLimparCampos.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnLimparCampos.Location = new System.Drawing.Point(364, 221);
+            this.btnLimparCampos.Name = "btnLimparCampos";
+            this.btnLimparCampos.Size = new System.Drawing.Size(108, 23);
+            this.btnLimparCampos.TabIndex = 37;
+            this.btnLimparCampos.Text = "Limpar Campos";
+            this.btnLimparCampos.UseSelectable = true;
+            this.btnLimparCampos.Click += new System.EventHandler(this.btnLimparCampos_Click);
             // 
             // txtObs
             // 
@@ -332,7 +407,7 @@
             this.txtObs.SelectionStart = 0;
             this.txtObs.ShortcutsEnabled = true;
             this.txtObs.Size = new System.Drawing.Size(327, 43);
-            this.txtObs.TabIndex = 36;
+            this.txtObs.TabIndex = 0;
             this.txtObs.UseSelectable = true;
             this.txtObs.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtObs.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -430,7 +505,7 @@
             this.btnDesbloquear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesbloquear.FlatAppearance.BorderSize = 0;
             this.btnDesbloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesbloquear.Location = new System.Drawing.Point(403, 176);
+            this.btnDesbloquear.Location = new System.Drawing.Point(390, 145);
             this.btnDesbloquear.Margin = new System.Windows.Forms.Padding(2);
             this.btnDesbloquear.Name = "btnDesbloquear";
             this.btnDesbloquear.Size = new System.Drawing.Size(50, 52);
@@ -445,7 +520,7 @@
             this.btnBloquear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBloquear.FlatAppearance.BorderSize = 0;
             this.btnBloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBloquear.Location = new System.Drawing.Point(403, 176);
+            this.btnBloquear.Location = new System.Drawing.Point(390, 145);
             this.btnBloquear.Margin = new System.Windows.Forms.Padding(2);
             this.btnBloquear.Name = "btnBloquear";
             this.btnBloquear.Size = new System.Drawing.Size(50, 52);
@@ -641,40 +716,10 @@
             this.gpboxEnderecos.TabStop = false;
             this.gpboxEnderecos.Text = "Endereço";
             // 
-            // btnCancelCep
-            // 
-            this.btnCancelCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancelCep.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelCep.FlatAppearance.BorderSize = 0;
-            this.btnCancelCep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelCep.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelCep.Image")));
-            this.btnCancelCep.Location = new System.Drawing.Point(524, 170);
-            this.btnCancelCep.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelCep.Name = "btnCancelCep";
-            this.btnCancelCep.Size = new System.Drawing.Size(48, 49);
-            this.btnCancelCep.TabIndex = 68;
-            this.btnCancelCep.UseVisualStyleBackColor = true;
-            this.btnCancelCep.Click += new System.EventHandler(this.btnCancelCep_Click);
-            // 
-            // btnAddCep
-            // 
-            this.btnAddCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddCep.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCep.FlatAppearance.BorderSize = 0;
-            this.btnAddCep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCep.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCep.Image")));
-            this.btnAddCep.Location = new System.Drawing.Point(463, 172);
-            this.btnAddCep.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddCep.Name = "btnAddCep";
-            this.btnAddCep.Size = new System.Drawing.Size(48, 49);
-            this.btnAddCep.TabIndex = 67;
-            this.btnAddCep.UseVisualStyleBackColor = true;
-            this.btnAddCep.Click += new System.EventHandler(this.btnAddCep_Click);
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(232, 161);
+            this.label14.Location = new System.Drawing.Point(218, 161);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(37, 20);
@@ -714,7 +759,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(459, 90);
+            this.label10.Location = new System.Drawing.Point(456, 90);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 20);
@@ -724,7 +769,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(362, 24);
+            this.label9.Location = new System.Drawing.Point(371, 24);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 20);
@@ -770,10 +815,10 @@
             "Viaduto",
             "Viela",
             "Vila"});
-            this.cmbTipo.Location = new System.Drawing.Point(236, 183);
+            this.cmbTipo.Location = new System.Drawing.Point(222, 183);
             this.cmbTipo.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(206, 30);
+            this.cmbTipo.Size = new System.Drawing.Size(256, 30);
             this.cmbTipo.TabIndex = 30;
             this.cmbTipo.UseSelectable = true;
             // 
@@ -815,7 +860,7 @@
             // 
             // 
             this.txtBairro.CustomButton.Image = null;
-            this.txtBairro.CustomButton.Location = new System.Drawing.Point(228, 2);
+            this.txtBairro.CustomButton.Location = new System.Drawing.Point(200, 2);
             this.txtBairro.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtBairro.CustomButton.Name = "";
             this.txtBairro.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -824,19 +869,19 @@
             this.txtBairro.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtBairro.CustomButton.UseSelectable = true;
             this.txtBairro.CustomButton.Visible = false;
-            this.txtBairro.Enabled = false;
             this.txtBairro.Lines = new string[0];
             this.txtBairro.Location = new System.Drawing.Point(202, 114);
             this.txtBairro.Margin = new System.Windows.Forms.Padding(4);
             this.txtBairro.MaxLength = 60;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.PasswordChar = '\0';
+            this.txtBairro.ReadOnly = true;
             this.txtBairro.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtBairro.SelectedText = "";
             this.txtBairro.SelectionLength = 0;
             this.txtBairro.SelectionStart = 0;
             this.txtBairro.ShortcutsEnabled = true;
-            this.txtBairro.Size = new System.Drawing.Size(250, 24);
+            this.txtBairro.Size = new System.Drawing.Size(222, 24);
             this.txtBairro.TabIndex = 33;
             this.txtBairro.UseSelectable = true;
             this.txtBairro.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -848,7 +893,7 @@
             // 
             // 
             this.txtEstado.CustomButton.Image = null;
-            this.txtEstado.CustomButton.Location = new System.Drawing.Point(185, 2);
+            this.txtEstado.CustomButton.Location = new System.Drawing.Point(173, 2);
             this.txtEstado.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtEstado.CustomButton.Name = "";
             this.txtEstado.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -857,19 +902,19 @@
             this.txtEstado.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtEstado.CustomButton.UseSelectable = true;
             this.txtEstado.CustomButton.Visible = false;
-            this.txtEstado.Enabled = false;
             this.txtEstado.Lines = new string[0];
-            this.txtEstado.Location = new System.Drawing.Point(366, 46);
+            this.txtEstado.Location = new System.Drawing.Point(375, 46);
             this.txtEstado.Margin = new System.Windows.Forms.Padding(4);
             this.txtEstado.MaxLength = 60;
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.PasswordChar = '\0';
+            this.txtEstado.ReadOnly = true;
             this.txtEstado.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtEstado.SelectedText = "";
             this.txtEstado.SelectionLength = 0;
             this.txtEstado.SelectionStart = 0;
             this.txtEstado.ShortcutsEnabled = true;
-            this.txtEstado.Size = new System.Drawing.Size(207, 24);
+            this.txtEstado.Size = new System.Drawing.Size(195, 24);
             this.txtEstado.TabIndex = 32;
             this.txtEstado.UseSelectable = true;
             this.txtEstado.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -881,7 +926,7 @@
             // 
             // 
             this.txtCidade.CustomButton.Image = null;
-            this.txtCidade.CustomButton.Location = new System.Drawing.Point(145, 2);
+            this.txtCidade.CustomButton.Location = new System.Drawing.Point(151, 2);
             this.txtCidade.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtCidade.CustomButton.Name = "";
             this.txtCidade.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -890,19 +935,19 @@
             this.txtCidade.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtCidade.CustomButton.UseSelectable = true;
             this.txtCidade.CustomButton.Visible = false;
-            this.txtCidade.Enabled = false;
             this.txtCidade.Lines = new string[0];
             this.txtCidade.Location = new System.Drawing.Point(20, 114);
             this.txtCidade.Margin = new System.Windows.Forms.Padding(4);
             this.txtCidade.MaxLength = 60;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.PasswordChar = '\0';
+            this.txtCidade.ReadOnly = true;
             this.txtCidade.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtCidade.SelectedText = "";
             this.txtCidade.SelectionLength = 0;
             this.txtCidade.SelectionStart = 0;
             this.txtCidade.ShortcutsEnabled = true;
-            this.txtCidade.Size = new System.Drawing.Size(167, 24);
+            this.txtCidade.Size = new System.Drawing.Size(173, 24);
             this.txtCidade.TabIndex = 31;
             this.txtCidade.UseSelectable = true;
             this.txtCidade.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -914,7 +959,7 @@
             // 
             // 
             this.txtLogradouro.CustomButton.Image = null;
-            this.txtLogradouro.CustomButton.Location = new System.Drawing.Point(207, 2);
+            this.txtLogradouro.CustomButton.Location = new System.Drawing.Point(219, 2);
             this.txtLogradouro.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogradouro.CustomButton.Name = "";
             this.txtLogradouro.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -923,19 +968,19 @@
             this.txtLogradouro.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtLogradouro.CustomButton.UseSelectable = true;
             this.txtLogradouro.CustomButton.Visible = false;
-            this.txtLogradouro.Enabled = false;
             this.txtLogradouro.Lines = new string[0];
             this.txtLogradouro.Location = new System.Drawing.Point(126, 46);
             this.txtLogradouro.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogradouro.MaxLength = 60;
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.PasswordChar = '\0';
+            this.txtLogradouro.ReadOnly = true;
             this.txtLogradouro.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtLogradouro.SelectedText = "";
             this.txtLogradouro.SelectionLength = 0;
             this.txtLogradouro.SelectionStart = 0;
             this.txtLogradouro.ShortcutsEnabled = true;
-            this.txtLogradouro.Size = new System.Drawing.Size(229, 24);
+            this.txtLogradouro.Size = new System.Drawing.Size(241, 24);
             this.txtLogradouro.TabIndex = 30;
             this.txtLogradouro.UseSelectable = true;
             this.txtLogradouro.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -957,7 +1002,7 @@
             this.txtNumero.CustomButton.UseSelectable = true;
             this.txtNumero.CustomButton.Visible = false;
             this.txtNumero.Lines = new string[0];
-            this.txtNumero.Location = new System.Drawing.Point(460, 114);
+            this.txtNumero.Location = new System.Drawing.Point(457, 114);
             this.txtNumero.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumero.MaxLength = 60;
             this.txtNumero.Name = "txtNumero";
@@ -1008,6 +1053,7 @@
             // 
             // gpboxNumeros
             // 
+            this.gpboxNumeros.Controls.Add(this.button3);
             this.gpboxNumeros.Controls.Add(this.metroComboBox2);
             this.gpboxNumeros.Controls.Add(this.metroComboBox3);
             this.gpboxNumeros.Controls.Add(this.maskedTextBox1);
@@ -1034,21 +1080,6 @@
             this.gpboxNumeros.TabStop = false;
             this.gpboxNumeros.Text = "Numeros";
             // 
-            // metroComboBox2
-            // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 24;
-            this.metroComboBox2.Items.AddRange(new object[] {
-            "Residencial",
-            "Comercial",
-            "Celular"});
-            this.metroComboBox2.Location = new System.Drawing.Point(161, 131);
-            this.metroComboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(100, 30);
-            this.metroComboBox2.TabIndex = 76;
-            this.metroComboBox2.UseSelectable = true;
-            // 
             // metroComboBox3
             // 
             this.metroComboBox3.FormattingEnabled = true;
@@ -1057,45 +1088,16 @@
             "Residencial",
             "Comercial",
             "Celular"});
-            this.metroComboBox3.Location = new System.Drawing.Point(161, 54);
+            this.metroComboBox3.Location = new System.Drawing.Point(157, 54);
             this.metroComboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.metroComboBox3.Name = "metroComboBox3";
             this.metroComboBox3.Size = new System.Drawing.Size(100, 30);
             this.metroComboBox3.TabIndex = 75;
             this.metroComboBox3.UseSelectable = true;
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(19, 131);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox1.Mask = "(00) 00000-9999";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(121, 26);
-            this.maskedTextBox1.TabIndex = 74;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(157, 109);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(37, 20);
-            this.label18.TabIndex = 73;
-            this.label18.Text = "Tipo";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(15, 109);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(92, 20);
-            this.label20.TabIndex = 72;
-            this.label20.Text = "Telefone - 3";
-            // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(19, 55);
+            this.maskedTextBox2.Location = new System.Drawing.Point(15, 55);
             this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox2.Mask = "(00) 00000-9999";
             this.maskedTextBox2.Name = "maskedTextBox2";
@@ -1105,7 +1107,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(157, 32);
+            this.label21.Location = new System.Drawing.Point(153, 32);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(37, 20);
@@ -1115,100 +1117,12 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(15, 29);
+            this.label22.Location = new System.Drawing.Point(11, 29);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(92, 20);
             this.label22.TabIndex = 69;
             this.label22.Text = "Telefone - 1";
-            // 
-            // metroComboBox4
-            // 
-            this.metroComboBox4.FormattingEnabled = true;
-            this.metroComboBox4.ItemHeight = 24;
-            this.metroComboBox4.Items.AddRange(new object[] {
-            "Residencial",
-            "Comercial",
-            "Celular"});
-            this.metroComboBox4.Location = new System.Drawing.Point(469, 131);
-            this.metroComboBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox4.Name = "metroComboBox4";
-            this.metroComboBox4.Size = new System.Drawing.Size(100, 30);
-            this.metroComboBox4.TabIndex = 68;
-            this.metroComboBox4.UseSelectable = true;
-            // 
-            // metroComboBox5
-            // 
-            this.metroComboBox5.FormattingEnabled = true;
-            this.metroComboBox5.ItemHeight = 24;
-            this.metroComboBox5.Items.AddRange(new object[] {
-            "Residencial",
-            "Comercial",
-            "Celular"});
-            this.metroComboBox5.Location = new System.Drawing.Point(469, 54);
-            this.metroComboBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox5.Name = "metroComboBox5";
-            this.metroComboBox5.Size = new System.Drawing.Size(100, 30);
-            this.metroComboBox5.TabIndex = 67;
-            this.metroComboBox5.UseSelectable = true;
-            // 
-            // maskedTextBox4
-            // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(327, 131);
-            this.maskedTextBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox4.Mask = "(00) 00000-9999";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(121, 26);
-            this.maskedTextBox4.TabIndex = 66;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(465, 109);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(37, 20);
-            this.label25.TabIndex = 65;
-            this.label25.Text = "Tipo";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(323, 109);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(92, 20);
-            this.label26.TabIndex = 63;
-            this.label26.Text = "Telefone - 4";
-            // 
-            // maskedTextBox3
-            // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(327, 55);
-            this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox3.Mask = "(00) 00000-9999";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(121, 26);
-            this.maskedTextBox3.TabIndex = 61;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(465, 32);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(37, 20);
-            this.label23.TabIndex = 60;
-            this.label23.Text = "Tipo";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(323, 29);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(92, 20);
-            this.label24.TabIndex = 58;
-            this.label24.Text = "Telefone - 2";
             // 
             // groupBox5
             // 
@@ -1217,7 +1131,7 @@
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(505, 250);
+            this.groupBox5.Size = new System.Drawing.Size(586, 250);
             this.groupBox5.TabIndex = 22;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Endereços";
@@ -1241,7 +1155,7 @@
             this.GridEndereco.ReadOnly = true;
             this.GridEndereco.RowHeadersVisible = false;
             this.GridEndereco.RowHeadersWidth = 51;
-            this.GridEndereco.Size = new System.Drawing.Size(497, 223);
+            this.GridEndereco.Size = new System.Drawing.Size(578, 223);
             this.GridEndereco.TabIndex = 10;
             // 
             // colunaCep
@@ -1279,6 +1193,7 @@
             // btnInserir
             // 
             this.btnInserir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInserir.Enabled = false;
             this.btnInserir.FlatAppearance.BorderSize = 0;
             this.btnInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInserir.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir.Image")));
@@ -1296,6 +1211,7 @@
             // btnEditar
             // 
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.Enabled = false;
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
@@ -1334,7 +1250,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1150, 0);
+            this.button1.Location = new System.Drawing.Point(1231, 2);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(35, 29);
@@ -1342,70 +1258,187 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // colunaId
+            // btnAddCep
             // 
-            this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colunaId.HeaderText = "Id";
-            this.colunaId.MinimumWidth = 6;
-            this.colunaId.Name = "colunaId";
-            this.colunaId.ReadOnly = true;
-            this.colunaId.Width = 53;
+            this.btnAddCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddCep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCep.FlatAppearance.BorderSize = 0;
+            this.btnAddCep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCep.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCep.Image")));
+            this.btnAddCep.Location = new System.Drawing.Point(500, 172);
+            this.btnAddCep.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddCep.Name = "btnAddCep";
+            this.btnAddCep.Size = new System.Drawing.Size(48, 49);
+            this.btnAddCep.TabIndex = 67;
+            this.btnAddCep.UseVisualStyleBackColor = true;
+            this.btnAddCep.Click += new System.EventHandler(this.btnAddCep_Click);
             // 
-            // colunaObs
+            // btnCancelCep
             // 
-            this.colunaObs.HeaderText = "Observações";
-            this.colunaObs.MinimumWidth = 6;
-            this.colunaObs.Name = "colunaObs";
-            this.colunaObs.ReadOnly = true;
+            this.btnCancelCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCancelCep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelCep.FlatAppearance.BorderSize = 0;
+            this.btnCancelCep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelCep.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelCep.Image")));
+            this.btnCancelCep.Location = new System.Drawing.Point(552, 169);
+            this.btnCancelCep.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelCep.Name = "btnCancelCep";
+            this.btnCancelCep.Size = new System.Drawing.Size(48, 49);
+            this.btnCancelCep.TabIndex = 68;
+            this.btnCancelCep.UseVisualStyleBackColor = true;
+            this.btnCancelCep.Click += new System.EventHandler(this.btnCancelCep_Click);
             // 
-            // colunaNome
+            // button3
             // 
-            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.colunaNome.HeaderText = "Nome";
-            this.colunaNome.MinimumWidth = 6;
-            this.colunaNome.Name = "colunaNome";
-            this.colunaNome.ReadOnly = true;
-            this.colunaNome.Width = 6;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(537, 71);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(60, 58);
+            this.button3.TabIndex = 69;
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // colunaCpf
+            // label20
             // 
-            this.colunaCpf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.colunaCpf.HeaderText = "CPF";
-            this.colunaCpf.MinimumWidth = 6;
-            this.colunaCpf.Name = "colunaCpf";
-            this.colunaCpf.ReadOnly = true;
-            this.colunaCpf.Width = 6;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(11, 109);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(92, 20);
+            this.label20.TabIndex = 72;
+            this.label20.Text = "Telefone - 3";
             // 
-            // colunaEmail
+            // label18
             // 
-            this.colunaEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaEmail.HeaderText = "Email";
-            this.colunaEmail.MinimumWidth = 6;
-            this.colunaEmail.Name = "colunaEmail";
-            this.colunaEmail.ReadOnly = true;
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(153, 109);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(37, 20);
+            this.label18.TabIndex = 73;
+            this.label18.Text = "Tipo";
             // 
-            // colunaDataCad
+            // maskedTextBox1
             // 
-            this.colunaDataCad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaDataCad.HeaderText = "DataCad";
-            this.colunaDataCad.MinimumWidth = 6;
-            this.colunaDataCad.Name = "colunaDataCad";
-            this.colunaDataCad.ReadOnly = true;
+            this.maskedTextBox1.Location = new System.Drawing.Point(15, 131);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBox1.Mask = "(00) 00000-9999";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(121, 26);
+            this.maskedTextBox1.TabIndex = 74;
             // 
-            // colunaAtivo
+            // metroComboBox2
             // 
-            this.colunaAtivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colunaAtivo.HeaderText = "Ativo";
-            this.colunaAtivo.MinimumWidth = 6;
-            this.colunaAtivo.Name = "colunaAtivo";
-            this.colunaAtivo.ReadOnly = true;
-            this.colunaAtivo.Width = 54;
+            this.metroComboBox2.FormattingEnabled = true;
+            this.metroComboBox2.ItemHeight = 24;
+            this.metroComboBox2.Items.AddRange(new object[] {
+            "Residencial",
+            "Comercial",
+            "Celular"});
+            this.metroComboBox2.Location = new System.Drawing.Point(157, 131);
+            this.metroComboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.metroComboBox2.Name = "metroComboBox2";
+            this.metroComboBox2.Size = new System.Drawing.Size(100, 30);
+            this.metroComboBox2.TabIndex = 76;
+            this.metroComboBox2.UseSelectable = true;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(278, 29);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(92, 20);
+            this.label24.TabIndex = 58;
+            this.label24.Text = "Telefone - 2";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(420, 32);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(37, 20);
+            this.label23.TabIndex = 60;
+            this.label23.Text = "Tipo";
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Location = new System.Drawing.Point(282, 55);
+            this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBox3.Mask = "(00) 00000-9999";
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(121, 26);
+            this.maskedTextBox3.TabIndex = 61;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(278, 109);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(92, 20);
+            this.label26.TabIndex = 63;
+            this.label26.Text = "Telefone - 4";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(420, 109);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(37, 20);
+            this.label25.TabIndex = 65;
+            this.label25.Text = "Tipo";
+            // 
+            // maskedTextBox4
+            // 
+            this.maskedTextBox4.Location = new System.Drawing.Point(282, 131);
+            this.maskedTextBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBox4.Mask = "(00) 00000-9999";
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(121, 26);
+            this.maskedTextBox4.TabIndex = 66;
+            // 
+            // metroComboBox5
+            // 
+            this.metroComboBox5.FormattingEnabled = true;
+            this.metroComboBox5.ItemHeight = 24;
+            this.metroComboBox5.Items.AddRange(new object[] {
+            "Residencial",
+            "Comercial",
+            "Celular"});
+            this.metroComboBox5.Location = new System.Drawing.Point(424, 54);
+            this.metroComboBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.metroComboBox5.Name = "metroComboBox5";
+            this.metroComboBox5.Size = new System.Drawing.Size(100, 30);
+            this.metroComboBox5.TabIndex = 67;
+            this.metroComboBox5.UseSelectable = true;
+            // 
+            // metroComboBox4
+            // 
+            this.metroComboBox4.FormattingEnabled = true;
+            this.metroComboBox4.ItemHeight = 24;
+            this.metroComboBox4.Items.AddRange(new object[] {
+            "Residencial",
+            "Comercial",
+            "Celular"});
+            this.metroComboBox4.Location = new System.Drawing.Point(424, 131);
+            this.metroComboBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.metroComboBox4.Name = "metroComboBox4";
+            this.metroComboBox4.Size = new System.Drawing.Size(100, 30);
+            this.metroComboBox4.TabIndex = 68;
+            this.metroComboBox4.UseSelectable = true;
             // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1186, 742);
+            this.ClientSize = new System.Drawing.Size(1264, 742);
             this.Controls.Add(this.gpboxEnderecos);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox5);
@@ -1486,24 +1519,10 @@
         private System.Windows.Forms.Label label3;
         private MetroFramework.Controls.MetroTextBox txtObs;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView GridEndereco;
-        private System.Windows.Forms.Button btnCancelCep;
-        private System.Windows.Forms.Button btnAddCep;
         private System.Windows.Forms.Button btnInserir;
-        private MetroFramework.Controls.MetroComboBox metroComboBox4;
-        private MetroFramework.Controls.MetroComboBox metroComboBox5;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
         private MetroFramework.Controls.MetroComboBox metroComboBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
@@ -1521,6 +1540,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colunaAtivo;
+        private MetroFramework.Controls.MetroButton btnLimparCampos;
+        private System.Windows.Forms.Button btnCancelCep;
+        private System.Windows.Forms.Button btnAddCep;
+        private System.Windows.Forms.Button button3;
+        private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label20;
+        private MetroFramework.Controls.MetroComboBox metroComboBox4;
+        private MetroFramework.Controls.MetroComboBox metroComboBox5;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
     }
 }
 

@@ -49,12 +49,13 @@ namespace ComercialSys
 
                 // GroupBox
                 gpBoxPesq.Enabled = false;
-                gpboxEnderecos.Enabled = true;
                 gpboxNumeros.Enabled = true;
+                gpboxEnderecos.Enabled = true;
 
                 // Botao
                 btnEditar.Enabled = true;
                 btnInserir.Enabled = false;
+                btnLimparCampos.Enabled = true;
 
                 // TextBox
                 txtObs.Enabled = true;
@@ -72,11 +73,12 @@ namespace ComercialSys
 
                 // GroupBox
                 gpBoxPesq.Enabled = false;
-                gpboxEnderecos.Enabled = true;
-                gpboxNumeros.Enabled = true;
+                gpboxEnderecos.Enabled = false;
+                gpboxNumeros.Enabled = false;
 
                 // Botao
                 btnInserir.Enabled = true;
+                btnLimparCampos.Enabled = true;
 
                 // TextBox
                 txtNome.Enabled = true;
@@ -114,6 +116,7 @@ namespace ComercialSys
             // Botao
             btnEditar.Enabled = false;
             btnInserir.Enabled = false;
+            btnLimparCampos.Enabled = false;
 
             // TextBox
             txtNome.Enabled = false;
@@ -123,13 +126,6 @@ namespace ComercialSys
 
             // CheckBox
             chkAtivo.Enabled = false;
-
-            // Limpando TextBox
-            txtId.Text = "0";
-            txtObs.Clear();
-            txtNome.Clear();
-            txtEmail.Clear();
-            txtCpf.Clear();
 
             btnBloquear.Visible = false;
             btnDesbloquear.Visible = true;
@@ -222,6 +218,8 @@ namespace ComercialSys
             chkAtivo.Checked = cliente.Ativo;
             txtDataCad.Text = cliente.dataCad;
             txtObs.Text = cliente.Obs;
+
+            btnBloquear_Click(sender, e);
         }
 
         // Limpar Campos ---------------------------------------------------------------------------------------------------------------
@@ -280,8 +278,8 @@ namespace ComercialSys
                 // Falha ao inserir cliente
                 MessageBox.Show("Falha ao inserir cliente", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            btnBloquear_Click(sender, e);
             ListarDataGrid();
+            btnDesbloquear_Click(sender, e);
         }
 
         // Inserir imagem Clientes ---------------------------------------------------------------------------------------------------------------
@@ -359,8 +357,6 @@ namespace ComercialSys
                 // Email Invalido
                 MessageBox.Show($"Email do cliente {cliente.Id} invalido", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            // Bloqueando campos
-            btnBloquear_Click(sender, e);
             // Listando DataGrid
             ListarDataGrid();
         }
@@ -640,6 +636,21 @@ namespace ComercialSys
                 // Mensagem de erro
                 MessageBox.Show("Erro ao inserir endereço", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnLimparCampos_Click(object sender, EventArgs e)
+        {
+            txtNome.Text = String.Empty;
+            txtCpf.Text = String.Empty;
+            txtEmail.Text = String.Empty;
+            txtObs.Text = String.Empty;
+            chkAtivo.Checked = true;
+            txtId.Text = "0";
+            txtDataCad.Text = String.Empty;
+            gpboxEnderecos.Enabled = false;
+            gpboxNumeros.Enabled = false;
+
+            btnBloquear_Click(sender, e);
         }
     }
 }

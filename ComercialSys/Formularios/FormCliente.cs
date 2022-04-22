@@ -207,6 +207,11 @@ namespace ComercialSys
                     GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaCidade.Index].Value = i.Cidade; // Text -> Cidade
                     GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaTipo.Index].Value = i.Tipo; // Text -> Tipo
                     GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaBairro.Index].Value = i.Bairro; // Text -> Bairro
+                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaLogradouro.Index].Value = i.Logradouro; // Text -> Logradouro
+                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaEstado.Index].Value = i.Estado; // Text -> Estado
+                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaNumero.Index].Value = i.Numero; // Text -> Numero
+                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaComplemento.Index].Value = i.Complemento; // Text -> Complemento
+
                 });
             }
 
@@ -651,6 +656,32 @@ namespace ComercialSys
             gpboxNumeros.Enabled = false;
 
             btnBloquear_Click(sender, e);
+        }
+
+        private void GridEndereco_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Variaveis para objeto Endereco
+            Endereco end = new Endereco();
+
+            // Valores para o objeto
+            end.Cep = Convert.ToString(GridEndereco["colunaCep", e.RowIndex].Value);
+            end.Cidade = Convert.ToString(GridEndereco["colunaCidade", e.RowIndex].Value);
+            end.Tipo = Convert.ToString(GridEndereco["colunaTipo", e.RowIndex].Value);
+            end.Bairro = Convert.ToString(GridEndereco["colunaBairro", e.RowIndex].Value);
+            end.Logradouro = Convert.ToString(GridEndereco["colunaLogradouro", e.RowIndex].Value);
+            end.Estado = Convert.ToString(GridEndereco["colunaEstado", e.RowIndex].Value);
+            end.Numero = Convert.ToString(GridEndereco["colunaNumero", e.RowIndex].Value);
+            end.Complemento = Convert.ToString(GridEndereco["colunaComplemento", e.RowIndex].Value);
+
+            // Atribuindo valores
+            txtCep.Text = end.Cep;
+            txtCidade.Text = end.Cidade;
+            cmbTipo.Text = end.Tipo;
+            txtBairro.Text = end.Bairro;
+            txtLogradouro.Text = end.Logradouro;
+            txtEstado.Text = end.Estado;
+            txtNumero.Text = end.Numero;
+            txtComplemento.Text = end.Complemento;
         }
     }
 }

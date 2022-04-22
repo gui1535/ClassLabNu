@@ -64,7 +64,7 @@ namespace ClassLabNu
         /// </summary>
         public void Inserir()
         {
-
+            // Tratar erro
             try
             {
                 // Abre conexão com banco
@@ -75,6 +75,7 @@ namespace ClassLabNu
                 banco.CommandText = "endereco_inserir";
 
                 // Parametros
+                banco.Parameters.AddWithValue("_idcli", IdCli);
                 banco.Parameters.AddWithValue("_logradouro", Logradouro);
                 banco.Parameters.AddWithValue("_cep", Cep);
                 banco.Parameters.AddWithValue("_numero", Numero);
@@ -84,17 +85,19 @@ namespace ClassLabNu
                 banco.Parameters.AddWithValue("_tipo", Tipo);
                 banco.Parameters.AddWithValue("_complemento", Complemento);
 
+                banco.ExecuteScalar();
+
                 // Fecha Conexão
                 banco.Connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocorreu um erro {ex}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"Ocorreu um erro inesperado", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        public List<Endereco> ListarEnderecos(int i = 0, int l = 0)
+        public List<Endereco> ListarEnderecoCli(int _idCli)
         {
             // Nova lista
             List<Endereco> lista = new List<Endereco>();
@@ -104,10 +107,8 @@ namespace ClassLabNu
 
             // Comando
             banco.CommandType = CommandType.Text;
-            if (l > 0)
-                banco.CommandText = $"select * from enderecos where idcli limit {i}, {l}";
-            else
-                banco.CommandText = $"select * from enderecos where idcli";
+            banco.CommandText = $"select * from enderecos where idcli = {_idCli}";
+
 
             // Var para Consulta
             var dr = banco.ExecuteReader();
@@ -133,8 +134,8 @@ namespace ClassLabNu
 
             // Retornando lista
             return lista;
-
-
         }
+
     }
 }
+

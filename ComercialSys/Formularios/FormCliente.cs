@@ -59,7 +59,6 @@ namespace ComercialSys
                 // TextBox
                 txtObs.Enabled = true;
                 txtNome.Enabled = true;
-                txtNomeFant.Enabled = true;
                 txtEmail.Enabled = true;
 
                 //CheckBox
@@ -83,6 +82,7 @@ namespace ComercialSys
                 txtNome.Enabled = true;
                 txtEmail.Enabled = true;
                 txtCpf.Enabled = true;
+                txtObs.Enabled = true;
 
                 //CheckBox
                 chkAtivo.Enabled = true;
@@ -119,12 +119,14 @@ namespace ComercialSys
             txtNome.Enabled = false;
             txtEmail.Enabled = false;
             txtCpf.Enabled = false;
+            txtObs.Enabled = false;
 
             // CheckBox
             chkAtivo.Enabled = false;
 
             // Limpando TextBox
             txtId.Text = "0";
+            txtObs.Clear();
             txtNome.Clear();
             txtEmail.Clear();
             txtCpf.Clear();
@@ -161,6 +163,7 @@ namespace ComercialSys
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // Text -> CPF
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // Text -> DataCad
                 GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
+                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaObs.Index].Value = i.Obs; // Text -> Observações
             });
         }
 
@@ -182,6 +185,34 @@ namespace ComercialSys
             cliente.Cpf = Convert.ToString(GridCliente["colunaCpf", e.RowIndex].Value);
             cliente.Ativo = Convert.ToBoolean(GridCliente["colunaAtivo", e.RowIndex].Value);
             cliente.dataCad = Convert.ToString(GridCliente["colunaDataCad", e.RowIndex].Value);
+            cliente.Obs = Convert.ToString(GridCliente["colunaObs", e.RowIndex].Value);
+
+            if ((Convert.ToInt32(txtId.Text) == 0) || (txtId.Text == null))
+            {
+
+            }
+            else
+            {
+                // Limpar Grid
+                GridEndereco.Rows.Clear();
+
+                // Objeto Endereco
+                Endereco end = new Endereco();
+
+                // Var para Listar enderecos
+                var lista = end.ListarEnderecoCli(cliente.Id);
+
+                // Listando enderecos no DataGrid
+                lista.ForEach(i =>
+                {
+                    // Linhas 
+                    GridEndereco.Rows.Add();
+                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaCep.Index].Value = i.Cep; // Text -> Cep
+                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaCidade.Index].Value = i.Cidade; // Text -> Cidade
+                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaTipo.Index].Value = i.Tipo; // Text -> Tipo
+                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaBairro.Index].Value = i.Bairro; // Text -> Bairro
+                });
+            }
 
             // Atributos
             txtId.Text = cliente.Id.ToString();
@@ -190,8 +221,8 @@ namespace ComercialSys
             txtCpf.Text = cliente.Cpf;
             chkAtivo.Checked = cliente.Ativo;
             txtDataCad.Text = cliente.dataCad;
+            txtObs.Text = cliente.Obs;
         }
-
 
         // Limpar Campos ---------------------------------------------------------------------------------------------------------------
 
@@ -203,6 +234,7 @@ namespace ComercialSys
             // Limpa campos
             txtCpf.Clear();
             txtEmail.Clear();
+            txtObs.Clear();
             txtId.Clear();
             txtNome.Clear();
         }
@@ -222,7 +254,8 @@ namespace ComercialSys
             ClassLabNu.Cliente c = new ClassLabNu.Cliente(
                 txtNome.Text,
                 txtCpf.Text,
-                txtEmail.Text
+                txtEmail.Text,
+                txtObs.Text
                 );
 
             c.Inserir();
@@ -294,6 +327,7 @@ namespace ComercialSys
             cliente.Cpf = txtCpf.Text;
             cliente.Email = txtEmail.Text;
             cliente.Ativo = chkAtivo.Checked;
+            cliente.Obs = txtObs.Text;
 
             // Validação do email
             if (Validacao.EmailValido(txtEmail.Text))
@@ -541,30 +575,25 @@ namespace ComercialSys
             // Verificando para pesquisar só se tiver 8 valores
             if (txtCep.Text.Length == 8)
             {
-                // Bloco
-                using (var srvCorreio = new WSCorreios.AtendeClienteClient())
+
+                var srvCorreio = new WSCorreios.AtendeClienteClient();
+
+                // Tratamento de erro
+                try
                 {
-                    // Tratamento de erro
-                    try
-                    {
-                        // Consultando CEP e removendo espaços, se tiver
-                        var endereco = srvCorreio.consultaCEP(txtCep.Text.Trim());
+                    // Consultando CEP e removendo espaços, se tiver
+                    var endereco = srvCorreio.consultaCEP(txtCep.Text.Trim());
 
-                        txtEstado.Text = endereco.uf;
-                        txtCidade.Text = endereco.cidade;
-                        txtBairro.Text = endereco.bairro;
-                        txtLogradouro.Text = endereco.end;
-
-                        //
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    // Atribuindo valores
+                    txtEstado.Text = endereco.uf;
+                    txtCidade.Text = endereco.cidade;
+                    txtBairro.Text = endereco.bairro;
+                    txtLogradouro.Text = endereco.end;
                 }
-            }
-            else
-            {
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -577,6 +606,40 @@ namespace ComercialSys
             txtBairro.Text = String.Empty;
             txtComplemento.Text = String.Empty;
             cmbTipo.Text = String.Empty;
+        }
+
+        private void btnAddCep_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Passando valores ao objeto endereco
+                Endereco end = new Endereco();
+
+                end.Logradouro = txtLogradouro.Text;
+                end.Cep = txtCep.Text;
+                end.Numero = txtNumero.Text;
+                end.Cidade = txtCidade.Text;
+                end.Bairro = txtBairro.Text;
+                end.Estado = txtEstado.Text;
+                end.Tipo = cmbTipo.Text;
+                end.Complemento = txtComplemento.Text;
+
+                // Atribuindo valor do TextBox para o ClienteID
+                int ClienteID = int.Parse(txtId.Text);
+
+                end.IdCli = ClienteID;
+
+                // Inserir endereco
+                end.Inserir();
+
+                // Mensagem sucesso
+                MessageBox.Show("Endereço inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                // Mensagem de erro
+                MessageBox.Show("Erro ao inserir endereço", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

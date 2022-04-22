@@ -15,6 +15,7 @@ namespace ClassLabNu
         public string Email { get; set; } // Email do Cliente
         public string dataCad { get; set; } // Data de cadastro do Cliente
         public bool Ativo { get; set; } // Cliente Ativo
+        public string Obs { get; set; } // Observações sobre o cliente
 
         // Construtores ----------------------------------------------------------------
 
@@ -66,6 +67,16 @@ namespace ClassLabNu
             this.dataCad = dataCad;
             this.Ativo = ativo;
         }
+        public Cliente(int id, string nome, string cpf, string email, string dataCad, bool ativo, string obs)
+        {
+            this.Id = id;
+            this.Nome = nome;
+            this.Cpf = cpf;
+            this.Email = email;
+            this.dataCad = dataCad;
+            this.Ativo = ativo;
+            this.Obs = obs;
+        }
 
         /// <summary>
         /// Construtor para o Cliente
@@ -88,11 +99,12 @@ namespace ClassLabNu
         /// <param name="nome">VARCHAR(60)</param>
         /// <param name="cpf">CHAR(11)</param>
         /// <param name="email">VARCHAR(60)</param>
-        public Cliente(string nome, string cpf, string email)
+        public Cliente(string nome, string cpf, string email, string obs)
         {
             Nome = nome;
             Cpf = cpf;
             Email = email;
+            Obs = obs;
         }
 
         /// <summary>
@@ -131,6 +143,7 @@ namespace ClassLabNu
                 banco.Parameters.AddWithValue("_nome", Nome);
                 banco.Parameters.AddWithValue("_cpf", Cpf);
                 banco.Parameters.AddWithValue("_email", Email);
+                banco.Parameters.AddWithValue("_observacoes", Obs);
                 Id = Convert.ToInt32(banco.ExecuteScalar());
 
                 // Fecha Conexão
@@ -163,6 +176,7 @@ namespace ClassLabNu
             cmd.Parameters.AddWithValue("_nome", Nome);
             cmd.Parameters.AddWithValue("_email", Email);
             cmd.Parameters.AddWithValue("_ativo", Ativo);
+            cmd.Parameters.AddWithValue("_observacoes", Obs);
 
             // Variavel para receber retorno
             int retorna = cmd.ExecuteNonQuery();
@@ -210,7 +224,8 @@ namespace ClassLabNu
                     dr.GetString(2), // Cpf
                     dr.GetString(3), // Email
                     dr.GetString(4), // Datacad
-                    dr.GetBoolean(5) // Ativo
+                    dr.GetBoolean(5), // Ativo
+                    dr.GetString(6) // Observações
                     ));
             }
 
@@ -250,7 +265,8 @@ namespace ClassLabNu
                     dr.GetString(2), // Cpf
                     dr.GetString(3), // Email
                     dr.GetString(4), // Datacad
-                    dr.GetBoolean(5) // Ativo
+                    dr.GetBoolean(5), // Ativo
+                    dr.GetString(6) // Observações
                     ));
             }
 
@@ -289,7 +305,8 @@ namespace ClassLabNu
                     dr.GetString(2), // Cpf
                     dr.GetString(3), // Email
                     dr.GetString(4), // Datacad
-                    dr.GetBoolean(5) // Ativo
+                    dr.GetBoolean(5), // Ativo
+                    dr.GetString(6) // Observações
                     ));
             }
 
@@ -333,7 +350,8 @@ namespace ClassLabNu
                     dr.GetString(2), // Cpf
                     dr.GetString(3), // Email
                     dr.GetString(4), // Datacad
-                    dr.GetBoolean(5) // Ativo
+                    dr.GetBoolean(5), // Ativo
+                    dr.GetString(6) // Observações
                     ));
             }
 

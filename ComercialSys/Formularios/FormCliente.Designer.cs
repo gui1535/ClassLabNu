@@ -34,17 +34,9 @@
             this.txtCpf = new MetroFramework.Controls.MetroTextBox();
             this.txtEmail = new MetroFramework.Controls.MetroTextBox();
             this.GridCliente = new System.Windows.Forms.DataGridView();
-            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtObs = new MetroFramework.Controls.MetroTextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtNomeFant = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -99,15 +91,22 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnInserir = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnListar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.GridEndereco = new System.Windows.Forms.DataGridView();
             this.colunaCep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnInserir = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gpBoxPesq.SuspendLayout();
@@ -115,7 +114,7 @@
             this.gpboxEnderecos.SuspendLayout();
             this.gpboxNumeros.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridEndereco)).BeginInit();
             this.SuspendLayout();
             // 
             // txtId
@@ -192,7 +191,7 @@
             // 
             // 
             this.txtCpf.CustomButton.Image = null;
-            this.txtCpf.CustomButton.Location = new System.Drawing.Point(141, 2);
+            this.txtCpf.CustomButton.Location = new System.Drawing.Point(200, 2);
             this.txtCpf.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpf.CustomButton.Name = "";
             this.txtCpf.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -203,7 +202,7 @@
             this.txtCpf.CustomButton.Visible = false;
             this.txtCpf.Enabled = false;
             this.txtCpf.Lines = new string[0];
-            this.txtCpf.Location = new System.Drawing.Point(25, 149);
+            this.txtCpf.Location = new System.Drawing.Point(256, 97);
             this.txtCpf.Margin = new System.Windows.Forms.Padding(4);
             this.txtCpf.MaxLength = 12;
             this.txtCpf.Name = "txtCpf";
@@ -213,7 +212,7 @@
             this.txtCpf.SelectionLength = 0;
             this.txtCpf.SelectionStart = 0;
             this.txtCpf.ShortcutsEnabled = true;
-            this.txtCpf.Size = new System.Drawing.Size(163, 24);
+            this.txtCpf.Size = new System.Drawing.Size(222, 24);
             this.txtCpf.TabIndex = 2;
             this.txtCpf.UseSelectable = true;
             this.txtCpf.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -225,7 +224,7 @@
             // 
             // 
             this.txtEmail.CustomButton.Image = null;
-            this.txtEmail.CustomButton.Location = new System.Drawing.Point(258, 2);
+            this.txtEmail.CustomButton.Location = new System.Drawing.Point(305, 2);
             this.txtEmail.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.CustomButton.Name = "";
             this.txtEmail.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -236,7 +235,7 @@
             this.txtEmail.CustomButton.Visible = false;
             this.txtEmail.Enabled = false;
             this.txtEmail.Lines = new string[0];
-            this.txtEmail.Location = new System.Drawing.Point(196, 150);
+            this.txtEmail.Location = new System.Drawing.Point(24, 149);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.MaxLength = 60;
             this.txtEmail.Name = "txtEmail";
@@ -246,7 +245,7 @@
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.ShortcutsEnabled = true;
-            this.txtEmail.Size = new System.Drawing.Size(280, 24);
+            this.txtEmail.Size = new System.Drawing.Size(327, 24);
             this.txtEmail.TabIndex = 3;
             this.txtEmail.UseSelectable = true;
             this.txtEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -261,6 +260,7 @@
             this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colunaId,
+            this.colunaObs,
             this.colunaNome,
             this.colunaCpf,
             this.colunaEmail,
@@ -277,65 +277,11 @@
             this.GridCliente.TabIndex = 10;
             this.GridCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCliente_CellDoubleClick);
             // 
-            // colunaId
-            // 
-            this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colunaId.HeaderText = "Id";
-            this.colunaId.MinimumWidth = 6;
-            this.colunaId.Name = "colunaId";
-            this.colunaId.ReadOnly = true;
-            this.colunaId.Width = 53;
-            // 
-            // colunaNome
-            // 
-            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.colunaNome.HeaderText = "Nome";
-            this.colunaNome.MinimumWidth = 6;
-            this.colunaNome.Name = "colunaNome";
-            this.colunaNome.ReadOnly = true;
-            this.colunaNome.Width = 6;
-            // 
-            // colunaCpf
-            // 
-            this.colunaCpf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.colunaCpf.HeaderText = "CPF";
-            this.colunaCpf.MinimumWidth = 6;
-            this.colunaCpf.Name = "colunaCpf";
-            this.colunaCpf.ReadOnly = true;
-            this.colunaCpf.Width = 6;
-            // 
-            // colunaEmail
-            // 
-            this.colunaEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaEmail.HeaderText = "Email";
-            this.colunaEmail.MinimumWidth = 6;
-            this.colunaEmail.Name = "colunaEmail";
-            this.colunaEmail.ReadOnly = true;
-            // 
-            // colunaDataCad
-            // 
-            this.colunaDataCad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaDataCad.HeaderText = "DataCad";
-            this.colunaDataCad.MinimumWidth = 6;
-            this.colunaDataCad.Name = "colunaDataCad";
-            this.colunaDataCad.ReadOnly = true;
-            // 
-            // colunaAtivo
-            // 
-            this.colunaAtivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colunaAtivo.HeaderText = "Ativo";
-            this.colunaAtivo.MinimumWidth = 6;
-            this.colunaAtivo.Name = "colunaAtivo";
-            this.colunaAtivo.ReadOnly = true;
-            this.colunaAtivo.Width = 54;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtObs);
             this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtId);
-            this.groupBox2.Controls.Add(this.txtNomeFant);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
@@ -401,49 +347,6 @@
             this.label19.TabIndex = 36;
             this.label19.Text = "Observações";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(236, 73);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 20);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Nome fantasia";
-            // 
-            // txtNomeFant
-            // 
-            // 
-            // 
-            // 
-            this.txtNomeFant.CustomButton.Image = null;
-            this.txtNomeFant.CustomButton.Location = new System.Drawing.Point(216, 2);
-            this.txtNomeFant.CustomButton.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNomeFant.CustomButton.Name = "";
-            this.txtNomeFant.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.txtNomeFant.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNomeFant.CustomButton.TabIndex = 1;
-            this.txtNomeFant.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtNomeFant.CustomButton.UseSelectable = true;
-            this.txtNomeFant.CustomButton.Visible = false;
-            this.txtNomeFant.Enabled = false;
-            this.txtNomeFant.Lines = new string[0];
-            this.txtNomeFant.Location = new System.Drawing.Point(240, 95);
-            this.txtNomeFant.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNomeFant.MaxLength = 60;
-            this.txtNomeFant.Name = "txtNomeFant";
-            this.txtNomeFant.PasswordChar = '\0';
-            this.txtNomeFant.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNomeFant.SelectedText = "";
-            this.txtNomeFant.SelectionLength = 0;
-            this.txtNomeFant.SelectionStart = 0;
-            this.txtNomeFant.ShortcutsEnabled = true;
-            this.txtNomeFant.Size = new System.Drawing.Size(238, 24);
-            this.txtNomeFant.TabIndex = 34;
-            this.txtNomeFant.UseSelectable = true;
-            this.txtNomeFant.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtNomeFant.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -457,7 +360,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 125);
+            this.label5.Location = new System.Drawing.Point(252, 73);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 20);
@@ -467,7 +370,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(194, 126);
+            this.label4.Location = new System.Drawing.Point(22, 125);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 20);
@@ -527,10 +430,10 @@
             this.btnDesbloquear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesbloquear.FlatAppearance.BorderSize = 0;
             this.btnDesbloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesbloquear.Location = new System.Drawing.Point(390, 196);
+            this.btnDesbloquear.Location = new System.Drawing.Point(403, 176);
             this.btnDesbloquear.Margin = new System.Windows.Forms.Padding(2);
             this.btnDesbloquear.Name = "btnDesbloquear";
-            this.btnDesbloquear.Size = new System.Drawing.Size(40, 47);
+            this.btnDesbloquear.Size = new System.Drawing.Size(50, 52);
             this.btnDesbloquear.TabIndex = 26;
             this.btnDesbloquear.UseVisualStyleBackColor = true;
             this.btnDesbloquear.Click += new System.EventHandler(this.btnDesbloquear_Click);
@@ -542,10 +445,10 @@
             this.btnBloquear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBloquear.FlatAppearance.BorderSize = 0;
             this.btnBloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBloquear.Location = new System.Drawing.Point(390, 196);
+            this.btnBloquear.Location = new System.Drawing.Point(403, 176);
             this.btnBloquear.Margin = new System.Windows.Forms.Padding(2);
             this.btnBloquear.Name = "btnBloquear";
-            this.btnBloquear.Size = new System.Drawing.Size(40, 47);
+            this.btnBloquear.Size = new System.Drawing.Size(50, 52);
             this.btnBloquear.TabIndex = 27;
             this.btnBloquear.UseVisualStyleBackColor = true;
             this.btnBloquear.Click += new System.EventHandler(this.btnBloquear_Click);
@@ -766,6 +669,7 @@
             this.btnAddCep.Size = new System.Drawing.Size(48, 49);
             this.btnAddCep.TabIndex = 67;
             this.btnAddCep.UseVisualStyleBackColor = true;
+            this.btnAddCep.Click += new System.EventHandler(this.btnAddCep_Click);
             // 
             // label14
             // 
@@ -851,6 +755,21 @@
             // 
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.ItemHeight = 24;
+            this.cmbTipo.Items.AddRange(new object[] {
+            "Avenida",
+            "Campo",
+            "Chacara",
+            "Condomínio",
+            "Estrada",
+            "Favela",
+            "Praça",
+            "Rodovia",
+            "Residencial",
+            "Rua",
+            "Sítio",
+            "Viaduto",
+            "Viela",
+            "Vila"});
             this.cmbTipo.Location = new System.Drawing.Point(236, 183);
             this.cmbTipo.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipo.Name = "cmbTipo";
@@ -1293,7 +1212,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.dataGridView1);
+            this.groupBox5.Controls.Add(this.GridEndereco);
             this.groupBox5.Location = new System.Drawing.Point(641, 465);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
@@ -1303,27 +1222,59 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Endereços";
             // 
-            // dataGridView1
+            // GridEndereco
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridEndereco.AllowUserToAddRows = false;
+            this.GridEndereco.AllowUserToDeleteRows = false;
+            this.GridEndereco.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridEndereco.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GridEndereco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridEndereco.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colunaCep,
             this.colunaCidade,
             this.colunaTipo,
             this.colunaBairro});
-            this.dataGridView1.GridColor = System.Drawing.Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 23);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(497, 223);
-            this.dataGridView1.TabIndex = 10;
+            this.GridEndereco.GridColor = System.Drawing.Color.Black;
+            this.GridEndereco.Location = new System.Drawing.Point(4, 23);
+            this.GridEndereco.Margin = new System.Windows.Forms.Padding(2);
+            this.GridEndereco.Name = "GridEndereco";
+            this.GridEndereco.ReadOnly = true;
+            this.GridEndereco.RowHeadersVisible = false;
+            this.GridEndereco.RowHeadersWidth = 51;
+            this.GridEndereco.Size = new System.Drawing.Size(497, 223);
+            this.GridEndereco.TabIndex = 10;
+            // 
+            // colunaCep
+            // 
+            this.colunaCep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaCep.HeaderText = "CEP";
+            this.colunaCep.MinimumWidth = 6;
+            this.colunaCep.Name = "colunaCep";
+            this.colunaCep.ReadOnly = true;
+            // 
+            // colunaCidade
+            // 
+            this.colunaCidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaCidade.HeaderText = "Cidade";
+            this.colunaCidade.MinimumWidth = 6;
+            this.colunaCidade.Name = "colunaCidade";
+            this.colunaCidade.ReadOnly = true;
+            // 
+            // colunaTipo
+            // 
+            this.colunaTipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaTipo.HeaderText = "Tipo";
+            this.colunaTipo.MinimumWidth = 6;
+            this.colunaTipo.Name = "colunaTipo";
+            this.colunaTipo.ReadOnly = true;
+            // 
+            // colunaBairro
+            // 
+            this.colunaBairro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaBairro.HeaderText = "Bairro";
+            this.colunaBairro.MinimumWidth = 6;
+            this.colunaBairro.Name = "colunaBairro";
+            this.colunaBairro.ReadOnly = true;
             // 
             // btnInserir
             // 
@@ -1391,37 +1342,64 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // colunaCep
+            // colunaId
             // 
-            this.colunaCep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaCep.HeaderText = "CEP";
-            this.colunaCep.MinimumWidth = 6;
-            this.colunaCep.Name = "colunaCep";
-            this.colunaCep.ReadOnly = true;
+            this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colunaId.HeaderText = "Id";
+            this.colunaId.MinimumWidth = 6;
+            this.colunaId.Name = "colunaId";
+            this.colunaId.ReadOnly = true;
+            this.colunaId.Width = 53;
             // 
-            // colunaCidade
+            // colunaObs
             // 
-            this.colunaCidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaCidade.HeaderText = "Cidade";
-            this.colunaCidade.MinimumWidth = 6;
-            this.colunaCidade.Name = "colunaCidade";
-            this.colunaCidade.ReadOnly = true;
+            this.colunaObs.HeaderText = "Observações";
+            this.colunaObs.MinimumWidth = 6;
+            this.colunaObs.Name = "colunaObs";
+            this.colunaObs.ReadOnly = true;
             // 
-            // colunaTipo
+            // colunaNome
             // 
-            this.colunaTipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaTipo.HeaderText = "Tipo";
-            this.colunaTipo.MinimumWidth = 6;
-            this.colunaTipo.Name = "colunaTipo";
-            this.colunaTipo.ReadOnly = true;
+            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.colunaNome.HeaderText = "Nome";
+            this.colunaNome.MinimumWidth = 6;
+            this.colunaNome.Name = "colunaNome";
+            this.colunaNome.ReadOnly = true;
+            this.colunaNome.Width = 6;
             // 
-            // colunaBairro
+            // colunaCpf
             // 
-            this.colunaBairro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaBairro.HeaderText = "Bairro";
-            this.colunaBairro.MinimumWidth = 6;
-            this.colunaBairro.Name = "colunaBairro";
-            this.colunaBairro.ReadOnly = true;
+            this.colunaCpf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.colunaCpf.HeaderText = "CPF";
+            this.colunaCpf.MinimumWidth = 6;
+            this.colunaCpf.Name = "colunaCpf";
+            this.colunaCpf.ReadOnly = true;
+            this.colunaCpf.Width = 6;
+            // 
+            // colunaEmail
+            // 
+            this.colunaEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaEmail.HeaderText = "Email";
+            this.colunaEmail.MinimumWidth = 6;
+            this.colunaEmail.Name = "colunaEmail";
+            this.colunaEmail.ReadOnly = true;
+            // 
+            // colunaDataCad
+            // 
+            this.colunaDataCad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaDataCad.HeaderText = "DataCad";
+            this.colunaDataCad.MinimumWidth = 6;
+            this.colunaDataCad.Name = "colunaDataCad";
+            this.colunaDataCad.ReadOnly = true;
+            // 
+            // colunaAtivo
+            // 
+            this.colunaAtivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colunaAtivo.HeaderText = "Ativo";
+            this.colunaAtivo.MinimumWidth = 6;
+            this.colunaAtivo.Name = "colunaAtivo";
+            this.colunaAtivo.ReadOnly = true;
+            this.colunaAtivo.Width = 54;
             // 
             // FormCliente
             // 
@@ -1458,7 +1436,7 @@
             this.gpboxNumeros.ResumeLayout(false);
             this.gpboxNumeros.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridEndereco)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1477,12 +1455,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox chkAtivo;
         private MetroFramework.Controls.MetroTextBox txtPesqNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaCpf;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colunaAtivo;
         private System.Windows.Forms.Button btnBloquear;
         private System.Windows.Forms.Button btnDesbloquear;
         private MetroFramework.Controls.MetroDateTime txtDataCad;
@@ -1496,8 +1468,6 @@
         private MetroFramework.Controls.MetroTextBox txtNumero;
         private MetroFramework.Controls.MetroTextBox txtCep;
         private System.Windows.Forms.GroupBox gpboxNumeros;
-        private System.Windows.Forms.Label label6;
-        private MetroFramework.Controls.MetroTextBox txtNomeFant;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
@@ -1523,7 +1493,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GridEndereco;
         private System.Windows.Forms.Button btnCancelCep;
         private System.Windows.Forms.Button btnAddCep;
         private System.Windows.Forms.Button btnInserir;
@@ -1544,6 +1514,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaCidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaBairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaObs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaCpf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colunaAtivo;
     }
 }
 

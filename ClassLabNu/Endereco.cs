@@ -15,6 +15,7 @@ namespace ClassLabNu
         public string Cidade { get; set; }
         public string Bairro { get; set; }
         public string Estado { get; set; }
+        public string Uf { get; set; }
         public string Tipo { get; set; }
         public string Complemento { get; set; }
 
@@ -35,6 +36,19 @@ namespace ClassLabNu
             Tipo = tipo;
             Complemento = complemento;
         }
+        public Endereco(int idCli, string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo, string complemento, string uf)
+        {
+            IdCli = idCli;
+            Logradouro = logradouro;
+            Cep = cep;
+            Numero = numero;
+            Cidade = cidade;
+            Bairro = bairro;
+            Estado = estado;
+            Tipo = tipo;
+            Complemento = complemento;
+            Uf = uf;
+        }
 
         public Endereco(string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo, string complemento)
         {
@@ -46,6 +60,18 @@ namespace ClassLabNu
             Estado = estado;
             Tipo = tipo;
             Complemento = complemento;
+        }
+        public Endereco(string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo, string complemento, string uf)
+        {
+            Logradouro = logradouro;
+            Cep = cep;
+            Numero = numero;
+            Cidade = cidade;
+            Bairro = bairro;
+            Estado = estado;
+            Tipo = tipo;
+            Complemento = complemento;
+            Uf = uf;
         }
 
         public Endereco(string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo)
@@ -82,6 +108,7 @@ namespace ClassLabNu
                 banco.Parameters.AddWithValue("_cidade", Cidade);
                 banco.Parameters.AddWithValue("_bairro", Bairro);
                 banco.Parameters.AddWithValue("_estado", Estado);
+                banco.Parameters.AddWithValue("_uf", Uf);
                 banco.Parameters.AddWithValue("_tipo", Tipo);
                 banco.Parameters.AddWithValue("_complemento", Complemento);
 
@@ -91,9 +118,9 @@ namespace ClassLabNu
                 banco.Connection.Close();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show($"Ocorreu um erro inesperado", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

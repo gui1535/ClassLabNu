@@ -1,4 +1,5 @@
 ﻿using ClassLabNu;
+using ComercialSys.Formularios.FormCliente;
 using System;
 using System.Windows.Forms;
 
@@ -15,6 +16,10 @@ namespace ComercialSys
 
             // Lista DataGrid
             ListarDataGrid();
+        }
+
+        public FormCliente()
+        {
         }
 
         // Form Load ---------------------------------------------------------------------------------------------------------------
@@ -138,29 +143,11 @@ namespace ComercialSys
         /// </summary>
         private void ListarDataGrid()
         {
-            // Limpar Grid
-            GridCliente.Rows.Clear();
+            // Instancia DataGrid Cliente
+            ClienteDataGrid dt = new ClienteDataGrid();
 
-            // Novo objeto Cliente
-            Cliente cliente = new Cliente();
-
-            // Var para Listar clientes
-            var lista = cliente.ListarClientes();
-
-            // Listando clientes no DataGrid
-            lista.ForEach(i =>
-            {
-
-                // Linhas 
-                GridCliente.Rows.Add();
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // Text -> ID
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Text -> Nome
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Text -> Email
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // Text -> CPF
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // Text -> DataCad
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
-                GridCliente.Rows[lista.IndexOf(i)].Cells[colunaObs.Index].Value = i.Obs; // Text -> Observações
-            });
+            // Listando Clientes
+            dt.ListarCliente(GridCliente, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
         }
 
         /// <summary>
@@ -402,7 +389,6 @@ namespace ComercialSys
                 var lista = cliente.ListarPorNome(txtPesqNome.Text);
                 lista.ForEach(i =>
                 {
-
                     // Linhas 
                     GridCliente.Rows.Add();
                     GridCliente.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // Text -> ID
@@ -576,31 +562,19 @@ namespace ComercialSys
             // Verificando para pesquisar só se tiver 8 valores
             if (txtCep.Text.Length == 8)
             {
-
-                var srvCorreio = new WSCorreios.AtendeClienteClient();
-
-                // Tratamento de erro
-                try
-                {
-                    // Consultando CEP e removendo espaços, se tiver
-                    var endereco = srvCorreio.consultaCEP(txtCep.Text.Trim());
-
-                    // Atribuindo valores
-                    txtEstado.Text = endereco.uf;
-                    txtCidade.Text = endereco.cidade;
-                    txtBairro.Text = endereco.bairro;
-                    txtLogradouro.Text = endereco.end;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                Cep.ConsultarCep(txtCep.Text.Trim());
+                txtLogradouro.Text = JsonCepResult.Logradouro;
+                txtBairro.Text = JsonCepResult.Bairro;
+                txtCidade.Text = JsonCepResult.Localidade;
+                txtComplemento.Text = JsonCepResult.Complemento;
+                txtUf.Text = JsonCepResult.Uf;
+                txtEstado.Text = VerificaUf.VerificarUf();
             }
         }
-
         private void btnCancelCep_Click(object sender, EventArgs e)
         {
             txtCep.Text = String.Empty;
+            txtUf.Text = String.Empty;
             txtEstado.Text = String.Empty;
             txtLogradouro.Text = String.Empty;
             txtCidade.Text = String.Empty;
@@ -622,6 +596,7 @@ namespace ComercialSys
                 end.Cidade = txtCidade.Text;
                 end.Bairro = txtBairro.Text;
                 end.Estado = txtEstado.Text;
+                end.Uf = txtUf.Text;
                 end.Tipo = cmbTipo.Text;
                 end.Complemento = txtComplemento.Text;
 
@@ -685,4 +660,3 @@ namespace ComercialSys
         }
     }
 }
-

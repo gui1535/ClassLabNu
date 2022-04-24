@@ -34,6 +34,13 @@
             this.txtCpf = new MetroFramework.Controls.MetroTextBox();
             this.txtEmail = new MetroFramework.Controls.MetroTextBox();
             this.GridCliente = new System.Windows.Forms.DataGridView();
+            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnLimparCampos = new MetroFramework.Controls.MetroButton();
             this.txtObs = new MetroFramework.Controls.MetroTextBox();
@@ -56,6 +63,8 @@
             this.txtPesqNome = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gpboxEnderecos = new System.Windows.Forms.GroupBox();
+            this.btnCancelCep = new System.Windows.Forms.Button();
+            this.btnAddCep = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -73,6 +82,8 @@
             this.txtNumero = new MetroFramework.Controls.MetroTextBox();
             this.txtCep = new MetroFramework.Controls.MetroTextBox();
             this.gpboxNumeros = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -81,19 +92,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnAddCep = new System.Windows.Forms.Button();
-            this.btnCancelCep = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.GridEndereco = new System.Windows.Forms.DataGridView();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.colunaCep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaLogradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,6 +101,9 @@
             this.colunaEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lbUf = new System.Windows.Forms.Label();
+            this.txtUf = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gpBoxPesq.SuspendLayout();
@@ -271,6 +273,66 @@
             this.GridCliente.Size = new System.Drawing.Size(581, 223);
             this.GridCliente.TabIndex = 10;
             this.GridCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCliente_CellDoubleClick);
+            // 
+            // colunaId
+            // 
+            this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colunaId.HeaderText = "Id";
+            this.colunaId.MinimumWidth = 6;
+            this.colunaId.Name = "colunaId";
+            this.colunaId.ReadOnly = true;
+            this.colunaId.Width = 53;
+            // 
+            // colunaObs
+            // 
+            this.colunaObs.HeaderText = "Observações";
+            this.colunaObs.MinimumWidth = 6;
+            this.colunaObs.Name = "colunaObs";
+            this.colunaObs.ReadOnly = true;
+            // 
+            // colunaNome
+            // 
+            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.colunaNome.HeaderText = "Nome";
+            this.colunaNome.MinimumWidth = 6;
+            this.colunaNome.Name = "colunaNome";
+            this.colunaNome.ReadOnly = true;
+            this.colunaNome.Width = 6;
+            // 
+            // colunaCpf
+            // 
+            this.colunaCpf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.colunaCpf.HeaderText = "CPF";
+            this.colunaCpf.MinimumWidth = 6;
+            this.colunaCpf.Name = "colunaCpf";
+            this.colunaCpf.ReadOnly = true;
+            this.colunaCpf.Width = 6;
+            // 
+            // colunaEmail
+            // 
+            this.colunaEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaEmail.HeaderText = "Email";
+            this.colunaEmail.MinimumWidth = 6;
+            this.colunaEmail.Name = "colunaEmail";
+            this.colunaEmail.ReadOnly = true;
+            // 
+            // colunaDataCad
+            // 
+            this.colunaDataCad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaDataCad.HeaderText = "DataCad";
+            this.colunaDataCad.MinimumWidth = 6;
+            this.colunaDataCad.Name = "colunaDataCad";
+            this.colunaDataCad.ReadOnly = true;
+            this.colunaDataCad.Visible = false;
+            // 
+            // colunaAtivo
+            // 
+            this.colunaAtivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colunaAtivo.HeaderText = "Ativo";
+            this.colunaAtivo.MinimumWidth = 6;
+            this.colunaAtivo.Name = "colunaAtivo";
+            this.colunaAtivo.ReadOnly = true;
+            this.colunaAtivo.Width = 54;
             // 
             // groupBox2
             // 
@@ -622,6 +684,8 @@
             // 
             // gpboxEnderecos
             // 
+            this.gpboxEnderecos.Controls.Add(this.lbUf);
+            this.gpboxEnderecos.Controls.Add(this.txtUf);
             this.gpboxEnderecos.Controls.Add(this.btnCancelCep);
             this.gpboxEnderecos.Controls.Add(this.btnAddCep);
             this.gpboxEnderecos.Controls.Add(this.label14);
@@ -649,6 +713,36 @@
             this.gpboxEnderecos.TabIndex = 29;
             this.gpboxEnderecos.TabStop = false;
             this.gpboxEnderecos.Text = "Endereço";
+            // 
+            // btnCancelCep
+            // 
+            this.btnCancelCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCancelCep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelCep.FlatAppearance.BorderSize = 0;
+            this.btnCancelCep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelCep.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelCep.Image")));
+            this.btnCancelCep.Location = new System.Drawing.Point(552, 169);
+            this.btnCancelCep.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelCep.Name = "btnCancelCep";
+            this.btnCancelCep.Size = new System.Drawing.Size(48, 49);
+            this.btnCancelCep.TabIndex = 68;
+            this.btnCancelCep.UseVisualStyleBackColor = true;
+            this.btnCancelCep.Click += new System.EventHandler(this.btnCancelCep_Click);
+            // 
+            // btnAddCep
+            // 
+            this.btnAddCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddCep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCep.FlatAppearance.BorderSize = 0;
+            this.btnAddCep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCep.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCep.Image")));
+            this.btnAddCep.Location = new System.Drawing.Point(500, 172);
+            this.btnAddCep.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddCep.Name = "btnAddCep";
+            this.btnAddCep.Size = new System.Drawing.Size(48, 49);
+            this.btnAddCep.TabIndex = 67;
+            this.btnAddCep.UseVisualStyleBackColor = true;
+            this.btnAddCep.Click += new System.EventHandler(this.btnAddCep_Click);
             // 
             // label14
             // 
@@ -683,7 +777,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(198, 90);
+            this.label11.Location = new System.Drawing.Point(204, 90);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 20);
@@ -693,7 +787,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(456, 90);
+            this.label10.Location = new System.Drawing.Point(439, 90);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 20);
@@ -703,7 +797,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(371, 24);
+            this.label9.Location = new System.Drawing.Point(352, 21);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 20);
@@ -713,7 +807,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(121, 22);
+            this.label8.Location = new System.Drawing.Point(103, 21);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 20);
@@ -752,7 +846,7 @@
             this.cmbTipo.Location = new System.Drawing.Point(299, 183);
             this.cmbTipo.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(179, 30);
+            this.cmbTipo.Size = new System.Drawing.Size(197, 30);
             this.cmbTipo.TabIndex = 30;
             this.cmbTipo.UseSelectable = true;
             // 
@@ -794,7 +888,7 @@
             // 
             // 
             this.txtBairro.CustomButton.Image = null;
-            this.txtBairro.CustomButton.Location = new System.Drawing.Point(200, 2);
+            this.txtBairro.CustomButton.Location = new System.Drawing.Point(180, 2);
             this.txtBairro.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtBairro.CustomButton.Name = "";
             this.txtBairro.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -804,7 +898,7 @@
             this.txtBairro.CustomButton.UseSelectable = true;
             this.txtBairro.CustomButton.Visible = false;
             this.txtBairro.Lines = new string[0];
-            this.txtBairro.Location = new System.Drawing.Point(202, 114);
+            this.txtBairro.Location = new System.Drawing.Point(208, 114);
             this.txtBairro.Margin = new System.Windows.Forms.Padding(4);
             this.txtBairro.MaxLength = 60;
             this.txtBairro.Name = "txtBairro";
@@ -815,7 +909,7 @@
             this.txtBairro.SelectionLength = 0;
             this.txtBairro.SelectionStart = 0;
             this.txtBairro.ShortcutsEnabled = true;
-            this.txtBairro.Size = new System.Drawing.Size(222, 24);
+            this.txtBairro.Size = new System.Drawing.Size(227, 24);
             this.txtBairro.TabIndex = 33;
             this.txtBairro.UseSelectable = true;
             this.txtBairro.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -827,7 +921,7 @@
             // 
             // 
             this.txtEstado.CustomButton.Image = null;
-            this.txtEstado.CustomButton.Location = new System.Drawing.Point(173, 2);
+            this.txtEstado.CustomButton.Location = new System.Drawing.Point(125, 2);
             this.txtEstado.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtEstado.CustomButton.Name = "";
             this.txtEstado.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -837,7 +931,7 @@
             this.txtEstado.CustomButton.UseSelectable = true;
             this.txtEstado.CustomButton.Visible = false;
             this.txtEstado.Lines = new string[0];
-            this.txtEstado.Location = new System.Drawing.Point(375, 46);
+            this.txtEstado.Location = new System.Drawing.Point(356, 46);
             this.txtEstado.Margin = new System.Windows.Forms.Padding(4);
             this.txtEstado.MaxLength = 60;
             this.txtEstado.Name = "txtEstado";
@@ -848,7 +942,7 @@
             this.txtEstado.SelectionLength = 0;
             this.txtEstado.SelectionStart = 0;
             this.txtEstado.ShortcutsEnabled = true;
-            this.txtEstado.Size = new System.Drawing.Size(195, 24);
+            this.txtEstado.Size = new System.Drawing.Size(147, 24);
             this.txtEstado.TabIndex = 32;
             this.txtEstado.UseSelectable = true;
             this.txtEstado.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -860,7 +954,7 @@
             // 
             // 
             this.txtCidade.CustomButton.Image = null;
-            this.txtCidade.CustomButton.Location = new System.Drawing.Point(151, 2);
+            this.txtCidade.CustomButton.Location = new System.Drawing.Point(131, 2);
             this.txtCidade.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtCidade.CustomButton.Name = "";
             this.txtCidade.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -881,7 +975,7 @@
             this.txtCidade.SelectionLength = 0;
             this.txtCidade.SelectionStart = 0;
             this.txtCidade.ShortcutsEnabled = true;
-            this.txtCidade.Size = new System.Drawing.Size(173, 24);
+            this.txtCidade.Size = new System.Drawing.Size(178, 24);
             this.txtCidade.TabIndex = 31;
             this.txtCidade.UseSelectable = true;
             this.txtCidade.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -903,7 +997,7 @@
             this.txtLogradouro.CustomButton.UseSelectable = true;
             this.txtLogradouro.CustomButton.Visible = false;
             this.txtLogradouro.Lines = new string[0];
-            this.txtLogradouro.Location = new System.Drawing.Point(126, 46);
+            this.txtLogradouro.Location = new System.Drawing.Point(107, 46);
             this.txtLogradouro.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogradouro.MaxLength = 60;
             this.txtLogradouro.Name = "txtLogradouro";
@@ -936,7 +1030,7 @@
             this.txtNumero.CustomButton.UseSelectable = true;
             this.txtNumero.CustomButton.Visible = false;
             this.txtNumero.Lines = new string[0];
-            this.txtNumero.Location = new System.Drawing.Point(457, 114);
+            this.txtNumero.Location = new System.Drawing.Point(443, 114);
             this.txtNumero.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumero.MaxLength = 60;
             this.txtNumero.Name = "txtNumero";
@@ -946,7 +1040,7 @@
             this.txtNumero.SelectionLength = 0;
             this.txtNumero.SelectionStart = 0;
             this.txtNumero.ShortcutsEnabled = true;
-            this.txtNumero.Size = new System.Drawing.Size(113, 24);
+            this.txtNumero.Size = new System.Drawing.Size(127, 24);
             this.txtNumero.TabIndex = 29;
             this.txtNumero.UseSelectable = true;
             this.txtNumero.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -958,7 +1052,7 @@
             // 
             // 
             this.txtCep.CustomButton.Image = null;
-            this.txtCep.CustomButton.Location = new System.Drawing.Point(76, 2);
+            this.txtCep.CustomButton.Location = new System.Drawing.Point(57, 2);
             this.txtCep.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtCep.CustomButton.Name = "";
             this.txtCep.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -978,7 +1072,7 @@
             this.txtCep.SelectionLength = 0;
             this.txtCep.SelectionStart = 0;
             this.txtCep.ShortcutsEnabled = true;
-            this.txtCep.Size = new System.Drawing.Size(98, 24);
+            this.txtCep.Size = new System.Drawing.Size(79, 24);
             this.txtCep.TabIndex = 20;
             this.txtCep.UseSelectable = true;
             this.txtCep.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1002,6 +1096,34 @@
             this.gpboxNumeros.TabIndex = 29;
             this.gpboxNumeros.TabStop = false;
             this.gpboxNumeros.Text = "Telefone";
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(549, 91);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(33, 32);
+            this.button2.TabIndex = 69;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(549, 142);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(33, 32);
+            this.button3.TabIndex = 69;
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // metroComboBox3
             // 
@@ -1115,110 +1237,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnAddCep
-            // 
-            this.btnAddCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddCep.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCep.FlatAppearance.BorderSize = 0;
-            this.btnAddCep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCep.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCep.Image")));
-            this.btnAddCep.Location = new System.Drawing.Point(500, 172);
-            this.btnAddCep.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddCep.Name = "btnAddCep";
-            this.btnAddCep.Size = new System.Drawing.Size(48, 49);
-            this.btnAddCep.TabIndex = 67;
-            this.btnAddCep.UseVisualStyleBackColor = true;
-            this.btnAddCep.Click += new System.EventHandler(this.btnAddCep_Click);
-            // 
-            // btnCancelCep
-            // 
-            this.btnCancelCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancelCep.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelCep.FlatAppearance.BorderSize = 0;
-            this.btnCancelCep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelCep.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelCep.Image")));
-            this.btnCancelCep.Location = new System.Drawing.Point(552, 169);
-            this.btnCancelCep.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelCep.Name = "btnCancelCep";
-            this.btnCancelCep.Size = new System.Drawing.Size(48, 49);
-            this.btnCancelCep.TabIndex = 68;
-            this.btnCancelCep.UseVisualStyleBackColor = true;
-            this.btnCancelCep.Click += new System.EventHandler(this.btnCancelCep_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(549, 142);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(33, 32);
-            this.button3.TabIndex = 69;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // colunaId
-            // 
-            this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colunaId.HeaderText = "Id";
-            this.colunaId.MinimumWidth = 6;
-            this.colunaId.Name = "colunaId";
-            this.colunaId.ReadOnly = true;
-            this.colunaId.Width = 53;
-            // 
-            // colunaObs
-            // 
-            this.colunaObs.HeaderText = "Observações";
-            this.colunaObs.MinimumWidth = 6;
-            this.colunaObs.Name = "colunaObs";
-            this.colunaObs.ReadOnly = true;
-            // 
-            // colunaNome
-            // 
-            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.colunaNome.HeaderText = "Nome";
-            this.colunaNome.MinimumWidth = 6;
-            this.colunaNome.Name = "colunaNome";
-            this.colunaNome.ReadOnly = true;
-            this.colunaNome.Width = 6;
-            // 
-            // colunaCpf
-            // 
-            this.colunaCpf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.colunaCpf.HeaderText = "CPF";
-            this.colunaCpf.MinimumWidth = 6;
-            this.colunaCpf.Name = "colunaCpf";
-            this.colunaCpf.ReadOnly = true;
-            this.colunaCpf.Width = 6;
-            // 
-            // colunaEmail
-            // 
-            this.colunaEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaEmail.HeaderText = "Email";
-            this.colunaEmail.MinimumWidth = 6;
-            this.colunaEmail.Name = "colunaEmail";
-            this.colunaEmail.ReadOnly = true;
-            // 
-            // colunaDataCad
-            // 
-            this.colunaDataCad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaDataCad.HeaderText = "DataCad";
-            this.colunaDataCad.MinimumWidth = 6;
-            this.colunaDataCad.Name = "colunaDataCad";
-            this.colunaDataCad.ReadOnly = true;
-            this.colunaDataCad.Visible = false;
-            // 
-            // colunaAtivo
-            // 
-            this.colunaAtivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colunaAtivo.HeaderText = "Ativo";
-            this.colunaAtivo.MinimumWidth = 6;
-            this.colunaAtivo.Name = "colunaAtivo";
-            this.colunaAtivo.ReadOnly = true;
-            this.colunaAtivo.Width = 54;
-            // 
             // GridEndereco
             // 
             this.GridEndereco.AllowUserToAddRows = false;
@@ -1245,32 +1263,6 @@
             this.GridEndereco.Size = new System.Drawing.Size(493, 223);
             this.GridEndereco.TabIndex = 10;
             this.GridEndereco.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridEndereco_CellDoubleClick);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.GridEndereco);
-            this.groupBox5.Location = new System.Drawing.Point(641, 465);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(505, 250);
-            this.groupBox5.TabIndex = 22;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Endereços";
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(549, 91);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(33, 32);
-            this.button2.TabIndex = 69;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // colunaCep
             // 
@@ -1335,6 +1327,61 @@
             this.colunaBairro.MinimumWidth = 6;
             this.colunaBairro.Name = "colunaBairro";
             this.colunaBairro.ReadOnly = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.GridEndereco);
+            this.groupBox5.Location = new System.Drawing.Point(641, 465);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox5.Size = new System.Drawing.Size(505, 250);
+            this.groupBox5.TabIndex = 22;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Endereços";
+            // 
+            // lbUf
+            // 
+            this.lbUf.AutoSize = true;
+            this.lbUf.Location = new System.Drawing.Point(512, 22);
+            this.lbUf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbUf.Name = "lbUf";
+            this.lbUf.Size = new System.Drawing.Size(27, 20);
+            this.lbUf.TabIndex = 70;
+            this.lbUf.Text = "UF";
+            // 
+            // txtUf
+            // 
+            // 
+            // 
+            // 
+            this.txtUf.CustomButton.Image = null;
+            this.txtUf.CustomButton.Location = new System.Drawing.Point(37, 2);
+            this.txtUf.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUf.CustomButton.Name = "";
+            this.txtUf.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.txtUf.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtUf.CustomButton.TabIndex = 1;
+            this.txtUf.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtUf.CustomButton.UseSelectable = true;
+            this.txtUf.CustomButton.Visible = false;
+            this.txtUf.Lines = new string[0];
+            this.txtUf.Location = new System.Drawing.Point(511, 46);
+            this.txtUf.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUf.MaxLength = 60;
+            this.txtUf.Name = "txtUf";
+            this.txtUf.PasswordChar = '\0';
+            this.txtUf.ReadOnly = true;
+            this.txtUf.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUf.SelectedText = "";
+            this.txtUf.SelectionLength = 0;
+            this.txtUf.SelectionStart = 0;
+            this.txtUf.ShortcutsEnabled = true;
+            this.txtUf.Size = new System.Drawing.Size(59, 24);
+            this.txtUf.TabIndex = 69;
+            this.txtUf.UseSelectable = true;
+            this.txtUf.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtUf.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // FormCliente
             // 
@@ -1451,6 +1498,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaBairro;
+        private System.Windows.Forms.Label lbUf;
+        private MetroFramework.Controls.MetroTextBox txtUf;
     }
 }
 

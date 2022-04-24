@@ -109,15 +109,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormCliente\Classes\ClienteDataGrid.cs" />
-    <Compile Include="FormCliente\Classes\EnderecoDataGrid.cs" />
+    <Compile Include="Controller\ControllerCliente\ClienteDataGrid.cs" />
+    <Compile Include="Controller\ControllerCliente\EnderecoDataGrid.cs" />
+    <Compile Include="Model\Banco.cs" />
+    <Compile Include="Model\Caixa.cs" />
+    <Compile Include="Model\Cep.cs" />
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Endereco.cs" />
+    <Compile Include="Model\ItemPedido.cs" />
+    <Compile Include="Model\JsonCepResult.cs" />
+    <Compile Include="Model\Nivel.cs" />
+    <Compile Include="Model\Pagamento.cs" />
+    <Compile Include="Model\Pedido.cs" />
+    <Compile Include="Model\Produto.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\Validacao.cs" />
+    <Compile Include="Model\Venda.cs" />
     <Compile Include="View\ViewCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ViewCliente.Designer.cs">
       <DependentUpon>ViewCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCliente\Classes\VerificaUf.cs" />
+    <Compile Include="Controller\ControllerCliente\VerificaUf.cs" />
     <Compile Include="View\ViewPedido.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComercialSys.FormPrincipal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace ComercialSys
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipal());
+            Application.Run(new ViewPrincipal());
         }
     }
 }

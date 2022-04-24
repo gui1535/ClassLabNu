@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace ComercialSys
 {
-    public partial class FormProduto : MetroFramework.Forms.MetroForm
+    public partial class ViewProduto : MetroFramework.Forms.MetroForm
     {
-        public FormProduto(Form parent)
+        public ViewProduto(Form parent)
         {
             InitializeComponent();
 

@@ -1,6 +1,6 @@
 ﻿namespace ComercialSys.Formularios
 {
-    partial class FormUsuario
+    partial class ViewUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewUsuario));
             this.btnListar = new MetroFramework.Controls.MetroButton();
             this.btnEditar = new MetroFramework.Controls.MetroButton();
             this.gpBoxPesq = new System.Windows.Forms.GroupBox();

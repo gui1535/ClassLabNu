@@ -109,51 +109,52 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\FormCliente\ClienteDataGrid.cs" />
-    <Compile Include="Formularios\FormCliente\FormCliente.cs">
+    <Compile Include="FormCliente\Classes\ClienteDataGrid.cs" />
+    <Compile Include="FormCliente\Classes\EnderecoDataGrid.cs" />
+    <Compile Include="View\ViewCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FormCliente\FormCliente.Designer.cs">
-      <DependentUpon>FormCliente.cs</DependentUpon>
+    <Compile Include="View\ViewCliente.Designer.cs">
+      <DependentUpon>ViewCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormCliente\VerificaUf.cs" />
-    <Compile Include="Formularios\Pedido\FormPedido.cs">
+    <Compile Include="FormCliente\Classes\VerificaUf.cs" />
+    <Compile Include="View\ViewPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Pedido\FormPedido.Designer.cs">
-      <DependentUpon>FormPedido.cs</DependentUpon>
+    <Compile Include="View\ViewPedido.Designer.cs">
+      <DependentUpon>ViewPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Principal\FormPrincipal.cs">
+    <Compile Include="View\ViewPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Principal\FormPrincipal.Designer.cs">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    <Compile Include="View\ViewPrincipal.Designer.cs">
+      <DependentUpon>ViewPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Produto\FormProduto.cs">
+    <Compile Include="View\ViewProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Produto\FormProduto.Designer.cs">
-      <DependentUpon>FormProduto.cs</DependentUpon>
+    <Compile Include="View\ViewProduto.Designer.cs">
+      <DependentUpon>ViewProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Usuario\FormUsuario.cs">
+    <Compile Include="View\ViewUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Usuario\FormUsuario.Designer.cs">
-      <DependentUpon>FormUsuario.cs</DependentUpon>
+    <Compile Include="View\ViewUsuario.Designer.cs">
+      <DependentUpon>ViewUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\FormCliente\FormCliente.resx">
-      <DependentUpon>FormCliente.cs</DependentUpon>
+    <EmbeddedResource Include="View\ViewCliente.resx">
+      <DependentUpon>ViewCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Principal\FormPrincipal.resx">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="View\ViewPrincipal.resx">
+      <DependentUpon>ViewPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Produto\FormProduto.resx">
-      <DependentUpon>FormProduto.cs</DependentUpon>
+    <EmbeddedResource Include="View\ViewProduto.resx">
+      <DependentUpon>ViewProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Usuario\FormUsuario.resx">
-      <DependentUpon>FormUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="View\ViewUsuario.resx">
+      <DependentUpon>ViewUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -187,5 +188,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

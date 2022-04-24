@@ -1,13 +1,13 @@
 ﻿using ClassLabNu;
-using ComercialSys.Formularios.FormCliente;
+using ComercialSys.FormCliente.Classes;
 using System;
 using System.Windows.Forms;
 
-namespace ComercialSys
+namespace ComercialSys.FormCliente
 {
-    public partial class FormCliente : Form
+    public partial class ViewCliente : Form
     {
-        public FormCliente(Form parent)
+        public ViewCliente(Form parent)
         {
             InitializeComponent();
 
@@ -18,7 +18,7 @@ namespace ComercialSys
             ListarDataGrid();
         }
 
-        public FormCliente()
+        public ViewCliente()
         {
         }
 
@@ -176,30 +176,11 @@ namespace ComercialSys
             }
             else
             {
-                // Limpar Grid
-                GridEndereco.Rows.Clear();
+                // Instancia DataGrid Cliente
+                EnderecoDataGrid dt = new EnderecoDataGrid();
 
-                // Objeto Endereco
-                Endereco end = new Endereco();
-
-                // Var para Listar enderecos
-                var lista = end.ListarEnderecoCli(cliente.Id);
-
-                // Listando enderecos no DataGrid
-                lista.ForEach(i =>
-                {
-                    // Linhas 
-                    GridEndereco.Rows.Add();
-                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaCep.Index].Value = i.Cep; // Text -> Cep
-                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaCidade.Index].Value = i.Cidade; // Text -> Cidade
-                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaTipo.Index].Value = i.Tipo; // Text -> Tipo
-                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaBairro.Index].Value = i.Bairro; // Text -> Bairro
-                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaLogradouro.Index].Value = i.Logradouro; // Text -> Logradouro
-                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaEstado.Index].Value = i.Estado; // Text -> Estado
-                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaNumero.Index].Value = i.Numero; // Text -> Numero
-                    GridEndereco.Rows[lista.IndexOf(i)].Cells[colunaComplemento.Index].Value = i.Complemento; // Text -> Complemento
-
-                });
+                // Listando enderecos dos clientes
+                dt.ListarEndereco(GridEndereco, cliente, colunaCep, colunaCidade, colunaTipo, colunaBairro, colunaLogradouro, colunaEstado, colunaNumero, colunaComplemento);
             }
 
             // Atributos
@@ -433,33 +414,22 @@ namespace ComercialSys
                 txtIdPesq.Clear();
                 txtPesqNome.Clear();
 
-                // Limpar Grid
-                GridCliente.Rows.Clear();
-
-                // Novo objeto Cliente
+                // Instancia para Cliente
                 Cliente cliente = new Cliente();
 
-                // Var para Listar clientes
-                var lista = cliente.ListarPorCpf(txtCpfPsq.Text);
-                lista.ForEach(i =>
-                {
+                // Instancia DataGrid Cliente
+                ClienteDataGrid dt = new ClienteDataGrid();
 
-                    // Linhas 
-                    GridCliente.Rows.Add();
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // Text -> ID
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Text -> Nome
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Text -> Email
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // Text -> CPF
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // Text -> DataCad
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
-                                                                                                 // Atributos
-                    txtId.Text = i.Id.ToString();
-                    txtNome.Text = i.Nome;
-                    txtDataCad.Text = i.dataCad;
-                    txtEmail.Text = i.Email;
-                    txtCpf.Text = i.Cpf;
-                    chkAtivo.Checked = i.Ativo;
-                });
+                // Listando Clientes
+                dt.PesquisarClienteCpf(GridCliente, txtCpfPsq.Text, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
+
+                txtId.Text = cliente.Id.ToString();
+                txtNome.Text = cliente.Nome;
+                txtDataCad.Text = cliente.dataCad;
+                txtEmail.Text = cliente.Email;
+                txtCpf.Text = cliente.Cpf;
+                chkAtivo.Checked = cliente.Ativo;
+
             }
         }
 
@@ -487,33 +457,9 @@ namespace ComercialSys
                 txtCpfPsq.Clear();
                 txtPesqNome.Clear();
 
-                // Limpar Grid
-                GridCliente.Rows.Clear();
+                ClienteDataGrid dt = new ClienteDataGrid();
 
-                // Novo objeto Cliente
-                Cliente cliente = new Cliente();
-
-                // Var para Listar clientes
-                var lista = cliente.ListarPorId(int.Parse(txtIdPesq.Text));
-                lista.ForEach(i =>
-                {
-
-                    // Linhas 
-                    GridCliente.Rows.Add();
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // Text -> ID
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Text -> Nome
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Text -> Email
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // Text -> CPF
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // Text -> DataCad
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
-                                                                                                 // Atributos
-                    txtId.Text = i.Id.ToString();
-                    txtNome.Text = i.Nome;
-                    txtDataCad.Text = i.dataCad;
-                    txtEmail.Text = i.Email;
-                    txtCpf.Text = i.Cpf;
-                    chkAtivo.Checked = i.Ativo;
-                });
+               
             }
 
         }

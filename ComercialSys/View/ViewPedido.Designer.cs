@@ -1,6 +1,6 @@
 ﻿namespace ComercialSys.Formularios
 {
-    partial class FormPedido
+    partial class ViewPedido
     {
         /// <summary>
         /// Required designer variable.

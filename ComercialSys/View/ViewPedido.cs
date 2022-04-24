@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ComercialSys.Formularios
 {
-    public partial class FormPedido : MetroFramework.Forms.MetroForm
+    public partial class ViewPedido : MetroFramework.Forms.MetroForm
     {
-        public FormPedido(Form parent)
+        public ViewPedido(Form parent)
         {
             InitializeComponent();
 

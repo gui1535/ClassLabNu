@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace ComercialSys.Formularios
 {
-    public partial class FormUsuario : MetroFramework.Forms.MetroForm
+    public partial class ViewUsuario : MetroFramework.Forms.MetroForm
     {
-        public FormUsuario(Form parent)
+        public ViewUsuario(Form parent)
         {
             InitializeComponent();
 

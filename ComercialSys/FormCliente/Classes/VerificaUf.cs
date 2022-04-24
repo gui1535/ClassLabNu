@@ -2,7 +2,7 @@
 using ComercialSys.Formularios;
 using System.Windows.Forms;
 
-namespace ComercialSys.Formularios.FormCliente
+namespace ComercialSys.FormCliente.Classes
 {
     public static class VerificaUf
     {

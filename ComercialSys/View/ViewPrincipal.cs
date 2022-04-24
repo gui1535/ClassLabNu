@@ -1,12 +1,14 @@
-﻿using ComercialSys.Formularios;
+﻿using ComercialSys.FormCliente;
+using ComercialSys.FormCliente.Classes;
+using ComercialSys.Formularios;
 using System;
 using System.Windows.Forms;
 
-namespace ComercialSys
+namespace ComercialSys.FormPrincipal
 {
-    public partial class FormPrincipal : Form
+    public partial class ViewPrincipal : Form
     {
-        public FormPrincipal()
+        public ViewPrincipal()
         {
             InitializeComponent();
         }
@@ -14,7 +16,7 @@ namespace ComercialSys
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             // Objeto FormCliente
-            FormCliente frmCliente = new FormCliente(this);
+            ViewCliente frmCliente = new ViewCliente(this);
 
             // Definindo Form como MdiParent
             frmCliente.MdiParent = this;
@@ -26,16 +28,16 @@ namespace ComercialSys
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Instancia do form Cliente
-            FormCliente frmCliente = new FormCliente(this);
+            ViewCliente FormCliente = new ViewCliente(this);
 
             // Exibe Form
-            frmCliente.Show();
+            FormCliente.Show();
         }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Instancia do form Cliente
-            FormProduto frmProduto = new FormProduto(this);
+            ViewProduto frmProduto = new ViewProduto(this);
 
             // Exibe Form
             frmProduto.Show();
@@ -44,7 +46,7 @@ namespace ComercialSys
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Instancia do form Cliente
-            FormUsuario frmUsuario = new FormUsuario(this);
+            ViewUsuario frmUsuario = new ViewUsuario(this);
 
             // Exibe Form
             frmUsuario.Show();

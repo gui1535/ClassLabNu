@@ -1,6 +1,6 @@
-﻿namespace ComercialSys
+﻿namespace ComercialSys.FormCliente
 {
-    partial class FormCliente
+    partial class ViewCliente
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,19 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCliente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewCliente));
             this.txtId = new MetroFramework.Controls.MetroTextBox();
             this.txtNome = new MetroFramework.Controls.MetroTextBox();
             this.txtCpf = new MetroFramework.Controls.MetroTextBox();
             this.txtEmail = new MetroFramework.Controls.MetroTextBox();
             this.GridCliente = new System.Windows.Forms.DataGridView();
-            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnLimparCampos = new MetroFramework.Controls.MetroButton();
             this.txtObs = new MetroFramework.Controls.MetroTextBox();
@@ -63,6 +56,8 @@
             this.txtPesqNome = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gpboxEnderecos = new System.Windows.Forms.GroupBox();
+            this.lbUf = new System.Windows.Forms.Label();
+            this.txtUf = new MetroFramework.Controls.MetroTextBox();
             this.btnCancelCep = new System.Windows.Forms.Button();
             this.btnAddCep = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -102,8 +97,13 @@
             this.colunaTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.lbUf = new System.Windows.Forms.Label();
-            this.txtUf = new MetroFramework.Controls.MetroTextBox();
+            this.colunaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaDataCad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gpBoxPesq.SuspendLayout();
@@ -273,66 +273,6 @@
             this.GridCliente.Size = new System.Drawing.Size(581, 223);
             this.GridCliente.TabIndex = 10;
             this.GridCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCliente_CellDoubleClick);
-            // 
-            // colunaId
-            // 
-            this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colunaId.HeaderText = "Id";
-            this.colunaId.MinimumWidth = 6;
-            this.colunaId.Name = "colunaId";
-            this.colunaId.ReadOnly = true;
-            this.colunaId.Width = 53;
-            // 
-            // colunaObs
-            // 
-            this.colunaObs.HeaderText = "Observações";
-            this.colunaObs.MinimumWidth = 6;
-            this.colunaObs.Name = "colunaObs";
-            this.colunaObs.ReadOnly = true;
-            // 
-            // colunaNome
-            // 
-            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.colunaNome.HeaderText = "Nome";
-            this.colunaNome.MinimumWidth = 6;
-            this.colunaNome.Name = "colunaNome";
-            this.colunaNome.ReadOnly = true;
-            this.colunaNome.Width = 6;
-            // 
-            // colunaCpf
-            // 
-            this.colunaCpf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.colunaCpf.HeaderText = "CPF";
-            this.colunaCpf.MinimumWidth = 6;
-            this.colunaCpf.Name = "colunaCpf";
-            this.colunaCpf.ReadOnly = true;
-            this.colunaCpf.Width = 6;
-            // 
-            // colunaEmail
-            // 
-            this.colunaEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaEmail.HeaderText = "Email";
-            this.colunaEmail.MinimumWidth = 6;
-            this.colunaEmail.Name = "colunaEmail";
-            this.colunaEmail.ReadOnly = true;
-            // 
-            // colunaDataCad
-            // 
-            this.colunaDataCad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaDataCad.HeaderText = "DataCad";
-            this.colunaDataCad.MinimumWidth = 6;
-            this.colunaDataCad.Name = "colunaDataCad";
-            this.colunaDataCad.ReadOnly = true;
-            this.colunaDataCad.Visible = false;
-            // 
-            // colunaAtivo
-            // 
-            this.colunaAtivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.colunaAtivo.HeaderText = "Ativo";
-            this.colunaAtivo.MinimumWidth = 6;
-            this.colunaAtivo.Name = "colunaAtivo";
-            this.colunaAtivo.ReadOnly = true;
-            this.colunaAtivo.Width = 54;
             // 
             // groupBox2
             // 
@@ -714,6 +654,49 @@
             this.gpboxEnderecos.TabStop = false;
             this.gpboxEnderecos.Text = "Endereço";
             // 
+            // lbUf
+            // 
+            this.lbUf.AutoSize = true;
+            this.lbUf.Location = new System.Drawing.Point(512, 22);
+            this.lbUf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbUf.Name = "lbUf";
+            this.lbUf.Size = new System.Drawing.Size(27, 20);
+            this.lbUf.TabIndex = 70;
+            this.lbUf.Text = "UF";
+            // 
+            // txtUf
+            // 
+            // 
+            // 
+            // 
+            this.txtUf.CustomButton.Image = null;
+            this.txtUf.CustomButton.Location = new System.Drawing.Point(37, 2);
+            this.txtUf.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUf.CustomButton.Name = "";
+            this.txtUf.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.txtUf.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtUf.CustomButton.TabIndex = 1;
+            this.txtUf.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtUf.CustomButton.UseSelectable = true;
+            this.txtUf.CustomButton.Visible = false;
+            this.txtUf.Lines = new string[0];
+            this.txtUf.Location = new System.Drawing.Point(511, 46);
+            this.txtUf.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUf.MaxLength = 60;
+            this.txtUf.Name = "txtUf";
+            this.txtUf.PasswordChar = '\0';
+            this.txtUf.ReadOnly = true;
+            this.txtUf.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUf.SelectedText = "";
+            this.txtUf.SelectionLength = 0;
+            this.txtUf.SelectionStart = 0;
+            this.txtUf.ShortcutsEnabled = true;
+            this.txtUf.Size = new System.Drawing.Size(59, 24);
+            this.txtUf.TabIndex = 69;
+            this.txtUf.UseSelectable = true;
+            this.txtUf.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtUf.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // btnCancelCep
             // 
             this.btnCancelCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -888,7 +871,7 @@
             // 
             // 
             this.txtBairro.CustomButton.Image = null;
-            this.txtBairro.CustomButton.Location = new System.Drawing.Point(180, 2);
+            this.txtBairro.CustomButton.Location = new System.Drawing.Point(205, 2);
             this.txtBairro.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtBairro.CustomButton.Name = "";
             this.txtBairro.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -954,7 +937,7 @@
             // 
             // 
             this.txtCidade.CustomButton.Image = null;
-            this.txtCidade.CustomButton.Location = new System.Drawing.Point(131, 2);
+            this.txtCidade.CustomButton.Location = new System.Drawing.Point(156, 2);
             this.txtCidade.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtCidade.CustomButton.Name = "";
             this.txtCidade.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -1020,7 +1003,7 @@
             // 
             // 
             this.txtNumero.CustomButton.Image = null;
-            this.txtNumero.CustomButton.Location = new System.Drawing.Point(91, 2);
+            this.txtNumero.CustomButton.Location = new System.Drawing.Point(105, 2);
             this.txtNumero.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumero.CustomButton.Name = "";
             this.txtNumero.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -1340,50 +1323,68 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Endereços";
             // 
-            // lbUf
+            // colunaId
             // 
-            this.lbUf.AutoSize = true;
-            this.lbUf.Location = new System.Drawing.Point(512, 22);
-            this.lbUf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbUf.Name = "lbUf";
-            this.lbUf.Size = new System.Drawing.Size(27, 20);
-            this.lbUf.TabIndex = 70;
-            this.lbUf.Text = "UF";
+            this.colunaId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colunaId.HeaderText = "Id";
+            this.colunaId.MinimumWidth = 6;
+            this.colunaId.Name = "colunaId";
+            this.colunaId.ReadOnly = true;
+            this.colunaId.Width = 53;
             // 
-            // txtUf
+            // colunaObs
             // 
+            this.colunaObs.HeaderText = "Observações";
+            this.colunaObs.MinimumWidth = 6;
+            this.colunaObs.Name = "colunaObs";
+            this.colunaObs.ReadOnly = true;
+            this.colunaObs.Visible = false;
             // 
+            // colunaNome
             // 
+            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.colunaNome.HeaderText = "Nome";
+            this.colunaNome.MinimumWidth = 6;
+            this.colunaNome.Name = "colunaNome";
+            this.colunaNome.ReadOnly = true;
+            this.colunaNome.Width = 6;
             // 
-            this.txtUf.CustomButton.Image = null;
-            this.txtUf.CustomButton.Location = new System.Drawing.Point(37, 2);
-            this.txtUf.CustomButton.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUf.CustomButton.Name = "";
-            this.txtUf.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.txtUf.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtUf.CustomButton.TabIndex = 1;
-            this.txtUf.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtUf.CustomButton.UseSelectable = true;
-            this.txtUf.CustomButton.Visible = false;
-            this.txtUf.Lines = new string[0];
-            this.txtUf.Location = new System.Drawing.Point(511, 46);
-            this.txtUf.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUf.MaxLength = 60;
-            this.txtUf.Name = "txtUf";
-            this.txtUf.PasswordChar = '\0';
-            this.txtUf.ReadOnly = true;
-            this.txtUf.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUf.SelectedText = "";
-            this.txtUf.SelectionLength = 0;
-            this.txtUf.SelectionStart = 0;
-            this.txtUf.ShortcutsEnabled = true;
-            this.txtUf.Size = new System.Drawing.Size(59, 24);
-            this.txtUf.TabIndex = 69;
-            this.txtUf.UseSelectable = true;
-            this.txtUf.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtUf.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // colunaCpf
             // 
-            // FormCliente
+            this.colunaCpf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.colunaCpf.HeaderText = "CPF";
+            this.colunaCpf.MinimumWidth = 6;
+            this.colunaCpf.Name = "colunaCpf";
+            this.colunaCpf.ReadOnly = true;
+            this.colunaCpf.Width = 6;
+            // 
+            // colunaEmail
+            // 
+            this.colunaEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaEmail.HeaderText = "Email";
+            this.colunaEmail.MinimumWidth = 6;
+            this.colunaEmail.Name = "colunaEmail";
+            this.colunaEmail.ReadOnly = true;
+            // 
+            // colunaDataCad
+            // 
+            this.colunaDataCad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaDataCad.HeaderText = "DataCad";
+            this.colunaDataCad.MinimumWidth = 6;
+            this.colunaDataCad.Name = "colunaDataCad";
+            this.colunaDataCad.ReadOnly = true;
+            this.colunaDataCad.Visible = false;
+            // 
+            // colunaAtivo
+            // 
+            this.colunaAtivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colunaAtivo.HeaderText = "Ativo";
+            this.colunaAtivo.MinimumWidth = 6;
+            this.colunaAtivo.Name = "colunaAtivo";
+            this.colunaAtivo.ReadOnly = true;
+            this.colunaAtivo.Width = 54;
+            // 
+            // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1402,7 +1403,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormCliente";
+            this.Name = "FrmCliente";
             this.Padding = new System.Windows.Forms.Padding(23, 75, 23, 25);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
@@ -1480,13 +1481,6 @@
         private System.Windows.Forms.Button btnCancelCep;
         private System.Windows.Forms.Button btnAddCep;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaObs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaCpf;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colunaAtivo;
         private System.Windows.Forms.DataGridView GridEndereco;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button2;
@@ -1500,6 +1494,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaBairro;
         private System.Windows.Forms.Label lbUf;
         private MetroFramework.Controls.MetroTextBox txtUf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaObs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaCpf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colunaAtivo;
     }
 }
 

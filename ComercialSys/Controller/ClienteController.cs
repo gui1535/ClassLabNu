@@ -6,6 +6,11 @@ namespace ComercialSys.Controller
     public class ClienteController
     {
         public string IdCli { get; set; }
+        public string NomeCli { get; set; }
+        public string DatacadCli { get; set; }
+        public string EmailCli { get; set; }
+        public string CpfCli { get; set; }
+        public bool AtivoCli { get; set; }
 
         /// <summary>
         /// Metodo para Listar clientes
@@ -53,6 +58,19 @@ namespace ComercialSys.Controller
             });
         }
 
+        /// <summary>
+        /// Metodo privado para atribuir valores para as propriedades
+        /// </summary>
+        /// <param name="cli">Cliente</param>
+        private void PreencherPropriedades(Cliente cli)
+        {
+            IdCli = cli.Id.ToString();
+            NomeCli = cli.Nome;
+            DatacadCli = cli.dataCad;
+            EmailCli = cli.Email;
+            CpfCli = cli.Cpf;
+            AtivoCli = cli.Ativo;
+        }
 
         /// <summary>
         /// Metodo para pesquiar clientes por CPF
@@ -70,7 +88,6 @@ namespace ComercialSys.Controller
         (
         DataGridView dt,
         string _cpf,
-        Cliente cli,
         DataGridViewTextBoxColumn clnId,
         DataGridViewTextBoxColumn ClnNome,
         DataGridViewTextBoxColumn ClnEmail,
@@ -80,6 +97,8 @@ namespace ComercialSys.Controller
         DataGridViewTextBoxColumn ClnObs
             )
         {
+            Cliente cli = new Cliente();
+
             // Limpar Grid
             dt.Rows.Clear();
 
@@ -99,14 +118,7 @@ namespace ComercialSys.Controller
                 dt.Rows[lista.IndexOf(i)].Cells[clnAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
                 dt.Rows[lista.IndexOf(i)].Cells[ClnObs.Index].Value = i.Obs; // Text -> Observações
 
-                // Atributos
-                cli.Id = i.Id;
-                cli.Nome = i.Nome;
-                cli.Email = i.Email;
-                cli.Cpf = i.Cpf;
-                cli.dataCad = i.dataCad;
-                cli.Ativo = i.Ativo;
-                cli.Obs = i.Obs;
+                PreencherPropriedades(cli);
 
             });
         }
@@ -129,7 +141,6 @@ namespace ComercialSys.Controller
         (
         DataGridView dt,
         int _id,
-        Cliente cli,
         DataGridViewTextBoxColumn clnId,
         DataGridViewTextBoxColumn ClnNome,
         DataGridViewTextBoxColumn ClnEmail,
@@ -139,6 +150,8 @@ namespace ComercialSys.Controller
         DataGridViewTextBoxColumn ClnObs
             )
         {
+            Cliente cli = new Cliente();
+
             // Limpar Grid
             dt.Rows.Clear();
 
@@ -158,14 +171,7 @@ namespace ComercialSys.Controller
                 dt.Rows[lista.IndexOf(i)].Cells[clnAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
                 dt.Rows[lista.IndexOf(i)].Cells[ClnObs.Index].Value = i.Obs; // Text -> Observações
 
-                // Atributos
-                cli.Id = i.Id;
-                cli.Nome = i.Nome;
-                cli.Email = i.Email;
-                cli.Cpf = i.Cpf;
-                cli.dataCad = i.dataCad;
-                cli.Ativo = i.Ativo;
-                cli.Obs = i.Obs;
+                PreencherPropriedades(cli);
 
             });
         }
@@ -187,7 +193,6 @@ namespace ComercialSys.Controller
         (
         DataGridView dt,
         string _nome,
-        Cliente cli,
         DataGridViewTextBoxColumn clnId,
         DataGridViewTextBoxColumn ClnNome,
         DataGridViewTextBoxColumn ClnEmail,
@@ -197,6 +202,8 @@ namespace ComercialSys.Controller
         DataGridViewTextBoxColumn ClnObs
             )
         {
+            Cliente cli = new Cliente();
+
             // Limpar Grid
             dt.Rows.Clear();
 
@@ -216,14 +223,7 @@ namespace ComercialSys.Controller
                 dt.Rows[lista.IndexOf(i)].Cells[clnAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
                 dt.Rows[lista.IndexOf(i)].Cells[ClnObs.Index].Value = i.Obs; // Text -> Observações
 
-                // Atributos
-                cli.Id = i.Id;
-                cli.Nome = i.Nome;
-                cli.Email = i.Email;
-                cli.Cpf = i.Cpf;
-                cli.dataCad = i.dataCad;
-                cli.Ativo = i.Ativo;
-                cli.Obs = i.Obs;
+                PreencherPropriedades(cli);
 
             });
         }
@@ -322,10 +322,9 @@ namespace ComercialSys.Controller
             }
         }
 
+        public void ConsultaCep()
+        {
 
-
-
-
-
+        }
     }
 }

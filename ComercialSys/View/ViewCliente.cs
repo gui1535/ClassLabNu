@@ -258,23 +258,19 @@ namespace ComercialSys.View
                 txtIdPesq.Clear();
                 txtCpfPsq.Clear();
 
-                // Instancia para Cliente
-                Cliente cliente = new Cliente();
-
                 // Instancia DataGrid Cliente
                 ClienteController dt = new ClienteController();
 
                 // Listando Clientes
-                dt.PesquisarClienteNome(GridCliente, txtPesqNome.Text, cliente, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
+                dt.PesquisarClienteNome(GridCliente, txtPesqNome.Text, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
 
                 // Atribuindo valores
-                txtId.Text = cliente.Id.ToString();
-                txtNome.Text = cliente.Nome;
-                txtDataCad.Text = cliente.dataCad;
-                txtEmail.Text = cliente.Email;
-                txtCpf.Text = cliente.Cpf;
-                chkAtivo.Checked = cliente.Ativo;
-
+                dt.IdCli = txtId.Text;
+                dt.CpfCli = txtCpf.Text;
+                dt.EmailCli = txtEmail.Text;
+                dt.NomeCli = txtNome.Text;
+                dt.AtivoCli = chkAtivo.Checked;
+                dt.DatacadCli = txtDataCad.Text;
             }
 
         }
@@ -298,22 +294,20 @@ namespace ComercialSys.View
                 txtIdPesq.Clear();
                 txtPesqNome.Clear();
 
-                // Instancia para Cliente
-                Cliente cliente = new Cliente();
 
                 // Instancia DataGrid Cliente
                 ClienteController dt = new ClienteController();
 
                 // Listando Clientes
-                dt.PesquisarClienteCpf(GridCliente, txtCpfPsq.Text, cliente, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
+                dt.PesquisarClienteCpf(GridCliente, txtCpfPsq.Text, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
 
                 // Atribuindo valores
-                txtId.Text = cliente.Id.ToString();
-                txtNome.Text = cliente.Nome;
-                txtDataCad.Text = cliente.dataCad;
-                txtEmail.Text = cliente.Email;
-                txtCpf.Text = cliente.Cpf;
-                chkAtivo.Checked = cliente.Ativo;
+                dt.IdCli = txtId.Text;
+                dt.CpfCli = txtCpf.Text;
+                dt.EmailCli = txtEmail.Text;
+                dt.NomeCli = txtNome.Text;
+                dt.AtivoCli = chkAtivo.Checked;
+                dt.DatacadCli = txtDataCad.Text;
 
             }
         }
@@ -342,24 +336,19 @@ namespace ComercialSys.View
                 txtCpfPsq.Clear();
                 txtPesqNome.Clear();
 
-                // Instancia para Cliente
-                Cliente cliente = new Cliente();
-
                 // Instancia DataGrid Cliente
                 ClienteController dt = new ClienteController();
 
                 // Listando Clientes
-                dt.PesquisarClienteId(GridCliente, int.Parse(txtIdPesq.Text), cliente, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
+                dt.PesquisarClienteId(GridCliente, int.Parse(txtIdPesq.Text), colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
 
                 // Atribuindo valores
-                txtId.Text = cliente.Id.ToString();
-                txtNome.Text = cliente.Nome;
-                txtDataCad.Text = cliente.dataCad;
-                txtEmail.Text = cliente.Email;
-                txtCpf.Text = cliente.Cpf;
-                chkAtivo.Checked = cliente.Ativo;
-
-
+                dt.IdCli = txtId.Text;
+                dt.CpfCli = txtCpf.Text;
+                dt.EmailCli = txtEmail.Text;
+                dt.NomeCli = txtNome.Text;
+                dt.AtivoCli = chkAtivo.Checked;
+                dt.DatacadCli = txtDataCad.Text;
             }
 
         }

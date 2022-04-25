@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ComercialSys.Controller
 {
-    public class EnderecoController : Endereco
+    public class EnderecoController
     {
         /// <summary>
         /// Metodo para listar endereços do cliente
@@ -36,12 +36,13 @@ namespace ComercialSys.Controller
             DataGridViewTextBoxColumn ClnComplemento
             )
         {
-
             // Limpar Grid
             dt.Rows.Clear();
 
             // Var para Listar enderecos
-            var lista = ListarEnderecoCli(cli.Id);
+            Endereco end = new Endereco();
+
+            var lista = end.ListarEnderecoCli(cli.Id);
 
             // Listando enderecos no DataGrid
             lista.ForEach(i =>

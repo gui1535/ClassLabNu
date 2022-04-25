@@ -1,5 +1,4 @@
 ﻿using ComercialSys.Controller;
-
 using System;
 using System.Windows.Forms;
 
@@ -437,11 +436,21 @@ namespace ComercialSys.View
 
         private void GridEndereco_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            // Controller
             EnderecoController endC = new EnderecoController();
 
-            endC.GridEndereco_DoubleClick(GridEndereco, e, colunaCep, colunaCidade, colunaTipo, colunaBairro, colunaLogradouro, colunaEstado, colunaNumero, colunaComplemento);
+            endC.GridEndereco_DoubleClick(GridEndereco, e);
 
+            // Atributos
+            txtCep.Text = endC.CepCli.Trim();
+            txtLogradouro.Text = endC.LogradouroCli;
+            txtEstado.Text = endC.EstadoCli;
+            txtUf.Text = endC.UfCli;
+            txtCidade.Text = endC.CidadeCli;
+            txtNumero.Text = endC.NumeroCli;
+            txtBairro.Text = endC.BairroCli;
+            txtComplemento.Text = endC.ComplementoCli;
+            cmbTipo.Text = endC.TipoCli;
         }
     }
 }

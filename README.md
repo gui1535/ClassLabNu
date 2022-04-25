@@ -21,7 +21,8 @@ As técnicas e tecnologias utilizadas pra isso são:
 - `DataGridView`: Listagem de produtos, clientes e usuarios de forma mais interativa
 - `Procedures`: Facilitar a manipulação de dados
 - `Biblioteca de classes`: Prover a reusabilidade em sistemas futuros
-- `Web Service Correio`: Consultando CEP do clientes atraves de um Web Service dos Correios
+- `Web Service ViaCep`: Consultando CEP do clientes atraves de um Web Service do Viacep
+- `MVC`: Dividir o projeto em camadas e facilitar a troca de informações
 
 <!-- ## 🎯 Desafio -->
 <!-- Tela de detalhes do produto -->

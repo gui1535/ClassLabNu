@@ -2,7 +2,7 @@
 using System;
 using System.Data;
 
-namespace ClassLabNu
+namespace ComercialSys.Model
 {
     /// <summary>
     /// Conectar no banco

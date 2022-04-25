@@ -1,4 +1,4 @@
-﻿using ClassLabNu;
+﻿using ComercialSys.Model;
 using System;
 using System.Windows.Forms;
 

@@ -1,0 +1,268 @@
+﻿using ComercialSys.Model;
+using System.Windows.Forms;
+
+namespace ComercialSys.Controller
+{
+    public class ClienteController
+    {
+        /// <summary>
+        /// Metodo para Listar clientes
+        /// </summary>
+        /// <param name="dt">DataGridView</param>
+        /// <param name="clnId">ColunaTextBox</param>
+        /// <param name="ClnNome">ColunaTextBox</param>
+        /// <param name="ClnEmail">ColunaTextBox</param>
+        /// <param name="ClnCpf">ColunaTextBox</param>
+        /// <param name="ClnDataCad">ColunaTextBox</param>
+        /// <param name="clnAtivo">ColunaCheckBox</param>
+        /// <param name="ClnObs">ColunaTextBox</param>
+        public static void ListarCliente
+            (
+            DataGridView dt,
+            DataGridViewTextBoxColumn clnId,
+            DataGridViewTextBoxColumn ClnNome,
+            DataGridViewTextBoxColumn ClnEmail,
+            DataGridViewTextBoxColumn ClnCpf,
+            DataGridViewTextBoxColumn ClnDataCad,
+            DataGridViewCheckBoxColumn clnAtivo,
+            DataGridViewTextBoxColumn ClnObs
+            )
+        {
+            // Limpar Grid
+            dt.Rows.Clear();
+
+            Cliente cli = new Cliente();
+
+            // Var para Listar clientes
+            var lista = cli.ListarClientes();
+
+            // Listando clientes no DataGrid
+            lista.ForEach(i =>
+            {
+                // Linhas 
+                dt.Rows.Add();
+                dt.Rows[lista.IndexOf(i)].Cells[clnId.Index].Value = i.Id; // Text -> ID
+                dt.Rows[lista.IndexOf(i)].Cells[ClnNome.Index].Value = i.Nome; // Text -> Nome
+                dt.Rows[lista.IndexOf(i)].Cells[ClnEmail.Index].Value = i.Email; // Text -> Email
+                dt.Rows[lista.IndexOf(i)].Cells[ClnCpf.Index].Value = i.Cpf; // Text -> CPF
+                dt.Rows[lista.IndexOf(i)].Cells[ClnDataCad.Index].Value = i.dataCad; // Text -> DataCad
+                dt.Rows[lista.IndexOf(i)].Cells[clnAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
+                dt.Rows[lista.IndexOf(i)].Cells[ClnObs.Index].Value = i.Obs; // Text -> Observações
+            });
+        }
+
+
+        /// <summary>
+        /// Metodo para pesquiar clientes por CPF
+        /// </summary>
+        /// <param name="dt">DataGridView</param>
+        /// <param name="_cpf">string</param>
+        /// <param name="clnId">ColunaTextBox</param>
+        /// <param name="ClnNome">ColunaTextBox</param>
+        /// <param name="ClnEmail">ColunaTextBox</param>
+        /// <param name="ClnCpf">ColunaTextBox</param>
+        /// <param name="ClnDataCad">ColunaTextBox</param>
+        /// <param name="clnAtivo">ColunaCheckBox</param>
+        /// <param name="ClnObs">ColunaTextBox</param>
+        public void PesquisarClienteCpf
+        (
+        DataGridView dt,
+        string _cpf,
+        Cliente cli,
+        DataGridViewTextBoxColumn clnId,
+        DataGridViewTextBoxColumn ClnNome,
+        DataGridViewTextBoxColumn ClnEmail,
+        DataGridViewTextBoxColumn ClnCpf,
+        DataGridViewTextBoxColumn ClnDataCad,
+        DataGridViewCheckBoxColumn clnAtivo,
+        DataGridViewTextBoxColumn ClnObs
+            )
+        {
+            // Limpar Grid
+            dt.Rows.Clear();
+
+            // Var para Listar clientes
+            var lista = cli.ListarPorCpf(_cpf);
+
+            // Listando clientes no DataGrid
+            lista.ForEach(i =>
+            {
+                // Linhas 
+                dt.Rows.Add();
+                dt.Rows[lista.IndexOf(i)].Cells[clnId.Index].Value = i.Id; // Text -> ID
+                dt.Rows[lista.IndexOf(i)].Cells[ClnNome.Index].Value = i.Nome; // Text -> Nome
+                dt.Rows[lista.IndexOf(i)].Cells[ClnEmail.Index].Value = i.Email; // Text -> Email
+                dt.Rows[lista.IndexOf(i)].Cells[ClnCpf.Index].Value = i.Cpf; // Text -> CPF
+                dt.Rows[lista.IndexOf(i)].Cells[ClnDataCad.Index].Value = i.dataCad; // Text -> DataCad
+                dt.Rows[lista.IndexOf(i)].Cells[clnAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
+                dt.Rows[lista.IndexOf(i)].Cells[ClnObs.Index].Value = i.Obs; // Text -> Observações
+
+                // Atributos
+                cli.Id = i.Id;
+                cli.Nome = i.Nome;
+                cli.Email = i.Email;
+                cli.Cpf = i.Cpf;
+                cli.dataCad = i.dataCad;
+                cli.Ativo = i.Ativo;
+                cli.Obs = i.Obs;
+
+            });
+        }
+
+
+        /// <summary>
+        /// Metodo para pesquiar clientes por ID
+        /// </summary>
+        /// <param name="dt">DataGridView</param>
+        /// <param name="_id">int</param>
+        /// <param name="cli">ColunaTextBox</param>
+        /// <param name="clnId">ColunaTextBox</param>
+        /// <param name="ClnNome">ColunaTextBox</param>
+        /// <param name="ClnEmail">ColunaTextBox</param>
+        /// <param name="ClnCpf">ColunaTextBox</param>
+        /// <param name="ClnDataCad">ColunaTextBox</param>
+        /// <param name="clnAtivo">ColunaCheckBox</param>
+        /// <param name="ClnObs">ColunaTextBox</param>
+        public void PesquisarClienteId
+        (
+        DataGridView dt,
+        int _id,
+        Cliente cli,
+        DataGridViewTextBoxColumn clnId,
+        DataGridViewTextBoxColumn ClnNome,
+        DataGridViewTextBoxColumn ClnEmail,
+        DataGridViewTextBoxColumn ClnCpf,
+        DataGridViewTextBoxColumn ClnDataCad,
+        DataGridViewCheckBoxColumn clnAtivo,
+        DataGridViewTextBoxColumn ClnObs
+            )
+        {
+            // Limpar Grid
+            dt.Rows.Clear();
+
+            // Var para Listar clientes
+            var lista = cli.ListarPorId(_id);
+
+            // Listando clientes no DataGrid
+            lista.ForEach(i =>
+            {
+                // Linhas 
+                dt.Rows.Add();
+                dt.Rows[lista.IndexOf(i)].Cells[clnId.Index].Value = i.Id; // Text -> ID
+                dt.Rows[lista.IndexOf(i)].Cells[ClnNome.Index].Value = i.Nome; // Text -> Nome
+                dt.Rows[lista.IndexOf(i)].Cells[ClnEmail.Index].Value = i.Email; // Text -> Email
+                dt.Rows[lista.IndexOf(i)].Cells[ClnCpf.Index].Value = i.Cpf; // Text -> CPF
+                dt.Rows[lista.IndexOf(i)].Cells[ClnDataCad.Index].Value = i.dataCad; // Text -> DataCad
+                dt.Rows[lista.IndexOf(i)].Cells[clnAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
+                dt.Rows[lista.IndexOf(i)].Cells[ClnObs.Index].Value = i.Obs; // Text -> Observações
+
+                // Atributos
+                cli.Id = i.Id;
+                cli.Nome = i.Nome;
+                cli.Email = i.Email;
+                cli.Cpf = i.Cpf;
+                cli.dataCad = i.dataCad;
+                cli.Ativo = i.Ativo;
+                cli.Obs = i.Obs;
+
+            });
+        }
+
+        /// <summary>
+        /// Metodo para pesquiar clientes por ID
+        /// </summary>
+        /// <param name="dt">DataGridView</param>
+        /// <param name="_nome">string</param>
+        /// <param name="cli">ColunaTextBox</param>
+        /// <param name="clnId">ColunaTextBox</param>
+        /// <param name="ClnNome">ColunaTextBox</param>
+        /// <param name="ClnEmail">ColunaTextBox</param>
+        /// <param name="ClnCpf">ColunaTextBox</param>
+        /// <param name="ClnDataCad">ColunaTextBox</param>
+        /// <param name="clnAtivo">ColunaCheckBox</param>
+        /// <param name="ClnObs">ColunaTextBox</param>
+        public void PesquisarClienteNome
+        (
+        DataGridView dt,
+        string _nome,
+        Cliente cli,
+        DataGridViewTextBoxColumn clnId,
+        DataGridViewTextBoxColumn ClnNome,
+        DataGridViewTextBoxColumn ClnEmail,
+        DataGridViewTextBoxColumn ClnCpf,
+        DataGridViewTextBoxColumn ClnDataCad,
+        DataGridViewCheckBoxColumn clnAtivo,
+        DataGridViewTextBoxColumn ClnObs
+            )
+        {
+            // Limpar Grid
+            dt.Rows.Clear();
+
+            // Var para Listar clientes
+            var lista = cli.ListarPorNome(_nome);
+
+            // Listando clientes no DataGrid
+            lista.ForEach(i =>
+            {
+                // Linhas 
+                dt.Rows.Add();
+                dt.Rows[lista.IndexOf(i)].Cells[clnId.Index].Value = i.Id; // Text -> ID
+                dt.Rows[lista.IndexOf(i)].Cells[ClnNome.Index].Value = i.Nome; // Text -> Nome
+                dt.Rows[lista.IndexOf(i)].Cells[ClnEmail.Index].Value = i.Email; // Text -> Email
+                dt.Rows[lista.IndexOf(i)].Cells[ClnCpf.Index].Value = i.Cpf; // Text -> CPF
+                dt.Rows[lista.IndexOf(i)].Cells[ClnDataCad.Index].Value = i.dataCad; // Text -> DataCad
+                dt.Rows[lista.IndexOf(i)].Cells[clnAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
+                dt.Rows[lista.IndexOf(i)].Cells[ClnObs.Index].Value = i.Obs; // Text -> Observações
+
+                // Atributos
+                cli.Id = i.Id;
+                cli.Nome = i.Nome;
+                cli.Email = i.Email;
+                cli.Cpf = i.Cpf;
+                cli.dataCad = i.dataCad;
+                cli.Ativo = i.Ativo;
+                cli.Obs = i.Obs;
+
+            });
+        }
+
+        public void InserirCliente(int _id, string _nome, string _cpf, string _email, string _obs)
+        {
+            Cliente cli = new Cliente();
+
+            // Objeto Cliente
+            cli.Id = _id;
+            cli.Nome = _nome;
+            cli.Cpf = _cpf;
+            cli.Email = _email;
+            cli.Obs = _obs;
+
+            // Inserindo Cliente
+            cli.Inserir();
+            // Se ID for maior que 0
+            if (cli.Id > 0)
+            {
+                // Verificação se email é valido
+                if (ValidacaoController.EmailValido(_email))
+                {
+                    MessageBox.Show($"Cliente {cli.Id} inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // Email Invalido
+                    MessageBox.Show($"Email invalido do cliente {cli.Id}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                // Falha ao inserir cliente
+                MessageBox.Show("Falha ao inserir cliente", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+
+    }
+}

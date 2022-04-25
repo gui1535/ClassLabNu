@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 
-namespace ClassLabNu
+namespace ComercialSys.Model
 {
     public class Pedido
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
-namespace ClassLabNu
+namespace ComercialSys.Model
 {
     // Documentação de classes de projeto -> XML Docs
 

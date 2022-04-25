@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ClassLabNu
+namespace ComercialSys.Model
 {
-    public static class Validacao
+    public static class ValidacaoController
     {
         public static string Numero { get; set; }
 

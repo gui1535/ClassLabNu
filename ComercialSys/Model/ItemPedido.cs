@@ -1,4 +1,4 @@
-﻿namespace ClassLabNu
+﻿namespace ComercialSys.Model
 {
     public class ItemPedido
     {

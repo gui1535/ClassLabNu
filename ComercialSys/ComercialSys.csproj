@@ -109,8 +109,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\ControllerCliente\ClienteDataGrid.cs" />
-    <Compile Include="Controller\ControllerCliente\EnderecoDataGrid.cs" />
+    <Compile Include="Controller\ClienteController.cs" />
+    <Compile Include="Controller\EnderecoController.cs" />
     <Compile Include="Model\Banco.cs" />
     <Compile Include="Model\Caixa.cs" />
     <Compile Include="Model\Cep.cs" />
@@ -123,7 +123,7 @@
     <Compile Include="Model\Pedido.cs" />
     <Compile Include="Model\Produto.cs" />
     <Compile Include="Model\Usuario.cs" />
-    <Compile Include="Model\Validacao.cs" />
+    <Compile Include="Controller\ValidacaoController.cs" />
     <Compile Include="Model\Venda.cs" />
     <Compile Include="View\ViewCliente.cs">
       <SubType>Form</SubType>
@@ -131,7 +131,7 @@
     <Compile Include="View\ViewCliente.Designer.cs">
       <DependentUpon>ViewCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controller\ControllerCliente\VerificaUf.cs" />
+    <Compile Include="Controller\VerificaUf.cs" />
     <Compile Include="View\ViewPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +179,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -192,12 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLabNu\ClassLabNu.csproj">
-      <Project>{b36ece74-244d-4d7f-af6b-34797ecb93e0}</Project>
-      <Name>ClassLabNu</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

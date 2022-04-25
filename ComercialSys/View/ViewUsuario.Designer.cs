@@ -1,4 +1,4 @@
-﻿namespace ComercialSys.Formularios
+﻿namespace ComercialSys.View
 {
     partial class ViewUsuario
     {

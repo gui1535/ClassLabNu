@@ -1,9 +1,9 @@
-﻿using ClassLabNu;
-using ComercialSys.FormCliente.Classes;
+﻿using ComercialSys.Controller;
+using ComercialSys.Model;
 using System;
 using System.Windows.Forms;
 
-namespace ComercialSys.FormCliente
+namespace ComercialSys.View
 {
     public partial class ViewCliente : Form
     {
@@ -21,14 +21,14 @@ namespace ComercialSys.FormCliente
         public ViewCliente()
         {
         }
-
         // Form Load ---------------------------------------------------------------------------------------------------------------
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string usuario = System.Environment.UserName;
+            string usuario = Environment.UserName;
 
             this.Text += usuario;
+
         }
 
         /// <summary>
@@ -41,6 +41,7 @@ namespace ComercialSys.FormCliente
             txtPesqNome.Clear();
             txtCpfPsq.Clear();
         }
+
         /// <summary>
         /// Desbloquear campos para inserir/editar cliente
         /// </summary>
@@ -143,11 +144,9 @@ namespace ComercialSys.FormCliente
         /// </summary>
         private void ListarDataGrid()
         {
-            // Instancia DataGrid Cliente
-            ClienteDataGrid dt = new ClienteDataGrid();
 
             // Listando Clientes
-            dt.ListarCliente(GridCliente, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
+            ClienteController.ListarCliente(GridCliente, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
         }
 
         /// <summary>
@@ -170,18 +169,12 @@ namespace ComercialSys.FormCliente
             cliente.dataCad = Convert.ToString(GridCliente["colunaDataCad", e.RowIndex].Value);
             cliente.Obs = Convert.ToString(GridCliente["colunaObs", e.RowIndex].Value);
 
-            if ((Convert.ToInt32(txtId.Text) == 0) || (txtId.Text == null))
-            {
+            // Instancia
+            EnderecoController dt = new EnderecoController();
 
-            }
-            else
-            {
-                // Instancia DataGrid Cliente
-                EnderecoDataGrid dt = new EnderecoDataGrid();
+            // Listando enderecos dos clientes
+            dt.ListarEndereco(GridEndereco, cliente, colunaCep, colunaCidade, colunaTipo, colunaBairro, colunaLogradouro, colunaEstado, colunaNumero, colunaComplemento);
 
-                // Listando enderecos dos clientes
-                dt.ListarEndereco(GridEndereco, cliente, colunaCep, colunaCidade, colunaTipo, colunaBairro, colunaLogradouro, colunaEstado, colunaNumero, colunaComplemento);
-            }
 
             // Atributos
             txtId.Text = cliente.Id.ToString();
@@ -195,22 +188,6 @@ namespace ComercialSys.FormCliente
             btnBloquear_Click(sender, e);
         }
 
-        // Limpar Campos ---------------------------------------------------------------------------------------------------------------
-
-        /// <summary>
-        /// Metodo limpar todos campos
-        /// </summary>
-        private void LimparTodosCampos()
-        {
-            // Limpa campos
-            txtCpf.Clear();
-            txtEmail.Clear();
-            txtObs.Clear();
-            txtId.Clear();
-            txtNome.Clear();
-        }
-
-
         // Inserir Clientes ---------------------------------------------------------------------------------------------------------------
 
         /// <summary>
@@ -220,38 +197,17 @@ namespace ComercialSys.FormCliente
         /// <param name="e"></param>
         private void btnInserir_Click(object sender, EventArgs e)
         {
+            // Objeto
+            ClienteController cli = new ClienteController();
 
-            // Objeto Cliente
-            ClassLabNu.Cliente c = new ClassLabNu.Cliente(
-                txtNome.Text,
-                txtCpf.Text,
-                txtEmail.Text,
-                txtObs.Text
-                );
+            // Valores para o controlador
+            cli.InserirCliente(Convert.ToInt32(txtId.Text), txtNome.Text, txtCpf.Text, txtEmail.Text, txtObs.Text);
 
-            c.Inserir();
-
-            // Se ID for maior que 0
-            if (c.Id > 0)
-            {
-                // Verificação se email é valido
-                if (Validacao.EmailValido(txtEmail.Text))
-                {
-                    txtId.Text = c.Id.ToString();
-                    MessageBox.Show($"Cliente {c.Id} inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    // Email Invalido
-                    MessageBox.Show($"Email invalido do cliente {c.Id}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-            }
-            else
-            {
-                // Falha ao inserir cliente
-                MessageBox.Show("Falha ao inserir cliente", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            txtId.Text = txtId.ToString();
+            // Listar DataGrid
             ListarDataGrid();
+
+            // Desbloquear campos
             btnDesbloquear_Click(sender, e);
         }
 
@@ -301,7 +257,7 @@ namespace ComercialSys.FormCliente
             cliente.Obs = txtObs.Text;
 
             // Validação do email
-            if (Validacao.EmailValido(txtEmail.Text))
+            if (ValidacaoController.EmailValido(txtEmail.Text))
             {
                 // Condição se usuario deseja mesmo fazer a alteração
                 if (MessageBox.Show("Você tem certeza que deseja alterar?", "SysComercial", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -311,12 +267,6 @@ namespace ComercialSys.FormCliente
                     {
                         // Mensagem Box
                         MessageBox.Show("Cliente alterado com sucesso!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // Limpa todos campos
-                        LimparTodosCampos();
-
-                        // Lista denovo
-                        ListarDataGrid();
                     }
                     else // Senão
                     {
@@ -336,11 +286,6 @@ namespace ComercialSys.FormCliente
 
         // Pesquisar Clientes ---------------------------------------------------------------------------------------------------------------
 
-        /// <summary>
-        /// Pesquisar cliente por nome
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void txtPesqNome_KeyUp(object sender, KeyEventArgs e)
         {
             // Verificando se o valor a pesquisar é vazio
@@ -360,41 +305,27 @@ namespace ComercialSys.FormCliente
                 txtIdPesq.Clear();
                 txtCpfPsq.Clear();
 
-                // Limpar Grid
-                GridCliente.Rows.Clear();
-
-                // Novo objeto Cliente
+                // Instancia para Cliente
                 Cliente cliente = new Cliente();
 
-                // Var para Listar clientes
-                var lista = cliente.ListarPorNome(txtPesqNome.Text);
-                lista.ForEach(i =>
-                {
-                    // Linhas 
-                    GridCliente.Rows.Add();
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaId.Index].Value = i.Id; // Text -> ID
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaNome.Index].Value = i.Nome; // Text -> Nome
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaEmail.Index].Value = i.Email; // Text -> Email
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaCpf.Index].Value = i.Cpf; // Text -> CPF
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaDataCad.Index].Value = i.dataCad; // Text -> DataCad
-                    GridCliente.Rows[lista.IndexOf(i)].Cells[colunaAtivo.Index].Value = i.Ativo; // Checkbox -> Ativo
-                                                                                                 // Atributos
-                    txtId.Text = i.Id.ToString();
-                    txtNome.Text = i.Nome;
-                    txtDataCad.Text = i.dataCad;
-                    txtEmail.Text = i.Email;
-                    txtCpf.Text = i.Cpf;
-                    chkAtivo.Checked = i.Ativo;
-                });
+                // Instancia DataGrid Cliente
+                ClienteController dt = new ClienteController();
+
+                // Listando Clientes
+                dt.PesquisarClienteNome(GridCliente, txtPesqNome.Text, cliente, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
+
+                // Atribuindo valores
+                txtId.Text = cliente.Id.ToString();
+                txtNome.Text = cliente.Nome;
+                txtDataCad.Text = cliente.dataCad;
+                txtEmail.Text = cliente.Email;
+                txtCpf.Text = cliente.Cpf;
+                chkAtivo.Checked = cliente.Ativo;
+
             }
 
         }
 
-        /// <summary>
-        /// Pesquisar cliente por CPF
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void txtCpfPsq_KeyUp(object sender, KeyEventArgs e)
         {
             // Verificando se o valor a pesquisar é vazio
@@ -418,11 +349,12 @@ namespace ComercialSys.FormCliente
                 Cliente cliente = new Cliente();
 
                 // Instancia DataGrid Cliente
-                ClienteDataGrid dt = new ClienteDataGrid();
+                ClienteController dt = new ClienteController();
 
                 // Listando Clientes
-                dt.PesquisarClienteCpf(GridCliente, txtCpfPsq.Text, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
+                dt.PesquisarClienteCpf(GridCliente, txtCpfPsq.Text, cliente, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
 
+                // Atribuindo valores
                 txtId.Text = cliente.Id.ToString();
                 txtNome.Text = cliente.Nome;
                 txtDataCad.Text = cliente.dataCad;
@@ -457,9 +389,24 @@ namespace ComercialSys.FormCliente
                 txtCpfPsq.Clear();
                 txtPesqNome.Clear();
 
-                ClienteDataGrid dt = new ClienteDataGrid();
+                // Instancia para Cliente
+                Cliente cliente = new Cliente();
 
-               
+                // Instancia DataGrid Cliente
+                ClienteController dt = new ClienteController();
+
+                // Listando Clientes
+                dt.PesquisarClienteId(GridCliente, int.Parse(txtIdPesq.Text), cliente, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
+
+                // Atribuindo valores
+                txtId.Text = cliente.Id.ToString();
+                txtNome.Text = cliente.Nome;
+                txtDataCad.Text = cliente.dataCad;
+                txtEmail.Text = cliente.Email;
+                txtCpf.Text = cliente.Cpf;
+                chkAtivo.Checked = cliente.Ativo;
+
+
             }
 
         }

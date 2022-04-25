@@ -1,4 +1,4 @@
-﻿using ClassLabNu;
+﻿using ComercialSys.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ComercialSys.FormCliente.Classes
+namespace ComercialSys.Controller
 {
-    public class EnderecoDataGrid : Endereco
+    public class EnderecoController : Endereco
     {
         /// <summary>
         /// Metodo para listar endereços do cliente

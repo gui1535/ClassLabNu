@@ -1,9 +1,9 @@
-﻿using ClassLabNu;
+﻿using ComercialSys.Model;
 using System;
 using System.Data;
 using System.Windows.Forms;
 
-namespace ComercialSys.Formularios
+namespace ComercialSys.View
 {
     public partial class ViewUsuario : MetroFramework.Forms.MetroForm
     {
@@ -14,6 +14,7 @@ namespace ComercialSys.Formularios
             //MdiParent
             MdiParent = parent;
 
+            
             // Listar usuarios
             ListarDataGrid();
         }
@@ -81,8 +82,8 @@ namespace ComercialSys.Formularios
             DataTable dt = new DataTable();
             dt.Load(Nivel.ConsultarNivel());
             cmbNivel.DataSource = dt;
-            cmbNivel.ValueMember = "nome";
-            cmbNivel.DisplayMember = "idnv";
+            cmbNivel.ValueMember = "idnv";
+            cmbNivel.DisplayMember = "nome";
         }
 
         // DataGrid Usuarios ---------------------------------------------------------------------------------------------------------------
@@ -182,7 +183,7 @@ namespace ComercialSys.Formularios
             if (u.Id > 0)
             {
                 // Verificação se email é valido
-                if (Validacao.EmailValido(txtEmail.Text))
+                if (ValidacaoController.EmailValido(txtEmail.Text))
                 {
                     txtId.Text = u.Id.ToString();
                     MessageBox.Show($"Usuario {u.Id} inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -236,7 +237,7 @@ namespace ComercialSys.Formularios
             usuario.Ativo = chkAtivo.Checked;
 
             // Validação do email
-            if (Validacao.EmailValido(txtEmail.Text))
+            if (ValidacaoController.EmailValido(txtEmail.Text))
             {
                 // Condição se usuario deseja mesmo fazer a alteração
                 if (MessageBox.Show("Você tem certeza que deseja alterar?", "SysComercial", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

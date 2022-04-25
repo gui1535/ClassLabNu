@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Http;
 
-namespace ClassLabNu
+namespace ComercialSys.Model
 {
     public static class Cep
     {

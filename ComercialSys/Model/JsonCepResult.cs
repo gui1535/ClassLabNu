@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace ClassLabNu
+namespace ComercialSys.Model
 {
     public class JsonCepResult
     {

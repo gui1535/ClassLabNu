@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Forms;
 using MessageBox = System.Windows.Forms.MessageBox;
 
-namespace ClassLabNu
+namespace ComercialSys.Model
 {
     public class Produto
     {

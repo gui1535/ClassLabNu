@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ClassLabNu
+namespace ComercialSys.Model
 {
     public class Caixa
     {

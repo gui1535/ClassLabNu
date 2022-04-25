@@ -1,12 +1,12 @@
-﻿using ClassLabNu;
-using ComercialSys.Formularios;
+﻿using ComercialSys.Model;
 using System.Windows.Forms;
 
-namespace ComercialSys.FormCliente.Classes
+namespace ComercialSys.Controller
 {
     public static class VerificaUf
     {
         public static string Estado { get; set; }
+
         public static string VerificarUf()
         {
             if (JsonCepResult.Uf.Equals("SP"))

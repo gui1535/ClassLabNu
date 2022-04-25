@@ -1,4 +1,5 @@
-﻿namespace ComercialSys.FormCliente
+﻿using ComercialSys.Controller;
+namespace ComercialSys.View
 {
     partial class ViewCliente
     {

@@ -1,6 +1,5 @@
-﻿using ComercialSys.FormCliente;
-using ComercialSys.FormCliente.Classes;
-using ComercialSys.Formularios;
+﻿using ComercialSys.Formularios;
+using ComercialSys.View;
 using System;
 using System.Windows.Forms;
 

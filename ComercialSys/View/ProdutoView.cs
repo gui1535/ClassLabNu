@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace ComercialSys
 {
-    public partial class ViewProduto : MetroFramework.Forms.MetroForm
+    public partial class ProdutoView : MetroFramework.Forms.MetroForm
     {
-        public ViewProduto(Form parent)
+        public ProdutoView(Form parent)
         {
             InitializeComponent();
 
@@ -124,7 +124,7 @@ namespace ComercialSys
             GridProdutos.Rows.Clear();
 
             // Novo objeto Cliente
-            Produto produto = new Produto();
+            ProdutoModel produto = new ProdutoModel();
 
             // Var para Listar clientes
             var lista = produto.ListarTodos();
@@ -152,7 +152,7 @@ namespace ComercialSys
         private void GridProdutos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // Variaveis para objeto Produto
-            Produto PAtributos = new Produto();
+            ProdutoModel PAtributos = new ProdutoModel();
 
             // Valores para variaveis
             PAtributos.Id = Convert.ToInt32(GridProdutos["colunaId", e.RowIndex].Value);
@@ -196,7 +196,7 @@ namespace ComercialSys
             try
             {
                 // Objeto Produto
-                Produto produto = new Produto(
+                ProdutoModel produto = new ProdutoModel(
                      txtNome.Text,
                      txtunidade.Text,
                      txtCodBar.Text,
@@ -257,7 +257,7 @@ namespace ComercialSys
                 GridProdutos.Rows.Clear();
 
                 // Novo objeto Cliente
-                Produto produto = new Produto();
+                ProdutoModel produto = new ProdutoModel();
 
                 // Var para Listar clientes
                 var lista = produto.ListarPorId(int.Parse(txtIdPesq.Text));
@@ -314,7 +314,7 @@ namespace ComercialSys
                 GridProdutos.Rows.Clear();
 
                 // Novo objeto Cliente
-                Produto produto = new Produto();
+                ProdutoModel produto = new ProdutoModel();
 
                 // Var para Listar clientes
                 var lista = produto.ListarPorCodbar(Convert.ToString(txtCodBarPesq.Text));
@@ -371,7 +371,7 @@ namespace ComercialSys
                 GridProdutos.Rows.Clear();
 
                 // Novo objeto Cliente
-                Produto produto = new Produto();
+                ProdutoModel produto = new ProdutoModel();
 
                 // Var para Listar clientes
                 var lista = produto.ListarPorValor(Convert.ToDouble(txtValorPesq.Text));
@@ -423,7 +423,7 @@ namespace ComercialSys
         private void btnEditar_Click(object sender, EventArgs e)
         {
             // Objeto Produto
-            Produto produto = new Produto();
+            ProdutoModel produto = new ProdutoModel();
 
             // Atributos do objeto
             produto.Id = int.Parse(txtId.Text);

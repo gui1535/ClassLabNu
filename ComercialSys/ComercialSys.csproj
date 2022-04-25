@@ -111,63 +111,63 @@
   <ItemGroup>
     <Compile Include="Controller\ClienteController.cs" />
     <Compile Include="Controller\EnderecoController.cs" />
-    <Compile Include="Model\Banco.cs" />
-    <Compile Include="Model\Caixa.cs" />
-    <Compile Include="Model\ViaCep.cs" />
-    <Compile Include="Model\Cliente.cs" />
-    <Compile Include="Model\Endereco.cs" />
-    <Compile Include="Model\ItemPedido.cs" />
+    <Compile Include="Model\BancoModel.cs" />
+    <Compile Include="Model\CaixaModel.cs" />
+    <Compile Include="Model\ViaCepModel.cs" />
+    <Compile Include="Model\ClienteModel.cs" />
+    <Compile Include="Model\EnderecoModel.cs" />
+    <Compile Include="Model\ItemPedidoModel.cs" />
     <Compile Include="Controller\CepController.cs" />
-    <Compile Include="Model\Nivel.cs" />
-    <Compile Include="Model\Pagamento.cs" />
-    <Compile Include="Model\Pedido.cs" />
-    <Compile Include="Model\Produto.cs" />
-    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\NivelModel.cs" />
+    <Compile Include="Model\PagamentoModel.cs" />
+    <Compile Include="Model\PedidoModel.cs" />
+    <Compile Include="Model\ProdutoModel.cs" />
+    <Compile Include="Model\UsuarioModel.cs" />
     <Compile Include="Controller\ValidacaoController.cs" />
-    <Compile Include="Model\Venda.cs" />
-    <Compile Include="View\ViewCliente.cs">
+    <Compile Include="Model\VendaModel.cs" />
+    <Compile Include="View\ClienteView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ViewCliente.Designer.cs">
-      <DependentUpon>ViewCliente.cs</DependentUpon>
+    <Compile Include="View\ClienteView.Designer.cs">
+      <DependentUpon>ClienteView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewPedido.cs">
+    <Compile Include="View\PedidoView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ViewPedido.Designer.cs">
-      <DependentUpon>ViewPedido.cs</DependentUpon>
+    <Compile Include="View\PedidoView.Designer.cs">
+      <DependentUpon>PedidoView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewPrincipal.cs">
+    <Compile Include="View\PrincipalView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ViewPrincipal.Designer.cs">
-      <DependentUpon>ViewPrincipal.cs</DependentUpon>
+    <Compile Include="View\PrincipalView.Designer.cs">
+      <DependentUpon>PrincipalView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewProduto.cs">
+    <Compile Include="View\ProdutoView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ViewProduto.Designer.cs">
-      <DependentUpon>ViewProduto.cs</DependentUpon>
+    <Compile Include="View\ProdutoView.Designer.cs">
+      <DependentUpon>ProdutoView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewUsuario.cs">
+    <Compile Include="View\UsuarioView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ViewUsuario.Designer.cs">
-      <DependentUpon>ViewUsuario.cs</DependentUpon>
+    <Compile Include="View\UsuarioView.Designer.cs">
+      <DependentUpon>UsuarioView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\ViewCliente.resx">
-      <DependentUpon>ViewCliente.cs</DependentUpon>
+    <EmbeddedResource Include="View\ClienteView.resx">
+      <DependentUpon>ClienteView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ViewPrincipal.resx">
-      <DependentUpon>ViewPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="View\PrincipalView.resx">
+      <DependentUpon>PrincipalView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ViewProduto.resx">
-      <DependentUpon>ViewProduto.cs</DependentUpon>
+    <EmbeddedResource Include="View\ProdutoView.resx">
+      <DependentUpon>ProdutoView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ViewUsuario.resx">
-      <DependentUpon>ViewUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="View\UsuarioView.resx">
+      <DependentUpon>UsuarioView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

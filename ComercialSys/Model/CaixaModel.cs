@@ -2,33 +2,34 @@
 
 namespace ComercialSys.Model
 {
-    public class Venda
+    public class CaixaModel
     {
-
         // Atributos
 
         public int Id { get; set; }
         public DateTime Data { get; set; }
         public string Status { get; set; }
-        public double Desconto { get; set; }
 
         // Construtores
 
-        public Venda()
+        public CaixaModel()
         {
         }
 
-        public Venda(int id, DateTime data, string status)
+        public CaixaModel(int id, DateTime data)
         {
             Id = id;
             Data = data;
+        }
+
+        public CaixaModel(int id, string status)
+        {
+            Id = id;
             Status = status;
         }
 
-        public Venda(DateTime data, double desconto)
-        {
-            Data = data;
-            Desconto = desconto;
-        }
+        // Metodos
+
+
     }
 }

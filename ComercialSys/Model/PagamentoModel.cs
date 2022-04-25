@@ -1,23 +1,23 @@
 ﻿namespace ComercialSys.Model
 {
-    public class Pagamento
+    public class PagamentoModel
     {
         // Atributos
         public int Id { get; set; }
         public double Valor { get; set; }
 
         // Construtores
-        public Pagamento()
+        public PagamentoModel()
         {
         }
 
-        public Pagamento(int id, double valor)
+        public PagamentoModel(int id, double valor)
         {
             Id = id;
             Valor = valor;
         }
 
-        public Pagamento(double valor)
+        public PagamentoModel(double valor)
         {
             Valor = valor;
         }

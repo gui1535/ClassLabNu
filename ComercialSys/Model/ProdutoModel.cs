@@ -7,7 +7,7 @@ using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace ComercialSys.Model
 {
-    public class Produto
+    public class ProdutoModel
     {
         // Atributos / Propriedades ----------------------------------------------------
 
@@ -24,7 +24,7 @@ namespace ComercialSys.Model
         /// <summary>
         /// Construtor vazio para o Produto
         /// </summary>
-        public Produto()
+        public ProdutoModel()
         {
         }
 
@@ -37,7 +37,7 @@ namespace ComercialSys.Model
         /// <param name="codbar">CHAR(13)</param>
         /// <param name="valor">DOUBLE</param>
         /// <param name="desconto">DOUBLE</param>
-        public Produto(int id, string descricao, string unidade, string codbar,double desconto,double valor)
+        public ProdutoModel(int id, string descricao, string unidade, string codbar,double desconto,double valor)
         {
             Id = id;
             this.Descricao = descricao;
@@ -56,7 +56,7 @@ namespace ComercialSys.Model
         /// <param name="valor">DOUBLE</param>
         /// <param name="desconto">DOUBLE</param>
         /// <param name="descontinuado">BIT(1)</param>
-        public Produto(string descricao, string unidade, string codbar, double valor, double desconto, bool descontinuado)
+        public ProdutoModel(string descricao, string unidade, string codbar, double valor, double desconto, bool descontinuado)
         {
             this.Descricao = descricao;
             this.Unidade = unidade;
@@ -76,7 +76,7 @@ namespace ComercialSys.Model
         /// <param name="valor">DOUBLE</param>
         /// <param name="desconto">DOUBLE</param>
         /// <param name="descontinuado">BIT(1)</param>
-        public Produto(int id, string descricao, string unidade, string codbar, double valor, double desconto, bool descontinuado)
+        public ProdutoModel(int id, string descricao, string unidade, string codbar, double valor, double desconto, bool descontinuado)
         {
             Id = id;
             this.Descricao = descricao;
@@ -95,7 +95,7 @@ namespace ComercialSys.Model
         /// <param name="unidade">VARCHAR(14)</param>
         /// <param name="codbar">CHAR(13)</param>
         /// <param name="valor">DOUBLE</param>
-        public Produto(int id, string descricao, string unidade, string codbar, double valor)
+        public ProdutoModel(int id, string descricao, string unidade, string codbar, double valor)
         {
             Id = id;
             this.Descricao = descricao;
@@ -112,7 +112,7 @@ namespace ComercialSys.Model
         /// <param name="codbar">CHAR(13)</param>
         /// <param name="valor">DOUBLE</param>
         /// <param name="desconto">DOUBLE</param>
-        public Produto(string descricao, string unidade, string codbar, double valor, double desconto)
+        public ProdutoModel(string descricao, string unidade, string codbar, double valor, double desconto)
         {
             this.Descricao = descricao;
             this.Unidade = unidade;
@@ -132,7 +132,7 @@ namespace ComercialSys.Model
             try
             {
                 // Abre conexão com banco
-                var banco = Banco.Abrir();
+                var banco = BancoModel.Abrir();
 
                 // Comandos SQL
                 banco.CommandType = CommandType.StoredProcedure;
@@ -164,7 +164,7 @@ namespace ComercialSys.Model
         {
 
             // Abrir conexao
-            var cmd = Banco.Abrir();
+            var cmd = BancoModel.Abrir();
 
             // Comando SQL
             cmd.CommandType = CommandType.StoredProcedure;
@@ -198,13 +198,13 @@ namespace ComercialSys.Model
         /// Metodo para consultar produtos por ID
         /// </summary>
         /// <param name="_id"></param>
-        public List<Produto> ListarPorId(int _id)
+        public List<ProdutoModel> ListarPorId(int _id)
         {
             // Nova lista
-            List<Produto> lista = new List<Produto>();
+            List<ProdutoModel> lista = new List<ProdutoModel>();
 
             // Abrir conexão
-            var banco = Banco.Abrir();
+            var banco = BancoModel.Abrir();
 
             // Comando
             banco.CommandType = CommandType.Text;
@@ -216,7 +216,7 @@ namespace ComercialSys.Model
             // Consulta
             while (dr.Read())
             {
-                lista.Add(new Produto(
+                lista.Add(new ProdutoModel(
                     Convert.ToInt32(dr.GetValue(0)), // ID
                     dr.GetString(1), // Descricao
                     dr.GetString(2), // Unidade
@@ -238,13 +238,13 @@ namespace ComercialSys.Model
         /// Metodo para consultar produto por valor
         /// </summary>
         /// <param name="_valor"></param>
-        public List<Produto> ListarPorValor(double _valor)
+        public List<ProdutoModel> ListarPorValor(double _valor)
         {
             // Nova lista
-            List<Produto> lista = new List<Produto>();
+            List<ProdutoModel> lista = new List<ProdutoModel>();
 
             // Abrir conexão
-            var banco = Banco.Abrir();
+            var banco = BancoModel.Abrir();
 
             // Comando
             banco.CommandType = CommandType.Text;
@@ -256,7 +256,7 @@ namespace ComercialSys.Model
             // Consulta
             while (dr.Read())
             {
-                lista.Add(new Produto(
+                lista.Add(new ProdutoModel(
                     Convert.ToInt32(dr.GetValue(0)), // ID
                     dr.GetString(1), // Descricao
                     dr.GetString(2), // Unidade
@@ -278,13 +278,13 @@ namespace ComercialSys.Model
         /// Metodo para consultar produto por codigo de barras
         /// </summary>
         /// <param name="_codbar"></param>
-        public List<Produto> ListarPorCodbar(string _codbar)
+        public List<ProdutoModel> ListarPorCodbar(string _codbar)
         {
             // Nova lista
-            List<Produto> lista = new List<Produto>();
+            List<ProdutoModel> lista = new List<ProdutoModel>();
 
             // Abrir conexão
-            var banco = Banco.Abrir();
+            var banco = BancoModel.Abrir();
 
             // Comando
             banco.CommandType = CommandType.Text;
@@ -296,7 +296,7 @@ namespace ComercialSys.Model
             // Consulta
             while (dr.Read())
             {
-                lista.Add(new Produto(
+                lista.Add(new ProdutoModel(
                     Convert.ToInt32(dr.GetValue(0)), // ID
                     dr.GetString(1), // Descricao
                     dr.GetString(2), // Unidade
@@ -320,13 +320,13 @@ namespace ComercialSys.Model
         /// <param name="i"></param>
         /// <param name="l"></param>
         /// <returns>Lista</returns>
-        public List<Produto> ListarTodos(int i = 0, int l = 0)
+        public List<ProdutoModel> ListarTodos(int i = 0, int l = 0)
         {
             // Nova lista
-            List<Produto> lista = new List<Produto>();
+            List<ProdutoModel> lista = new List<ProdutoModel>();
 
             // Abrir conexão
-            var banco = Banco.Abrir();
+            var banco = BancoModel.Abrir();
 
             // Comando
             banco.CommandType = CommandType.Text;
@@ -341,7 +341,7 @@ namespace ComercialSys.Model
             // Consulta
             while (dr.Read())
             {
-                lista.Add(new Produto(
+                lista.Add(new ProdutoModel(
                     Convert.ToInt32(dr.GetValue(0)), // ID
                     dr.GetString(1), // Descricao
                     dr.GetString(2), // Unidade

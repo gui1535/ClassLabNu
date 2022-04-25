@@ -49,7 +49,7 @@ namespace ComercialSys.Controller
         public static void ConsultarCep(string _cep)
         {
             // Consultar Cep
-            ViaCep.ConsultaCep(_cep.ToString().Trim());
+            ViaCepModel.ConsultaCep(_cep.ToString().Trim());
              
             VerificarUf();
         }

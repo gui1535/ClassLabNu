@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace ComercialSys.Model
 {
-    public class Nivel
+    public class NivelModel
     {
         // Atributos -> Campos
         private int Id { set; get; }
@@ -15,17 +15,17 @@ namespace ComercialSys.Model
 
         // Metodos Contrutores ------------------------------------------------------------------
 
-        public Nivel()
+        public NivelModel()
         {
         }
 
-        public Nivel(string nome, string sigla)
+        public NivelModel(string nome, string sigla)
         {
             this.Nome = nome;
             this.Sigla = sigla;
         }
 
-        public Nivel(int id, string nome, string sigla)
+        public NivelModel(int id, string nome, string sigla)
         {
             this.Id = id;
             this.Nome = nome;
@@ -37,7 +37,7 @@ namespace ComercialSys.Model
             try
             {
                 // Abre conexão com banco
-                var banco = Banco.Abrir();
+                var banco = BancoModel.Abrir();
 
                 // Comandos SQL
                 banco.CommandType = System.Data.CommandType.StoredProcedure;
@@ -66,7 +66,7 @@ namespace ComercialSys.Model
         public bool Alterar()
         {
             // Abrir conexao
-            var cmd = Banco.Abrir();
+            var cmd = BancoModel.Abrir();
 
             // Comando SQL
             cmd.CommandType = CommandType.StoredProcedure;
@@ -95,7 +95,7 @@ namespace ComercialSys.Model
         public static MySqlDataReader ConsultarNivel()
         {
             // Abre conexao com banco
-            var cmd = Banco.Abrir();
+            var cmd = BancoModel.Abrir();
 
             // Comandos SQL
             cmd.CommandType = CommandType.Text;

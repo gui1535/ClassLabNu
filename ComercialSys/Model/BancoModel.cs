@@ -7,7 +7,7 @@ namespace ComercialSys.Model
     /// <summary>
     /// Conectar no banco
     /// </summary>
-    public static class Banco
+    public static class BancoModel
     {
         // Metodo Conexão
         public static MySqlCommand Abrir()

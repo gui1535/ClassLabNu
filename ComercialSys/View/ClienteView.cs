@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace ComercialSys.View
 {
-    public partial class ViewCliente : Form
+    public partial class ClienteView : Form
     {
-        public ViewCliente(Form parent)
+        public ClienteView(Form parent)
         {
             InitializeComponent();
 
@@ -17,7 +17,7 @@ namespace ComercialSys.View
             ListarDataGrid();
         }
 
-        public ViewCliente()
+        public ClienteView()
         {
         }
         // Form Load ---------------------------------------------------------------------------------------------------------------

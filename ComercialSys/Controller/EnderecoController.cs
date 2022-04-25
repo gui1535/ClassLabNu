@@ -46,7 +46,7 @@ namespace ComercialSys.Controller
             dt.Rows.Clear();
 
             // Var para Listar enderecos
-            Endereco end = new Endereco();
+            EnderecoModel end = new EnderecoModel();
 
             var lista = end.ListarEnderecoCli(Convert.ToInt32(cli.IdCli));
 
@@ -71,7 +71,7 @@ namespace ComercialSys.Controller
             try
             {
                 // Passando valores ao objeto endereco
-                Endereco end = new Endereco();
+                EnderecoModel end = new EnderecoModel();
 
                 end.Logradouro = _logradouro;
                 end.Cep = _cep;
@@ -108,7 +108,7 @@ namespace ComercialSys.Controller
         )
         {
             // Variaveis para objeto Endereco
-            Endereco end = new Endereco();
+            EnderecoModel end = new EnderecoModel();
 
             // Valores para o objeto
             end.Cep = Convert.ToString(dt[$"colunaCep", e.RowIndex].Value);

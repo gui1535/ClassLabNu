@@ -40,7 +40,7 @@ namespace ComercialSys.Controller
             // Limpar Grid
             dt.Rows.Clear();
 
-            Cliente cli = new Cliente();
+            ClienteModel cli = new ClienteModel();
 
             // Var para Listar clientes
             var lista = cli.ListarClientes();
@@ -64,7 +64,7 @@ namespace ComercialSys.Controller
         /// Metodo privado para atribuir valores para as propriedades
         /// </summary>
         /// <param name="cli">Cliente</param>
-        private void PreencherPropriedades(Cliente cli)
+        private void PreencherPropriedades(ClienteModel cli)
         {
             IdCli = cli.Id.ToString();
             NomeCli = cli.Nome;
@@ -82,7 +82,7 @@ namespace ComercialSys.Controller
         )
         {
 
-            Cliente cli = new Cliente();
+            ClienteModel cli = new ClienteModel();
 
             cli.Id = Convert.ToInt32(dt[$"colunaId", e.RowIndex].Value);
             cli.Nome = Convert.ToString(dt[$"colunaNome", e.RowIndex].Value);
@@ -127,7 +127,7 @@ namespace ComercialSys.Controller
         DataGridViewTextBoxColumn ClnObs
             )
         {
-            Cliente cli = new Cliente();
+            ClienteModel cli = new ClienteModel();
 
             // Limpar Grid
             dt.Rows.Clear();
@@ -180,7 +180,7 @@ namespace ComercialSys.Controller
         DataGridViewTextBoxColumn ClnObs
             )
         {
-            Cliente cli = new Cliente();
+            ClienteModel cli = new ClienteModel();
 
             // Limpar Grid
             dt.Rows.Clear();
@@ -232,7 +232,7 @@ namespace ComercialSys.Controller
         DataGridViewTextBoxColumn ClnObs
             )
         {
-            Cliente cli = new Cliente();
+            ClienteModel cli = new ClienteModel();
 
             // Limpar Grid
             dt.Rows.Clear();
@@ -268,7 +268,7 @@ namespace ComercialSys.Controller
         /// <param name="_obs">String</param>
         public void InserirCliente(int _id, string _nome, string _cpf, string _email, string _obs)
         {
-            Cliente cli = new Cliente();
+            ClienteModel cli = new ClienteModel();
 
             // Objeto Cliente
             cli.Id = _id;
@@ -316,7 +316,7 @@ namespace ComercialSys.Controller
         public void EditarCliente(int _id, string _nome, string _cpf, string _email, bool _ativo, string _obs)
         {
             // Objeto Cliente
-            Cliente cli = new Cliente();
+            ClienteModel cli = new ClienteModel();
 
             // Atributos do objeto
             cli.Id = _id;

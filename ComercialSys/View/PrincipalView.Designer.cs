@@ -1,6 +1,6 @@
 ﻿namespace ComercialSys.FormPrincipal
 {
-    partial class ViewPrincipal
+    partial class PrincipalView
     {
         /// <summary>
         /// Required designer variable.

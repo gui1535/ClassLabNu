@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace ComercialSys.View
 {
-    public partial class ViewUsuario : MetroFramework.Forms.MetroForm
+    public partial class UsuarioView : MetroFramework.Forms.MetroForm
     {
-        public ViewUsuario(Form parent)
+        public UsuarioView(Form parent)
         {
             InitializeComponent();
 
@@ -80,7 +80,7 @@ namespace ComercialSys.View
         private void FormUsuario_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt.Load(Nivel.ConsultarNivel());
+            dt.Load(NivelModel.ConsultarNivel());
             cmbNivel.DataSource = dt;
             cmbNivel.ValueMember = "idnv";
             cmbNivel.DisplayMember = "nome";
@@ -97,7 +97,7 @@ namespace ComercialSys.View
             GridUsuarios.Rows.Clear();
 
             // Novo objeto Usuario
-            Usuario usuario = new Usuario();
+            UsuarioModel usuario = new UsuarioModel();
 
             // Var para Listar usuario
             var lista = usuario.ListarUsuarios();
@@ -127,7 +127,7 @@ namespace ComercialSys.View
         private void GridUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // Variaveis para objeto Cliente
-            Usuario u = new Usuario();
+            UsuarioModel u = new UsuarioModel();
 
             // Valores para o objeto
             u.Id = Convert.ToInt32(GridUsuarios["colunaId", e.RowIndex].Value);
@@ -170,7 +170,7 @@ namespace ComercialSys.View
         private void btnInserir_Click(object sender, EventArgs e)
         {
             // Objeto Usuario
-            Usuario u = new Usuario(
+            UsuarioModel u = new UsuarioModel(
                 txtNome.Text,
                 txtEmail.Text,
                 txtSenha.Text,
@@ -226,7 +226,7 @@ namespace ComercialSys.View
         private void btnEditar_Click(object sender, EventArgs e)
         {
             // Objeto Cliente
-            Usuario usuario = new Usuario();
+            UsuarioModel usuario = new UsuarioModel();
 
             // Atributos do objeto
             usuario.Id = int.Parse(txtId.Text);
@@ -285,7 +285,7 @@ namespace ComercialSys.View
             else
             {
                 // Objeto Cliente
-                Usuario usuario = new Usuario();
+                UsuarioModel usuario = new UsuarioModel();
 
                 // Metodo Consulta por ID
                 usuario.ConsultarPorId(int.Parse(txtIdPesq.Text));
@@ -308,7 +308,7 @@ namespace ComercialSys.View
             else
             {
                 // Objeto Cliente
-                Usuario usuario = new Usuario();
+                UsuarioModel usuario = new UsuarioModel();
 
                 // Metodo Consulta por Nome
                 usuario.ConsultarPorNome(Convert.ToString(txtPesqNome.Text));

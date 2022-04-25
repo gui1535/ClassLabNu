@@ -17,7 +17,7 @@ namespace ComercialSys
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ViewPrincipal());
+            Application.Run(new PrincipalView());
         }
     }
 }

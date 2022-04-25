@@ -4,7 +4,7 @@ using System.Data;
 
 namespace ComercialSys.Model
 {
-    public class Pedido
+    public class PedidoModel
     {
         // idped	data	status_ped	desconto	idcli_ped	iduser_ped
 
@@ -14,17 +14,17 @@ namespace ComercialSys.Model
         public DateTime DataPed { get; set; }
         public string Status { get; set; }
         public double Desconto { get; set; }
-        public Cliente Cliente { get; set; }
-        public Usuario Usuario { get; set; }
-        public List<ItemPedido> Itens { get; set; }
+        public ClienteModel Cliente { get; set; }
+        public UsuarioModel Usuario { get; set; }
+        public List<ItemPedidoModel> Itens { get; set; }
 
         // Construtores
 
-        public Pedido()
+        public PedidoModel()
         {
         }
 
-        public Pedido(DateTime dataPed, string status, double desconto, Cliente cliente, Usuario usuario, List<ItemPedido> itens)
+        public PedidoModel(DateTime dataPed, string status, double desconto, ClienteModel cliente, UsuarioModel usuario, List<ItemPedidoModel> itens)
         {
             DataPed = dataPed;
             Status = status;
@@ -33,7 +33,7 @@ namespace ComercialSys.Model
             this.Usuario = usuario;
             this.Itens = itens;
         }
-        public Pedido(int id, DateTime dataPed, string status, double desconto, Cliente cliente, Usuario usuario, List<ItemPedido> itens)
+        public PedidoModel(int id, DateTime dataPed, string status, double desconto, ClienteModel cliente, UsuarioModel usuario, List<ItemPedidoModel> itens)
         {
             Id = id;
             DataPed = dataPed;
@@ -49,7 +49,7 @@ namespace ComercialSys.Model
         public void Inserir()
         {
             // Abre conexão com banco
-            var cmd = Banco.Abrir();
+            var cmd = BancoModel.Abrir();
 
             // Comandos SQL
             cmd.CommandType = CommandType.Text;
@@ -72,12 +72,12 @@ namespace ComercialSys.Model
             cmd.Parameters.Clear();
         }
 
-        public void Alterar(Pedido pedido)
+        public void Alterar(PedidoModel pedido)
         {
             try // Faça
             {
                 // Abrir conexão com banco
-                var cmd = Banco.Abrir();
+                var cmd = BancoModel.Abrir();
 
                 // Comandos SQL
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -98,7 +98,7 @@ namespace ComercialSys.Model
         public void ConsultarPorId(int _id)
         {
             // Abre conexão com banco
-            var cmd = Banco.Abrir();
+            var cmd = BancoModel.Abrir();
 
             // Comandos SQL
             cmd.CommandType = System.Data.CommandType.Text;
@@ -118,9 +118,9 @@ namespace ComercialSys.Model
         }
 
         // ----------------------------------------------------------
-        public static List<Pedido> ConsultarPorClienteId(int _id)
+        public static List<PedidoModel> ConsultarPorClienteId(int _id)
         {
-            List<Pedido> pedidos = new List<Pedido>();
+            List<PedidoModel> pedidos = new List<PedidoModel>();
             return pedidos;
         }
 

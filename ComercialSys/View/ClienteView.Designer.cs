@@ -1,7 +1,7 @@
 ﻿using ComercialSys.Controller;
 namespace ComercialSys.View
 {
-    partial class ViewCliente
+    partial class ClienteView
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -29,7 +29,7 @@ namespace ComercialSys.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewCliente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteView));
             this.txtId = new MetroFramework.Controls.MetroTextBox();
             this.txtNome = new MetroFramework.Controls.MetroTextBox();
             this.txtCpf = new MetroFramework.Controls.MetroTextBox();

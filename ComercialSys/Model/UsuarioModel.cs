@@ -7,7 +7,7 @@ namespace ComercialSys.Model
 {
     // Documentação de classes de projeto -> XML Docs
 
-    public class Usuario
+    public class UsuarioModel
     {
 
         // Atributos -----------------------------------------------------------------------------
@@ -24,7 +24,7 @@ namespace ComercialSys.Model
         /// <summary>
         /// Construtor vazio para o Usuario
         /// </summary>
-        public Usuario()
+        public UsuarioModel()
         {
 
         }
@@ -36,7 +36,7 @@ namespace ComercialSys.Model
         /// <param name="email">VARCHAR(60)</param>
         /// <param name="password">VARCHAR(32)</param>
         /// <param name="nivel">VARCHAR(15)</param>
-        public Usuario(string nome, string email, string password, string nivel)
+        public UsuarioModel(string nome, string email, string password, string nivel)
         {
             this.Nome = nome;
             this.Email = email;
@@ -54,7 +54,7 @@ namespace ComercialSys.Model
         /// <param name="password">VARCHAR(32)</param>
         /// <param name="ativo">BIT(1)</param>
         /// <param name="nivel">VARCHAR(15)</param>
-        public Usuario(int id, string nome, string email, string password, string nivel, bool ativo, byte[] foto)
+        public UsuarioModel(int id, string nome, string email, string password, string nivel, bool ativo, byte[] foto)
         {
             this.Id = id;
             this.Nome = nome;
@@ -64,7 +64,7 @@ namespace ComercialSys.Model
             this.Nivel = nivel;
             Foto = foto;
         }
-        public Usuario(int id, string nome, string email, string password, string nivel, bool ativo)
+        public UsuarioModel(int id, string nome, string email, string password, string nivel, bool ativo)
         {
             this.Id = id;
             this.Nome = nome;
@@ -82,7 +82,7 @@ namespace ComercialSys.Model
         /// <param name="email">VARCHAR(60)</param>
         /// <param name="password">VARCHAR(32)</param>
         /// <param name="nivel">VARCHAR(15)</param>
-        public Usuario(int id, string nome, string email, string password, string nivel)
+        public UsuarioModel(int id, string nome, string email, string password, string nivel)
         {
             Id = id;
             Nome = nome;
@@ -101,7 +101,7 @@ namespace ComercialSys.Model
             try
             {
                 // Abre conexão com banco
-                var banco = Banco.Abrir();
+                var banco = BancoModel.Abrir();
 
                 // Comandos SQL
                 banco.CommandType = System.Data.CommandType.StoredProcedure;
@@ -142,13 +142,13 @@ namespace ComercialSys.Model
         /// <param name="i"></param>
         /// <param name="l"></param>
         /// <returns></returns>
-        public List<Usuario> ListarUsuarios(int i = 0, int l = 0)
+        public List<UsuarioModel> ListarUsuarios(int i = 0, int l = 0)
         {
             // Nova lista
-            List<Usuario> lista = new List<Usuario>();
+            List<UsuarioModel> lista = new List<UsuarioModel>();
 
             // Abrir conexão
-            var banco = Banco.Abrir();
+            var banco = BancoModel.Abrir();
 
             // Comando
             banco.CommandType = CommandType.Text;
@@ -163,7 +163,7 @@ namespace ComercialSys.Model
             // Consulta
             while (dr.Read())
             {
-                lista.Add(new Usuario(
+                lista.Add(new UsuarioModel(
                     Convert.ToInt32(dr.GetValue(0)), // ID
                     dr.GetString(1), // Nome
                     dr.GetString(2), // Email
@@ -186,7 +186,7 @@ namespace ComercialSys.Model
         public bool Alterar()
         {
             // Abrir conexao
-            var cmd = Banco.Abrir();
+            var cmd = BancoModel.Abrir();
 
             // Comando SQL
             cmd.CommandText = $"update usuarios set nome = '{Nome}', senha = '{Password}', email = '{Email}', ativo = {Ativo}, nivel = '{Nivel}' where iduser = {Id}";
@@ -210,7 +210,7 @@ namespace ComercialSys.Model
         public void ConsultarPorId(int _id)
         {
             // Abre conexao com banco
-            var cmd = Banco.Abrir();
+            var cmd = BancoModel.Abrir();
 
             // Comandos SQL
             cmd.CommandType = CommandType.Text;
@@ -240,7 +240,7 @@ namespace ComercialSys.Model
         public void ConsultarPorNome(string _nome)
         {
             // Abre conexao com banco
-            var cmd = Banco.Abrir();
+            var cmd = BancoModel.Abrir();
 
             // Comandos SQL
             cmd.CommandType = CommandType.Text;

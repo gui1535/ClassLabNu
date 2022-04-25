@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace ComercialSys.Model
 {
-    public class Cliente
+    public class ClienteModel
     {
         // Atributos  ------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ namespace ComercialSys.Model
         /// <summary>
         /// Construtor vazio para o Cliente
         /// </summary>
-        public Cliente()
+        public ClienteModel()
         {
         }
 
@@ -32,7 +32,7 @@ namespace ComercialSys.Model
         /// <param name="id">INT(11)</param>
         /// <param name="nome">VARCHAR(60)</param>
         /// <param name="cpf">CHAR(11)</param>
-        public Cliente(int id, string nome, string cpf)
+        public ClienteModel(int id, string nome, string cpf)
         {
             Id = id;
             Nome = nome;
@@ -43,7 +43,7 @@ namespace ComercialSys.Model
         /// Construtor para o Cliente
         /// </summary>
         /// <param name="id">INT</param>
-        public Cliente(int id)
+        public ClienteModel(int id)
         {
             Id = id;
 
@@ -58,7 +58,7 @@ namespace ComercialSys.Model
         /// <param name="email">VARCHAR(60)</param>
         /// <param name="dataCad">VARCHAR(60)</param>
         /// <param name="ativo">BIT(1)</param>
-        public Cliente(int id, string nome, string cpf, string email, string dataCad, bool ativo)
+        public ClienteModel(int id, string nome, string cpf, string email, string dataCad, bool ativo)
         {
             this.Id = id;
             this.Nome = nome;
@@ -67,7 +67,7 @@ namespace ComercialSys.Model
             this.dataCad = dataCad;
             this.Ativo = ativo;
         }
-        public Cliente(int id, string nome, string cpf, string email, string dataCad, bool ativo, string obs)
+        public ClienteModel(int id, string nome, string cpf, string email, string dataCad, bool ativo, string obs)
         {
             this.Id = id;
             this.Nome = nome;
@@ -85,7 +85,7 @@ namespace ComercialSys.Model
         /// <param name="cpf">CHAR(11)</param>
         /// <param name="email">VARCHAR(60)</param>
         /// <param name="ativo">BIT(1)</param>
-        public Cliente(string nome, string cpf, string email, bool ativo)
+        public ClienteModel(string nome, string cpf, string email, bool ativo)
         {
             this.Nome = nome;
             this.Cpf = cpf;
@@ -99,7 +99,7 @@ namespace ComercialSys.Model
         /// <param name="nome">VARCHAR(60)</param>
         /// <param name="cpf">CHAR(11)</param>
         /// <param name="email">VARCHAR(60)</param>
-        public Cliente(string nome, string cpf, string email, string obs)
+        public ClienteModel(string nome, string cpf, string email, string obs)
         {
             Nome = nome;
             Cpf = cpf;
@@ -114,7 +114,7 @@ namespace ComercialSys.Model
         /// <param name="nome">VARCHAR(60)</param>
         /// <param name="cpf">CHAR(11)</param>
         /// <param name="email">VARCHAR(60)</param>
-        public Cliente(int id, string nome, string cpf, string email)
+        public ClienteModel(int id, string nome, string cpf, string email)
         {
             Id = id;
             Nome = nome;
@@ -133,7 +133,7 @@ namespace ComercialSys.Model
             try
             {
                 // Abre conexão com banco
-                var banco = Banco.Abrir();
+                var banco = BancoModel.Abrir();
 
                 // Comandos SQL
                 banco.CommandType = CommandType.StoredProcedure;
@@ -165,7 +165,7 @@ namespace ComercialSys.Model
         {
 
             // Abrir conexao
-            var cmd = Banco.Abrir();
+            var cmd = BancoModel.Abrir();
 
             // Comando SQL
             cmd.CommandType = CommandType.StoredProcedure;
@@ -199,14 +199,14 @@ namespace ComercialSys.Model
         /// Metodo para consultar cliente por ID
         /// </summary>
         /// <param name="_id">int</param>
-        public List<Cliente> ListarPorId(int _id)
+        public List<ClienteModel> ListarPorId(int _id)
         {
 
             // Nova lista
-            List<Cliente> lista = new List<Cliente>();
+            List<ClienteModel> lista = new List<ClienteModel>();
 
             // Abrir conexão
-            var banco = Banco.Abrir();
+            var banco = BancoModel.Abrir();
 
             // Comando
             banco.CommandType = CommandType.Text;
@@ -218,7 +218,7 @@ namespace ComercialSys.Model
             // Consulta
             while (dr.Read())
             {
-                lista.Add(new Cliente(
+                lista.Add(new ClienteModel(
                     Convert.ToInt32(dr.GetValue(0)), // ID
                     dr.GetString(1), // Nome
                     dr.GetString(2), // Cpf
@@ -241,13 +241,13 @@ namespace ComercialSys.Model
         /// Metodo para consultar cliente por CPF
         /// </summary>
         /// <param name="_cpf">string</param>
-        public List<Cliente> ListarPorCpf(string _cpf)
+        public List<ClienteModel> ListarPorCpf(string _cpf)
         {
             // Nova lista
-            List<Cliente> lista = new List<Cliente>();
+            List<ClienteModel> lista = new List<ClienteModel>();
 
             // Abrir conexão
-            var banco = Banco.Abrir();
+            var banco = BancoModel.Abrir();
 
             // Comando
             banco.CommandType = CommandType.Text;
@@ -259,7 +259,7 @@ namespace ComercialSys.Model
             // Consulta
             while (dr.Read())
             {
-                lista.Add(new Cliente(
+                lista.Add(new ClienteModel(
                     Convert.ToInt32(dr.GetValue(0)), // ID
                     dr.GetString(1), // Nome
                     dr.GetString(2), // Cpf
@@ -281,13 +281,13 @@ namespace ComercialSys.Model
         /// Metodo para consultar cliente por Nome
         /// </summary>
         /// <param name="_nome">string</param>
-        public List<Cliente> ListarPorNome(string _nome)
+        public List<ClienteModel> ListarPorNome(string _nome)
         {
             // Nova lista
-            List<Cliente> lista = new List<Cliente>();
+            List<ClienteModel> lista = new List<ClienteModel>();
 
             // Abrir conexão
-            var banco = Banco.Abrir();
+            var banco = BancoModel.Abrir();
 
             // Comando
             banco.CommandType = CommandType.Text;
@@ -299,7 +299,7 @@ namespace ComercialSys.Model
             // Consulta
             while (dr.Read())
             {
-                lista.Add(new Cliente(
+                lista.Add(new ClienteModel(
                     Convert.ToInt32(dr.GetValue(0)), // ID
                     dr.GetString(1), // Nome
                     dr.GetString(2), // Cpf
@@ -323,13 +323,13 @@ namespace ComercialSys.Model
         /// <param name="i">int</param>
         /// <param name="l">int</param>
         /// <returns>Lista</returns>
-        public List<Cliente> ListarClientes(int i = 0, int l = 0)
+        public List<ClienteModel> ListarClientes(int i = 0, int l = 0)
         {
             // Nova lista
-            List<Cliente> lista = new List<Cliente>();
+            List<ClienteModel> lista = new List<ClienteModel>();
 
             // Abrir conexão
-            var banco = Banco.Abrir();
+            var banco = BancoModel.Abrir();
 
             // Comando
             banco.CommandType = CommandType.Text;
@@ -344,7 +344,7 @@ namespace ComercialSys.Model
             // Consulta
             while (dr.Read())
             {
-                lista.Add(new Cliente(
+                lista.Add(new ClienteModel(
                     Convert.ToInt32(dr.GetValue(0)), // ID
                     dr.GetString(1), // Nome
                     dr.GetString(2), // Cpf
@@ -369,7 +369,7 @@ namespace ComercialSys.Model
         public void Desativar(int _id)
         {
             // Abrir conexao
-            var cmd = Banco.Abrir();
+            var cmd = BancoModel.Abrir();
 
             // Comandos SQL
             cmd.CommandType = CommandType.Text;

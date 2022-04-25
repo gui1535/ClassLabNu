@@ -5,7 +5,7 @@ using ComercialSys.Controller;
 
 namespace ComercialSys.Model
 {
-    public static class ViaCep
+    public static class ViaCepModel
     {
         public static CepController RetornaCep { get; set; }
 

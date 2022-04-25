@@ -1,6 +1,6 @@
 ﻿namespace ComercialSys
 {
-    partial class ViewProduto
+    partial class ProdutoView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewProduto));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdutoView));
             this.gpBoxCadastrar = new System.Windows.Forms.GroupBox();
             this.chkDescontinuado = new System.Windows.Forms.CheckBox();
             this.btnDesbloquear = new System.Windows.Forms.Button();

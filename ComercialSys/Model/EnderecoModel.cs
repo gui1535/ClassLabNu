@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace ComercialSys.Model
 {
-    public class Endereco
+    public class EnderecoModel
     {
         // Atributos / Propriedades ------------------------------------------------------------------------------
         public int IdCli { get; set; }
@@ -20,11 +20,11 @@ namespace ComercialSys.Model
         public string Complemento { get; set; }
 
         // Construtores -------------------------------------------------------------------------------------------
-        public Endereco()
+        public EnderecoModel()
         {
         }
 
-        public Endereco(int idCli, string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo, string complemento)
+        public EnderecoModel(int idCli, string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo, string complemento)
         {
             IdCli = idCli;
             Logradouro = logradouro;
@@ -36,7 +36,7 @@ namespace ComercialSys.Model
             Tipo = tipo;
             Complemento = complemento;
         }
-        public Endereco(int idCli, string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo, string complemento, string uf)
+        public EnderecoModel(int idCli, string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo, string complemento, string uf)
         {
             IdCli = idCli;
             Logradouro = logradouro;
@@ -50,7 +50,7 @@ namespace ComercialSys.Model
             Uf = uf;
         }
 
-        public Endereco(string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo, string complemento)
+        public EnderecoModel(string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo, string complemento)
         {
             Logradouro = logradouro;
             Cep = cep;
@@ -61,7 +61,7 @@ namespace ComercialSys.Model
             Tipo = tipo;
             Complemento = complemento;
         }
-        public Endereco(string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo, string complemento, string uf)
+        public EnderecoModel(string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo, string complemento, string uf)
         {
             Logradouro = logradouro;
             Cep = cep;
@@ -74,7 +74,7 @@ namespace ComercialSys.Model
             Uf = uf;
         }
 
-        public Endereco(string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo)
+        public EnderecoModel(string logradouro, string cep, string numero, string cidade, string bairro, string estado, string tipo)
         {
             Logradouro = logradouro;
             Cep = cep;
@@ -94,7 +94,7 @@ namespace ComercialSys.Model
             try
             {
                 // Abre conexão com banco
-                var banco = Banco.Abrir();
+                var banco = BancoModel.Abrir();
 
                 // Comandos SQL
                 banco.CommandType = CommandType.StoredProcedure;
@@ -124,13 +124,13 @@ namespace ComercialSys.Model
             }
         }
 
-        public List<Endereco> ListarEnderecoCli(int _idCli)
+        public List<EnderecoModel> ListarEnderecoCli(int _idCli)
         {
             // Nova lista
-            List<Endereco> lista = new List<Endereco>();
+            List<EnderecoModel> lista = new List<EnderecoModel>();
 
             // Abrir conexão
-            var banco = Banco.Abrir();
+            var banco = BancoModel.Abrir();
 
             // Comando
             banco.CommandType = CommandType.Text;
@@ -143,7 +143,7 @@ namespace ComercialSys.Model
             // Consulta
             while (dr.Read())
             {
-                lista.Add(new Endereco(
+                lista.Add(new EnderecoModel(
                     Convert.ToInt32(dr.GetValue(0)),
                     dr.GetString(1),
                     dr.GetString(2),

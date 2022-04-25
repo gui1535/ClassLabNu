@@ -17,18 +17,11 @@ namespace ComercialSys.View
         private void PedidoView_Load(object sender, EventArgs e)
         {
 
-            ClienteModel c = new ClienteModel();
-            var lista = c.ListarClientes();
+            var lista = ClienteModel.ListarClientes();
 
             cmbUsuarios.DataSource = lista.ToArray();
             cmbUsuarios.DisplayMember = "Nome";
             cmbUsuarios.ValueMember = "Id";
-
-
-
-            //cmbUsuarios.DataSource = dt;
-            //cmbUsuarios.ValueMember = "iduser";
-            //cmbUsuarios.DisplayMember = "nome";
         }
     }
 }

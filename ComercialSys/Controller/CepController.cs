@@ -41,8 +41,10 @@ namespace ComercialSys.Controller
         [JsonProperty(PropertyName = "ddd")]
         public static int Ddd { get; set; }
 
+
         [JsonProperty(PropertyName = "siafi")]
         public static int Siafi { get; set; }
+
         public static string Estado { get; set; }
 
 
@@ -51,6 +53,7 @@ namespace ComercialSys.Controller
             // Consultar Cep
             ViaCepModel.ConsultaCep(_cep.ToString().Trim());
              
+            // Verificando Uf
             VerificarUf();
         }
         private static string VerificarUf()

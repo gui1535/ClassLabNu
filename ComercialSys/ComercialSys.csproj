@@ -111,9 +111,11 @@
   <ItemGroup>
     <Compile Include="Controller\ClienteController.cs" />
     <Compile Include="Controller\EnderecoController.cs" />
+    <Compile Include="Controller\NumeroController.cs" />
     <Compile Include="Controller\PedidoController.cs" />
     <Compile Include="Model\BancoModel.cs" />
     <Compile Include="Model\CaixaModel.cs" />
+    <Compile Include="Model\NumeroModel.cs" />
     <Compile Include="Model\ViaCepModel.cs" />
     <Compile Include="Model\ClienteModel.cs" />
     <Compile Include="Model\EnderecoModel.cs" />

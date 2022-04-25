@@ -40,10 +40,8 @@ namespace ComercialSys.Controller
             // Limpar Grid
             dt.Rows.Clear();
 
-            ClienteModel cli = new ClienteModel();
-
             // Var para Listar clientes
-            var lista = cli.ListarClientes();
+            var lista = ClienteModel.ListarClientes();
 
             // Listando clientes no DataGrid
             lista.ForEach(i =>
@@ -75,6 +73,11 @@ namespace ComercialSys.Controller
             ObsCli = cli.Obs;
         }
 
+        /// <summary>
+        /// metodo privado quando for feita uma ação de double click no DataGridView
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <param name="e"></param>
         public void GridCliente_DoubleClick
         (
         DataGridView dt,
@@ -114,7 +117,7 @@ namespace ComercialSys.Controller
         /// <param name="ClnDataCad">ColunaTextBox</param>
         /// <param name="clnAtivo">ColunaCheckBox</param>
         /// <param name="ClnObs">ColunaTextBox</param>
-            public void PesquisarClienteCpf
+        public void PesquisarClienteCpf
         (
         DataGridView dt,
         string _cpf,

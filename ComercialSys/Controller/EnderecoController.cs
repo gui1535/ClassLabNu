@@ -29,17 +29,17 @@ namespace ComercialSys.Controller
         /// <param name="ClnNumero">ColunaTextBox</param>
         /// <param name="ClnComplemento">ColunaTextBox</param>
         public void ListarEndereco
-            (
-            DataGridView dt,
-            ClienteController cli,
-            DataGridViewTextBoxColumn clnCep,
-            DataGridViewTextBoxColumn ClnCidade,
-            DataGridViewTextBoxColumn ClnTipo,
-            DataGridViewTextBoxColumn ClnBairro,
-            DataGridViewTextBoxColumn ClnLogradouro,
-            DataGridViewTextBoxColumn ClnEstado,
-            DataGridViewTextBoxColumn ClnNumero,
-            DataGridViewTextBoxColumn ClnComplemento
+        (
+        DataGridView dt,
+        ClienteController cli,
+        DataGridViewTextBoxColumn clnCep,
+        DataGridViewTextBoxColumn ClnCidade,
+        DataGridViewTextBoxColumn ClnTipo,
+        DataGridViewTextBoxColumn ClnBairro,
+        DataGridViewTextBoxColumn ClnLogradouro,
+        DataGridViewTextBoxColumn ClnEstado,
+        DataGridViewTextBoxColumn ClnNumero,
+        DataGridViewTextBoxColumn ClnComplemento
             )
         {
             // Limpar Grid
@@ -66,7 +66,19 @@ namespace ComercialSys.Controller
             });
         }
 
-        public void AdicionarEndereco(int _idCli, string _logradouro, string _cep, string _numero, string _cidade, string _bairro, string _estado, string _uf, string _tipo, string _complemento)
+        public void AdicionarEndereco
+        (
+        int _idCli,
+        string _logradouro,
+        string _cep,
+        string _numero,
+        string _cidade,
+        string _bairro,
+        string _estado,
+        string _uf,
+        string _tipo,
+        string _complemento
+        )
         {
             try
             {

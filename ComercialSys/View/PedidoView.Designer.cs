@@ -40,7 +40,7 @@
             this.cmbUsuarios.FormattingEnabled = true;
             this.cmbUsuarios.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmbUsuarios.ItemHeight = 23;
-            this.cmbUsuarios.Location = new System.Drawing.Point(73, 99);
+            this.cmbUsuarios.Location = new System.Drawing.Point(58, 109);
             this.cmbUsuarios.Name = "cmbUsuarios";
             this.cmbUsuarios.Size = new System.Drawing.Size(239, 29);
             this.cmbUsuarios.TabIndex = 1;
@@ -54,7 +54,7 @@
             this.GridCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridCliente.GridColor = System.Drawing.Color.Black;
-            this.GridCliente.Location = new System.Drawing.Point(73, 202);
+            this.GridCliente.Location = new System.Drawing.Point(58, 191);
             this.GridCliente.Margin = new System.Windows.Forms.Padding(2);
             this.GridCliente.Name = "GridCliente";
             this.GridCliente.ReadOnly = true;
@@ -69,7 +69,7 @@
             this.cmbClientes.FormattingEnabled = true;
             this.cmbClientes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmbClientes.ItemHeight = 23;
-            this.cmbClientes.Location = new System.Drawing.Point(403, 84);
+            this.cmbClientes.Location = new System.Drawing.Point(400, 109);
             this.cmbClientes.Name = "cmbClientes";
             this.cmbClientes.Size = new System.Drawing.Size(239, 29);
             this.cmbClientes.TabIndex = 12;

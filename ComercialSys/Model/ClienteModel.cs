@@ -323,7 +323,7 @@ namespace ComercialSys.Model
         /// <param name="i">int</param>
         /// <param name="l">int</param>
         /// <returns>Lista</returns>
-        public List<ClienteModel> ListarClientes(int i = 0, int l = 0)
+        public static List<ClienteModel> ListarClientes(int i = 0, int l = 0)
         {
             // Nova lista
             List<ClienteModel> lista = new List<ClienteModel>();

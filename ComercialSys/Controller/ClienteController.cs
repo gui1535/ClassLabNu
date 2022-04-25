@@ -5,6 +5,8 @@ namespace ComercialSys.Controller
 {
     public class ClienteController
     {
+        public string IdCli { get; set; }
+
         /// <summary>
         /// Metodo para Listar clientes
         /// </summary>
@@ -226,6 +228,14 @@ namespace ComercialSys.Controller
             });
         }
 
+        /// <summary>
+        /// Metodo para inserir cliente
+        /// </summary>
+        /// <param name="_id">Int</param>
+        /// <param name="_nome">String</param>
+        /// <param name="_cpf">String</param>
+        /// <param name="_email">String</param>
+        /// <param name="_obs">String</param>
         public void InserirCliente(int _id, string _nome, string _cpf, string _email, string _obs)
         {
             Cliente cli = new Cliente();
@@ -239,6 +249,7 @@ namespace ComercialSys.Controller
 
             // Inserindo Cliente
             cli.Inserir();
+
             // Se ID for maior que 0
             if (cli.Id > 0)
             {
@@ -250,7 +261,7 @@ namespace ComercialSys.Controller
                 else
                 {
                     // Email Invalido
-                    MessageBox.Show($"Email invalido do cliente {cli.Id}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show($"Email invalido", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else
@@ -258,7 +269,59 @@ namespace ComercialSys.Controller
                 // Falha ao inserir cliente
                 MessageBox.Show("Falha ao inserir cliente", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            IdCli = cli.Id.ToString();
+
         }
+
+        /// <summary>
+        /// Metodo para editar cliente
+        /// </summary>
+        /// <param name="_id">Int</param>
+        /// <param name="_nome">String</param>
+        /// <param name="_cpf">String</param>
+        /// <param name="_email">String</param>
+        /// <param name="_ativo">Boolean</param>
+        /// <param name="_obs">String</param>
+        public void EditarCliente(int _id, string _nome, string _cpf, string _email, bool _ativo, string _obs)
+        {
+            // Objeto Cliente
+            Cliente cli = new Cliente();
+
+            // Atributos do objeto
+            cli.Id = _id;
+            cli.Nome = _nome;
+            cli.Cpf = _cpf;
+            cli.Email = _email;
+            cli.Ativo = _ativo;
+            cli.Obs = _obs;
+
+            // Validação do email
+            if (ValidacaoController.EmailValido(_email))
+            {
+                // Condição se usuario deseja mesmo fazer a alteração
+                if (MessageBox.Show("Você tem certeza que deseja alterar?", "SysComercial", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    // Condição
+                    if (cli.Alterar()) // Se cliente alterar for igual a TRUE
+                    {
+                        // Mensagem Box
+                        MessageBox.Show("Cliente alterado com sucesso!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else // Senão
+                    {
+                        // Mensagem Box
+                        MessageBox.Show("Falha ao alterar o cliente!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                // Email Invalido
+                MessageBox.Show($"Email invalido", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
 
 
 

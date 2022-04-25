@@ -190,11 +190,6 @@ namespace ComercialSys.View
 
         // Inserir Clientes ---------------------------------------------------------------------------------------------------------------
 
-        /// <summary>
-        /// Botao inserir Cliente
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnInserir_Click(object sender, EventArgs e)
         {
             // Objeto
@@ -203,7 +198,8 @@ namespace ComercialSys.View
             // Valores para o controlador
             cli.InserirCliente(Convert.ToInt32(txtId.Text), txtNome.Text, txtCpf.Text, txtEmail.Text, txtObs.Text);
 
-            txtId.Text = txtId.ToString();
+            txtId.Text = cli.IdCli;
+
             // Listar DataGrid
             ListarDataGrid();
 
@@ -213,10 +209,6 @@ namespace ComercialSys.View
 
         // Inserir imagem Clientes ---------------------------------------------------------------------------------------------------------------
 
-        /// <summary>
-        /// Botao inserir imagem Cliente
-        /// </summary>
-        /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnInserirImg_Click(object sender, EventArgs e)
         {
@@ -225,11 +217,6 @@ namespace ComercialSys.View
 
         // Listar Clientes ---------------------------------------------------------------------------------------------------------------
 
-        /// <summary>
-        /// Botao listar Cliente
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnListar_Click_1(object sender, EventArgs e)
         {
             // Listando Clientes
@@ -238,48 +225,14 @@ namespace ComercialSys.View
 
         // Editar Clientes ---------------------------------------------------------------------------------------------------------------
 
-        /// <summary>
-        /// Botao editar Cliente
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            // Objeto Cliente
-            Cliente cliente = new Cliente();
+            // Objeto
+            ClienteController cli = new ClienteController();
 
-            // Atributos do objeto
-            cliente.Id = int.Parse(txtId.Text);
-            cliente.Nome = txtNome.Text;
-            cliente.Cpf = txtCpf.Text;
-            cliente.Email = txtEmail.Text;
-            cliente.Ativo = chkAtivo.Checked;
-            cliente.Obs = txtObs.Text;
+            // Valores para o controlador
+            cli.EditarCliente(Convert.ToInt32(txtId.Text), txtNome.Text, txtCpf.Text, txtEmail.Text, chkAtivo.Checked, txtObs.Text);
 
-            // Validação do email
-            if (ValidacaoController.EmailValido(txtEmail.Text))
-            {
-                // Condição se usuario deseja mesmo fazer a alteração
-                if (MessageBox.Show("Você tem certeza que deseja alterar?", "SysComercial", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    // Condição
-                    if (cliente.Alterar()) // Se cliente alterar for igual a TRUE
-                    {
-                        // Mensagem Box
-                        MessageBox.Show("Cliente alterado com sucesso!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else // Senão
-                    {
-                        // Mensagem Box
-                        MessageBox.Show("Falha ao alterar o cliente!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            else
-            {
-                // Email Invalido
-                MessageBox.Show($"Email do cliente {cliente.Id} invalido", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
             // Listando DataGrid
             ListarDataGrid();
         }

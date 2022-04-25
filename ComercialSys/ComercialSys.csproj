@@ -113,11 +113,11 @@
     <Compile Include="Controller\EnderecoController.cs" />
     <Compile Include="Model\Banco.cs" />
     <Compile Include="Model\Caixa.cs" />
-    <Compile Include="Model\Cep.cs" />
+    <Compile Include="Model\ViaCep.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Endereco.cs" />
     <Compile Include="Model\ItemPedido.cs" />
-    <Compile Include="Model\JsonCepResult.cs" />
+    <Compile Include="Controller\CepController.cs" />
     <Compile Include="Model\Nivel.cs" />
     <Compile Include="Model\Pagamento.cs" />
     <Compile Include="Model\Pedido.cs" />
@@ -131,7 +131,6 @@
     <Compile Include="View\ViewCliente.Designer.cs">
       <DependentUpon>ViewCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controller\VerificaUf.cs" />
     <Compile Include="View\ViewPedido.cs">
       <SubType>Form</SubType>
     </Compile>

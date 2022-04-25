@@ -1,14 +1,15 @@
 ﻿using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http;
+using ComercialSys.Controller;
 
 namespace ComercialSys.Model
 {
-    public static class Cep
+    public static class ViaCep
     {
-        public static JsonCepResult RetornaCep { get; set; }
+        public static CepController RetornaCep { get; set; }
 
-        public static JsonCepResult ConsultarCep(string _cep)
+        public static CepController ConsultaCep(string _cep)
         {
 
             ServicePointManager.Expect100Continue = true;
@@ -30,7 +31,7 @@ namespace ComercialSys.Model
                     var result = rsp.Content.ReadAsStringAsync().Result;
 
                     // Desirialize do objeto
-                    JsonCepResult RetornaCep = JsonConvert.DeserializeObject<JsonCepResult>(result);
+                    CepController RetornaCep = JsonConvert.DeserializeObject<CepController>(result);
                 }
             }
             return RetornaCep;

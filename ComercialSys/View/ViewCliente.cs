@@ -1,5 +1,5 @@
 ﻿using ComercialSys.Controller;
-using ComercialSys.Model;
+
 using System;
 using System.Windows.Forms;
 
@@ -156,34 +156,24 @@ namespace ComercialSys.View
         /// <param name="e"></param>
         private void GridCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            ClienteController clienteC = new ClienteController();
 
-            // Variaveis para objeto Cliente
-            Cliente cliente = new Cliente();
-
-            // Valores para o objeto
-            cliente.Id = Convert.ToInt32(GridCliente["colunaId", e.RowIndex].Value);
-            cliente.Nome = Convert.ToString(GridCliente["colunaNome", e.RowIndex].Value);
-            cliente.Email = Convert.ToString(GridCliente["colunaEmail", e.RowIndex].Value);
-            cliente.Cpf = Convert.ToString(GridCliente["colunaCpf", e.RowIndex].Value);
-            cliente.Ativo = Convert.ToBoolean(GridCliente["colunaAtivo", e.RowIndex].Value);
-            cliente.dataCad = Convert.ToString(GridCliente["colunaDataCad", e.RowIndex].Value);
-            cliente.Obs = Convert.ToString(GridCliente["colunaObs", e.RowIndex].Value);
+            clienteC.GridCliente_DoubleClick(GridCliente, e);
 
             // Instancia
             EnderecoController dt = new EnderecoController();
 
             // Listando enderecos dos clientes
-            dt.ListarEndereco(GridEndereco, cliente, colunaCep, colunaCidade, colunaTipo, colunaBairro, colunaLogradouro, colunaEstado, colunaNumero, colunaComplemento);
-
+            dt.ListarEndereco(GridEndereco, clienteC, colunaCep, colunaCidade, colunaTipo, colunaBairro, colunaLogradouro, colunaEstado, colunaNumero, colunaComplemento);
 
             // Atributos
-            txtId.Text = cliente.Id.ToString();
-            txtNome.Text = cliente.Nome;
-            txtEmail.Text = cliente.Email;
-            txtCpf.Text = cliente.Cpf;
-            chkAtivo.Checked = cliente.Ativo;
-            txtDataCad.Text = cliente.dataCad;
-            txtObs.Text = cliente.Obs;
+            txtId.Text = clienteC.IdCli.ToString();
+            txtNome.Text = clienteC.NomeCli;
+            txtEmail.Text = clienteC.EmailCli;
+            txtCpf.Text = clienteC.CpfCli;
+            chkAtivo.Checked = clienteC.AtivoCli;
+            txtDataCad.Text = clienteC.DatacadCli;
+            txtObs.Text = clienteC.ObsCli;
 
             btnBloquear_Click(sender, e);
         }
@@ -397,13 +387,16 @@ namespace ComercialSys.View
             // Verificando para pesquisar só se tiver 8 valores
             if (txtCep.Text.Length == 8)
             {
-                Cep.ConsultarCep(txtCep.Text.Trim());
-                txtLogradouro.Text = JsonCepResult.Logradouro;
-                txtBairro.Text = JsonCepResult.Bairro;
-                txtCidade.Text = JsonCepResult.Localidade;
-                txtComplemento.Text = JsonCepResult.Complemento;
-                txtUf.Text = JsonCepResult.Uf;
-                txtEstado.Text = VerificaUf.VerificarUf();
+                // Consultando Cep
+                CepController.ConsultarCep(txtCep.Text);
+
+                // Atribuindo valores
+                txtLogradouro.Text = CepController.Logradouro;
+                txtEstado.Text = CepController.Estado;
+                txtUf.Text = CepController.Uf;
+                txtCidade.Text = CepController.Localidade;
+                txtBairro.Text = CepController.Bairro;
+                txtComplemento.Text = CepController.Complemento;
             }
         }
         private void btnCancelCep_Click(object sender, EventArgs e)
@@ -420,37 +413,11 @@ namespace ComercialSys.View
 
         private void btnAddCep_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Passando valores ao objeto endereco
-                Endereco end = new Endereco();
+            // Controller
+            EnderecoController endC = new EnderecoController();
 
-                end.Logradouro = txtLogradouro.Text;
-                end.Cep = txtCep.Text;
-                end.Numero = txtNumero.Text;
-                end.Cidade = txtCidade.Text;
-                end.Bairro = txtBairro.Text;
-                end.Estado = txtEstado.Text;
-                end.Uf = txtUf.Text;
-                end.Tipo = cmbTipo.Text;
-                end.Complemento = txtComplemento.Text;
-
-                // Atribuindo valor do TextBox para o ClienteID
-                int ClienteID = int.Parse(txtId.Text);
-
-                end.IdCli = ClienteID;
-
-                // Inserir endereco
-                end.Inserir();
-
-                // Mensagem sucesso
-                MessageBox.Show("Endereço inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception)
-            {
-                // Mensagem de erro
-                MessageBox.Show("Erro ao inserir endereço", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // Atribuindo valores
+            endC.AdicionarEndereco(Convert.ToInt32(txtId.Text), txtLogradouro.Text, txtCep.Text, txtNumero.Text, txtCidade.Text, txtBairro.Text, txtEstado.Text, txtUf.Text, cmbTipo.Text, txtComplemento.Text);
         }
 
         private void btnLimparCampos_Click(object sender, EventArgs e)
@@ -470,28 +437,11 @@ namespace ComercialSys.View
 
         private void GridEndereco_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Variaveis para objeto Endereco
-            Endereco end = new Endereco();
 
-            // Valores para o objeto
-            end.Cep = Convert.ToString(GridEndereco["colunaCep", e.RowIndex].Value);
-            end.Cidade = Convert.ToString(GridEndereco["colunaCidade", e.RowIndex].Value);
-            end.Tipo = Convert.ToString(GridEndereco["colunaTipo", e.RowIndex].Value);
-            end.Bairro = Convert.ToString(GridEndereco["colunaBairro", e.RowIndex].Value);
-            end.Logradouro = Convert.ToString(GridEndereco["colunaLogradouro", e.RowIndex].Value);
-            end.Estado = Convert.ToString(GridEndereco["colunaEstado", e.RowIndex].Value);
-            end.Numero = Convert.ToString(GridEndereco["colunaNumero", e.RowIndex].Value);
-            end.Complemento = Convert.ToString(GridEndereco["colunaComplemento", e.RowIndex].Value);
+            EnderecoController endC = new EnderecoController();
 
-            // Atribuindo valores
-            txtCep.Text = end.Cep;
-            txtCidade.Text = end.Cidade;
-            cmbTipo.Text = end.Tipo;
-            txtBairro.Text = end.Bairro;
-            txtLogradouro.Text = end.Logradouro;
-            txtEstado.Text = end.Estado;
-            txtNumero.Text = end.Numero;
-            txtComplemento.Text = end.Complemento;
+            endC.GridEndereco_DoubleClick(GridEndereco, e, colunaCep, colunaCidade, colunaTipo, colunaBairro, colunaLogradouro, colunaEstado, colunaNumero, colunaComplemento);
+
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ComercialSys.Model;
+using System;
 using System.Windows.Forms;
 
 namespace ComercialSys.Controller
@@ -11,6 +12,7 @@ namespace ComercialSys.Controller
         public string EmailCli { get; set; }
         public string CpfCli { get; set; }
         public bool AtivoCli { get; set; }
+        public string ObsCli { get; set; }
 
         /// <summary>
         /// Metodo para Listar clientes
@@ -70,6 +72,34 @@ namespace ComercialSys.Controller
             EmailCli = cli.Email;
             CpfCli = cli.Cpf;
             AtivoCli = cli.Ativo;
+            ObsCli = cli.Obs;
+        }
+
+        public void GridCliente_DoubleClick
+        (
+        DataGridView dt,
+        DataGridViewCellEventArgs e
+        )
+        {
+
+            Cliente cli = new Cliente();
+
+            cli.Id = Convert.ToInt32(dt[$"colunaId", e.RowIndex].Value);
+            cli.Nome = Convert.ToString(dt[$"colunaNome", e.RowIndex].Value);
+            cli.Email = Convert.ToString(dt[$"colunaEmail", e.RowIndex].Value);
+            cli.Cpf = Convert.ToString(dt[$"colunaCpf", e.RowIndex].Value);
+            cli.dataCad = Convert.ToString(dt[$"colunaDataCad", e.RowIndex].Value);
+            cli.Ativo = Convert.ToBoolean(dt[$"colunaAtivo", e.RowIndex].Value);
+            cli.Obs = Convert.ToString(dt[$"colunaObs", e.RowIndex].Value);
+
+            IdCli = cli.Id.ToString();
+            NomeCli = cli.Nome;
+            EmailCli = cli.Email;
+            CpfCli = cli.Cpf;
+            DatacadCli = cli.dataCad;
+            AtivoCli = cli.Ativo;
+            ObsCli = cli.Obs;
+
         }
 
         /// <summary>
@@ -84,7 +114,7 @@ namespace ComercialSys.Controller
         /// <param name="ClnDataCad">ColunaTextBox</param>
         /// <param name="clnAtivo">ColunaCheckBox</param>
         /// <param name="ClnObs">ColunaTextBox</param>
-        public void PesquisarClienteCpf
+            public void PesquisarClienteCpf
         (
         DataGridView dt,
         string _cpf,
@@ -320,11 +350,6 @@ namespace ComercialSys.Controller
                 // Email Invalido
                 MessageBox.Show($"Email invalido", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }
-
-        public void ConsultaCep()
-        {
-
         }
     }
 }

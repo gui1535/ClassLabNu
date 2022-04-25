@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows;
@@ -132,7 +133,7 @@ namespace ComercialSys.Model
             try
             {
                 // Abre conexão com banco
-                var banco = BancoModel.Abrir();
+                MySqlCommand banco = BancoModel.Abrir();
 
                 // Comandos SQL
                 banco.CommandType = CommandType.StoredProcedure;
@@ -152,7 +153,7 @@ namespace ComercialSys.Model
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocorreu um erro {ex}", "SysComercial", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message.ToString(), "SysComercial", (MessageBoxButtons)MessageBoxButton.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -288,7 +289,7 @@ namespace ComercialSys.Model
 
             // Comando
             banco.CommandType = CommandType.Text;
-            banco.CommandText = $"select * from produtos where codbar = {_codbar}";
+            banco.CommandText = $"select * from produtos where codbar = {_codbar} ";
 
             // Var para Consulta
             var dr = banco.ExecuteReader();
@@ -301,9 +302,9 @@ namespace ComercialSys.Model
                     dr.GetString(1), // Descricao
                     dr.GetString(2), // Unidade
                     dr.GetString(3), // CodBar
-                dr.GetDouble(4), // Valor
+                    dr.GetDouble(4), // Valor
                     dr.GetDouble(5), // Desconto
-                     dr.GetBoolean(6) // Descontinuado
+                    dr.GetBoolean(6) // Descontinuado
                     ));
             }
 
@@ -320,13 +321,13 @@ namespace ComercialSys.Model
         /// <param name="i"></param>
         /// <param name="l"></param>
         /// <returns>Lista</returns>
-        public List<ProdutoModel> ListarTodos(int i = 0, int l = 0)
+        public static List<ProdutoModel> ListarTodos(int i = 0, int l = 0)
         {
             // Nova lista
             List<ProdutoModel> lista = new List<ProdutoModel>();
 
             // Abrir conexão
-            var banco = BancoModel.Abrir();
+            MySqlCommand banco = BancoModel.Abrir();
 
             // Comando
             banco.CommandType = CommandType.Text;
@@ -336,7 +337,7 @@ namespace ComercialSys.Model
                 banco.CommandText = "select * from produtos where descontinuado = 1";
 
             // Var para Consulta
-            var dr = banco.ExecuteReader();
+            MySqlDataReader dr = banco.ExecuteReader();
 
             // Consulta
             while (dr.Read())

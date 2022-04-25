@@ -1,24 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using ComercialSys.Model;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ComercialSys.Formularios
+namespace ComercialSys.View
 {
-    public partial class PedidoView : MetroFramework.Forms.MetroForm
+    public partial class PedidoView : Form
     {
         public PedidoView(Form parent)
         {
             InitializeComponent();
 
-            //MdiParent
             MdiParent = parent;
+        }
 
+        private void PedidoView_Load(object sender, EventArgs e)
+        {
+
+            ClienteModel c = new ClienteModel();
+            var lista = c.ListarClientes();
+
+            cmbUsuarios.DataSource = lista.ToArray();
+            cmbUsuarios.DisplayMember = "Nome";
+            cmbUsuarios.ValueMember = "Id";
+
+
+
+            //cmbUsuarios.DataSource = dt;
+            //cmbUsuarios.ValueMember = "iduser";
+            //cmbUsuarios.DisplayMember = "nome";
         }
     }
 }

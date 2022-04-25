@@ -151,7 +151,7 @@ namespace ComercialSys.Model
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocorreu um erro {ex}", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message.ToString(), "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 

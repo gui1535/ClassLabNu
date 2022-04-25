@@ -123,11 +123,8 @@ namespace ComercialSys
             // Limpar Grid
             GridProdutos.Rows.Clear();
 
-            // Novo objeto Cliente
-            ProdutoModel produto = new ProdutoModel();
-
             // Var para Listar clientes
-            var lista = produto.ListarTodos();
+            var lista = ProdutoModel.ListarTodos();
             lista.ForEach(i =>
             {
 

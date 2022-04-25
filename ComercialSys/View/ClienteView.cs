@@ -416,7 +416,7 @@ namespace ComercialSys.View
             EnderecoController endC = new EnderecoController();
 
             // Atribuindo valores
-            endC.AdicionarEndereco(Convert.ToInt32(txtId.Text), txtLogradouro.Text, txtCep.Text, txtNumero.Text, txtCidade.Text, txtBairro.Text, txtEstado.Text, txtUf.Text, cmbTipo.Text, txtComplemento.Text);
+            endC.AdicionarEndereco (Convert.ToInt32(txtId.Text), txtLogradouro.Text, txtCep.Text, txtNumero.Text, txtCidade.Text, txtBairro.Text, txtEstado.Text, txtUf.Text, cmbTipo.Text, txtComplemento.Text);
         }
 
         private void btnLimparCampos_Click(object sender, EventArgs e)

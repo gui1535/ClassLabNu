@@ -111,6 +111,7 @@
   <ItemGroup>
     <Compile Include="Controller\ClienteController.cs" />
     <Compile Include="Controller\EnderecoController.cs" />
+    <Compile Include="Controller\PedidoController.cs" />
     <Compile Include="Model\BancoModel.cs" />
     <Compile Include="Model\CaixaModel.cs" />
     <Compile Include="Model\ViaCepModel.cs" />
@@ -159,6 +160,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="View\ClienteView.resx">
       <DependentUpon>ClienteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PedidoView.resx">
+      <DependentUpon>PedidoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PrincipalView.resx">
       <DependentUpon>PrincipalView.cs</DependentUpon>

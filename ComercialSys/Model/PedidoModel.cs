@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 
 namespace ComercialSys.Model
 {
@@ -11,7 +12,7 @@ namespace ComercialSys.Model
         // Atributos
 
         public int Id { get; set; }
-        public DateTime DataPed { get; set; }
+        public string DataPed { get; set; }
         public string Status { get; set; }
         public double Desconto { get; set; }
         public ClienteModel Cliente { get; set; }
@@ -24,7 +25,7 @@ namespace ComercialSys.Model
         {
         }
 
-        public PedidoModel(DateTime dataPed, string status, double desconto, ClienteModel cliente, UsuarioModel usuario, List<ItemPedidoModel> itens)
+        public PedidoModel(string dataPed, string status, double desconto, ClienteModel cliente, UsuarioModel usuario, List<ItemPedidoModel> itens)
         {
             DataPed = dataPed;
             Status = status;
@@ -33,7 +34,7 @@ namespace ComercialSys.Model
             this.Usuario = usuario;
             this.Itens = itens;
         }
-        public PedidoModel(int id, DateTime dataPed, string status, double desconto, ClienteModel cliente, UsuarioModel usuario, List<ItemPedidoModel> itens)
+        public PedidoModel(int id, string dataPed, string status, double desconto, ClienteModel cliente, UsuarioModel usuario, List<ItemPedidoModel> itens)
         {
             Id = id;
             DataPed = dataPed;
@@ -46,33 +47,42 @@ namespace ComercialSys.Model
 
         // Metodos
 
-        public void Inserir()
+        public void Inserir(ClienteModel cli, UsuarioModel user)
         {
-            // Abre conexão com banco
-            var cmd = BancoModel.Abrir();
+            try
+            {
+                // Abre conexão com banco
+                var banco = BancoModel.Abrir();
 
-            // Comandos SQL
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert pedidos values(@idped, @dataped, @status, @desconto)";
+                // Comandos SQL
+                banco.CommandType = CommandType.StoredProcedure;
+                banco.CommandText = "pedido_inserir";
 
-            // Parametros SQL
-            cmd.Parameters.AddWithValue("@idped", null);
-            cmd.Parameters.AddWithValue("@dataped", DataPed);
-            cmd.Parameters.AddWithValue("@status", Status);
-            cmd.Parameters.AddWithValue("@desconto", Desconto);
-            cmd.ExecuteNonQuery();
+                // Parametros
+                banco.Parameters.AddWithValue("_idcli", cli.Id);
+                banco.Parameters.AddWithValue("_iduser", user.Id);
 
-            // Pega o ultimo ID criado
-            cmd.CommandText = "select @@identity";
+                // Leitura
+                var dr = banco.ExecuteReader();
+                dr.Read();
 
-            // Guarda o ultimo ID criado no Id
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
+                while (dr.Read())
+                {
+                    Id = dr.GetInt32(0);
+                    Status = dr.GetString(2);
+                }
 
-            // Limpar parametros
-            cmd.Parameters.Clear();
+                // Fecha Conexão
+                banco.Connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
-        public void Alterar(PedidoModel pedido)
+        public void Alterar()
         {
             try // Faça
             {
@@ -82,10 +92,9 @@ namespace ComercialSys.Model
                 // Comandos SQL
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "altera_Pedido";
-                cmd.Parameters.AddWithValue("_idped", Id).Direction = ParameterDirection.Input;
-                cmd.Parameters.AddWithValue("_dataped", DataPed).Direction = ParameterDirection.Input;
-                cmd.Parameters.AddWithValue("_status", Status).Direction = ParameterDirection.Input;
-                cmd.Parameters.AddWithValue("_desconto", Desconto).Direction = ParameterDirection.Input;
+                cmd.Parameters.AddWithValue("_idped", Id);
+                cmd.Parameters.AddWithValue("_status", Status);
+                cmd.Parameters.AddWithValue("_desconto", Desconto);
                 cmd.ExecuteNonQuery();
 
             }
@@ -111,7 +120,7 @@ namespace ComercialSys.Model
             while (dr.Read())
             {
                 Id = dr.GetInt32(0);
-                DataPed = dr.GetDateTime(1);
+                DataPed = dr.GetString(1);
                 Status = dr.GetString(2);
                 Desconto = dr.GetDouble(3);
             }

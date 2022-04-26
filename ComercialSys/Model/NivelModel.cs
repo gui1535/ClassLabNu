@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
@@ -9,9 +8,9 @@ namespace ComercialSys.Model
     public class NivelModel
     {
         // Atributos -> Campos
-        private int Id { set; get; }
-        private string Nome { set; get; }
-        private string Sigla { set; get; }
+        public int Id { set; get; }
+        public string Nome { set; get; }
+        public string Sigla { set; get; }
 
         // Metodos Contrutores ------------------------------------------------------------------
 
@@ -30,6 +29,12 @@ namespace ComercialSys.Model
             this.Id = id;
             this.Nome = nome;
             this.Sigla = sigla;
+        }
+        public NivelModel(string nome, string sigla, int id)
+        {
+            this.Nome = nome;
+            this.Sigla = sigla;
+            this.Id = id;
         }
 
         public void Inserir()
@@ -92,16 +97,33 @@ namespace ComercialSys.Model
                 return false;
             }
         }
-        public static MySqlDataReader ConsultarNivel()
+        public static List<NivelModel> ListarNivel()
         {
-            // Abre conexao com banco
-            var cmd = BancoModel.Abrir();
+            // Nova lista
+            List<NivelModel> lista = new List<NivelModel>();
 
-            // Comandos SQL
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"SELECT * FROM nivel";
+            // Abrir conexão
+            var banco = BancoModel.Abrir();
 
-            return cmd.ExecuteReader();
+            // Comando
+            banco.CommandType = CommandType.Text;
+            banco.CommandText = "select * from nivel";
+
+            // Var para Consulta
+            var dr = banco.ExecuteReader();
+
+            // Consulta
+            while (dr.Read())
+            {
+                lista.Add(new NivelModel(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2)
+                    ));
+            }
+
+            // Retornando lista
+            return lista;
         }
     }
 }

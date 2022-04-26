@@ -18,7 +18,7 @@ namespace ComercialSys.Model
         public string Email { get; set; }
         public string Password { get; set; }
         public bool Ativo { get; set; }
-        public string Nivel { get; set; }
+        public int Nivel { get; set; }
         public byte[] Foto { get; set; }
         // Metodos Construtores ------------------------------------------------------------------
 
@@ -27,7 +27,6 @@ namespace ComercialSys.Model
         /// </summary>
         public UsuarioModel()
         {
-
         }
 
         /// <summary>
@@ -37,13 +36,18 @@ namespace ComercialSys.Model
         /// <param name="email">VARCHAR(60)</param>
         /// <param name="password">VARCHAR(32)</param>
         /// <param name="nivel">VARCHAR(15)</param>
-        public UsuarioModel(string nome, string email, string password, string nivel)
+        public UsuarioModel(string nome, string email, string password, int nivel)
         {
             this.Nome = nome;
             this.Email = email;
             this.Password = password;
             this.Ativo = true;
             this.Nivel = nivel;
+        }
+
+        public UsuarioModel(int id)
+        {
+            Id = id;
         }
 
         /// <summary>
@@ -55,7 +59,7 @@ namespace ComercialSys.Model
         /// <param name="password">VARCHAR(32)</param>
         /// <param name="ativo">BIT(1)</param>
         /// <param name="nivel">VARCHAR(15)</param>
-        public UsuarioModel(int id, string nome, string email, string password, string nivel, bool ativo, byte[] foto)
+        public UsuarioModel(int id, string nome, string email, string password, int nivel, bool ativo, byte[] foto)
         {
             this.Id = id;
             this.Nome = nome;
@@ -65,7 +69,7 @@ namespace ComercialSys.Model
             this.Nivel = nivel;
             Foto = foto;
         }
-        public UsuarioModel(int id, string nome, string email, string password, string nivel, bool ativo)
+        public UsuarioModel(int id, string nome, string email, string password, int nivel, bool ativo)
         {
             this.Id = id;
             this.Nome = nome;
@@ -83,7 +87,7 @@ namespace ComercialSys.Model
         /// <param name="email">VARCHAR(60)</param>
         /// <param name="password">VARCHAR(32)</param>
         /// <param name="nivel">VARCHAR(15)</param>
-        public UsuarioModel(int id, string nome, string email, string password, string nivel)
+        public UsuarioModel(int id, string nome, string email, string password, int nivel)
         {
             Id = id;
             Nome = nome;
@@ -105,7 +109,7 @@ namespace ComercialSys.Model
                 var banco = BancoModel.Abrir();
 
                 // Comandos SQL
-                banco.CommandType = System.Data.CommandType.StoredProcedure;
+                banco.CommandType = CommandType.StoredProcedure;
                 banco.CommandText = "usuario_inserir";
 
                 // Parametros
@@ -143,7 +147,7 @@ namespace ComercialSys.Model
         /// <param name="i"></param>
         /// <param name="l"></param>
         /// <returns></returns>
-        public List<UsuarioModel> ListarUsuarios(int i = 0, int l = 0)
+        public static List<UsuarioModel> ListarUsuarios(int i = 0, int l = 0)
         {
             // Nova lista
             List<UsuarioModel> lista = new List<UsuarioModel>();
@@ -169,7 +173,7 @@ namespace ComercialSys.Model
                     dr.GetString(1), // Nome
                     dr.GetString(2), // Email
                     dr.GetString(3), // Senha
-                    dr.GetString(4), // Nivel
+                    dr.GetInt32(4), // Nivel
                     dr.GetBoolean(5) // Ativo
                     ));
             }
@@ -227,7 +231,7 @@ namespace ComercialSys.Model
                 Nome = dr.GetString(1);
                 Email = dr.GetString(2);
                 Password = dr.GetString(3);
-                Nivel = dr.GetString(4);
+                Nivel = dr.GetInt32(4);
                 Ativo = dr.GetBoolean(5);
 
 
@@ -257,7 +261,7 @@ namespace ComercialSys.Model
                 Nome = dr.GetString(1);
                 Email = dr.GetString(2);
                 Password = dr.GetString(3);
-                Nivel = dr.GetString(4);
+                Nivel = dr.GetInt32(4);
                 Ativo = dr.GetBoolean(5);
             }
         }

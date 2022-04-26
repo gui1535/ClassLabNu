@@ -361,7 +361,6 @@
             // cmbNivel
             // 
             this.cmbNivel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbNivel.Enabled = false;
             this.cmbNivel.FormattingEnabled = true;
             this.cmbNivel.ItemHeight = 23;
             this.cmbNivel.Location = new System.Drawing.Point(609, 141);
@@ -563,7 +562,7 @@
             // 
             this.FileDialogImg.FileName = "Imagem";
             // 
-            // FormUsuario
+            // UsuarioView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -576,7 +575,7 @@
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormUsuario";
+            this.Name = "UsuarioView";
             this.Padding = new System.Windows.Forms.Padding(25, 79, 25, 26);
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.FormUsuario_Load);

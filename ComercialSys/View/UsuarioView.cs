@@ -79,12 +79,14 @@ namespace ComercialSys.View
 
         private void FormUsuario_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt.Load(NivelModel.ConsultarNivel());
-            cmbNivel.DataSource = dt;
-            cmbNivel.ValueMember = "idnv";
-            cmbNivel.DisplayMember = "nome";
+            var lista = NivelModel.ListarNivel();
+
+            // Listando Usuarios ComboBox
+            cmbNivel.DataSource = lista.ToArray();
+            cmbNivel.DisplayMember = "Nome";
+            cmbNivel.ValueMember = "Id";
         }
+
 
         // DataGrid Usuarios ---------------------------------------------------------------------------------------------------------------
 
@@ -96,11 +98,8 @@ namespace ComercialSys.View
             // Limpar Grid
             GridUsuarios.Rows.Clear();
 
-            // Novo objeto Usuario
-            UsuarioModel usuario = new UsuarioModel();
-
             // Var para Listar usuario
-            var lista = usuario.ListarUsuarios();
+            var lista = UsuarioModel.ListarUsuarios();
 
             // Listando usuarios no DataGrid
             lista.ForEach(i =>
@@ -135,14 +134,14 @@ namespace ComercialSys.View
             u.Email = Convert.ToString(GridUsuarios["colunaEmail", e.RowIndex].Value);
             u.Password = Convert.ToString(GridUsuarios["colunaSenhaInv", e.RowIndex].Value);
             u.Ativo = Convert.ToBoolean(GridUsuarios["colunaAtivo", e.RowIndex].Value);
-            u.Nivel = Convert.ToString(GridUsuarios["colunaNivel", e.RowIndex].Value);
+            u.Nivel = Convert.ToInt32(GridUsuarios["colunaNivel", e.RowIndex].Value);
 
             // Atributos
             txtId.Text = u.Id.ToString();
             txtNome.Text = u.Nome;
             txtEmail.Text = u.Email;
             txtSenha.Text = u.Password;
-            cmbNivel.Text = u.Nivel;
+            cmbNivel.SelectedValue = u.Nivel;
             chkAtivo.Checked = u.Ativo;
         }
 
@@ -174,7 +173,7 @@ namespace ComercialSys.View
                 txtNome.Text,
                 txtEmail.Text,
                 txtSenha.Text,
-                cmbNivel.Text
+                Convert.ToInt32(cmbNivel.SelectedValue)
                 );
 
             u.Inserir();
@@ -233,7 +232,7 @@ namespace ComercialSys.View
             usuario.Nome = txtNome.Text;
             usuario.Password = txtSenha.Text;
             usuario.Email = txtEmail.Text;
-            usuario.Nivel = cmbNivel.Text;
+            usuario.Nivel = Convert.ToInt32(cmbNivel.SelectedValue);
             usuario.Ativo = chkAtivo.Checked;
 
             // Validação do email
@@ -295,7 +294,7 @@ namespace ComercialSys.View
                 txtNome.Text = usuario.Nome;
                 txtEmail.Text = usuario.Email;
                 txtSenha.Text = usuario.Password;
-                cmbNivel.Text = usuario.Nivel;
+                cmbNivel.SelectedValue = usuario.Nivel;
             }
         }
 
@@ -318,7 +317,7 @@ namespace ComercialSys.View
                 txtNome.Text = usuario.Nome;
                 txtEmail.Text = usuario.Email;
                 txtSenha.Text = usuario.Password;
-                cmbNivel.Text = usuario.Nivel;
+                cmbNivel.SelectedValue = usuario.Nivel;
                 chkAtivo.Checked = usuario.Ativo;
             }
 

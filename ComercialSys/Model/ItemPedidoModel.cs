@@ -1,19 +1,19 @@
-﻿namespace ComercialSys.Model
+﻿using System;
+using System.Data;
+using System.Windows.Forms;
+
+namespace ComercialSys.Model
 {
     public class ItemPedidoModel
     {
         // idped_ip	idprod_ip	valor	quantidade	desconto
         // Atributos
-        ProdutoModel produto;
-        private double valor;
-        private double quantidade;
-        private double desconto;
+        public ProdutoModel Produto { get; set; }
+        public PedidoModel Pedido { get; set; }
+        public double Valor { get; set; }
+        public double Quantidade { get; set; }
+        public double Desconto { get; set; }
 
-        // Propriedades
-        public ProdutoModel Produto { get { return produto; } set { produto = value; } }
-        public double Valor { get { return valor; } set { valor = value; } }
-        public double Quantidade { get { return quantidade; } set { quantidade = value; } }
-        public double Desconto { get { return desconto; } set { desconto = value; } }
 
         // Construtores
 
@@ -24,17 +24,42 @@
 
         public ItemPedidoModel(ProdutoModel produto, double valor, double quantidade, double desconto)
         {
-            this.produto = produto;
-            this.valor = valor;
-            this.quantidade = quantidade;
-            this.desconto = desconto;
+            this.Produto = produto;
+            this.Valor = valor;
+            this.Quantidade = quantidade;
+            this.Desconto = desconto;
         }
 
         // Metodos
 
         public void Inserir()
         {
+            try
+            {
+                // Abre conexão com banco
+                var banco = BancoModel.Abrir();
 
+                // Comandos SQL
+                banco.CommandType = CommandType.StoredProcedure;
+                banco.CommandText = "itempedido_inserir";
+
+                // Parametros
+                banco.Parameters.AddWithValue("_idped", Pedido.Id);
+                banco.Parameters.AddWithValue("_idprod", Produto.Id);
+                banco.Parameters.AddWithValue("_quantidade", Quantidade);
+                banco.Parameters.AddWithValue("_valor", Valor);
+                banco.Parameters.AddWithValue("_desconto", Desconto);
+
+                // Leitura
+                var dr = banco.ExecuteReader();
+
+                // Fecha Conexão
+                banco.Connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void Alterar(ItemPedidoModel item)

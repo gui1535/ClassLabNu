@@ -36,6 +36,10 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="BuscaCEP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\BuscaCEP.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -111,8 +115,10 @@
   <ItemGroup>
     <Compile Include="Controller\ClienteController.cs" />
     <Compile Include="Controller\EnderecoController.cs" />
+    <Compile Include="Controller\ItemPedidoController.cs" />
     <Compile Include="Controller\NumeroController.cs" />
     <Compile Include="Controller\PedidoController.cs" />
+    <Compile Include="Controller\UsuarioController.cs" />
     <Compile Include="Model\BancoModel.cs" />
     <Compile Include="Model\CaixaModel.cs" />
     <Compile Include="Model\NumeroModel.cs" />
@@ -133,6 +139,11 @@
     </Compile>
     <Compile Include="View\ClienteView.Designer.cs">
       <DependentUpon>ClienteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClienteView1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClienteView.resx</DependentUpon>
     </Compile>
     <Compile Include="View\PedidoView.cs">
       <SubType>Form</SubType>
@@ -162,6 +173,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="View\ClienteView.resx">
       <DependentUpon>ClienteView.cs</DependentUpon>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ClienteView1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PedidoView.resx">
       <DependentUpon>PedidoView.cs</DependentUpon>

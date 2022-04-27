@@ -7,8 +7,6 @@ namespace ComercialSys.Model
 {
     public class PedidoModel
     {
-        // idped	data	status_ped	desconto	idcli_ped	iduser_ped
-
         // Atributos
 
         public int Id { get; set; }
@@ -27,7 +25,7 @@ namespace ComercialSys.Model
 
         public PedidoModel(string dataPed, string status, double desconto, ClienteModel cliente, UsuarioModel usuario, List<ItemPedidoModel> itens)
         {
-            DataPed = dataPed;
+            this.DataPed = dataPed;
             Status = status;
             this.Desconto = desconto;
             this.Cliente = cliente;
@@ -47,7 +45,7 @@ namespace ComercialSys.Model
 
         // Metodos
 
-        public void Inserir(ClienteModel cli, UsuarioModel user)
+        public void Inserir()
         {
             try
             {
@@ -59,18 +57,18 @@ namespace ComercialSys.Model
                 banco.CommandText = "pedido_inserir";
 
                 // Parametros
-                banco.Parameters.AddWithValue("_idcli", cli.Id);
-                banco.Parameters.AddWithValue("_iduser", user.Id);
+                banco.Parameters.AddWithValue("_idcli", Cliente.Id);
+                banco.Parameters.AddWithValue("_iduser", Usuario.Id);
 
                 // Leitura
                 var dr = banco.ExecuteReader();
+
+                // Consulta
                 dr.Read();
 
-                while (dr.Read())
-                {
-                    Id = dr.GetInt32(0);
-                    Status = dr.GetString(2);
-                }
+                Id = dr.GetInt32(0);
+                Status = dr.GetString(1);
+                DataPed = dr.GetString(2);
 
                 // Fecha Conexão
                 banco.Connection.Close();
@@ -78,7 +76,6 @@ namespace ComercialSys.Model
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
 
@@ -90,13 +87,12 @@ namespace ComercialSys.Model
                 var cmd = BancoModel.Abrir();
 
                 // Comandos SQL
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "altera_Pedido";
                 cmd.Parameters.AddWithValue("_idped", Id);
                 cmd.Parameters.AddWithValue("_status", Status);
                 cmd.Parameters.AddWithValue("_desconto", Desconto);
                 cmd.ExecuteNonQuery();
-
             }
             catch (Exception) // Exception
             {
@@ -126,7 +122,6 @@ namespace ComercialSys.Model
             }
         }
 
-        // ----------------------------------------------------------
         public static List<PedidoModel> ConsultarPorClienteId(int _id)
         {
             List<PedidoModel> pedidos = new List<PedidoModel>();

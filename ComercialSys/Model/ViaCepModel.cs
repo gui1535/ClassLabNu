@@ -1,7 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using ComercialSys.Controller;
+using Newtonsoft.Json;
+using System.Data;
 using System.Net;
 using System.Net.Http;
-using ComercialSys.Controller;
 
 namespace ComercialSys.Model
 {
@@ -39,3 +40,4 @@ namespace ComercialSys.Model
         }
     }
 }
+

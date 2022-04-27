@@ -303,7 +303,7 @@ namespace ComercialSys.Controller
                 MessageBox.Show("Falha ao inserir cliente", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            IdCli = cli.Id.ToString();
+            
 
         }
 
@@ -316,7 +316,7 @@ namespace ComercialSys.Controller
         /// <param name="_email">String</param>
         /// <param name="_ativo">Boolean</param>
         /// <param name="_obs">String</param>
-        public void EditarCliente(int _id, string _nome, string _cpf, string _email, bool _ativo, string _obs)
+        public  void EditarCliente(int _id, string _nome, string _cpf, string _email, bool _ativo, string _obs)
         {
             // Objeto Cliente
             ClienteModel cli = new ClienteModel();
@@ -353,6 +353,14 @@ namespace ComercialSys.Controller
                 // Email Invalido
                 MessageBox.Show($"Email invalido", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        public static void ListClienteBox(ComboBox cmb)
+        {
+            // Listando Clientes ComboBox
+            cmb.DataSource = ClienteModel.ListarClientes().ToArray();
+            cmb.DisplayMember = "Nome";
+            cmb.ValueMember = "Id";
         }
     }
 }

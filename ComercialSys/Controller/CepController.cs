@@ -47,12 +47,11 @@ namespace ComercialSys.Controller
 
         public static string Estado { get; set; }
 
-
         public static void ConsultarCep(string _cep)
         {
             // Consultar Cep
             ViaCepModel.ConsultaCep(_cep.ToString().Trim());
-             
+
             // Verificando Uf
             VerificarUf();
         }
@@ -166,6 +165,11 @@ namespace ComercialSys.Controller
             {
                 Estado = "Tocantins";
             }
+            else
+            {
+
+            }
+            
 
             return Estado;
         }

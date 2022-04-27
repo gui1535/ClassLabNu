@@ -145,6 +145,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClienteView.resx</DependentUpon>
     </Compile>
+    <Compile Include="View\LoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PedidoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
       <DependentUpon>ClienteView.cs</DependentUpon>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ClienteView1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PedidoView.resx">
       <DependentUpon>PedidoView.cs</DependentUpon>

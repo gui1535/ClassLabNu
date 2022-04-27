@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
@@ -137,8 +136,13 @@ namespace ComercialSys.Model
         /// <returns>Bool</returns>
         public static bool EfetuarLogin(string email, string senha)
         {
-            // Realiza validação e devolve verdadeiro ou falso
-            return false;
+            var banco = BancoModel.Abrir();
+
+            banco.CommandText = $"select * from usuarios where email = '{email}' and senha = md5('{senha}')";
+
+            var dr = banco.ExecuteReader();
+
+            return dr.Read();
         }
 
         /// <summary>

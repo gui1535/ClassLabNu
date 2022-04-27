@@ -13,11 +13,9 @@ namespace ComercialSys.FormPrincipal
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            // Instancia do form Cliente
-            ClienteView FormCliente = new ClienteView(this);
+            LoginView loginView = new LoginView();
 
-            // Exibe Form
-            FormCliente.Show();
+            loginView.ShowDialog();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)

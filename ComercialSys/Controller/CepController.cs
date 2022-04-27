@@ -20,7 +20,7 @@ namespace ComercialSys.Controller
 
         [JsonProperty(PropertyName = "bairro")]
         public static string Bairro { get; set; }
-
+        
 
         [JsonProperty(PropertyName = "localidade")]
         public static string Localidade { get; set; }
@@ -55,6 +55,7 @@ namespace ComercialSys.Controller
             // Verificando Uf
             VerificarUf();
         }
+
         private static string VerificarUf()
         {
             if (Uf.Equals("SP"))

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -8,8 +9,8 @@ namespace ComercialSys.Model
     {
         // idped_ip	idprod_ip	valor	quantidade	desconto
         // Atributos
-        public ProdutoModel Produto { get; set; }
-        public PedidoModel Pedido { get; set; }
+        public int Produto { get; set; }
+        public int Pedido { get; set; }
         public double Valor { get; set; }
         public double Quantidade { get; set; }
         public double Desconto { get; set; }
@@ -22,9 +23,17 @@ namespace ComercialSys.Model
 
         }
 
-        public ItemPedidoModel(ProdutoModel produto, double valor, double quantidade, double desconto)
+        public ItemPedidoModel(int produto, double valor, double quantidade, double desconto)
         {
             this.Produto = produto;
+            this.Valor = valor;
+            this.Quantidade = quantidade;
+            this.Desconto = desconto;
+        }
+        public ItemPedidoModel(int produto, int pedido, double valor, double quantidade, double desconto)
+        {
+            this.Produto = produto;
+            Pedido = pedido;
             this.Valor = valor;
             this.Quantidade = quantidade;
             this.Desconto = desconto;
@@ -44,8 +53,8 @@ namespace ComercialSys.Model
                 banco.CommandText = "itempedido_inserir";
 
                 // Parametros
-                banco.Parameters.AddWithValue("_idped", Pedido.Id);
-                banco.Parameters.AddWithValue("_idprod", Produto.Id);
+                banco.Parameters.AddWithValue("_idped", Pedido);
+                banco.Parameters.AddWithValue("_idprod", Produto);
                 banco.Parameters.AddWithValue("_quantidade", Quantidade);
                 banco.Parameters.AddWithValue("_valor", Valor);
                 banco.Parameters.AddWithValue("_desconto", Desconto);
@@ -62,9 +71,38 @@ namespace ComercialSys.Model
             }
         }
 
-        public void Alterar(ItemPedidoModel item)
+        public static List<ItemPedidoModel> ListarItensPedido(int _idPed, int _idProd)
         {
+            // Nova lista
+            List<ItemPedidoModel> lista = new List<ItemPedidoModel>();
 
+            // Abrir conexão
+            var banco = BancoModel.Abrir();
+
+            // Comando
+            banco.CommandType = CommandType.Text;
+            banco.CommandText = $"select * from itempedido where idped = {_idPed} and idprod = {_idProd}";
+
+            // Var para Consulta
+            var dr = banco.ExecuteReader();
+
+            // Consulta
+            while (dr.Read())
+            {
+                lista.Add(new ItemPedidoModel(
+                    Convert.ToInt32(dr.GetValue(0)), // ID
+                    dr.GetInt32(1), // Nome
+                    dr.GetDouble(2), // Cpf
+                    dr.GetDouble(3), // Email
+                    dr.GetDouble(4)
+                    ));
+            }
+
+        // Fecha Conexão
+        banco.Connection.Close();
+
+            // Retornando lista
+            return lista;
         }
     }
 }

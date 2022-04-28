@@ -48,7 +48,7 @@ namespace ComercialSys.Controller
             // Var para Listar enderecos
             EnderecoModel end = new EnderecoModel();
 
-            var lista = end.ListarEnderecoCli(Convert.ToInt32(cli.IdCli));
+            var lista = end.ListarEnderecoCli(Convert.ToInt32(cli.Id));
 
             // Listando enderecos no DataGrid
             lista.ForEach(i =>

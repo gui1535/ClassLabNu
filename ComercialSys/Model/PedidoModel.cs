@@ -26,7 +26,7 @@ namespace ComercialSys.Model
         public PedidoModel(string dataPed, string status, double desconto, ClienteModel cliente, UsuarioModel usuario, List<ItemPedidoModel> itens)
         {
             this.DataPed = dataPed;
-            Status = status;
+            this.Status = status;
             this.Desconto = desconto;
             this.Cliente = cliente;
             this.Usuario = usuario;
@@ -67,8 +67,9 @@ namespace ComercialSys.Model
                 dr.Read();
 
                 Id = dr.GetInt32(0);
-                Status = dr.GetString(1);
-                DataPed = dr.GetString(2);
+                Status = Convert.ToString(dr.GetString(1));
+                DataPed = Convert.ToString(dr.GetString(2));
+
 
                 // Fecha Conexão
                 banco.Connection.Close();

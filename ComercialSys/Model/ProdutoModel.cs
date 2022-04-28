@@ -38,7 +38,7 @@ namespace ComercialSys.Model
         /// <param name="codbar">CHAR(13)</param>
         /// <param name="valor">DOUBLE</param>
         /// <param name="desconto">DOUBLE</param>
-        public ProdutoModel(int id, string descricao, string unidade, string codbar,double desconto,double valor)
+        public ProdutoModel(int id, string descricao, string unidade, string codbar, double desconto, double valor)
         {
             Id = id;
             this.Descricao = descricao;
@@ -193,6 +193,28 @@ namespace ComercialSys.Model
             {
                 return false;
             }
+        }
+
+        public static ProdutoModel ConsultarPorCodBar(string _codbar)
+        {
+            ProdutoModel prod = new ProdutoModel();
+            var cmd = BancoModel.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from produtos where codbar = " + _codbar;
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                prod.Id = Convert.ToInt32(dr.GetValue(0));
+                prod.Descricao = dr.GetString(1);
+                prod.Unidade = dr.GetString(2);
+                prod.Codbar = dr.GetString(3);
+                prod.Valor = dr.GetDouble(4);
+                prod.Desconto = dr.GetDouble(5);
+                prod.Descontinuado = dr.GetBoolean(6);
+
+            }
+            return prod;
+
         }
 
         /// <summary>

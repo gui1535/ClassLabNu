@@ -4,16 +4,8 @@ using System.Windows.Forms;
 
 namespace ComercialSys.Controller
 {
-    public class ClienteController
+    public class ClienteController : ClienteModel
     {
-        public string IdCli { get; set; }
-        public string NomeCli { get; set; }
-        public string DatacadCli { get; set; }
-        public string EmailCli { get; set; }
-        public string CpfCli { get; set; }
-        public bool AtivoCli { get; set; }
-        public string ObsCli { get; set; }
-
         /// <summary>
         /// Metodo para Listar clientes
         /// </summary>
@@ -41,7 +33,7 @@ namespace ComercialSys.Controller
             dt.Rows.Clear();
 
             // Var para Listar clientes
-            var lista = ClienteModel.ListarClientes();
+            var lista = ListarClientes();
 
             // Listando clientes no DataGrid
             lista.ForEach(i =>
@@ -64,13 +56,13 @@ namespace ComercialSys.Controller
         /// <param name="cli">Cliente</param>
         private void PreencherPropriedades(ClienteModel cli)
         {
-            IdCli = cli.Id.ToString();
-            NomeCli = cli.Nome;
-            DatacadCli = cli.dataCad;
-            EmailCli = cli.Email;
-            CpfCli = cli.Cpf;
-            AtivoCli = cli.Ativo;
-            ObsCli = cli.Obs;
+            Id = cli.Id;
+            Nome = cli.Nome;
+            dataCad = cli.dataCad;
+            Email = cli.Email;
+            Cpf = cli.Cpf;
+            Ativo = cli.Ativo;
+            Obs = cli.Obs;
         }
 
         /// <summary>
@@ -84,7 +76,6 @@ namespace ComercialSys.Controller
         DataGridViewCellEventArgs e
         )
         {
-
             ClienteModel cli = new ClienteModel();
 
             cli.Id = Convert.ToInt32(dt[$"colunaId", e.RowIndex].Value);
@@ -95,13 +86,13 @@ namespace ComercialSys.Controller
             cli.Ativo = Convert.ToBoolean(dt[$"colunaAtivo", e.RowIndex].Value);
             cli.Obs = Convert.ToString(dt[$"colunaObs", e.RowIndex].Value);
 
-            IdCli = cli.Id.ToString();
-            NomeCli = cli.Nome;
-            EmailCli = cli.Email;
-            CpfCli = cli.Cpf;
-            DatacadCli = cli.dataCad;
-            AtivoCli = cli.Ativo;
-            ObsCli = cli.Obs;
+            Id = cli.Id;
+            Nome = cli.Nome;
+            Email = cli.Email;
+            Cpf = cli.Cpf;
+            dataCad = cli.dataCad;
+            Ativo = cli.Ativo;
+            Obs = cli.Obs;
 
         }
 
@@ -136,7 +127,7 @@ namespace ComercialSys.Controller
             dt.Rows.Clear();
 
             // Var para Listar clientes
-            var lista = cli.ListarPorCpf(_cpf);
+            var lista = ListarPorCpf(_cpf);
 
             // Listando clientes no DataGrid
             lista.ForEach(i =>
@@ -189,7 +180,7 @@ namespace ComercialSys.Controller
             dt.Rows.Clear();
 
             // Var para Listar clientes
-            var lista = cli.ListarPorId(_id);
+            var lista = ListarPorId(_id);
 
             // Listando clientes no DataGrid
             lista.ForEach(i =>
@@ -241,7 +232,7 @@ namespace ComercialSys.Controller
             dt.Rows.Clear();
 
             // Var para Listar clientes
-            var lista = cli.ListarPorNome(_nome);
+            var lista = ListarPorNome(_nome);
 
             // Listando clientes no DataGrid
             lista.ForEach(i =>
@@ -271,25 +262,23 @@ namespace ComercialSys.Controller
         /// <param name="_obs">String</param>
         public void InserirCliente(int _id, string _nome, string _cpf, string _email, string _obs)
         {
-            ClienteModel cli = new ClienteModel();
-
             // Objeto Cliente
-            cli.Id = _id;
-            cli.Nome = _nome;
-            cli.Cpf = _cpf;
-            cli.Email = _email;
-            cli.Obs = _obs;
+            Id = _id;
+            Nome = _nome;
+            Cpf = _cpf;
+            Email = _email;
+            Obs = _obs;
 
             // Inserindo Cliente
-            cli.Inserir();
+            Inserir();
 
             // Se ID for maior que 0
-            if (cli.Id > 0)
+            if (Id > 0)
             {
                 // Verificação se email é valido
                 if (ValidacaoController.EmailValido(_email))
                 {
-                    MessageBox.Show($"Cliente {cli.Id} inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Cliente {Id} inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -318,16 +307,13 @@ namespace ComercialSys.Controller
         /// <param name="_obs">String</param>
         public  void EditarCliente(int _id, string _nome, string _cpf, string _email, bool _ativo, string _obs)
         {
-            // Objeto Cliente
-            ClienteModel cli = new ClienteModel();
-
             // Atributos do objeto
-            cli.Id = _id;
-            cli.Nome = _nome;
-            cli.Cpf = _cpf;
-            cli.Email = _email;
-            cli.Ativo = _ativo;
-            cli.Obs = _obs;
+            Id = _id;
+            Nome = _nome;
+            Cpf = _cpf;
+            Email = _email;
+            Ativo = _ativo;
+            Obs = _obs;
 
             // Validação do email
             if (ValidacaoController.EmailValido(_email))
@@ -336,7 +322,7 @@ namespace ComercialSys.Controller
                 if (MessageBox.Show("Você tem certeza que deseja alterar?", "SysComercial", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     // Condição
-                    if (cli.Alterar()) // Se cliente alterar for igual a TRUE
+                    if (Alterar()) // Se cliente alterar for igual a TRUE
                     {
                         // Mensagem Box
                         MessageBox.Show("Cliente alterado com sucesso!", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);

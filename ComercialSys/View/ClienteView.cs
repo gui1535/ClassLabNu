@@ -166,13 +166,13 @@ namespace ComercialSys.View
             dt.ListarEndereco(GridEndereco, clienteC, colunaCep, colunaCidade, colunaTipo, colunaBairro, colunaLogradouro, colunaEstado, colunaNumero, colunaComplemento);
 
             // Atributos
-            txtId.Text = clienteC.IdCli.ToString();
-            txtNome.Text = clienteC.NomeCli;
-            txtEmail.Text = clienteC.EmailCli;
-            txtCpf.Text = clienteC.CpfCli;
-            chkAtivo.Checked = clienteC.AtivoCli;
-            txtDataCad.Text = clienteC.DatacadCli;
-            txtObs.Text = clienteC.ObsCli;
+            txtId.Text = clienteC.Id.ToString();
+            txtNome.Text = clienteC.Nome;
+            txtEmail.Text = clienteC.Email;
+            txtCpf.Text = clienteC.Cpf;
+            chkAtivo.Checked = clienteC.Ativo;
+            txtDataCad.Text = clienteC.dataCad;
+            txtObs.Text = clienteC.Obs;
 
             btnBloquear_Click(sender, e);
         }
@@ -187,7 +187,7 @@ namespace ComercialSys.View
             // Valores para o controlador
             cli.InserirCliente(Convert.ToInt32(txtId.Text), txtNome.Text, txtCpf.Text, txtEmail.Text, txtObs.Text);
 
-            txtId.Text = cli.IdCli;
+            txtId.Text = cli.Id.ToString().Trim();
 
             // Listar DataGrid
             ListarDataGrid();
@@ -254,12 +254,12 @@ namespace ComercialSys.View
                 dt.PesquisarClienteNome(GridCliente, txtPesqNome.Text, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
 
                 // Atribuindo valores
-                dt.IdCli = txtId.Text;
-                dt.CpfCli = txtCpf.Text;
-                dt.EmailCli = txtEmail.Text;
-                dt.NomeCli = txtNome.Text;
-                dt.AtivoCli = chkAtivo.Checked;
-                dt.DatacadCli = txtDataCad.Text;
+                dt.Id = Convert.ToInt32(txtId.Text);
+                dt.Cpf = txtCpf.Text;
+                dt.Email = txtEmail.Text;
+                dt.Nome = txtNome.Text;
+                dt.Ativo = chkAtivo.Checked;
+                dt.dataCad = txtDataCad.Text;
             }
 
         }
@@ -291,12 +291,12 @@ namespace ComercialSys.View
                 dt.PesquisarClienteCpf(GridCliente, txtCpfPsq.Text, colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
 
                 // Atribuindo valores
-                dt.IdCli = txtId.Text;
-                dt.CpfCli = txtCpf.Text;
-                dt.EmailCli = txtEmail.Text;
-                dt.NomeCli = txtNome.Text;
-                dt.AtivoCli = chkAtivo.Checked;
-                dt.DatacadCli = txtDataCad.Text;
+                dt.Id = Convert.ToInt32(txtId.Text);
+                dt.Cpf = txtCpf.Text;
+                dt.Email = txtEmail.Text;
+                dt.Nome = txtNome.Text;
+                dt.Ativo = chkAtivo.Checked;
+                dt.dataCad = txtDataCad.Text;
 
             }
         }
@@ -332,12 +332,12 @@ namespace ComercialSys.View
                 dt.PesquisarClienteId(GridCliente, int.Parse(txtIdPesq.Text), colunaId, colunaNome, colunaEmail, colunaCpf, colunaDataCad, colunaAtivo, colunaObs);
 
                 // Atribuindo valores
-                dt.IdCli = txtId.Text;
-                dt.CpfCli = txtCpf.Text;
-                dt.EmailCli = txtEmail.Text;
-                dt.NomeCli = txtNome.Text;
-                dt.AtivoCli = chkAtivo.Checked;
-                dt.DatacadCli = txtDataCad.Text;
+                dt.Id = Convert.ToInt32(txtId.Text);
+                dt.Cpf = txtCpf.Text;
+                dt.Email = txtEmail.Text;
+                dt.Nome = txtNome.Text;
+                dt.Ativo = chkAtivo.Checked;
+                dt.dataCad = txtDataCad.Text;
             }
 
         }

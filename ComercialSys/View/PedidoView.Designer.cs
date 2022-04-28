@@ -40,11 +40,6 @@
             this.txtDataPed = new MetroFramework.Controls.MetroTextBox();
             this.gpItensPed = new System.Windows.Forms.GroupBox();
             this.GridItensPedido = new System.Windows.Forms.DataGridView();
-            this.colunaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.txtDescricao = new MetroFramework.Controls.MetroTextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,8 +54,13 @@
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtValorFPed = new MetroFramework.Controls.MetroTextBox();
+            this.txtValorFinal = new MetroFramework.Controls.MetroTextBox();
             this.lbStatusPed = new System.Windows.Forms.Label();
+            this.colunaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpDadosPed.SuspendLayout();
             this.gpItensPed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).BeginInit();
@@ -246,8 +246,8 @@
             this.GridItensPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colunaPedido,
             this.colunaProduto,
-            this.colunaQuantidade,
             this.colunaValor,
+            this.colunaQuantidade,
             this.colunaDesconto});
             this.GridItensPedido.GridColor = System.Drawing.Color.Black;
             this.GridItensPedido.Location = new System.Drawing.Point(5, 84);
@@ -258,36 +258,6 @@
             this.GridItensPedido.RowHeadersWidth = 51;
             this.GridItensPedido.Size = new System.Drawing.Size(597, 245);
             this.GridItensPedido.TabIndex = 26;
-            // 
-            // colunaPedido
-            // 
-            this.colunaPedido.HeaderText = "Pedido";
-            this.colunaPedido.Name = "colunaPedido";
-            this.colunaPedido.ReadOnly = true;
-            // 
-            // colunaProduto
-            // 
-            this.colunaProduto.HeaderText = "Produto";
-            this.colunaProduto.Name = "colunaProduto";
-            this.colunaProduto.ReadOnly = true;
-            // 
-            // colunaQuantidade
-            // 
-            this.colunaQuantidade.HeaderText = "Quantidade";
-            this.colunaQuantidade.Name = "colunaQuantidade";
-            this.colunaQuantidade.ReadOnly = true;
-            // 
-            // colunaValor
-            // 
-            this.colunaValor.HeaderText = "Valor";
-            this.colunaValor.Name = "colunaValor";
-            this.colunaValor.ReadOnly = true;
-            // 
-            // colunaDesconto
-            // 
-            this.colunaDesconto.HeaderText = "Desconto";
-            this.colunaDesconto.Name = "colunaDesconto";
-            this.colunaDesconto.ReadOnly = true;
             // 
             // label9
             // 
@@ -512,36 +482,36 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "VALOR TOTAL";
             // 
-            // txtValorFPed
+            // txtValorFinal
             // 
             // 
             // 
             // 
-            this.txtValorFPed.CustomButton.Image = null;
-            this.txtValorFPed.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.txtValorFPed.CustomButton.Name = "";
-            this.txtValorFPed.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtValorFPed.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtValorFPed.CustomButton.TabIndex = 1;
-            this.txtValorFPed.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtValorFPed.CustomButton.UseSelectable = true;
-            this.txtValorFPed.CustomButton.Visible = false;
-            this.txtValorFPed.Enabled = false;
-            this.txtValorFPed.Lines = new string[0];
-            this.txtValorFPed.Location = new System.Drawing.Point(645, 496);
-            this.txtValorFPed.MaxLength = 32767;
-            this.txtValorFPed.Name = "txtValorFPed";
-            this.txtValorFPed.PasswordChar = '\0';
-            this.txtValorFPed.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtValorFPed.SelectedText = "";
-            this.txtValorFPed.SelectionLength = 0;
-            this.txtValorFPed.SelectionStart = 0;
-            this.txtValorFPed.ShortcutsEnabled = true;
-            this.txtValorFPed.Size = new System.Drawing.Size(143, 23);
-            this.txtValorFPed.TabIndex = 20;
-            this.txtValorFPed.UseSelectable = true;
-            this.txtValorFPed.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtValorFPed.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtValorFinal.CustomButton.Image = null;
+            this.txtValorFinal.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtValorFinal.CustomButton.Name = "";
+            this.txtValorFinal.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtValorFinal.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtValorFinal.CustomButton.TabIndex = 1;
+            this.txtValorFinal.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtValorFinal.CustomButton.UseSelectable = true;
+            this.txtValorFinal.CustomButton.Visible = false;
+            this.txtValorFinal.Enabled = false;
+            this.txtValorFinal.Lines = new string[0];
+            this.txtValorFinal.Location = new System.Drawing.Point(645, 496);
+            this.txtValorFinal.MaxLength = 32767;
+            this.txtValorFinal.Name = "txtValorFinal";
+            this.txtValorFinal.PasswordChar = '\0';
+            this.txtValorFinal.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtValorFinal.SelectedText = "";
+            this.txtValorFinal.SelectionLength = 0;
+            this.txtValorFinal.SelectionStart = 0;
+            this.txtValorFinal.ShortcutsEnabled = true;
+            this.txtValorFinal.Size = new System.Drawing.Size(143, 23);
+            this.txtValorFinal.TabIndex = 20;
+            this.txtValorFinal.UseSelectable = true;
+            this.txtValorFinal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtValorFinal.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // lbStatusPed
             // 
@@ -552,6 +522,36 @@
             this.lbStatusPed.Size = new System.Drawing.Size(0, 25);
             this.lbStatusPed.TabIndex = 20;
             // 
+            // colunaPedido
+            // 
+            this.colunaPedido.HeaderText = "Pedido";
+            this.colunaPedido.Name = "colunaPedido";
+            this.colunaPedido.ReadOnly = true;
+            // 
+            // colunaProduto
+            // 
+            this.colunaProduto.HeaderText = "Produto";
+            this.colunaProduto.Name = "colunaProduto";
+            this.colunaProduto.ReadOnly = true;
+            // 
+            // colunaValor
+            // 
+            this.colunaValor.HeaderText = "Valor";
+            this.colunaValor.Name = "colunaValor";
+            this.colunaValor.ReadOnly = true;
+            // 
+            // colunaQuantidade
+            // 
+            this.colunaQuantidade.HeaderText = "Quantidade";
+            this.colunaQuantidade.Name = "colunaQuantidade";
+            this.colunaQuantidade.ReadOnly = true;
+            // 
+            // colunaDesconto
+            // 
+            this.colunaDesconto.HeaderText = "Desconto";
+            this.colunaDesconto.Name = "colunaDesconto";
+            this.colunaDesconto.ReadOnly = true;
+            // 
             // PedidoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,7 +560,7 @@
             this.Controls.Add(this.lbStatusPed);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.gpOperacoes);
-            this.Controls.Add(this.txtValorFPed);
+            this.Controls.Add(this.txtValorFinal);
             this.Controls.Add(this.gpItensPed);
             this.Controls.Add(this.gpDadosPed);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -602,15 +602,15 @@
         private MetroFramework.Controls.MetroTextBox txtValor;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private MetroFramework.Controls.MetroTextBox txtValorFPed;
+        private MetroFramework.Controls.MetroTextBox txtValorFinal;
         private System.Windows.Forms.Label lbStatusPed;
         private System.Windows.Forms.ComboBox cmbClientes;
         private System.Windows.Forms.ComboBox cmbUsuarios;
         private System.Windows.Forms.DataGridView GridItensPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDesconto;
     }
 }

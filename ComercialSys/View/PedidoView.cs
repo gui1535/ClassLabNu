@@ -87,8 +87,22 @@ namespace ComercialSys.View
             // Consultando o ID do codbar para prencher TextBox
             PC.ConsultaCodBar(txtCodbar.Text);
 
-            IPC.ListarItem(Convert.ToInt32(txtIdPed.Text), PC.Id, GridItensPedido, colunaPedido, colunaProduto, colunaQuantidade, colunaValor, colunaDesconto);
+            IPC.ListarItem(Convert.ToInt32(txtIdPed.Text), PC.Id, GridItensPedido, colunaPedido, colunaProduto, colunaValor, colunaQuantidade, colunaDesconto);
 
+            calculaTotal();
+        }
+
+        private void calculaTotal()
+        {
+
+            decimal total = 0
+                ;
+            foreach (DataGridViewRow row in GridItensPedido.Rows)
+            {
+                total += Convert.ToDecimal(row.Cells["colunaValor"].Value);
+            }
+
+            txtValorFinal.Text = Convert.ToDouble(total).ToString("C");
         }
     }
 }

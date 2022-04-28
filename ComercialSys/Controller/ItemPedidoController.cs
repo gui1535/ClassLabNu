@@ -38,6 +38,7 @@ namespace ComercialSys.Controller
             var lista = ListarItensPedido(_idped);
 
             dt.Rows.Add();
+
             // Listando clientes no DataGrid
             lista.ForEach(i =>
             {

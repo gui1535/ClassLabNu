@@ -90,10 +90,10 @@ namespace ComercialSys.Model
             while (dr.Read())
             {
                 lista.Add(new ItemPedidoModel(
-                    Convert.ToInt32(dr.GetValue(0)), // ID
-                    dr.GetInt32(1), // Nome
-                    dr.GetDouble(2), // Cpf
-                    dr.GetDouble(3), // Email
+                    Convert.ToInt32(dr.GetValue(0)),
+                    dr.GetInt32(1),
+                    dr.GetDouble(2),
+                    dr.GetDouble(3),
                     dr.GetDouble(4)
                     ));
             }

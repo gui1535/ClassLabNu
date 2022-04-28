@@ -22,7 +22,7 @@ namespace ComercialSys.Controller
             Inserir();
         }
 
-        public static void ListarItem
+        public  void ListarItem
         (
         int _idped,
         int _idprod,
@@ -34,17 +34,14 @@ namespace ComercialSys.Controller
         DataGridViewTextBoxColumn ClnDesconto
         )
         {
-            // Limpar Grid
-            dt.Rows.Clear();
-
             // Var para Listar clientes
-            var lista = ListarItensPedido(_idped, _idprod);
+            var lista = ListarItensPedido(_idped);
 
+            dt.Rows.Add();
             // Listando clientes no DataGrid
             lista.ForEach(i =>
             {
-                // Linhas 
-                dt.Rows.Add();
+                // Linhas
                 dt.Rows[lista.IndexOf(i)].Cells[CnlPed.Index].Value = i.Pedido; // Text -> Pedido
                 dt.Rows[lista.IndexOf(i)].Cells[ClnProd.Index].Value = i.Produto; // Text -> Produto
                 dt.Rows[lista.IndexOf(i)].Cells[ClnQuantidade.Index].Value = i.Quantidade; // Text -> Quantidade

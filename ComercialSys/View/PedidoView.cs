@@ -52,6 +52,8 @@ namespace ComercialSys.View
 
             // Inserindo item
             IPC.InserirItem(Convert.ToInt32(txtIdPed.Text), txtCodbar.Text, Convert.ToDouble(txtValor.Text), Convert.ToDouble(txtDesconto.Text));
+
+            ListaDataGrid();
         }
 
         private void txtCodbar_KeyUp(object sender, KeyEventArgs e)
@@ -79,16 +81,14 @@ namespace ComercialSys.View
         {
             ItemPedidoController IPC = new ItemPedidoController();
 
-            IPC.ListarItem(Convert.ToInt32(txtIdPed.Text), );
+            // Instancia do Controlador
+            ProdutoController PC = new ProdutoController();
 
-                        int _idped,
-        int _idprod,
-        DataGridView dt,
-        DataGridViewTextBoxColumn CnlPed,
-        DataGridViewTextBoxColumn ClnProd,
-        DataGridViewTextBoxColumn ClnQuantidade,
-        DataGridViewTextBoxColumn ClnValor,
-        DataGridViewTextBoxColumn ClnDesconto
+            // Consultando o ID do codbar para prencher TextBox
+            PC.ConsultaCodBar(txtCodbar.Text);
+
+            IPC.ListarItem(Convert.ToInt32(txtIdPed.Text), PC.Id, GridItensPedido, colunaPedido, colunaProduto, colunaQuantidade, colunaValor, colunaDesconto);
+
         }
     }
 }

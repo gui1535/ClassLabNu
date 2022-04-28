@@ -71,7 +71,7 @@ namespace ComercialSys.Model
             }
         }
 
-        public static List<ItemPedidoModel> ListarItensPedido(int _idPed, int _idProd)
+        public static List<ItemPedidoModel> ListarItensPedido(int _idPed)
         {
             // Nova lista
             List<ItemPedidoModel> lista = new List<ItemPedidoModel>();
@@ -81,7 +81,7 @@ namespace ComercialSys.Model
 
             // Comando
             banco.CommandType = CommandType.Text;
-            banco.CommandText = $"select * from itempedido where idped = {_idPed} and idprod = {_idProd}";
+            banco.CommandText = $"select * from itempedido where idped = {_idPed}";
 
             // Var para Consulta
             var dr = banco.ExecuteReader();

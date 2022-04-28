@@ -39,6 +39,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDataPed = new MetroFramework.Controls.MetroTextBox();
             this.gpItensPed = new System.Windows.Forms.GroupBox();
+            this.GridItensPedido = new System.Windows.Forms.DataGridView();
+            this.colunaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.txtDescricao = new MetroFramework.Controls.MetroTextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -55,16 +61,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtValorFPed = new MetroFramework.Controls.MetroTextBox();
             this.lbStatusPed = new System.Windows.Forms.Label();
-            this.GridCliente = new System.Windows.Forms.DataGridView();
-            this.colunaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpDadosPed.SuspendLayout();
             this.gpItensPed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).BeginInit();
             this.gpOperacoes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // gpDadosPed
@@ -217,7 +217,7 @@
             // 
             // gpItensPed
             // 
-            this.gpItensPed.Controls.Add(this.GridCliente);
+            this.gpItensPed.Controls.Add(this.GridItensPedido);
             this.gpItensPed.Controls.Add(this.label9);
             this.gpItensPed.Controls.Add(this.txtDescricao);
             this.gpItensPed.Controls.Add(this.label8);
@@ -235,6 +235,59 @@
             this.gpItensPed.TabIndex = 20;
             this.gpItensPed.TabStop = false;
             this.gpItensPed.Text = "Dados do Pedido";
+            // 
+            // GridItensPedido
+            // 
+            this.GridItensPedido.AllowUserToAddRows = false;
+            this.GridItensPedido.AllowUserToDeleteRows = false;
+            this.GridItensPedido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridItensPedido.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GridItensPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridItensPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colunaPedido,
+            this.colunaProduto,
+            this.colunaQuantidade,
+            this.colunaValor,
+            this.colunaDesconto});
+            this.GridItensPedido.GridColor = System.Drawing.Color.Black;
+            this.GridItensPedido.Location = new System.Drawing.Point(5, 84);
+            this.GridItensPedido.Margin = new System.Windows.Forms.Padding(2);
+            this.GridItensPedido.Name = "GridItensPedido";
+            this.GridItensPedido.ReadOnly = true;
+            this.GridItensPedido.RowHeadersVisible = false;
+            this.GridItensPedido.RowHeadersWidth = 51;
+            this.GridItensPedido.Size = new System.Drawing.Size(597, 245);
+            this.GridItensPedido.TabIndex = 26;
+            // 
+            // colunaPedido
+            // 
+            this.colunaPedido.HeaderText = "Pedido";
+            this.colunaPedido.Name = "colunaPedido";
+            this.colunaPedido.ReadOnly = true;
+            // 
+            // colunaProduto
+            // 
+            this.colunaProduto.HeaderText = "Produto";
+            this.colunaProduto.Name = "colunaProduto";
+            this.colunaProduto.ReadOnly = true;
+            // 
+            // colunaQuantidade
+            // 
+            this.colunaQuantidade.HeaderText = "Quantidade";
+            this.colunaQuantidade.Name = "colunaQuantidade";
+            this.colunaQuantidade.ReadOnly = true;
+            // 
+            // colunaValor
+            // 
+            this.colunaValor.HeaderText = "Valor";
+            this.colunaValor.Name = "colunaValor";
+            this.colunaValor.ReadOnly = true;
+            // 
+            // colunaDesconto
+            // 
+            this.colunaDesconto.HeaderText = "Desconto";
+            this.colunaDesconto.Name = "colunaDesconto";
+            this.colunaDesconto.ReadOnly = true;
             // 
             // label9
             // 
@@ -453,7 +506,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(645, 468);
+            this.label6.Location = new System.Drawing.Point(645, 473);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 17);
             this.label6.TabIndex = 21;
@@ -475,7 +528,7 @@
             this.txtValorFPed.CustomButton.Visible = false;
             this.txtValorFPed.Enabled = false;
             this.txtValorFPed.Lines = new string[0];
-            this.txtValorFPed.Location = new System.Drawing.Point(645, 491);
+            this.txtValorFPed.Location = new System.Drawing.Point(645, 496);
             this.txtValorFPed.MaxLength = 32767;
             this.txtValorFPed.Name = "txtValorFPed";
             this.txtValorFPed.PasswordChar = '\0';
@@ -499,59 +552,6 @@
             this.lbStatusPed.Size = new System.Drawing.Size(0, 25);
             this.lbStatusPed.TabIndex = 20;
             // 
-            // GridCliente
-            // 
-            this.GridCliente.AllowUserToAddRows = false;
-            this.GridCliente.AllowUserToDeleteRows = false;
-            this.GridCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.GridCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.GridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colunaPedido,
-            this.colunaProduto,
-            this.colunaQuantidade,
-            this.colunaValor,
-            this.colunaDesconto});
-            this.GridCliente.GridColor = System.Drawing.Color.Black;
-            this.GridCliente.Location = new System.Drawing.Point(5, 84);
-            this.GridCliente.Margin = new System.Windows.Forms.Padding(2);
-            this.GridCliente.Name = "GridCliente";
-            this.GridCliente.ReadOnly = true;
-            this.GridCliente.RowHeadersVisible = false;
-            this.GridCliente.RowHeadersWidth = 51;
-            this.GridCliente.Size = new System.Drawing.Size(597, 245);
-            this.GridCliente.TabIndex = 26;
-            // 
-            // colunaPedido
-            // 
-            this.colunaPedido.HeaderText = "Pedido";
-            this.colunaPedido.Name = "colunaPedido";
-            this.colunaPedido.ReadOnly = true;
-            // 
-            // colunaProduto
-            // 
-            this.colunaProduto.HeaderText = "Produto";
-            this.colunaProduto.Name = "colunaProduto";
-            this.colunaProduto.ReadOnly = true;
-            // 
-            // colunaQuantidade
-            // 
-            this.colunaQuantidade.HeaderText = "Quantidade";
-            this.colunaQuantidade.Name = "colunaQuantidade";
-            this.colunaQuantidade.ReadOnly = true;
-            // 
-            // colunaValor
-            // 
-            this.colunaValor.HeaderText = "Valor";
-            this.colunaValor.Name = "colunaValor";
-            this.colunaValor.ReadOnly = true;
-            // 
-            // colunaDesconto
-            // 
-            this.colunaDesconto.HeaderText = "Desconto";
-            this.colunaDesconto.Name = "colunaDesconto";
-            this.colunaDesconto.ReadOnly = true;
-            // 
             // PedidoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,8 +571,8 @@
             this.gpDadosPed.PerformLayout();
             this.gpItensPed.ResumeLayout(false);
             this.gpItensPed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).EndInit();
             this.gpOperacoes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -606,7 +606,7 @@
         private System.Windows.Forms.Label lbStatusPed;
         private System.Windows.Forms.ComboBox cmbClientes;
         private System.Windows.Forms.ComboBox cmbUsuarios;
-        private System.Windows.Forms.DataGridView GridCliente;
+        private System.Windows.Forms.DataGridView GridItensPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaQuantidade;

@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuarioView));
             this.btnListar = new MetroFramework.Controls.MetroButton();
             this.btnEditar = new MetroFramework.Controls.MetroButton();
             this.gpBoxPesq = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtPesqNome = new MetroFramework.Controls.MetroTextBox();
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -43,6 +46,11 @@
             this.colunaAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnInserir = new MetroFramework.Controls.MetroButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.btnBloq = new System.Windows.Forms.Button();
             this.btnDesbloq = new System.Windows.Forms.Button();
@@ -52,13 +60,6 @@
             this.txtNome = new MetroFramework.Controls.MetroTextBox();
             this.txtEmail = new MetroFramework.Controls.MetroTextBox();
             this.FileDialogImg = new System.Windows.Forms.OpenFileDialog();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.gpBoxPesq.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridUsuarios)).BeginInit();
@@ -104,6 +105,26 @@
             this.gpBoxPesq.TabIndex = 24;
             this.gpBoxPesq.TabStop = false;
             this.gpBoxPesq.Text = "Pesquisar";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label7.Location = new System.Drawing.Point(21, 51);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 17);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "ID";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label6.Location = new System.Drawing.Point(21, 141);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 17);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Nome";
             // 
             // txtPesqNome
             // 
@@ -293,6 +314,56 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastrar";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label5.Location = new System.Drawing.Point(7, 106);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 17);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Email";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label4.Location = new System.Drawing.Point(369, 106);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 17);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Senha";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label3.Location = new System.Drawing.Point(608, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 17);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Nivel";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label2.Location = new System.Drawing.Point(132, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 17);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Nome";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label1.Location = new System.Drawing.Point(7, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 17);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "ID";
+            // 
             // chkAtivo
             // 
             this.chkAtivo.AutoSize = true;
@@ -308,11 +379,12 @@
             // 
             // btnBloq
             // 
+            this.btnBloq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBloq.BackgroundImage")));
             this.btnBloq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBloq.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBloq.FlatAppearance.BorderSize = 0;
             this.btnBloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBloq.Location = new System.Drawing.Point(782, 163);
+            this.btnBloq.Location = new System.Drawing.Point(764, 183);
             this.btnBloq.Margin = new System.Windows.Forms.Padding(4);
             this.btnBloq.Name = "btnBloq";
             this.btnBloq.Size = new System.Drawing.Size(48, 52);
@@ -323,11 +395,12 @@
             // 
             // btnDesbloq
             // 
+            this.btnDesbloq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDesbloq.BackgroundImage")));
             this.btnDesbloq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDesbloq.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesbloq.FlatAppearance.BorderSize = 0;
             this.btnDesbloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesbloq.Location = new System.Drawing.Point(782, 163);
+            this.btnDesbloq.Location = new System.Drawing.Point(635, 166);
             this.btnDesbloq.Margin = new System.Windows.Forms.Padding(4);
             this.btnDesbloq.Name = "btnDesbloq";
             this.btnDesbloq.Size = new System.Drawing.Size(48, 52);
@@ -483,76 +556,6 @@
             // FileDialogImg
             // 
             this.FileDialogImg.FileName = "Imagem";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label1.Location = new System.Drawing.Point(7, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 17);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label2.Location = new System.Drawing.Point(132, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 17);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Nome";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label3.Location = new System.Drawing.Point(608, 108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 17);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Nivel";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label4.Location = new System.Drawing.Point(369, 106);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 17);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Senha";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label5.Location = new System.Drawing.Point(7, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 17);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Email";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label6.Location = new System.Drawing.Point(21, 141);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 17);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "Nome";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label7.Location = new System.Drawing.Point(21, 51);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(21, 17);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "ID";
             // 
             // UsuarioView
             // 

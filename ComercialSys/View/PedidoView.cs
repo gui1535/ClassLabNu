@@ -58,7 +58,6 @@ namespace ComercialSys.View
 
         private void txtCodbar_KeyUp(object sender, KeyEventArgs e)
         {
-
             // Verificando se o valor a pesquisar é vazio
             if (txtCodbar.Text.Length > 12)
             {
@@ -103,6 +102,18 @@ namespace ComercialSys.View
             }
 
             txtValorFinal.Text = Convert.ToDouble(total).ToString("C");
+        }
+
+        private void btnPesqCod_Click(object sender, EventArgs e)
+        {
+            ListaProdutosView LPW = new ListaProdutosView();
+
+            LPW.ShowDialog();
+        }
+
+        private void btnFecharPed_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

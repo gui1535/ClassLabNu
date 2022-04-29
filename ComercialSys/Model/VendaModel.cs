@@ -8,7 +8,7 @@ namespace ComercialSys.Model
         // Atributos
 
         public int Id { get; set; }
-        public DateTime Data { get; set; }
+        public string Data { get; set; }
         public string Status { get; set; }
         public double Desconto { get; set; }
 
@@ -18,14 +18,14 @@ namespace ComercialSys.Model
         {
         }
 
-        public VendaModel(int id, DateTime data, string status)
+        public VendaModel(int id, string data, string status)
         {
             Id = id;
             Data = data;
             Status = status;
         }
 
-        public VendaModel(DateTime data, double desconto)
+        public VendaModel(string data, double desconto)
         {
             Data = data;
             Desconto = desconto;

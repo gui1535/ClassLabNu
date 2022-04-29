@@ -1,5 +1,4 @@
-﻿using MetroFramework.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ComercialSys.View
 {
-    public partial class VendaView : Form
+    public partial class ListaProdutosView : Form
     {
-        public VendaView()
+        public ListaProdutosView()
         {
             InitializeComponent();
         }

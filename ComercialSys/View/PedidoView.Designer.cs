@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDataPed = new MetroFramework.Controls.MetroTextBox();
             this.gpItensPed = new System.Windows.Forms.GroupBox();
+            this.btnPesqCod = new MetroFramework.Controls.MetroButton();
             this.GridItensPedido = new System.Windows.Forms.DataGridView();
             this.colunaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -217,6 +218,7 @@
             // 
             // gpItensPed
             // 
+            this.gpItensPed.Controls.Add(this.btnPesqCod);
             this.gpItensPed.Controls.Add(this.GridItensPedido);
             this.gpItensPed.Controls.Add(this.label9);
             this.gpItensPed.Controls.Add(this.txtDescricao);
@@ -235,6 +237,16 @@
             this.gpItensPed.TabIndex = 20;
             this.gpItensPed.TabStop = false;
             this.gpItensPed.Text = "Dados do Pedido";
+            // 
+            // btnPesqCod
+            // 
+            this.btnPesqCod.Location = new System.Drawing.Point(122, 45);
+            this.btnPesqCod.Name = "btnPesqCod";
+            this.btnPesqCod.Size = new System.Drawing.Size(24, 23);
+            this.btnPesqCod.TabIndex = 27;
+            this.btnPesqCod.Text = "...";
+            this.btnPesqCod.UseSelectable = true;
+            this.btnPesqCod.Click += new System.EventHandler(this.btnPesqCod_Click);
             // 
             // GridItensPedido
             // 
@@ -293,7 +305,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(141, 25);
+            this.label9.Location = new System.Drawing.Point(159, 25);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 17);
             this.label9.TabIndex = 25;
@@ -314,7 +326,7 @@
             this.txtDescricao.CustomButton.UseSelectable = true;
             this.txtDescricao.CustomButton.Visible = false;
             this.txtDescricao.Lines = new string[0];
-            this.txtDescricao.Location = new System.Drawing.Point(144, 45);
+            this.txtDescricao.Location = new System.Drawing.Point(162, 45);
             this.txtDescricao.MaxLength = 32767;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.PasswordChar = '\0';
@@ -334,7 +346,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(397, 25);
+            this.label8.Location = new System.Drawing.Point(415, 25);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 17);
             this.label8.TabIndex = 23;
@@ -355,7 +367,7 @@
             this.txtDesconto.CustomButton.UseSelectable = true;
             this.txtDesconto.CustomButton.Visible = false;
             this.txtDesconto.Lines = new string[0];
-            this.txtDesconto.Location = new System.Drawing.Point(400, 45);
+            this.txtDesconto.Location = new System.Drawing.Point(418, 45);
             this.txtDesconto.MaxLength = 32767;
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.PasswordChar = '\0';
@@ -374,7 +386,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(269, 25);
+            this.label7.Location = new System.Drawing.Point(287, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 17);
             this.label7.TabIndex = 21;
@@ -426,7 +438,7 @@
             this.txtValor.CustomButton.UseSelectable = true;
             this.txtValor.CustomButton.Visible = false;
             this.txtValor.Lines = new string[0];
-            this.txtValor.Location = new System.Drawing.Point(272, 45);
+            this.txtValor.Location = new System.Drawing.Point(290, 45);
             this.txtValor.MaxLength = 32767;
             this.txtValor.Name = "txtValor";
             this.txtValor.PasswordChar = '\0';
@@ -483,6 +495,7 @@
             this.btnFecharPed.TabIndex = 22;
             this.btnFecharPed.Text = "Fechar Pedido";
             this.btnFecharPed.UseSelectable = true;
+            this.btnFecharPed.Click += new System.EventHandler(this.btnFecharPed_Click);
             // 
             // metroButton3
             // 
@@ -612,5 +625,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDesconto;
+        private MetroFramework.Controls.MetroButton btnPesqCod;
     }
 }

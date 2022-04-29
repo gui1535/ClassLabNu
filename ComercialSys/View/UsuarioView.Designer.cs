@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuarioView));
             this.btnListar = new MetroFramework.Controls.MetroButton();
             this.btnEditar = new MetroFramework.Controls.MetroButton();
             this.gpBoxPesq = new System.Windows.Forms.GroupBox();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.txtPesqNome = new MetroFramework.Controls.MetroTextBox();
-            this.lbIdPesq = new MetroFramework.Controls.MetroLabel();
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.GridUsuarios = new System.Windows.Forms.DataGridView();
@@ -50,16 +47,18 @@
             this.btnBloq = new System.Windows.Forms.Button();
             this.btnDesbloq = new System.Windows.Forms.Button();
             this.cmbNivel = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.txtSenha = new MetroFramework.Controls.MetroTextBox();
             this.txtId = new MetroFramework.Controls.MetroTextBox();
             this.txtNome = new MetroFramework.Controls.MetroTextBox();
             this.txtEmail = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.FileDialogImg = new System.Windows.Forms.OpenFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.gpBoxPesq.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridUsuarios)).BeginInit();
@@ -69,7 +68,7 @@
             // btnListar
             // 
             this.btnListar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnListar.Location = new System.Drawing.Point(817, 315);
+            this.btnListar.Location = new System.Drawing.Point(819, 280);
             this.btnListar.Margin = new System.Windows.Forms.Padding(5);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(150, 40);
@@ -82,7 +81,7 @@
             // 
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.Enabled = false;
-            this.btnEditar.Location = new System.Drawing.Point(459, 315);
+            this.btnEditar.Location = new System.Drawing.Point(461, 280);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(5);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(150, 40);
@@ -93,11 +92,11 @@
             // 
             // gpBoxPesq
             // 
-            this.gpBoxPesq.Controls.Add(this.metroLabel5);
+            this.gpBoxPesq.Controls.Add(this.label7);
+            this.gpBoxPesq.Controls.Add(this.label6);
             this.gpBoxPesq.Controls.Add(this.txtPesqNome);
-            this.gpBoxPesq.Controls.Add(this.lbIdPesq);
             this.gpBoxPesq.Controls.Add(this.txtIdPesq);
-            this.gpBoxPesq.Location = new System.Drawing.Point(886, 63);
+            this.gpBoxPesq.Location = new System.Drawing.Point(886, 28);
             this.gpBoxPesq.Margin = new System.Windows.Forms.Padding(4);
             this.gpBoxPesq.Name = "gpBoxPesq";
             this.gpBoxPesq.Padding = new System.Windows.Forms.Padding(4);
@@ -105,16 +104,6 @@
             this.gpBoxPesq.TabIndex = 24;
             this.gpBoxPesq.TabStop = false;
             this.gpBoxPesq.Text = "Pesquisar";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(24, 126);
-            this.metroLabel5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(46, 19);
-            this.metroLabel5.TabIndex = 19;
-            this.metroLabel5.Text = "Nome";
             // 
             // txtPesqNome
             // 
@@ -148,16 +137,6 @@
             this.txtPesqNome.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPesqNome.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtPesqNome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPesqNome_KeyUp);
-            // 
-            // lbIdPesq
-            // 
-            this.lbIdPesq.AutoSize = true;
-            this.lbIdPesq.Location = new System.Drawing.Point(24, 42);
-            this.lbIdPesq.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lbIdPesq.Name = "lbIdPesq";
-            this.lbIdPesq.Size = new System.Drawing.Size(21, 19);
-            this.lbIdPesq.TabIndex = 13;
-            this.lbIdPesq.Text = "ID";
             // 
             // txtIdPesq
             // 
@@ -195,7 +174,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.GridUsuarios);
-            this.groupBox1.Location = new System.Drawing.Point(29, 356);
+            this.groupBox1.Location = new System.Drawing.Point(29, 334);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -281,7 +260,7 @@
             // 
             this.btnInserir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInserir.Enabled = false;
-            this.btnInserir.Location = new System.Drawing.Point(638, 315);
+            this.btnInserir.Location = new System.Drawing.Point(640, 280);
             this.btnInserir.Margin = new System.Windows.Forms.Padding(5);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(150, 40);
@@ -292,20 +271,20 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.chkAtivo);
             this.groupBox2.Controls.Add(this.btnBloq);
             this.groupBox2.Controls.Add(this.btnDesbloq);
             this.groupBox2.Controls.Add(this.cmbNivel);
-            this.groupBox2.Controls.Add(this.metroLabel6);
             this.groupBox2.Controls.Add(this.txtSenha);
             this.groupBox2.Controls.Add(this.txtId);
             this.groupBox2.Controls.Add(this.txtNome);
             this.groupBox2.Controls.Add(this.txtEmail);
-            this.groupBox2.Controls.Add(this.metroLabel1);
-            this.groupBox2.Controls.Add(this.metroLabel4);
-            this.groupBox2.Controls.Add(this.metroLabel2);
-            this.groupBox2.Controls.Add(this.metroLabel3);
-            this.groupBox2.Location = new System.Drawing.Point(29, 63);
+            this.groupBox2.Location = new System.Drawing.Point(29, 28);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -319,7 +298,7 @@
             this.chkAtivo.AutoSize = true;
             this.chkAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkAtivo.Enabled = false;
-            this.chkAtivo.Location = new System.Drawing.Point(610, 64);
+            this.chkAtivo.Location = new System.Drawing.Point(610, 44);
             this.chkAtivo.Margin = new System.Windows.Forms.Padding(5);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(61, 21);
@@ -329,12 +308,11 @@
             // 
             // btnBloq
             // 
-            this.btnBloq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBloq.BackgroundImage")));
             this.btnBloq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBloq.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBloq.FlatAppearance.BorderSize = 0;
             this.btnBloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBloq.Location = new System.Drawing.Point(782, 183);
+            this.btnBloq.Location = new System.Drawing.Point(782, 163);
             this.btnBloq.Margin = new System.Windows.Forms.Padding(4);
             this.btnBloq.Name = "btnBloq";
             this.btnBloq.Size = new System.Drawing.Size(48, 52);
@@ -345,12 +323,11 @@
             // 
             // btnDesbloq
             // 
-            this.btnDesbloq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDesbloq.BackgroundImage")));
             this.btnDesbloq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDesbloq.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesbloq.FlatAppearance.BorderSize = 0;
             this.btnDesbloq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesbloq.Location = new System.Drawing.Point(782, 183);
+            this.btnDesbloq.Location = new System.Drawing.Point(782, 163);
             this.btnDesbloq.Margin = new System.Windows.Forms.Padding(4);
             this.btnDesbloq.Name = "btnDesbloq";
             this.btnDesbloq.Size = new System.Drawing.Size(48, 52);
@@ -363,24 +340,13 @@
             this.cmbNivel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbNivel.FormattingEnabled = true;
             this.cmbNivel.ItemHeight = 23;
-            this.cmbNivel.Location = new System.Drawing.Point(609, 141);
+            this.cmbNivel.Location = new System.Drawing.Point(610, 129);
             this.cmbNivel.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNivel.Name = "cmbNivel";
             this.cmbNivel.Size = new System.Drawing.Size(150, 29);
             this.cmbNivel.TabIndex = 19;
             this.cmbNivel.UseSelectable = true;
             this.cmbNivel.SelectedIndexChanged += new System.EventHandler(this.cmbNivel_SelectedIndexChanged);
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(609, 112);
-            this.metroLabel6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(39, 19);
-            this.metroLabel6.TabIndex = 18;
-            this.metroLabel6.Text = "Nivel";
             // 
             // txtSenha
             // 
@@ -399,7 +365,7 @@
             this.txtSenha.CustomButton.Visible = false;
             this.txtSenha.Enabled = false;
             this.txtSenha.Lines = new string[0];
-            this.txtSenha.Location = new System.Drawing.Point(372, 147);
+            this.txtSenha.Location = new System.Drawing.Point(372, 127);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(5);
             this.txtSenha.MaxLength = 12;
             this.txtSenha.Name = "txtSenha";
@@ -432,7 +398,7 @@
             this.txtId.CustomButton.Visible = false;
             this.txtId.Enabled = false;
             this.txtId.Lines = new string[0];
-            this.txtId.Location = new System.Drawing.Point(9, 68);
+            this.txtId.Location = new System.Drawing.Point(9, 48);
             this.txtId.Margin = new System.Windows.Forms.Padding(5);
             this.txtId.MaxLength = 32767;
             this.txtId.Name = "txtId";
@@ -465,7 +431,7 @@
             this.txtNome.CustomButton.Visible = false;
             this.txtNome.Enabled = false;
             this.txtNome.Lines = new string[0];
-            this.txtNome.Location = new System.Drawing.Point(135, 68);
+            this.txtNome.Location = new System.Drawing.Point(135, 48);
             this.txtNome.Margin = new System.Windows.Forms.Padding(5);
             this.txtNome.MaxLength = 60;
             this.txtNome.Name = "txtNome";
@@ -498,7 +464,7 @@
             this.txtEmail.CustomButton.Visible = false;
             this.txtEmail.Enabled = false;
             this.txtEmail.Lines = new string[0];
-            this.txtEmail.Location = new System.Drawing.Point(9, 147);
+            this.txtEmail.Location = new System.Drawing.Point(9, 127);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmail.MaxLength = 60;
             this.txtEmail.Name = "txtEmail";
@@ -514,59 +480,85 @@
             this.txtEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtEmail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(9, 38);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(23, 19);
-            this.metroLabel1.TabIndex = 4;
-            this.metroLabel1.Text = "ID";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(9, 117);
-            this.metroLabel4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(41, 19);
-            this.metroLabel4.TabIndex = 7;
-            this.metroLabel4.Text = "Email";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(135, 38);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(46, 19);
-            this.metroLabel2.TabIndex = 5;
-            this.metroLabel2.Text = "Nome";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(371, 117);
-            this.metroLabel3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(46, 19);
-            this.metroLabel3.TabIndex = 6;
-            this.metroLabel3.Text = "Senha";
-            // 
             // FileDialogImg
             // 
             this.FileDialogImg.FileName = "Imagem";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label1.Location = new System.Drawing.Point(7, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 17);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label2.Location = new System.Drawing.Point(132, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 17);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Nome";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label3.Location = new System.Drawing.Point(608, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 17);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Nivel";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label4.Location = new System.Drawing.Point(369, 106);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 17);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Senha";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label5.Location = new System.Drawing.Point(7, 106);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 17);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Email";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label6.Location = new System.Drawing.Point(21, 141);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 17);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Nome";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label7.Location = new System.Drawing.Point(21, 51);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 17);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "ID";
             // 
             // UsuarioView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 708);
+            this.ClientSize = new System.Drawing.Size(1095, 695);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.gpBoxPesq);
@@ -594,9 +586,7 @@
         private MetroFramework.Controls.MetroButton btnListar;
         private MetroFramework.Controls.MetroButton btnEditar;
         private System.Windows.Forms.GroupBox gpBoxPesq;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroTextBox txtPesqNome;
-        private MetroFramework.Controls.MetroLabel lbIdPesq;
         private MetroFramework.Controls.MetroTextBox txtIdPesq;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView GridUsuarios;
@@ -606,12 +596,7 @@
         private MetroFramework.Controls.MetroTextBox txtId;
         private MetroFramework.Controls.MetroTextBox txtNome;
         private MetroFramework.Controls.MetroTextBox txtEmail;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroComboBox cmbNivel;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
         private System.Windows.Forms.OpenFileDialog FileDialogImg;
         private System.Windows.Forms.Button btnDesbloq;
         private System.Windows.Forms.Button btnBloq;
@@ -622,5 +607,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaSenhaInv;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaNivel;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colunaAtivo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

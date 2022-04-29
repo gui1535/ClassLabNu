@@ -84,22 +84,22 @@ namespace ComercialSys.View
             this.txtNumero = new MetroFramework.Controls.MetroTextBox();
             this.txtCep = new MetroFramework.Controls.MetroTextBox();
             this.gpboxNumeros = new System.Windows.Forms.GroupBox();
-            this.metroComboBox4 = new MetroFramework.Controls.MetroComboBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.cmbTipo4 = new MetroFramework.Controls.MetroComboBox();
+            this.mskTelefone4 = new System.Windows.Forms.MaskedTextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.cmbTipo3 = new MetroFramework.Controls.MetroComboBox();
+            this.mskTelefone3 = new System.Windows.Forms.MaskedTextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.cmbTipo2 = new MetroFramework.Controls.MetroComboBox();
+            this.mskTelefone2 = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.cmbTipo1 = new MetroFramework.Controls.MetroComboBox();
+            this.mskTelefone1 = new System.Windows.Forms.MaskedTextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.btnInserir = new System.Windows.Forms.Button();
@@ -293,7 +293,7 @@ namespace ComercialSys.View
             this.colunaId.MinimumWidth = 6;
             this.colunaId.Name = "colunaId";
             this.colunaId.ReadOnly = true;
-            this.colunaId.Width = 53;
+            this.colunaId.Width = 44;
             // 
             // colunaObs
             // 
@@ -345,7 +345,7 @@ namespace ComercialSys.View
             this.colunaAtivo.MinimumWidth = 6;
             this.colunaAtivo.Name = "colunaAtivo";
             this.colunaAtivo.ReadOnly = true;
-            this.colunaAtivo.Width = 54;
+            this.colunaAtivo.Width = 47;
             // 
             // groupBox2
             // 
@@ -427,7 +427,7 @@ namespace ComercialSys.View
             this.label19.Location = new System.Drawing.Point(22, 177);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(109, 20);
+            this.label19.Size = new System.Drawing.Size(88, 17);
             this.label19.TabIndex = 36;
             this.label19.Text = "Observações";
             // 
@@ -437,7 +437,7 @@ namespace ComercialSys.View
             this.label1.Location = new System.Drawing.Point(22, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 20);
+            this.label1.Size = new System.Drawing.Size(20, 17);
             this.label1.TabIndex = 29;
             this.label1.Text = "ID";
             // 
@@ -447,7 +447,7 @@ namespace ComercialSys.View
             this.label5.Location = new System.Drawing.Point(328, 75);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 20);
+            this.label5.Size = new System.Drawing.Size(30, 17);
             this.label5.TabIndex = 33;
             this.label5.Text = "CPF";
             // 
@@ -457,7 +457,7 @@ namespace ComercialSys.View
             this.label4.Location = new System.Drawing.Point(22, 125);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 20);
+            this.label4.Size = new System.Drawing.Size(39, 17);
             this.label4.TabIndex = 32;
             this.label4.Text = "Email";
             // 
@@ -467,7 +467,7 @@ namespace ComercialSys.View
             this.label2.Location = new System.Drawing.Point(20, 73);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 20);
+            this.label2.Size = new System.Drawing.Size(44, 17);
             this.label2.TabIndex = 30;
             this.label2.Text = "Nome";
             // 
@@ -477,7 +477,7 @@ namespace ComercialSys.View
             this.label3.Location = new System.Drawing.Point(120, 17);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 20);
+            this.label3.Size = new System.Drawing.Size(96, 17);
             this.label3.TabIndex = 31;
             this.label3.Text = "Data Cadastro";
             // 
@@ -489,7 +489,7 @@ namespace ComercialSys.View
             this.chkAtivo.Location = new System.Drawing.Point(370, 39);
             this.chkAtivo.Margin = new System.Windows.Forms.Padding(4);
             this.chkAtivo.Name = "chkAtivo";
-            this.chkAtivo.Size = new System.Drawing.Size(70, 24);
+            this.chkAtivo.Size = new System.Drawing.Size(60, 21);
             this.chkAtivo.TabIndex = 17;
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
@@ -502,9 +502,9 @@ namespace ComercialSys.View
             this.txtDataCad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtDataCad.Location = new System.Drawing.Point(124, 39);
             this.txtDataCad.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDataCad.MinimumSize = new System.Drawing.Size(0, 30);
+            this.txtDataCad.MinimumSize = new System.Drawing.Size(0, 29);
             this.txtDataCad.Name = "txtDataCad";
-            this.txtDataCad.Size = new System.Drawing.Size(201, 30);
+            this.txtDataCad.Size = new System.Drawing.Size(201, 29);
             this.txtDataCad.TabIndex = 28;
             // 
             // btnDesbloquear
@@ -624,7 +624,7 @@ namespace ComercialSys.View
             this.label17.Location = new System.Drawing.Point(259, 22);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(53, 20);
+            this.label17.Size = new System.Drawing.Size(44, 17);
             this.label17.TabIndex = 35;
             this.label17.Text = "Nome";
             // 
@@ -634,7 +634,7 @@ namespace ComercialSys.View
             this.label16.Location = new System.Drawing.Point(103, 22);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(37, 20);
+            this.label16.Size = new System.Drawing.Size(30, 17);
             this.label16.TabIndex = 34;
             this.label16.Text = "CPF";
             // 
@@ -644,7 +644,7 @@ namespace ComercialSys.View
             this.label15.Location = new System.Drawing.Point(8, 22);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(25, 20);
+            this.label15.Size = new System.Drawing.Size(20, 17);
             this.label15.TabIndex = 33;
             this.label15.Text = "ID";
             // 
@@ -731,7 +731,7 @@ namespace ComercialSys.View
             this.lbUf.Location = new System.Drawing.Point(512, 22);
             this.lbUf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUf.Name = "lbUf";
-            this.lbUf.Size = new System.Drawing.Size(27, 20);
+            this.lbUf.Size = new System.Drawing.Size(22, 17);
             this.lbUf.TabIndex = 70;
             this.lbUf.Text = "UF";
             // 
@@ -802,7 +802,7 @@ namespace ComercialSys.View
             this.label14.Location = new System.Drawing.Point(295, 161);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(37, 20);
+            this.label14.Size = new System.Drawing.Size(32, 17);
             this.label14.TabIndex = 42;
             this.label14.Text = "Tipo";
             // 
@@ -812,7 +812,7 @@ namespace ComercialSys.View
             this.label13.Location = new System.Drawing.Point(18, 167);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(114, 20);
+            this.label13.Size = new System.Drawing.Size(94, 17);
             this.label13.TabIndex = 41;
             this.label13.Text = "Complemento";
             // 
@@ -822,7 +822,7 @@ namespace ComercialSys.View
             this.label12.Location = new System.Drawing.Point(16, 90);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(64, 20);
+            this.label12.Size = new System.Drawing.Size(52, 17);
             this.label12.TabIndex = 40;
             this.label12.Text = "Cidade";
             // 
@@ -832,7 +832,7 @@ namespace ComercialSys.View
             this.label11.Location = new System.Drawing.Point(204, 90);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 20);
+            this.label11.Size = new System.Drawing.Size(42, 17);
             this.label11.TabIndex = 39;
             this.label11.Text = "Bairro";
             // 
@@ -842,7 +842,7 @@ namespace ComercialSys.View
             this.label10.Location = new System.Drawing.Point(439, 90);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 20);
+            this.label10.Size = new System.Drawing.Size(55, 17);
             this.label10.TabIndex = 38;
             this.label10.Text = "Numero";
             // 
@@ -852,7 +852,7 @@ namespace ComercialSys.View
             this.label9.Location = new System.Drawing.Point(352, 21);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 20);
+            this.label9.Size = new System.Drawing.Size(48, 17);
             this.label9.TabIndex = 37;
             this.label9.Text = "Estado";
             // 
@@ -862,7 +862,7 @@ namespace ComercialSys.View
             this.label8.Location = new System.Drawing.Point(103, 21);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 20);
+            this.label8.Size = new System.Drawing.Size(77, 17);
             this.label8.TabIndex = 36;
             this.label8.Text = "Logradouro";
             // 
@@ -872,14 +872,14 @@ namespace ComercialSys.View
             this.label7.Location = new System.Drawing.Point(18, 24);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 20);
+            this.label7.Size = new System.Drawing.Size(30, 17);
             this.label7.TabIndex = 32;
             this.label7.Text = "CEP";
             // 
             // cmbTipo
             // 
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.ItemHeight = 24;
+            this.cmbTipo.ItemHeight = 23;
             this.cmbTipo.Items.AddRange(new object[] {
             "Avenida",
             "Campo",
@@ -898,7 +898,7 @@ namespace ComercialSys.View
             this.cmbTipo.Location = new System.Drawing.Point(299, 183);
             this.cmbTipo.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(197, 30);
+            this.cmbTipo.Size = new System.Drawing.Size(197, 29);
             this.cmbTipo.TabIndex = 30;
             this.cmbTipo.UseSelectable = true;
             // 
@@ -1133,22 +1133,22 @@ namespace ComercialSys.View
             // 
             // gpboxNumeros
             // 
-            this.gpboxNumeros.Controls.Add(this.metroComboBox4);
-            this.gpboxNumeros.Controls.Add(this.maskedTextBox4);
+            this.gpboxNumeros.Controls.Add(this.cmbTipo4);
+            this.gpboxNumeros.Controls.Add(this.mskTelefone4);
             this.gpboxNumeros.Controls.Add(this.label24);
             this.gpboxNumeros.Controls.Add(this.label25);
-            this.gpboxNumeros.Controls.Add(this.metroComboBox2);
-            this.gpboxNumeros.Controls.Add(this.maskedTextBox3);
+            this.gpboxNumeros.Controls.Add(this.cmbTipo3);
+            this.gpboxNumeros.Controls.Add(this.mskTelefone3);
             this.gpboxNumeros.Controls.Add(this.label20);
             this.gpboxNumeros.Controls.Add(this.label23);
-            this.gpboxNumeros.Controls.Add(this.metroComboBox1);
-            this.gpboxNumeros.Controls.Add(this.maskedTextBox1);
+            this.gpboxNumeros.Controls.Add(this.cmbTipo2);
+            this.gpboxNumeros.Controls.Add(this.mskTelefone2);
             this.gpboxNumeros.Controls.Add(this.label6);
             this.gpboxNumeros.Controls.Add(this.label18);
             this.gpboxNumeros.Controls.Add(this.button2);
             this.gpboxNumeros.Controls.Add(this.button3);
-            this.gpboxNumeros.Controls.Add(this.metroComboBox3);
-            this.gpboxNumeros.Controls.Add(this.maskedTextBox2);
+            this.gpboxNumeros.Controls.Add(this.cmbTipo1);
+            this.gpboxNumeros.Controls.Add(this.mskTelefone1);
             this.gpboxNumeros.Controls.Add(this.label21);
             this.gpboxNumeros.Controls.Add(this.label22);
             this.gpboxNumeros.Cursor = System.Windows.Forms.Cursors.Default;
@@ -1162,29 +1162,29 @@ namespace ComercialSys.View
             this.gpboxNumeros.TabStop = false;
             this.gpboxNumeros.Text = "Telefone";
             // 
-            // metroComboBox4
+            // cmbTipo4
             // 
-            this.metroComboBox4.FormattingEnabled = true;
-            this.metroComboBox4.ItemHeight = 24;
-            this.metroComboBox4.Items.AddRange(new object[] {
+            this.cmbTipo4.FormattingEnabled = true;
+            this.cmbTipo4.ItemHeight = 23;
+            this.cmbTipo4.Items.AddRange(new object[] {
             "Residencial",
             "Comercial",
             "Celular"});
-            this.metroComboBox4.Location = new System.Drawing.Point(424, 133);
-            this.metroComboBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox4.Name = "metroComboBox4";
-            this.metroComboBox4.Size = new System.Drawing.Size(100, 30);
-            this.metroComboBox4.TabIndex = 87;
-            this.metroComboBox4.UseSelectable = true;
+            this.cmbTipo4.Location = new System.Drawing.Point(424, 133);
+            this.cmbTipo4.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTipo4.Name = "cmbTipo4";
+            this.cmbTipo4.Size = new System.Drawing.Size(100, 29);
+            this.cmbTipo4.TabIndex = 87;
+            this.cmbTipo4.UseSelectable = true;
             // 
-            // maskedTextBox4
+            // mskTelefone4
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(307, 139);
-            this.maskedTextBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox4.Mask = "(00) 00000-9999";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(90, 26);
-            this.maskedTextBox4.TabIndex = 86;
+            this.mskTelefone4.Location = new System.Drawing.Point(307, 139);
+            this.mskTelefone4.Margin = new System.Windows.Forms.Padding(2);
+            this.mskTelefone4.Mask = "(00) 00000-9999";
+            this.mskTelefone4.Name = "mskTelefone4";
+            this.mskTelefone4.Size = new System.Drawing.Size(90, 22);
+            this.mskTelefone4.TabIndex = 86;
             // 
             // label24
             // 
@@ -1192,7 +1192,7 @@ namespace ComercialSys.View
             this.label24.Location = new System.Drawing.Point(421, 114);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(37, 20);
+            this.label24.Size = new System.Drawing.Size(32, 17);
             this.label24.TabIndex = 85;
             this.label24.Text = "Tipo";
             // 
@@ -1202,33 +1202,33 @@ namespace ComercialSys.View
             this.label25.Location = new System.Drawing.Point(303, 114);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(71, 20);
+            this.label25.Size = new System.Drawing.Size(59, 17);
             this.label25.TabIndex = 84;
             this.label25.Text = "Telefone";
             // 
-            // metroComboBox2
+            // cmbTipo3
             // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 24;
-            this.metroComboBox2.Items.AddRange(new object[] {
+            this.cmbTipo3.FormattingEnabled = true;
+            this.cmbTipo3.ItemHeight = 23;
+            this.cmbTipo3.Items.AddRange(new object[] {
             "Residencial",
             "Comercial",
             "Celular"});
-            this.metroComboBox2.Location = new System.Drawing.Point(424, 49);
-            this.metroComboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(100, 30);
-            this.metroComboBox2.TabIndex = 83;
-            this.metroComboBox2.UseSelectable = true;
+            this.cmbTipo3.Location = new System.Drawing.Point(424, 49);
+            this.cmbTipo3.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTipo3.Name = "cmbTipo3";
+            this.cmbTipo3.Size = new System.Drawing.Size(100, 29);
+            this.cmbTipo3.TabIndex = 83;
+            this.cmbTipo3.UseSelectable = true;
             // 
-            // maskedTextBox3
+            // mskTelefone3
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(307, 55);
-            this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox3.Mask = "(00) 00000-9999";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(90, 26);
-            this.maskedTextBox3.TabIndex = 82;
+            this.mskTelefone3.Location = new System.Drawing.Point(307, 55);
+            this.mskTelefone3.Margin = new System.Windows.Forms.Padding(2);
+            this.mskTelefone3.Mask = "(00) 00000-9999";
+            this.mskTelefone3.Name = "mskTelefone3";
+            this.mskTelefone3.Size = new System.Drawing.Size(90, 22);
+            this.mskTelefone3.TabIndex = 82;
             // 
             // label20
             // 
@@ -1236,7 +1236,7 @@ namespace ComercialSys.View
             this.label20.Location = new System.Drawing.Point(421, 30);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(37, 20);
+            this.label20.Size = new System.Drawing.Size(32, 17);
             this.label20.TabIndex = 81;
             this.label20.Text = "Tipo";
             // 
@@ -1246,33 +1246,33 @@ namespace ComercialSys.View
             this.label23.Location = new System.Drawing.Point(303, 30);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(71, 20);
+            this.label23.Size = new System.Drawing.Size(59, 17);
             this.label23.TabIndex = 80;
             this.label23.Text = "Telefone";
             // 
-            // metroComboBox1
+            // cmbTipo2
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 24;
-            this.metroComboBox1.Items.AddRange(new object[] {
+            this.cmbTipo2.FormattingEnabled = true;
+            this.cmbTipo2.ItemHeight = 23;
+            this.cmbTipo2.Items.AddRange(new object[] {
             "Residencial",
             "Comercial",
             "Celular"});
-            this.metroComboBox1.Location = new System.Drawing.Point(148, 127);
-            this.metroComboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(100, 30);
-            this.metroComboBox1.TabIndex = 79;
-            this.metroComboBox1.UseSelectable = true;
+            this.cmbTipo2.Location = new System.Drawing.Point(148, 127);
+            this.cmbTipo2.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTipo2.Name = "cmbTipo2";
+            this.cmbTipo2.Size = new System.Drawing.Size(100, 29);
+            this.cmbTipo2.TabIndex = 79;
+            this.cmbTipo2.UseSelectable = true;
             // 
-            // maskedTextBox1
+            // mskTelefone2
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(31, 133);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox1.Mask = "(00) 00000-9999";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(90, 26);
-            this.maskedTextBox1.TabIndex = 78;
+            this.mskTelefone2.Location = new System.Drawing.Point(31, 133);
+            this.mskTelefone2.Margin = new System.Windows.Forms.Padding(2);
+            this.mskTelefone2.Mask = "(00) 00000-9999";
+            this.mskTelefone2.Name = "mskTelefone2";
+            this.mskTelefone2.Size = new System.Drawing.Size(90, 22);
+            this.mskTelefone2.TabIndex = 78;
             // 
             // label6
             // 
@@ -1280,7 +1280,7 @@ namespace ComercialSys.View
             this.label6.Location = new System.Drawing.Point(145, 108);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 20);
+            this.label6.Size = new System.Drawing.Size(32, 17);
             this.label6.TabIndex = 77;
             this.label6.Text = "Tipo";
             // 
@@ -1290,7 +1290,7 @@ namespace ComercialSys.View
             this.label18.Location = new System.Drawing.Point(27, 108);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(71, 20);
+            this.label18.Size = new System.Drawing.Size(59, 17);
             this.label18.TabIndex = 76;
             this.label18.Text = "Telefone";
             // 
@@ -1319,30 +1319,31 @@ namespace ComercialSys.View
             this.button3.Size = new System.Drawing.Size(33, 32);
             this.button3.TabIndex = 69;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.buttonAddTelefone_Click);
             // 
-            // metroComboBox3
+            // cmbTipo1
             // 
-            this.metroComboBox3.FormattingEnabled = true;
-            this.metroComboBox3.ItemHeight = 24;
-            this.metroComboBox3.Items.AddRange(new object[] {
+            this.cmbTipo1.FormattingEnabled = true;
+            this.cmbTipo1.ItemHeight = 23;
+            this.cmbTipo1.Items.AddRange(new object[] {
             "Residencial",
             "Comercial",
             "Celular"});
-            this.metroComboBox3.Location = new System.Drawing.Point(148, 42);
-            this.metroComboBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.metroComboBox3.Name = "metroComboBox3";
-            this.metroComboBox3.Size = new System.Drawing.Size(100, 30);
-            this.metroComboBox3.TabIndex = 75;
-            this.metroComboBox3.UseSelectable = true;
+            this.cmbTipo1.Location = new System.Drawing.Point(148, 42);
+            this.cmbTipo1.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTipo1.Name = "cmbTipo1";
+            this.cmbTipo1.Size = new System.Drawing.Size(100, 29);
+            this.cmbTipo1.TabIndex = 75;
+            this.cmbTipo1.UseSelectable = true;
             // 
-            // maskedTextBox2
+            // mskTelefone1
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(31, 48);
-            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox2.Mask = "(00) 00000-9999";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(90, 26);
-            this.maskedTextBox2.TabIndex = 71;
+            this.mskTelefone1.Location = new System.Drawing.Point(31, 48);
+            this.mskTelefone1.Margin = new System.Windows.Forms.Padding(2);
+            this.mskTelefone1.Mask = "(00) 00000-9999";
+            this.mskTelefone1.Name = "mskTelefone1";
+            this.mskTelefone1.Size = new System.Drawing.Size(90, 22);
+            this.mskTelefone1.TabIndex = 71;
             // 
             // label21
             // 
@@ -1350,7 +1351,7 @@ namespace ComercialSys.View
             this.label21.Location = new System.Drawing.Point(145, 23);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(37, 20);
+            this.label21.Size = new System.Drawing.Size(32, 17);
             this.label21.TabIndex = 70;
             this.label21.Text = "Tipo";
             // 
@@ -1360,7 +1361,7 @@ namespace ComercialSys.View
             this.label22.Location = new System.Drawing.Point(27, 23);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(71, 20);
+            this.label22.Size = new System.Drawing.Size(59, 17);
             this.label22.TabIndex = 69;
             this.label22.Text = "Telefone";
             // 
@@ -1451,7 +1452,7 @@ namespace ComercialSys.View
             this.GridEndereco.ReadOnly = true;
             this.GridEndereco.RowHeadersVisible = false;
             this.GridEndereco.RowHeadersWidth = 51;
-            this.GridEndereco.Size = new System.Drawing.Size(493, 223);
+            this.GridEndereco.Size = new System.Drawing.Size(493, 219);
             this.GridEndereco.TabIndex = 10;
             this.GridEndereco.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridEndereco_CellDoubleClick);
             // 
@@ -1526,14 +1527,14 @@ namespace ComercialSys.View
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(505, 250);
+            this.groupBox5.Size = new System.Drawing.Size(505, 246);
             this.groupBox5.TabIndex = 22;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Endereços";
             // 
             // ClienteView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 742);
             this.Controls.Add(this.gpboxEnderecos);
@@ -1616,8 +1617,8 @@ namespace ComercialSys.View
         private MetroFramework.Controls.MetroTextBox txtObs;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btnInserir;
-        private MetroFramework.Controls.MetroComboBox metroComboBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private MetroFramework.Controls.MetroComboBox cmbTipo1;
+        private System.Windows.Forms.MaskedTextBox mskTelefone1;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button btnEditar;
@@ -1647,16 +1648,16 @@ namespace ComercialSys.View
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDataCad;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colunaAtivo;
-        private MetroFramework.Controls.MetroComboBox metroComboBox4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private MetroFramework.Controls.MetroComboBox cmbTipo4;
+        private System.Windows.Forms.MaskedTextBox mskTelefone4;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private MetroFramework.Controls.MetroComboBox cmbTipo3;
+        private System.Windows.Forms.MaskedTextBox mskTelefone3;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label23;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private MetroFramework.Controls.MetroComboBox cmbTipo2;
+        private System.Windows.Forms.MaskedTextBox mskTelefone2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label18;
     }

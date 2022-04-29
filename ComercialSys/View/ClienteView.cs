@@ -1,4 +1,5 @@
 ﻿using ComercialSys.Controller;
+using ComercialSys.Model;
 using System;
 using System.Windows.Forms;
 
@@ -17,9 +18,6 @@ namespace ComercialSys.View
             ListarDataGrid();
         }
 
-        public ClienteView()
-        {
-        }
         // Form Load ---------------------------------------------------------------------------------------------------------------
 
         private void Form1_Load(object sender, EventArgs e)
@@ -174,7 +172,19 @@ namespace ComercialSys.View
             txtDataCad.Text = clienteC.dataCad;
             txtObs.Text = clienteC.Obs;
 
+            NumeroModel NM = new NumeroModel();
+
+            NM.ListarTelefonesCli(Convert.ToInt32(clienteC.Id));
+
+            mskTelefone1.Text = Convert.ToString(NM.Numero);
+
+            cmbTipo1.Text = NM.Tipo;
+            cmbTipo2.Text = NM.Tipo;
+
+
+
             btnBloquear_Click(sender, e);
+
         }
 
         // Inserir Clientes ---------------------------------------------------------------------------------------------------------------
@@ -442,15 +452,48 @@ namespace ComercialSys.View
             endC.GridEndereco_DoubleClick(GridEndereco, e);
 
             // Atributos
-            txtCep.Text = endC.CepCli.Trim();
-            txtLogradouro.Text = endC.LogradouroCli;
-            txtEstado.Text = endC.EstadoCli;
-            txtUf.Text = endC.UfCli;
-            txtCidade.Text = endC.CidadeCli;
-            txtNumero.Text = endC.NumeroCli;
-            txtBairro.Text = endC.BairroCli;
-            txtComplemento.Text = endC.ComplementoCli;
-            cmbTipo.Text = endC.TipoCli;
+            txtCep.Text = endC.Cep.Trim();
+            txtLogradouro.Text = endC.Logradouro;
+            txtEstado.Text = endC.Estado;
+            txtUf.Text = endC.Uf;
+            txtCidade.Text = endC.Cidade;
+            txtNumero.Text = endC.Numero;
+            txtBairro.Text = endC.Bairro;
+            txtComplemento.Text = endC.Complemento;
+            cmbTipo.Text = endC.Tipo;
+        }
+
+        private void buttonAddTelefone_Click(object sender, EventArgs e)
+        {
+            // Controlador
+            NumeroController NC = new NumeroController();
+
+
+            // Inserindo telefones
+            if (mskTelefone1.Text.Length > 9)
+            {
+                mskTelefone1.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+
+                NC.AdicionarTelefone(Convert.ToInt32(txtId.Text), mskTelefone1.Text, cmbTipo1.Text);
+            }
+            if (mskTelefone2.Text.Length > 9)
+            {
+                mskTelefone2.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+
+                NC.AdicionarTelefone(Convert.ToInt32(txtId.Text), mskTelefone2.Text, cmbTipo2.Text);
+            }
+            if (mskTelefone3.Text.Length > 9)
+            {
+                mskTelefone3.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+
+                NC.AdicionarTelefone(Convert.ToInt32(txtId.Text), mskTelefone3.Text, cmbTipo3.Text);
+            }
+            if (mskTelefone4.Text.Length > 9)
+            {
+                mskTelefone4.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+
+                NC.AdicionarTelefone(Convert.ToInt32(txtId.Text), mskTelefone4.Text, cmbTipo4.Text);
+            }
         }
     }
 }

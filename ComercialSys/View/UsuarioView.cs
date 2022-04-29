@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace ComercialSys.View
 {
-    public partial class UsuarioView : MetroFramework.Forms.MetroForm
+    public partial class UsuarioView : Form
     {
         public UsuarioView(Form parent)
         {

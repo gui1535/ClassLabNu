@@ -4,17 +4,9 @@ using System.Windows.Forms;
 
 namespace ComercialSys.Controller
 {
-    public class EnderecoController
+    public class EnderecoController : EnderecoModel
     {
-        public string LogradouroCli { get; set; }
-        public string CepCli { get; set; }
-        public string NumeroCli { set; get; }
-        public string CidadeCli { get; set; }
-        public string BairroCli { get; set; }
-        public string EstadoCli { get; set; }
-        public string UfCli { get; set; }
-        public string TipoCli { get; set; }
-        public string ComplementoCli { get; set; }
+
 
         /// <summary>
         /// Metodo para listar endereços do cliente
@@ -133,14 +125,14 @@ namespace ComercialSys.Controller
             end.Complemento = Convert.ToString(dt[$"colunaComplemento", e.RowIndex].Value);
 
             // Valores para propriedades
-            CepCli = end.Cep;
-            CidadeCli = end.Cidade;
-            TipoCli = end.Tipo;
-            BairroCli = end.Bairro;
-            LogradouroCli = end.Logradouro;
-            EstadoCli = end.Estado;
-            NumeroCli = end.Numero;
-            ComplementoCli = end.Complemento;
+            Cep = end.Cep;
+            Cidade = end.Cidade;
+            Tipo = end.Tipo;
+            Bairro = end.Bairro;
+            Logradouro = end.Logradouro;
+            Estado = end.Estado;
+            Numero = end.Numero;
+            Complemento = end.Complemento;
         }
     }
 }

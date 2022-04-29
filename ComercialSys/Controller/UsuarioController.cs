@@ -17,6 +17,9 @@ namespace ComercialSys.Controller
             cmb.DataSource = UsuarioModel.ListarUsuarios().ToArray();
             cmb.DisplayMember = "Nome";
             cmb.ValueMember = "Id";
+
+            // Tipo de DropDown
+            cmb.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

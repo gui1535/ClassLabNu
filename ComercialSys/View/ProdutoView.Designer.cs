@@ -28,23 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdutoView));
             this.gpBoxCadastrar = new System.Windows.Forms.GroupBox();
             this.chkDescontinuado = new System.Windows.Forms.CheckBox();
             this.btnDesbloquear = new System.Windows.Forms.Button();
             this.btnBloquear = new System.Windows.Forms.Button();
             this.txtValor = new MetroFramework.Controls.MetroTextBox();
-            this.lbValor = new MetroFramework.Controls.MetroLabel();
             this.txtDesconto = new MetroFramework.Controls.MetroTextBox();
-            this.lbDesconto = new MetroFramework.Controls.MetroLabel();
             this.txtunidade = new MetroFramework.Controls.MetroTextBox();
             this.txtId = new MetroFramework.Controls.MetroTextBox();
             this.txtNome = new MetroFramework.Controls.MetroTextBox();
             this.txtCodBar = new MetroFramework.Controls.MetroTextBox();
-            this.lbId = new MetroFramework.Controls.MetroLabel();
-            this.lbCodBar = new MetroFramework.Controls.MetroLabel();
-            this.lbNome = new MetroFramework.Controls.MetroLabel();
-            this.lbUnidade = new MetroFramework.Controls.MetroLabel();
             this.btnListar = new MetroFramework.Controls.MetroButton();
             this.btnInserir = new MetroFramework.Controls.MetroButton();
             this.GridProdutos = new System.Windows.Forms.DataGridView();
@@ -56,14 +49,20 @@
             this.colunaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColunaDescontinuado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtIdPesq = new MetroFramework.Controls.MetroTextBox();
-            this.lbIdPesq = new MetroFramework.Controls.MetroLabel();
             this.txtValorPesq = new MetroFramework.Controls.MetroTextBox();
-            this.lbValorPesq = new MetroFramework.Controls.MetroLabel();
             this.txtCodBarPesq = new MetroFramework.Controls.MetroTextBox();
-            this.lbCodBarPesq = new MetroFramework.Controls.MetroLabel();
             this.gpBoxPesq = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEditar = new MetroFramework.Controls.MetroButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.gpBoxCadastrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridProdutos)).BeginInit();
             this.gpBoxPesq.SuspendLayout();
@@ -72,22 +71,22 @@
             // 
             // gpBoxCadastrar
             // 
+            this.gpBoxCadastrar.Controls.Add(this.label6);
+            this.gpBoxCadastrar.Controls.Add(this.label5);
+            this.gpBoxCadastrar.Controls.Add(this.label4);
+            this.gpBoxCadastrar.Controls.Add(this.label3);
+            this.gpBoxCadastrar.Controls.Add(this.label2);
+            this.gpBoxCadastrar.Controls.Add(this.label1);
             this.gpBoxCadastrar.Controls.Add(this.chkDescontinuado);
             this.gpBoxCadastrar.Controls.Add(this.btnDesbloquear);
             this.gpBoxCadastrar.Controls.Add(this.btnBloquear);
             this.gpBoxCadastrar.Controls.Add(this.txtValor);
-            this.gpBoxCadastrar.Controls.Add(this.lbValor);
             this.gpBoxCadastrar.Controls.Add(this.txtDesconto);
-            this.gpBoxCadastrar.Controls.Add(this.lbDesconto);
             this.gpBoxCadastrar.Controls.Add(this.txtunidade);
             this.gpBoxCadastrar.Controls.Add(this.txtId);
             this.gpBoxCadastrar.Controls.Add(this.txtNome);
             this.gpBoxCadastrar.Controls.Add(this.txtCodBar);
-            this.gpBoxCadastrar.Controls.Add(this.lbId);
-            this.gpBoxCadastrar.Controls.Add(this.lbCodBar);
-            this.gpBoxCadastrar.Controls.Add(this.lbNome);
-            this.gpBoxCadastrar.Controls.Add(this.lbUnidade);
-            this.gpBoxCadastrar.Location = new System.Drawing.Point(16, 54);
+            this.gpBoxCadastrar.Location = new System.Drawing.Point(24, 28);
             this.gpBoxCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.gpBoxCadastrar.Name = "gpBoxCadastrar";
             this.gpBoxCadastrar.Padding = new System.Windows.Forms.Padding(4);
@@ -112,7 +111,6 @@
             // 
             // btnDesbloquear
             // 
-            this.btnDesbloquear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDesbloquear.BackgroundImage")));
             this.btnDesbloquear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDesbloquear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesbloquear.FlatAppearance.BorderSize = 0;
@@ -126,7 +124,6 @@
             // 
             // btnBloquear
             // 
-            this.btnBloquear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBloquear.BackgroundImage")));
             this.btnBloquear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBloquear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBloquear.FlatAppearance.BorderSize = 0;
@@ -173,16 +170,6 @@
             this.txtValor.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtValor.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // lbValor
-            // 
-            this.lbValor.AutoSize = true;
-            this.lbValor.Location = new System.Drawing.Point(370, 19);
-            this.lbValor.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lbValor.Name = "lbValor";
-            this.lbValor.Size = new System.Drawing.Size(38, 19);
-            this.lbValor.TabIndex = 15;
-            this.lbValor.Text = "Valor";
-            // 
             // txtDesconto
             // 
             // 
@@ -217,16 +204,6 @@
             this.txtDesconto.UseSelectable = true;
             this.txtDesconto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDesconto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lbDesconto
-            // 
-            this.lbDesconto.AutoSize = true;
-            this.lbDesconto.Location = new System.Drawing.Point(370, 89);
-            this.lbDesconto.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lbDesconto.Name = "lbDesconto";
-            this.lbDesconto.Size = new System.Drawing.Size(63, 19);
-            this.lbDesconto.TabIndex = 13;
-            this.lbDesconto.Text = "Desconto";
             // 
             // txtunidade
             // 
@@ -364,49 +341,9 @@
             this.txtCodBar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCodBar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // lbId
-            // 
-            this.lbId.AutoSize = true;
-            this.lbId.Location = new System.Drawing.Point(11, 19);
-            this.lbId.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(21, 19);
-            this.lbId.TabIndex = 4;
-            this.lbId.Text = "ID";
-            // 
-            // lbCodBar
-            // 
-            this.lbCodBar.AutoSize = true;
-            this.lbCodBar.Location = new System.Drawing.Point(8, 89);
-            this.lbCodBar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lbCodBar.Name = "lbCodBar";
-            this.lbCodBar.Size = new System.Drawing.Size(78, 19);
-            this.lbCodBar.TabIndex = 7;
-            this.lbCodBar.Text = "Cod. Barras";
-            // 
-            // lbNome
-            // 
-            this.lbNome.AutoSize = true;
-            this.lbNome.Location = new System.Drawing.Point(109, 19);
-            this.lbNome.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(46, 19);
-            this.lbNome.TabIndex = 5;
-            this.lbNome.Text = "Nome";
-            // 
-            // lbUnidade
-            // 
-            this.lbUnidade.AutoSize = true;
-            this.lbUnidade.Location = new System.Drawing.Point(225, 89);
-            this.lbUnidade.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lbUnidade.Name = "lbUnidade";
-            this.lbUnidade.Size = new System.Drawing.Size(58, 19);
-            this.lbUnidade.TabIndex = 6;
-            this.lbUnidade.Text = "Unidade";
-            // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(657, 254);
+            this.btnListar.Location = new System.Drawing.Point(664, 227);
             this.btnListar.Margin = new System.Windows.Forms.Padding(4);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(120, 32);
@@ -418,7 +355,7 @@
             // btnInserir
             // 
             this.btnInserir.Enabled = false;
-            this.btnInserir.Location = new System.Drawing.Point(513, 254);
+            this.btnInserir.Location = new System.Drawing.Point(520, 227);
             this.btnInserir.Margin = new System.Windows.Forms.Padding(5);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(120, 32);
@@ -534,16 +471,6 @@
             this.txtIdPesq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtIdPesq.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtIdPesq_KeyUp);
             // 
-            // lbIdPesq
-            // 
-            this.lbIdPesq.AutoSize = true;
-            this.lbIdPesq.Location = new System.Drawing.Point(9, 19);
-            this.lbIdPesq.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lbIdPesq.Name = "lbIdPesq";
-            this.lbIdPesq.Size = new System.Drawing.Size(21, 19);
-            this.lbIdPesq.TabIndex = 13;
-            this.lbIdPesq.Text = "ID";
-            // 
             // txtValorPesq
             // 
             // 
@@ -576,16 +503,6 @@
             this.txtValorPesq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtValorPesq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtValorPesq.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtValorPesq_KeyUp);
-            // 
-            // lbValorPesq
-            // 
-            this.lbValorPesq.AutoSize = true;
-            this.lbValorPesq.Location = new System.Drawing.Point(117, 15);
-            this.lbValorPesq.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lbValorPesq.Name = "lbValorPesq";
-            this.lbValorPesq.Size = new System.Drawing.Size(38, 19);
-            this.lbValorPesq.TabIndex = 15;
-            this.lbValorPesq.Text = "Valor";
             // 
             // txtCodBarPesq
             // 
@@ -620,25 +537,15 @@
             this.txtCodBarPesq.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.txtCodBarPesq.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodBarPesq_KeyUp);
             // 
-            // lbCodBarPesq
-            // 
-            this.lbCodBarPesq.AutoSize = true;
-            this.lbCodBarPesq.Location = new System.Drawing.Point(9, 89);
-            this.lbCodBarPesq.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lbCodBarPesq.Name = "lbCodBarPesq";
-            this.lbCodBarPesq.Size = new System.Drawing.Size(78, 19);
-            this.lbCodBarPesq.TabIndex = 19;
-            this.lbCodBarPesq.Text = "Cod. Barras";
-            // 
             // gpBoxPesq
             // 
-            this.gpBoxPesq.Controls.Add(this.lbCodBarPesq);
+            this.gpBoxPesq.Controls.Add(this.label9);
+            this.gpBoxPesq.Controls.Add(this.label8);
+            this.gpBoxPesq.Controls.Add(this.label7);
             this.gpBoxPesq.Controls.Add(this.txtCodBarPesq);
-            this.gpBoxPesq.Controls.Add(this.lbValorPesq);
             this.gpBoxPesq.Controls.Add(this.txtValorPesq);
-            this.gpBoxPesq.Controls.Add(this.lbIdPesq);
             this.gpBoxPesq.Controls.Add(this.txtIdPesq);
-            this.gpBoxPesq.Location = new System.Drawing.Point(707, 54);
+            this.gpBoxPesq.Location = new System.Drawing.Point(715, 28);
             this.gpBoxPesq.Margin = new System.Windows.Forms.Padding(4);
             this.gpBoxPesq.Name = "gpBoxPesq";
             this.gpBoxPesq.Padding = new System.Windows.Forms.Padding(4);
@@ -650,7 +557,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.GridProdutos);
-            this.groupBox1.Location = new System.Drawing.Point(16, 287);
+            this.groupBox1.Location = new System.Drawing.Point(23, 260);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -662,7 +569,7 @@
             // btnEditar
             // 
             this.btnEditar.Enabled = false;
-            this.btnEditar.Location = new System.Drawing.Point(368, 254);
+            this.btnEditar.Location = new System.Drawing.Point(375, 227);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(120, 32);
@@ -671,11 +578,101 @@
             this.btnEditar.UseSelectable = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // FormProduto
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label1.Location = new System.Drawing.Point(8, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 17);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Cod. Barras";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label2.Location = new System.Drawing.Point(8, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 17);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "ID";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label3.Location = new System.Drawing.Point(106, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 17);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Nome";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label4.Location = new System.Drawing.Point(222, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 17);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Unidade";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label5.Location = new System.Drawing.Point(367, 92);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 17);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Desconto";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label6.Location = new System.Drawing.Point(367, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 17);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Valor";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label7.Location = new System.Drawing.Point(7, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 17);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "ID";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label8.Location = new System.Drawing.Point(114, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 17);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Valor";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label9.Location = new System.Drawing.Point(6, 92);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 17);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Cod. Barras";
+            // 
+            // ProdutoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 666);
+            this.ClientSize = new System.Drawing.Size(956, 629);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gpBoxCadastrar);
@@ -684,7 +681,7 @@
             this.Controls.Add(this.btnInserir);
             this.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormProduto";
+            this.Name = "ProdutoView";
             this.Padding = new System.Windows.Forms.Padding(27, 79, 27, 27);
             this.Text = "Produto";
             this.Load += new System.EventHandler(this.FormProduto_Load);
@@ -707,21 +704,12 @@
         private MetroFramework.Controls.MetroTextBox txtNome;
         private MetroFramework.Controls.MetroTextBox txtCodBar;
         private MetroFramework.Controls.MetroButton btnInserir;
-        private MetroFramework.Controls.MetroLabel lbId;
-        private MetroFramework.Controls.MetroLabel lbCodBar;
-        private MetroFramework.Controls.MetroLabel lbNome;
-        private MetroFramework.Controls.MetroLabel lbUnidade;
         private System.Windows.Forms.DataGridView GridProdutos;
         private MetroFramework.Controls.MetroTextBox txtDesconto;
-        private MetroFramework.Controls.MetroLabel lbDesconto;
         private MetroFramework.Controls.MetroTextBox txtValor;
-        private MetroFramework.Controls.MetroLabel lbValor;
         private MetroFramework.Controls.MetroTextBox txtIdPesq;
-        private MetroFramework.Controls.MetroLabel lbIdPesq;
         private MetroFramework.Controls.MetroTextBox txtValorPesq;
-        private MetroFramework.Controls.MetroLabel lbValorPesq;
         private MetroFramework.Controls.MetroTextBox txtCodBarPesq;
-        private MetroFramework.Controls.MetroLabel lbCodBarPesq;
         private System.Windows.Forms.GroupBox gpBoxPesq;
         private System.Windows.Forms.GroupBox groupBox1;
         private MetroFramework.Controls.MetroButton btnEditar;
@@ -735,5 +723,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDesconto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaValor;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColunaDescontinuado;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }

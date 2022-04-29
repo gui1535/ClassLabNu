@@ -347,6 +347,9 @@ namespace ComercialSys.Controller
             cmb.DataSource = ClienteModel.ListarClientes().ToArray();
             cmb.DisplayMember = "Nome";
             cmb.ValueMember = "Id";
+
+            // Tipo de DropDown
+            cmb.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

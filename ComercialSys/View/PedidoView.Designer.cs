@@ -40,6 +40,11 @@
             this.txtDataPed = new MetroFramework.Controls.MetroTextBox();
             this.gpItensPed = new System.Windows.Forms.GroupBox();
             this.GridItensPedido = new System.Windows.Forms.DataGridView();
+            this.colunaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.txtDescricao = new MetroFramework.Controls.MetroTextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,11 +61,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtValorFinal = new MetroFramework.Controls.MetroTextBox();
             this.lbStatusPed = new System.Windows.Forms.Label();
-            this.colunaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpDadosPed.SuspendLayout();
             this.gpItensPed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).BeginInit();
@@ -259,11 +259,41 @@
             this.GridItensPedido.Size = new System.Drawing.Size(597, 245);
             this.GridItensPedido.TabIndex = 26;
             // 
+            // colunaPedido
+            // 
+            this.colunaPedido.HeaderText = "Pedido";
+            this.colunaPedido.Name = "colunaPedido";
+            this.colunaPedido.ReadOnly = true;
+            // 
+            // colunaProduto
+            // 
+            this.colunaProduto.HeaderText = "Produto";
+            this.colunaProduto.Name = "colunaProduto";
+            this.colunaProduto.ReadOnly = true;
+            // 
+            // colunaValor
+            // 
+            this.colunaValor.HeaderText = "Valor";
+            this.colunaValor.Name = "colunaValor";
+            this.colunaValor.ReadOnly = true;
+            // 
+            // colunaQuantidade
+            // 
+            this.colunaQuantidade.HeaderText = "Quantidade";
+            this.colunaQuantidade.Name = "colunaQuantidade";
+            this.colunaQuantidade.ReadOnly = true;
+            // 
+            // colunaDesconto
+            // 
+            this.colunaDesconto.HeaderText = "Desconto";
+            this.colunaDesconto.Name = "colunaDesconto";
+            this.colunaDesconto.ReadOnly = true;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(150, 25);
+            this.label9.Location = new System.Drawing.Point(141, 25);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 17);
             this.label9.TabIndex = 25;
@@ -284,7 +314,7 @@
             this.txtDescricao.CustomButton.UseSelectable = true;
             this.txtDescricao.CustomButton.Visible = false;
             this.txtDescricao.Lines = new string[0];
-            this.txtDescricao.Location = new System.Drawing.Point(153, 45);
+            this.txtDescricao.Location = new System.Drawing.Point(144, 45);
             this.txtDescricao.MaxLength = 32767;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.PasswordChar = '\0';
@@ -423,7 +453,7 @@
             // 
             // btnInserirPed
             // 
-            this.btnInserirPed.Location = new System.Drawing.Point(525, 41);
+            this.btnInserirPed.Location = new System.Drawing.Point(526, 41);
             this.btnInserirPed.Name = "btnInserirPed";
             this.btnInserirPed.Size = new System.Drawing.Size(75, 27);
             this.btnInserirPed.TabIndex = 21;
@@ -521,36 +551,6 @@
             this.lbStatusPed.Name = "lbStatusPed";
             this.lbStatusPed.Size = new System.Drawing.Size(0, 25);
             this.lbStatusPed.TabIndex = 20;
-            // 
-            // colunaPedido
-            // 
-            this.colunaPedido.HeaderText = "Pedido";
-            this.colunaPedido.Name = "colunaPedido";
-            this.colunaPedido.ReadOnly = true;
-            // 
-            // colunaProduto
-            // 
-            this.colunaProduto.HeaderText = "Produto";
-            this.colunaProduto.Name = "colunaProduto";
-            this.colunaProduto.ReadOnly = true;
-            // 
-            // colunaValor
-            // 
-            this.colunaValor.HeaderText = "Valor";
-            this.colunaValor.Name = "colunaValor";
-            this.colunaValor.ReadOnly = true;
-            // 
-            // colunaQuantidade
-            // 
-            this.colunaQuantidade.HeaderText = "Quantidade";
-            this.colunaQuantidade.Name = "colunaQuantidade";
-            this.colunaQuantidade.ReadOnly = true;
-            // 
-            // colunaDesconto
-            // 
-            this.colunaDesconto.HeaderText = "Desconto";
-            this.colunaDesconto.Name = "colunaDesconto";
-            this.colunaDesconto.ReadOnly = true;
             // 
             // PedidoView
             // 

@@ -95,8 +95,8 @@ namespace ComercialSys.View
         private void calculaTotal()
         {
 
-            decimal total = 0
-                ;
+            decimal total = 0;
+
             foreach (DataGridViewRow row in GridItensPedido.Rows)
             {
                 total += Convert.ToDecimal(row.Cells["colunaValor"].Value);

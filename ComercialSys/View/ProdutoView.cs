@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ComercialSys
 {
-    public partial class ProdutoView : MetroFramework.Forms.MetroForm
+    public partial class ProdutoView : Form
     {
         public ProdutoView(Form parent)
         {

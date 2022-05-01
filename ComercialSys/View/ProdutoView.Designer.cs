@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.gpBoxCadastrar = new System.Windows.Forms.GroupBox();
+            this.btnInserirImagem = new MetroFramework.Controls.MetroButton();
+            this.picImage = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.chkDescontinuado = new System.Windows.Forms.CheckBox();
             this.btnDesbloquear = new System.Windows.Forms.Button();
             this.btnBloquear = new System.Windows.Forms.Button();
@@ -52,18 +60,15 @@
             this.txtValorPesq = new MetroFramework.Controls.MetroTextBox();
             this.txtCodBarPesq = new MetroFramework.Controls.MetroTextBox();
             this.gpBoxPesq = new System.Windows.Forms.GroupBox();
+            this.txtDir = new MetroFramework.Controls.MetroTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEditar = new MetroFramework.Controls.MetroButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.btnClear = new MetroFramework.Controls.MetroButton();
             this.gpBoxCadastrar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridProdutos)).BeginInit();
             this.gpBoxPesq.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -71,6 +76,9 @@
             // 
             // gpBoxCadastrar
             // 
+            this.gpBoxCadastrar.Controls.Add(this.btnClear);
+            this.gpBoxCadastrar.Controls.Add(this.btnInserirImagem);
+            this.gpBoxCadastrar.Controls.Add(this.picImage);
             this.gpBoxCadastrar.Controls.Add(this.label6);
             this.gpBoxCadastrar.Controls.Add(this.label5);
             this.gpBoxCadastrar.Controls.Add(this.label4);
@@ -86,14 +94,95 @@
             this.gpBoxCadastrar.Controls.Add(this.txtId);
             this.gpBoxCadastrar.Controls.Add(this.txtNome);
             this.gpBoxCadastrar.Controls.Add(this.txtCodBar);
+            this.gpBoxCadastrar.Controls.Add(this.txtDir);
             this.gpBoxCadastrar.Location = new System.Drawing.Point(24, 28);
             this.gpBoxCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.gpBoxCadastrar.Name = "gpBoxCadastrar";
             this.gpBoxCadastrar.Padding = new System.Windows.Forms.Padding(4);
-            this.gpBoxCadastrar.Size = new System.Drawing.Size(683, 191);
+            this.gpBoxCadastrar.Size = new System.Drawing.Size(887, 191);
             this.gpBoxCadastrar.TabIndex = 18;
             this.gpBoxCadastrar.TabStop = false;
             this.gpBoxCadastrar.Text = "Cadastrar";
+            // 
+            // btnInserirImagem
+            // 
+            this.btnInserirImagem.Enabled = false;
+            this.btnInserirImagem.Location = new System.Drawing.Point(673, 156);
+            this.btnInserirImagem.Margin = new System.Windows.Forms.Padding(5);
+            this.btnInserirImagem.Name = "btnInserirImagem";
+            this.btnInserirImagem.Size = new System.Drawing.Size(173, 26);
+            this.btnInserirImagem.TabIndex = 23;
+            this.btnInserirImagem.Text = "Inserir Imagem";
+            this.btnInserirImagem.UseSelectable = true;
+            this.btnInserirImagem.Click += new System.EventHandler(this.btnInserirImagem_Click);
+            // 
+            // picImage
+            // 
+            this.picImage.Location = new System.Drawing.Point(674, 24);
+            this.picImage.Name = "picImage";
+            this.picImage.Size = new System.Drawing.Size(172, 124);
+            this.picImage.TabIndex = 37;
+            this.picImage.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label6.Location = new System.Drawing.Point(366, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 21);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Valor";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label5.Location = new System.Drawing.Point(367, 92);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 21);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Desconto";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label4.Location = new System.Drawing.Point(222, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 21);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Unidade";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label3.Location = new System.Drawing.Point(105, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 21);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Nome";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label2.Location = new System.Drawing.Point(8, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 21);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "ID";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label1.Location = new System.Drawing.Point(8, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 21);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Cod. Barras";
             // 
             // chkDescontinuado
             // 
@@ -103,7 +192,7 @@
             this.chkDescontinuado.Location = new System.Drawing.Point(536, 44);
             this.chkDescontinuado.Margin = new System.Windows.Forms.Padding(4);
             this.chkDescontinuado.Name = "chkDescontinuado";
-            this.chkDescontinuado.Size = new System.Drawing.Size(92, 20);
+            this.chkDescontinuado.Size = new System.Drawing.Size(115, 23);
             this.chkDescontinuado.TabIndex = 30;
             this.chkDescontinuado.Text = "Continuado";
             this.chkDescontinuado.UseVisualStyleBackColor = true;
@@ -115,7 +204,7 @@
             this.btnDesbloquear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesbloquear.FlatAppearance.BorderSize = 0;
             this.btnDesbloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesbloquear.Location = new System.Drawing.Point(590, 110);
+            this.btnDesbloquear.Location = new System.Drawing.Point(576, 92);
             this.btnDesbloquear.Name = "btnDesbloquear";
             this.btnDesbloquear.Size = new System.Drawing.Size(44, 49);
             this.btnDesbloquear.TabIndex = 28;
@@ -128,7 +217,7 @@
             this.btnBloquear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBloquear.FlatAppearance.BorderSize = 0;
             this.btnBloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBloquear.Location = new System.Drawing.Point(590, 110);
+            this.btnBloquear.Location = new System.Drawing.Point(576, 92);
             this.btnBloquear.Name = "btnBloquear";
             this.btnBloquear.Size = new System.Drawing.Size(44, 49);
             this.btnBloquear.TabIndex = 29;
@@ -343,10 +432,10 @@
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(664, 227);
+            this.btnListar.Location = new System.Drawing.Point(347, 260);
             this.btnListar.Margin = new System.Windows.Forms.Padding(4);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(120, 32);
+            this.btnListar.Size = new System.Drawing.Size(130, 54);
             this.btnListar.TabIndex = 11;
             this.btnListar.Text = "Listar";
             this.btnListar.UseSelectable = true;
@@ -355,10 +444,10 @@
             // btnInserir
             // 
             this.btnInserir.Enabled = false;
-            this.btnInserir.Location = new System.Drawing.Point(520, 227);
+            this.btnInserir.Location = new System.Drawing.Point(200, 260);
             this.btnInserir.Margin = new System.Windows.Forms.Padding(5);
             this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(120, 32);
+            this.btnInserir.Size = new System.Drawing.Size(130, 54);
             this.btnInserir.TabIndex = 8;
             this.btnInserir.Text = "&Inserir";
             this.btnInserir.UseSelectable = true;
@@ -383,7 +472,7 @@
             this.GridProdutos.ReadOnly = true;
             this.GridProdutos.RowHeadersVisible = false;
             this.GridProdutos.RowHeadersWidth = 51;
-            this.GridProdutos.Size = new System.Drawing.Size(899, 324);
+            this.GridProdutos.Size = new System.Drawing.Size(870, 324);
             this.GridProdutos.TabIndex = 16;
             this.GridProdutos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridProdutos_CellDoubleClick);
             // 
@@ -487,7 +576,7 @@
             this.txtValorPesq.CustomButton.UseSelectable = true;
             this.txtValorPesq.CustomButton.Visible = false;
             this.txtValorPesq.Lines = new string[0];
-            this.txtValorPesq.Location = new System.Drawing.Point(117, 44);
+            this.txtValorPesq.Location = new System.Drawing.Point(89, 44);
             this.txtValorPesq.Margin = new System.Windows.Forms.Padding(5);
             this.txtValorPesq.MaxLength = 60;
             this.txtValorPesq.Name = "txtValorPesq";
@@ -510,7 +599,7 @@
             // 
             // 
             this.txtCodBarPesq.CustomButton.Image = null;
-            this.txtCodBarPesq.CustomButton.Location = new System.Drawing.Point(168, 1);
+            this.txtCodBarPesq.CustomButton.Location = new System.Drawing.Point(140, 1);
             this.txtCodBarPesq.CustomButton.Margin = new System.Windows.Forms.Padding(5);
             this.txtCodBarPesq.CustomButton.Name = "";
             this.txtCodBarPesq.CustomButton.Size = new System.Drawing.Size(31, 31);
@@ -520,7 +609,7 @@
             this.txtCodBarPesq.CustomButton.UseSelectable = true;
             this.txtCodBarPesq.CustomButton.Visible = false;
             this.txtCodBarPesq.Lines = new string[0];
-            this.txtCodBarPesq.Location = new System.Drawing.Point(9, 114);
+            this.txtCodBarPesq.Location = new System.Drawing.Point(191, 44);
             this.txtCodBarPesq.Margin = new System.Windows.Forms.Padding(5);
             this.txtCodBarPesq.MaxLength = 60;
             this.txtCodBarPesq.Name = "txtCodBarPesq";
@@ -530,7 +619,7 @@
             this.txtCodBarPesq.SelectionLength = 0;
             this.txtCodBarPesq.SelectionStart = 0;
             this.txtCodBarPesq.ShortcutsEnabled = true;
-            this.txtCodBarPesq.Size = new System.Drawing.Size(200, 33);
+            this.txtCodBarPesq.Size = new System.Drawing.Size(172, 33);
             this.txtCodBarPesq.TabIndex = 18;
             this.txtCodBarPesq.UseSelectable = true;
             this.txtCodBarPesq.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -545,23 +634,85 @@
             this.gpBoxPesq.Controls.Add(this.txtCodBarPesq);
             this.gpBoxPesq.Controls.Add(this.txtValorPesq);
             this.gpBoxPesq.Controls.Add(this.txtIdPesq);
-            this.gpBoxPesq.Location = new System.Drawing.Point(715, 28);
+            this.gpBoxPesq.Location = new System.Drawing.Point(539, 227);
             this.gpBoxPesq.Margin = new System.Windows.Forms.Padding(4);
             this.gpBoxPesq.Name = "gpBoxPesq";
             this.gpBoxPesq.Padding = new System.Windows.Forms.Padding(4);
-            this.gpBoxPesq.Size = new System.Drawing.Size(224, 191);
+            this.gpBoxPesq.Size = new System.Drawing.Size(372, 101);
             this.gpBoxPesq.TabIndex = 17;
             this.gpBoxPesq.TabStop = false;
             this.gpBoxPesq.Text = "Pesquisar";
             // 
+            // txtDir
+            // 
+            // 
+            // 
+            // 
+            this.txtDir.CustomButton.Image = null;
+            this.txtDir.CustomButton.Location = new System.Drawing.Point(149, 2);
+            this.txtDir.CustomButton.Margin = new System.Windows.Forms.Padding(5);
+            this.txtDir.CustomButton.Name = "";
+            this.txtDir.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDir.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDir.CustomButton.TabIndex = 1;
+            this.txtDir.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDir.CustomButton.UseSelectable = true;
+            this.txtDir.CustomButton.Visible = false;
+            this.txtDir.Lines = new string[0];
+            this.txtDir.Location = new System.Drawing.Point(673, 156);
+            this.txtDir.Margin = new System.Windows.Forms.Padding(5);
+            this.txtDir.MaxLength = 60;
+            this.txtDir.Name = "txtDir";
+            this.txtDir.PasswordChar = '\0';
+            this.txtDir.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDir.SelectedText = "";
+            this.txtDir.SelectionLength = 0;
+            this.txtDir.SelectionStart = 0;
+            this.txtDir.ShortcutsEnabled = true;
+            this.txtDir.Size = new System.Drawing.Size(173, 26);
+            this.txtDir.TabIndex = 38;
+            this.txtDir.UseSelectable = true;
+            this.txtDir.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDir.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label9.Location = new System.Drawing.Point(188, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(99, 21);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Cod. Barras";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label8.Location = new System.Drawing.Point(85, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 21);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Valor";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.5F);
+            this.label7.Location = new System.Drawing.Point(7, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 21);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "ID";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.GridProdutos);
-            this.groupBox1.Location = new System.Drawing.Point(23, 260);
+            this.groupBox1.Location = new System.Drawing.Point(24, 340);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(915, 356);
+            this.groupBox1.Size = new System.Drawing.Size(887, 356);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Produtos";
@@ -569,110 +720,32 @@
             // btnEditar
             // 
             this.btnEditar.Enabled = false;
-            this.btnEditar.Location = new System.Drawing.Point(375, 227);
+            this.btnEditar.Location = new System.Drawing.Point(53, 260);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(120, 32);
+            this.btnEditar.Size = new System.Drawing.Size(130, 54);
             this.btnEditar.TabIndex = 22;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseSelectable = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // label1
+            // btnClear
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label1.Location = new System.Drawing.Point(8, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 17);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Cod. Barras";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label2.Location = new System.Drawing.Point(8, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 17);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "ID";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label3.Location = new System.Drawing.Point(106, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 17);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Nome";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label4.Location = new System.Drawing.Point(222, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 17);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Unidade";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label5.Location = new System.Drawing.Point(367, 92);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 17);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Desconto";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label6.Location = new System.Drawing.Point(367, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 17);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Valor";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label7.Location = new System.Drawing.Point(7, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(21, 17);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "ID";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label8.Location = new System.Drawing.Point(114, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 17);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "Valor";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.5F);
-            this.label9.Location = new System.Drawing.Point(6, 92);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 17);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "Cod. Barras";
+            this.btnClear.Enabled = false;
+            this.btnClear.Location = new System.Drawing.Point(548, 156);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(5);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(102, 22);
+            this.btnClear.TabIndex = 23;
+            this.btnClear.Text = "Limpar Campos";
+            this.btnClear.UseSelectable = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // ProdutoView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 629);
+            this.ClientSize = new System.Drawing.Size(956, 710);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gpBoxCadastrar);
@@ -687,6 +760,7 @@
             this.Load += new System.EventHandler(this.FormProduto_Load);
             this.gpBoxCadastrar.ResumeLayout(false);
             this.gpBoxCadastrar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridProdutos)).EndInit();
             this.gpBoxPesq.ResumeLayout(false);
             this.gpBoxPesq.PerformLayout();
@@ -732,5 +806,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private MetroFramework.Controls.MetroButton btnInserirImagem;
+        private System.Windows.Forms.PictureBox picImage;
+        private MetroFramework.Controls.MetroTextBox txtDir;
+        private MetroFramework.Controls.MetroButton btnClear;
     }
 }

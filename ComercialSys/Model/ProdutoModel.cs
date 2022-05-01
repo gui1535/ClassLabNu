@@ -19,6 +19,7 @@ namespace ComercialSys.Model
         public double Valor { get; set; }
         public double Desconto { get; set; }
         public bool Descontinuado { get; set; }
+        public byte[] Foto { get; set; }
 
         // Construtores ----------------------------------------------------------------
 
@@ -66,6 +67,16 @@ namespace ComercialSys.Model
             this.Desconto = desconto;
             this.Descontinuado = descontinuado;
         }
+        public ProdutoModel(string descricao, string unidade, string codbar, double valor, double desconto, bool descontinuado, byte[] foto)
+        {
+            this.Descricao = descricao;
+            this.Unidade = unidade;
+            this.Codbar = codbar;
+            this.Valor = valor;
+            this.Desconto = desconto;
+            this.Descontinuado = descontinuado;
+            this.Foto = foto;
+        }
 
         /// <summary>
         /// Construtor para o Produto
@@ -86,6 +97,18 @@ namespace ComercialSys.Model
             this.Valor = valor;
             this.Desconto = desconto;
             this.Descontinuado = descontinuado;
+        }
+
+        public ProdutoModel(int id, string descricao, string unidade, string codbar, double valor, double desconto, bool descontinuado, byte[] foto)
+        {
+            Id = id;
+            this.Descricao = descricao;
+            this.Unidade = unidade;
+            this.Codbar = codbar;
+            this.Valor = valor;
+            this.Desconto = desconto;
+            this.Descontinuado = descontinuado;
+            this.Foto = foto;
         }
 
         /// <summary>
@@ -146,6 +169,8 @@ namespace ComercialSys.Model
                 banco.Parameters.AddWithValue("_desconto", Desconto);
                 banco.Parameters.AddWithValue("_valor", Valor);
                 banco.Parameters.AddWithValue("_descontinuado", Descontinuado);
+                banco.Parameters.AddWithValue("_foto", Foto);
+
                 Id = Convert.ToInt32(banco.ExecuteScalar());
 
                 // Fecha Conexão
@@ -178,6 +203,7 @@ namespace ComercialSys.Model
             cmd.Parameters.AddWithValue("_desconto", Desconto);
             cmd.Parameters.AddWithValue("_valor", Valor);
             cmd.Parameters.AddWithValue("_descontinuado", Descontinuado);
+            cmd.Parameters.AddWithValue("_foto", Foto);
 
             // Variavel para receber retorno
             int retorna = cmd.ExecuteNonQuery();
@@ -211,7 +237,7 @@ namespace ComercialSys.Model
                 prod.Valor = dr.GetDouble(4);
                 prod.Desconto = dr.GetDouble(5);
                 prod.Descontinuado = dr.GetBoolean(6);
-
+                prod.Foto = (byte[])dr["foto"];
             }
             return prod;
 
@@ -246,7 +272,8 @@ namespace ComercialSys.Model
                     dr.GetString(3), // CodBar
                 dr.GetDouble(4), // Valor
                     dr.GetDouble(5), // Desconto
-                     dr.GetBoolean(6) // Descontinuado
+                     dr.GetBoolean(6), // Descontinuado
+                     (byte[])dr["foto"]
                     ));
             }
 
@@ -286,7 +313,8 @@ namespace ComercialSys.Model
                     dr.GetString(3), // CodBar
                 dr.GetDouble(4), // Valor
                     dr.GetDouble(5), // Desconto
-                     dr.GetBoolean(6) // Descontinuado
+                     dr.GetBoolean(6), // Descontinuado
+                     (byte[])dr["foto"]
                     ));
             }
 
@@ -326,7 +354,8 @@ namespace ComercialSys.Model
                     dr.GetString(3), // CodBar
                     dr.GetDouble(4), // Valor
                     dr.GetDouble(5), // Desconto
-                    dr.GetBoolean(6) // Descontinuado
+                    dr.GetBoolean(6), // Descontinuado
+                    (byte[])dr["foto"]
                     ));
             }
 
@@ -371,7 +400,8 @@ namespace ComercialSys.Model
                     dr.GetString(3), // CodBar
                 dr.GetDouble(4), // Valor
                     dr.GetDouble(5), // Desconto
-                     dr.GetBoolean(6) // Descontinuado
+                     dr.GetBoolean(6), // Descontinuado
+                     (byte[])dr["foto"]
                     ));
             }
 
@@ -380,6 +410,27 @@ namespace ComercialSys.Model
 
             // Retornando lista
             return lista;
+        }
+
+        public static byte[] PesquisaFoto(int _id)
+        {
+            ProdutoModel prod = new ProdutoModel();
+
+            var cmd = BancoModel.Abrir();
+            cmd.CommandText = "select * from produtos where idprod = " + _id;
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                prod.Id= Convert.ToInt32(dr.GetValue(0));
+                prod.Descricao =  dr.GetString(1);
+                prod.Unidade = dr.GetString(2);
+                prod.Codbar = dr.GetString(3);
+                prod.Valor =  dr.GetDouble(4);
+                prod.Desconto = dr.GetDouble(5);
+                prod.Descontinuado = dr.GetBoolean(6);
+                prod.Foto = (byte[])dr["foto"];
+            }
+            return prod.Foto;
         }
     }
 }

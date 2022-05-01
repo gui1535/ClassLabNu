@@ -1,5 +1,6 @@
 ﻿using ComercialSys.Model;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ComercialSys
@@ -46,20 +47,14 @@ namespace ComercialSys
             gpBoxPesq.Enabled = true;
             btnEditar.Enabled = false;
             btnInserir.Enabled = false;
+            btnInserirImagem.Enabled = false;
+            btnClear.Enabled = false;
             txtNome.Enabled = false;
             txtValor.Enabled = false;
             txtCodBar.Enabled = false;
             txtunidade.Enabled = false;
             txtDesconto.Enabled = false;
             chkDescontinuado.Enabled = false;
-
-            // Limpando TextBox
-            txtId.Text = "0";
-            txtNome.Clear();
-            txtValor.Text = "0";
-            txtCodBar.Clear();
-            txtunidade.Text = "0";
-            txtDesconto.Text = "0";
 
             // Botao visiveis
             btnBloquear.Visible = false;
@@ -83,6 +78,8 @@ namespace ComercialSys
                 gpBoxPesq.Enabled = false;
                 btnEditar.Enabled = true;
                 btnInserir.Enabled = false;
+                btnInserirImagem.Enabled = true;
+                btnClear.Enabled = true;
                 txtNome.Enabled = true;
                 txtValor.Enabled = true;
                 txtunidade.Enabled = true;
@@ -92,12 +89,14 @@ namespace ComercialSys
                 // Limpar campos de pesquisa
                 LimpaCampoPesquisa();
             }
-            else if (Convert.ToInt32(txtId.Text) == 0)
+            else if (Convert.ToInt32(txtId.Text) == 0 || txtId.Text == null)
             {
                 // Habilitando / Desabilitando campos
                 gpBoxPesq.Enabled = false;
                 btnEditar.Enabled = false;
                 btnInserir.Enabled = true;
+                btnClear.Enabled = true;
+                btnInserirImagem.Enabled = true;
                 txtNome.Enabled = true;
                 txtValor.Enabled = true;
                 txtCodBar.Enabled = true;
@@ -168,6 +167,9 @@ namespace ComercialSys
             txtValor.Text = PAtributos.Valor.ToString();
             txtDesconto.Text = PAtributos.Desconto.ToString();
             chkDescontinuado.Checked = PAtributos.Descontinuado;
+
+            MemoryStream mstream = new MemoryStream(ProdutoModel.PesquisaFoto(Convert.ToInt32(txtId.Text)));
+            picImage.Image = System.Drawing.Image.FromStream(mstream);
         }
 
         /// <summary>
@@ -183,6 +185,21 @@ namespace ComercialSys
 
         // Inserir Produtos ---------------------------------------------------------------------------------------------------------------
 
+        private byte[] ByteImagem()
+        {
+            // Array de bytes
+            byte[] imgByte;
+
+            // Armazenar Bytes
+            FileStream fstream = new FileStream(txtDir.Text, FileMode.Open, FileAccess.Read);
+
+            // Leitura de bytes
+            BinaryReader br = new BinaryReader(fstream);
+            imgByte = br.ReadBytes((int)fstream.Length);
+
+            return imgByte;
+        }
+
         /// <summary>
         /// Botão para inserir produtos
         /// </summary>
@@ -192,6 +209,7 @@ namespace ComercialSys
         {
             try
             {
+
                 // Objeto Produto
                 ProdutoModel produto = new ProdutoModel(
                      txtNome.Text,
@@ -199,12 +217,14 @@ namespace ComercialSys
                      txtCodBar.Text,
                      Convert.ToDouble(txtDesconto.Text),
                      Convert.ToDouble(txtValor.Text),
-                     Convert.ToBoolean(chkDescontinuado.Checked)
+                     Convert.ToBoolean(chkDescontinuado.Checked),
+                    ByteImagem()
                      );
 
                 // Inserindo produtoo
                 produto.Inserir();
 
+                // Mensagem Sucesso
                 MessageBox.Show($"Produto {produto.Id} inserido com sucesso", "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 //Listando DataGrid
@@ -213,10 +233,9 @@ namespace ComercialSys
                 // Bloqueando campos
                 btnBloquear_Click(sender, e);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message);
             }
 
 
@@ -243,6 +262,7 @@ namespace ComercialSys
                 txtCodBar.Clear();
                 txtunidade.Text = "0";
                 txtDesconto.Text = "0";
+                picImage.Image = null;
             }
             else
             {
@@ -277,6 +297,9 @@ namespace ComercialSys
                     txtValor.Text = i.Valor.ToString();
                     txtDesconto.Text = i.Desconto.ToString();
                     chkDescontinuado.Checked = i.Descontinuado;
+
+                    MemoryStream mstream = new MemoryStream(ProdutoModel.PesquisaFoto(Convert.ToInt32(txtId.Text)));
+                    picImage.Image = System.Drawing.Image.FromStream(mstream);
                 });
             }
         }
@@ -300,6 +323,7 @@ namespace ComercialSys
                 txtCodBar.Clear();
                 txtunidade.Text = "0";
                 txtDesconto.Text = "0";
+                picImage.Image = null;
             }
             else
             {
@@ -334,6 +358,9 @@ namespace ComercialSys
                     txtCodBar.Text = i.Codbar;
                     txtValor.Text = i.Valor.ToString();
                     txtDesconto.Text = i.Desconto.ToString();
+
+                    MemoryStream mstream = new MemoryStream(ProdutoModel.PesquisaFoto(Convert.ToInt32(txtId.Text)));
+                    picImage.Image = System.Drawing.Image.FromStream(mstream);
                 });
             }
         }
@@ -357,6 +384,7 @@ namespace ComercialSys
                 txtCodBar.Clear();
                 txtunidade.Text = "0";
                 txtDesconto.Text = "0";
+                picImage.Image = null;
             }
             else
             {
@@ -429,6 +457,7 @@ namespace ComercialSys
             produto.Unidade = txtunidade.Text;
             produto.Desconto = Convert.ToDouble(txtDesconto.Text);
             produto.Descontinuado = chkDescontinuado.Checked;
+            produto.Foto = ByteImagem();
 
             // Condição
             if (produto.Alterar()) // Se cliente alterar for igual a TRUE
@@ -445,9 +474,40 @@ namespace ComercialSys
             }
             //Listar DataGrid
             ListarProdutos();
+        }
 
-            // BLoquear campos
-            btnBloquear_Click(sender, e);
+        private void btnInserirImagem_Click(object sender, EventArgs e)
+        {
+            // Instancia do File Dialog
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            // Filtrar arquivos JPG / PNG / AllFiles
+            dialog.Filter = "JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png|AllFiles(*.*)|*.*";
+
+            // Se o resultado do dialog quando estiver aberto for igual a OK
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                // Variavel para pegar o diretorio da foto
+                string diretorioFoto = dialog.FileName.ToString();
+
+                // Salvando diretorio no TextBox
+                txtDir.Text = diretorioFoto;
+
+                // Salva foto na PictureBox
+                picImage.ImageLocation = diretorioFoto;
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtNome.Clear();
+            txtValor.Clear();
+            txtDesconto.Clear();
+            txtCodBar.Clear();
+            txtunidade.Clear();
+            txtDesconto.Clear();
+            txtId.Text = "0";
+            chkDescontinuado.Checked = true;
         }
     }
 }

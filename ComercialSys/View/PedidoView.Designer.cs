@@ -40,11 +40,6 @@
             this.txtDataPed = new MetroFramework.Controls.MetroTextBox();
             this.gpItensPed = new System.Windows.Forms.GroupBox();
             this.GridItensPedido = new System.Windows.Forms.DataGridView();
-            this.colunaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.txtDescricao = new MetroFramework.Controls.MetroTextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -55,13 +50,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnInserirPed = new MetroFramework.Controls.MetroButton();
             this.gpOperacoes = new System.Windows.Forms.GroupBox();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.btnFecharPed = new MetroFramework.Controls.MetroButton();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.label6 = new System.Windows.Forms.Label();
             this.txtValorFinal = new MetroFramework.Controls.MetroTextBox();
             this.lbStatusPed = new System.Windows.Forms.Label();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.picImage = new System.Windows.Forms.PictureBox();
+            this.colunaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpDadosPed.SuspendLayout();
             this.gpItensPed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).BeginInit();
@@ -82,9 +82,9 @@
             this.gpDadosPed.Controls.Add(this.txtDataPed);
             this.gpDadosPed.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpDadosPed.Location = new System.Drawing.Point(29, 33);
-            this.gpDadosPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpDadosPed.Margin = new System.Windows.Forms.Padding(4);
             this.gpDadosPed.Name = "gpDadosPed";
-            this.gpDadosPed.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpDadosPed.Padding = new System.Windows.Forms.Padding(4);
             this.gpDadosPed.Size = new System.Drawing.Size(1048, 112);
             this.gpDadosPed.TabIndex = 13;
             this.gpDadosPed.TabStop = false;
@@ -111,7 +111,7 @@
             // btnCriarPed
             // 
             this.btnCriarPed.Location = new System.Drawing.Point(913, 55);
-            this.btnCriarPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCriarPed.Margin = new System.Windows.Forms.Padding(4);
             this.btnCriarPed.Name = "btnCriarPed";
             this.btnCriarPed.Size = new System.Drawing.Size(119, 33);
             this.btnCriarPed.TabIndex = 19;
@@ -136,10 +136,10 @@
             // 
             // 
             this.txtIdPed.CustomButton.Image = null;
-            this.txtIdPed.CustomButton.Location = new System.Drawing.Point(159, 2);
-            this.txtIdPed.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdPed.CustomButton.Location = new System.Drawing.Point(119, 2);
+            this.txtIdPed.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdPed.CustomButton.Name = "";
-            this.txtIdPed.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.txtIdPed.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtIdPed.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtIdPed.CustomButton.TabIndex = 1;
             this.txtIdPed.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -147,10 +147,11 @@
             this.txtIdPed.CustomButton.Visible = false;
             this.txtIdPed.Lines = new string[0];
             this.txtIdPed.Location = new System.Drawing.Point(741, 60);
-            this.txtIdPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdPed.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdPed.MaxLength = 32767;
             this.txtIdPed.Name = "txtIdPed";
             this.txtIdPed.PasswordChar = '\0';
+            this.txtIdPed.ReadOnly = true;
             this.txtIdPed.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtIdPed.SelectedText = "";
             this.txtIdPed.SelectionLength = 0;
@@ -213,8 +214,8 @@
             this.txtDataPed.Enabled = false;
             this.txtDataPed.Lines = new string[0];
             this.txtDataPed.Location = new System.Drawing.Point(570, 60);
-            this.txtDataPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDataPed.MaxLength = 32767;
+            this.txtDataPed.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDataPed.MaxLength = 11;
             this.txtDataPed.Name = "txtDataPed";
             this.txtDataPed.PasswordChar = '\0';
             this.txtDataPed.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -243,9 +244,9 @@
             this.gpItensPed.Enabled = false;
             this.gpItensPed.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpItensPed.Location = new System.Drawing.Point(29, 162);
-            this.gpItensPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpItensPed.Margin = new System.Windows.Forms.Padding(4);
             this.gpItensPed.Name = "gpItensPed";
-            this.gpItensPed.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpItensPed.Padding = new System.Windows.Forms.Padding(4);
             this.gpItensPed.Size = new System.Drawing.Size(809, 439);
             this.gpItensPed.TabIndex = 20;
             this.gpItensPed.TabStop = false;
@@ -274,41 +275,6 @@
             this.GridItensPedido.Size = new System.Drawing.Size(796, 330);
             this.GridItensPedido.TabIndex = 26;
             // 
-            // colunaPedido
-            // 
-            this.colunaPedido.HeaderText = "Pedido";
-            this.colunaPedido.MinimumWidth = 6;
-            this.colunaPedido.Name = "colunaPedido";
-            this.colunaPedido.ReadOnly = true;
-            // 
-            // colunaProduto
-            // 
-            this.colunaProduto.HeaderText = "Produto";
-            this.colunaProduto.MinimumWidth = 6;
-            this.colunaProduto.Name = "colunaProduto";
-            this.colunaProduto.ReadOnly = true;
-            // 
-            // colunaValor
-            // 
-            this.colunaValor.HeaderText = "Valor";
-            this.colunaValor.MinimumWidth = 6;
-            this.colunaValor.Name = "colunaValor";
-            this.colunaValor.ReadOnly = true;
-            // 
-            // colunaQuantidade
-            // 
-            this.colunaQuantidade.HeaderText = "Quantidade";
-            this.colunaQuantidade.MinimumWidth = 6;
-            this.colunaQuantidade.Name = "colunaQuantidade";
-            this.colunaQuantidade.ReadOnly = true;
-            // 
-            // colunaDesconto
-            // 
-            this.colunaDesconto.HeaderText = "Desconto";
-            this.colunaDesconto.MinimumWidth = 6;
-            this.colunaDesconto.Name = "colunaDesconto";
-            this.colunaDesconto.ReadOnly = true;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -326,10 +292,10 @@
             // 
             // 
             this.txtDescricao.CustomButton.Image = null;
-            this.txtDescricao.CustomButton.Location = new System.Drawing.Point(147, 2);
-            this.txtDescricao.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescricao.CustomButton.Location = new System.Drawing.Point(110, 2);
+            this.txtDescricao.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescricao.CustomButton.Name = "";
-            this.txtDescricao.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.txtDescricao.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtDescricao.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtDescricao.CustomButton.TabIndex = 1;
             this.txtDescricao.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -337,7 +303,7 @@
             this.txtDescricao.CustomButton.Visible = false;
             this.txtDescricao.Lines = new string[0];
             this.txtDescricao.Location = new System.Drawing.Point(185, 55);
-            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescricao.MaxLength = 32767;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.PasswordChar = '\0';
@@ -370,10 +336,10 @@
             // 
             // 
             this.txtDesconto.CustomButton.Image = null;
-            this.txtDesconto.CustomButton.Location = new System.Drawing.Point(147, 2);
-            this.txtDesconto.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDesconto.CustomButton.Location = new System.Drawing.Point(110, 2);
+            this.txtDesconto.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtDesconto.CustomButton.Name = "";
-            this.txtDesconto.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.txtDesconto.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtDesconto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtDesconto.CustomButton.TabIndex = 1;
             this.txtDesconto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -381,7 +347,7 @@
             this.txtDesconto.CustomButton.Visible = false;
             this.txtDesconto.Lines = new string[0];
             this.txtDesconto.Location = new System.Drawing.Point(526, 55);
-            this.txtDesconto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDesconto.Margin = new System.Windows.Forms.Padding(4);
             this.txtDesconto.MaxLength = 32767;
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.PasswordChar = '\0';
@@ -413,10 +379,10 @@
             // 
             // 
             this.txtCodbar.CustomButton.Image = null;
-            this.txtCodbar.CustomButton.Location = new System.Drawing.Point(147, 2);
-            this.txtCodbar.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodbar.CustomButton.Location = new System.Drawing.Point(110, 2);
+            this.txtCodbar.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodbar.CustomButton.Name = "";
-            this.txtCodbar.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.txtCodbar.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtCodbar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCodbar.CustomButton.TabIndex = 1;
             this.txtCodbar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -424,7 +390,7 @@
             this.txtCodbar.CustomButton.Visible = false;
             this.txtCodbar.Lines = new string[0];
             this.txtCodbar.Location = new System.Drawing.Point(21, 55);
-            this.txtCodbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodbar.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodbar.MaxLength = 32767;
             this.txtCodbar.Name = "txtCodbar";
             this.txtCodbar.PasswordChar = '\0';
@@ -446,10 +412,10 @@
             // 
             // 
             this.txtValor.CustomButton.Image = null;
-            this.txtValor.CustomButton.Location = new System.Drawing.Point(147, 2);
-            this.txtValor.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtValor.CustomButton.Location = new System.Drawing.Point(110, 2);
+            this.txtValor.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtValor.CustomButton.Name = "";
-            this.txtValor.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.txtValor.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtValor.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtValor.CustomButton.TabIndex = 1;
             this.txtValor.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -457,7 +423,7 @@
             this.txtValor.CustomButton.Visible = false;
             this.txtValor.Lines = new string[0];
             this.txtValor.Location = new System.Drawing.Point(356, 55);
-            this.txtValor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(4);
             this.txtValor.MaxLength = 32767;
             this.txtValor.Name = "txtValor";
             this.txtValor.PasswordChar = '\0';
@@ -486,7 +452,7 @@
             // btnInserirPed
             // 
             this.btnInserirPed.Location = new System.Drawing.Point(701, 50);
-            this.btnInserirPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInserirPed.Margin = new System.Windows.Forms.Padding(4);
             this.btnInserirPed.Name = "btnInserirPed";
             this.btnInserirPed.Size = new System.Drawing.Size(100, 33);
             this.btnInserirPed.TabIndex = 21;
@@ -502,24 +468,44 @@
             this.gpOperacoes.Enabled = false;
             this.gpOperacoes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpOperacoes.Location = new System.Drawing.Point(29, 624);
-            this.gpOperacoes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpOperacoes.Margin = new System.Windows.Forms.Padding(4);
             this.gpOperacoes.Name = "gpOperacoes";
-            this.gpOperacoes.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpOperacoes.Padding = new System.Windows.Forms.Padding(4);
             this.gpOperacoes.Size = new System.Drawing.Size(809, 89);
             this.gpOperacoes.TabIndex = 21;
             this.gpOperacoes.TabStop = false;
             this.gpOperacoes.Text = "Operações";
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(42, 28);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(177, 44);
+            this.metroButton1.TabIndex = 23;
+            this.metroButton1.Text = "metroButton1";
+            this.metroButton1.UseSelectable = true;
+            // 
             // btnFecharPed
             // 
             this.btnFecharPed.Location = new System.Drawing.Point(588, 28);
-            this.btnFecharPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFecharPed.Margin = new System.Windows.Forms.Padding(4);
             this.btnFecharPed.Name = "btnFecharPed";
             this.btnFecharPed.Size = new System.Drawing.Size(177, 44);
             this.btnFecharPed.TabIndex = 22;
             this.btnFecharPed.Text = "Fechar Pedido";
             this.btnFecharPed.UseSelectable = true;
             this.btnFecharPed.Click += new System.EventHandler(this.btnFecharPed_Click);
+            // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(315, 28);
+            this.metroButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(177, 44);
+            this.metroButton3.TabIndex = 21;
+            this.metroButton3.Text = "metroButton3";
+            this.metroButton3.UseSelectable = true;
             // 
             // label6
             // 
@@ -539,7 +525,7 @@
             // 
             this.txtValorFinal.CustomButton.Image = null;
             this.txtValorFinal.CustomButton.Location = new System.Drawing.Point(205, 2);
-            this.txtValorFinal.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtValorFinal.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtValorFinal.CustomButton.Name = "";
             this.txtValorFinal.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtValorFinal.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -550,7 +536,7 @@
             this.txtValorFinal.Enabled = false;
             this.txtValorFinal.Lines = new string[0];
             this.txtValorFinal.Location = new System.Drawing.Point(846, 558);
-            this.txtValorFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtValorFinal.Margin = new System.Windows.Forms.Padding(4);
             this.txtValorFinal.MaxLength = 32767;
             this.txtValorFinal.Name = "txtValorFinal";
             this.txtValorFinal.PasswordChar = '\0';
@@ -576,26 +562,6 @@
             this.lbStatusPed.Size = new System.Drawing.Size(0, 44);
             this.lbStatusPed.TabIndex = 20;
             // 
-            // metroButton3
-            // 
-            this.metroButton3.Location = new System.Drawing.Point(315, 28);
-            this.metroButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(177, 44);
-            this.metroButton3.TabIndex = 21;
-            this.metroButton3.Text = "metroButton3";
-            this.metroButton3.UseSelectable = true;
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(42, 28);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(177, 44);
-            this.metroButton1.TabIndex = 23;
-            this.metroButton1.Text = "metroButton1";
-            this.metroButton1.UseSelectable = true;
-            // 
             // picImage
             // 
             this.picImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -605,6 +571,42 @@
             this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImage.TabIndex = 38;
             this.picImage.TabStop = false;
+            // 
+            // colunaPedido
+            // 
+            this.colunaPedido.HeaderText = "Pedido";
+            this.colunaPedido.MinimumWidth = 6;
+            this.colunaPedido.Name = "colunaPedido";
+            this.colunaPedido.ReadOnly = true;
+            // 
+            // colunaProduto
+            // 
+            this.colunaProduto.HeaderText = "Produto";
+            this.colunaProduto.MinimumWidth = 6;
+            this.colunaProduto.Name = "colunaProduto";
+            this.colunaProduto.ReadOnly = true;
+            // 
+            // colunaValor
+            // 
+            this.colunaValor.HeaderText = "Valor";
+            this.colunaValor.MinimumWidth = 6;
+            this.colunaValor.Name = "colunaValor";
+            this.colunaValor.ReadOnly = true;
+            // 
+            // colunaQuantidade
+            // 
+            this.colunaQuantidade.HeaderText = "Quantidade";
+            this.colunaQuantidade.MinimumWidth = 6;
+            this.colunaQuantidade.Name = "colunaQuantidade";
+            this.colunaQuantidade.ReadOnly = true;
+            this.colunaQuantidade.Visible = false;
+            // 
+            // colunaDesconto
+            // 
+            this.colunaDesconto.HeaderText = "Desconto";
+            this.colunaDesconto.MinimumWidth = 6;
+            this.colunaDesconto.Name = "colunaDesconto";
+            this.colunaDesconto.ReadOnly = true;
             // 
             // PedidoView
             // 
@@ -619,7 +621,7 @@
             this.Controls.Add(this.gpItensPed);
             this.Controls.Add(this.gpDadosPed);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PedidoView";
             this.Text = "PedidoView";
             this.Load += new System.EventHandler(this.PedidoView_Load);
@@ -662,13 +664,13 @@
         private System.Windows.Forms.ComboBox cmbClientes;
         private System.Windows.Forms.ComboBox cmbUsuarios;
         private System.Windows.Forms.DataGridView GridItensPedido;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton metroButton3;
+        private System.Windows.Forms.PictureBox picImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDesconto;
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton metroButton3;
-        private System.Windows.Forms.PictureBox picImage;
     }
 }

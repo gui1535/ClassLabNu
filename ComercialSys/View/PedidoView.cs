@@ -110,12 +110,11 @@ namespace ComercialSys.View
 
             foreach (DataGridViewRow row in GridItensPedido.Rows)
             {
-                total += Convert.ToDecimal(row.Cells["colunaValor"].Value);
+                total += Convert.ToDecimal(row.Cells["colunaValor"].Value) - Convert.ToDecimal(row.Cells["colunaDesconto"].Value);
             }
 
             txtValorFinal.Text = Convert.ToDouble(total).ToString("C");
         }
-
 
         private void btnFecharPed_Click(object sender, EventArgs e)
         {

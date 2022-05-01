@@ -39,7 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDataPed = new MetroFramework.Controls.MetroTextBox();
             this.gpItensPed = new System.Windows.Forms.GroupBox();
-            this.btnPesqCod = new MetroFramework.Controls.MetroButton();
             this.GridItensPedido = new System.Windows.Forms.DataGridView();
             this.colunaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,15 +56,17 @@
             this.btnInserirPed = new MetroFramework.Controls.MetroButton();
             this.gpOperacoes = new System.Windows.Forms.GroupBox();
             this.btnFecharPed = new MetroFramework.Controls.MetroButton();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.label6 = new System.Windows.Forms.Label();
             this.txtValorFinal = new MetroFramework.Controls.MetroTextBox();
             this.lbStatusPed = new System.Windows.Forms.Label();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.picImage = new System.Windows.Forms.PictureBox();
             this.gpDadosPed.SuspendLayout();
             this.gpItensPed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).BeginInit();
             this.gpOperacoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             this.SuspendLayout();
             // 
             // gpDadosPed
@@ -80,9 +81,11 @@
             this.gpDadosPed.Controls.Add(this.label1);
             this.gpDadosPed.Controls.Add(this.txtDataPed);
             this.gpDadosPed.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpDadosPed.Location = new System.Drawing.Point(22, 27);
+            this.gpDadosPed.Location = new System.Drawing.Point(29, 33);
+            this.gpDadosPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gpDadosPed.Name = "gpDadosPed";
-            this.gpDadosPed.Size = new System.Drawing.Size(607, 148);
+            this.gpDadosPed.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpDadosPed.Size = new System.Drawing.Size(1048, 112);
             this.gpDadosPed.TabIndex = 13;
             this.gpDadosPed.TabStop = false;
             this.gpDadosPed.Text = "Dados do Pedido";
@@ -90,26 +93,27 @@
             // cmbClientes
             // 
             this.cmbClientes.FormattingEnabled = true;
-            this.cmbClientes.Location = new System.Drawing.Point(16, 46);
-            this.cmbClientes.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbClientes.Location = new System.Drawing.Point(21, 57);
+            this.cmbClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbClientes.Name = "cmbClientes";
-            this.cmbClientes.Size = new System.Drawing.Size(239, 29);
+            this.cmbClientes.Size = new System.Drawing.Size(254, 31);
             this.cmbClientes.TabIndex = 21;
             // 
             // cmbUsuarios
             // 
             this.cmbUsuarios.FormattingEnabled = true;
-            this.cmbUsuarios.Location = new System.Drawing.Point(16, 117);
-            this.cmbUsuarios.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbUsuarios.Location = new System.Drawing.Point(296, 57);
+            this.cmbUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbUsuarios.Name = "cmbUsuarios";
-            this.cmbUsuarios.Size = new System.Drawing.Size(239, 29);
+            this.cmbUsuarios.Size = new System.Drawing.Size(254, 31);
             this.cmbUsuarios.TabIndex = 20;
             // 
             // btnCriarPed
             // 
-            this.btnCriarPed.Location = new System.Drawing.Point(476, 97);
+            this.btnCriarPed.Location = new System.Drawing.Point(913, 55);
+            this.btnCriarPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCriarPed.Name = "btnCriarPed";
-            this.btnCriarPed.Size = new System.Drawing.Size(109, 27);
+            this.btnCriarPed.Size = new System.Drawing.Size(119, 33);
             this.btnCriarPed.TabIndex = 19;
             this.btnCriarPed.Text = "Criar";
             this.btnCriarPed.UseSelectable = true;
@@ -119,9 +123,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(473, 28);
+            this.label4.Location = new System.Drawing.Point(737, 35);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 17);
+            this.label4.Size = new System.Drawing.Size(98, 21);
             this.label4.TabIndex = 18;
             this.label4.Text = "ID PEDIDO";
             // 
@@ -131,16 +136,18 @@
             // 
             // 
             this.txtIdPed.CustomButton.Image = null;
-            this.txtIdPed.CustomButton.Location = new System.Drawing.Point(87, 1);
+            this.txtIdPed.CustomButton.Location = new System.Drawing.Point(159, 2);
+            this.txtIdPed.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtIdPed.CustomButton.Name = "";
-            this.txtIdPed.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtIdPed.CustomButton.Size = new System.Drawing.Size(31, 28);
             this.txtIdPed.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtIdPed.CustomButton.TabIndex = 1;
             this.txtIdPed.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtIdPed.CustomButton.UseSelectable = true;
             this.txtIdPed.CustomButton.Visible = false;
             this.txtIdPed.Lines = new string[0];
-            this.txtIdPed.Location = new System.Drawing.Point(476, 48);
+            this.txtIdPed.Location = new System.Drawing.Point(741, 60);
+            this.txtIdPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtIdPed.MaxLength = 32767;
             this.txtIdPed.Name = "txtIdPed";
             this.txtIdPed.PasswordChar = '\0';
@@ -149,7 +156,7 @@
             this.txtIdPed.SelectionLength = 0;
             this.txtIdPed.SelectionStart = 0;
             this.txtIdPed.ShortcutsEnabled = true;
-            this.txtIdPed.Size = new System.Drawing.Size(109, 23);
+            this.txtIdPed.Size = new System.Drawing.Size(145, 28);
             this.txtIdPed.TabIndex = 17;
             this.txtIdPed.UseSelectable = true;
             this.txtIdPed.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -159,9 +166,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 81);
+            this.label3.Location = new System.Drawing.Point(292, 29);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 17);
+            this.label3.Size = new System.Drawing.Size(125, 21);
             this.label3.TabIndex = 16;
             this.label3.Text = "Nome Usuario";
             // 
@@ -169,9 +177,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 26);
+            this.label2.Location = new System.Drawing.Point(17, 32);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
+            this.label2.Size = new System.Drawing.Size(121, 21);
             this.label2.TabIndex = 15;
             this.label2.Text = "Nome cliente";
             // 
@@ -179,9 +188,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(301, 28);
+            this.label1.Location = new System.Drawing.Point(566, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 17);
+            this.label1.Size = new System.Drawing.Size(54, 21);
             this.label1.TabIndex = 14;
             this.label1.Text = "Data";
             // 
@@ -191,9 +201,10 @@
             // 
             // 
             this.txtDataPed.CustomButton.Image = null;
-            this.txtDataPed.CustomButton.Location = new System.Drawing.Point(113, 1);
+            this.txtDataPed.CustomButton.Location = new System.Drawing.Point(119, 2);
+            this.txtDataPed.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.txtDataPed.CustomButton.Name = "";
-            this.txtDataPed.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDataPed.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtDataPed.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtDataPed.CustomButton.TabIndex = 1;
             this.txtDataPed.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -201,7 +212,8 @@
             this.txtDataPed.CustomButton.Visible = false;
             this.txtDataPed.Enabled = false;
             this.txtDataPed.Lines = new string[0];
-            this.txtDataPed.Location = new System.Drawing.Point(304, 48);
+            this.txtDataPed.Location = new System.Drawing.Point(570, 60);
+            this.txtDataPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDataPed.MaxLength = 32767;
             this.txtDataPed.Name = "txtDataPed";
             this.txtDataPed.PasswordChar = '\0';
@@ -210,7 +222,7 @@
             this.txtDataPed.SelectionLength = 0;
             this.txtDataPed.SelectionStart = 0;
             this.txtDataPed.ShortcutsEnabled = true;
-            this.txtDataPed.Size = new System.Drawing.Size(135, 23);
+            this.txtDataPed.Size = new System.Drawing.Size(145, 28);
             this.txtDataPed.TabIndex = 13;
             this.txtDataPed.UseSelectable = true;
             this.txtDataPed.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -218,7 +230,6 @@
             // 
             // gpItensPed
             // 
-            this.gpItensPed.Controls.Add(this.btnPesqCod);
             this.gpItensPed.Controls.Add(this.GridItensPedido);
             this.gpItensPed.Controls.Add(this.label9);
             this.gpItensPed.Controls.Add(this.txtDescricao);
@@ -231,22 +242,14 @@
             this.gpItensPed.Controls.Add(this.btnInserirPed);
             this.gpItensPed.Enabled = false;
             this.gpItensPed.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpItensPed.Location = new System.Drawing.Point(22, 190);
+            this.gpItensPed.Location = new System.Drawing.Point(29, 162);
+            this.gpItensPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gpItensPed.Name = "gpItensPed";
-            this.gpItensPed.Size = new System.Drawing.Size(607, 334);
+            this.gpItensPed.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpItensPed.Size = new System.Drawing.Size(809, 439);
             this.gpItensPed.TabIndex = 20;
             this.gpItensPed.TabStop = false;
             this.gpItensPed.Text = "Dados do Pedido";
-            // 
-            // btnPesqCod
-            // 
-            this.btnPesqCod.Location = new System.Drawing.Point(122, 45);
-            this.btnPesqCod.Name = "btnPesqCod";
-            this.btnPesqCod.Size = new System.Drawing.Size(24, 23);
-            this.btnPesqCod.TabIndex = 27;
-            this.btnPesqCod.Text = "...";
-            this.btnPesqCod.UseSelectable = true;
-            this.btnPesqCod.Click += new System.EventHandler(this.btnPesqCod_Click);
             // 
             // GridItensPedido
             // 
@@ -262,42 +265,47 @@
             this.colunaQuantidade,
             this.colunaDesconto});
             this.GridItensPedido.GridColor = System.Drawing.Color.Black;
-            this.GridItensPedido.Location = new System.Drawing.Point(5, 84);
-            this.GridItensPedido.Margin = new System.Windows.Forms.Padding(2);
+            this.GridItensPedido.Location = new System.Drawing.Point(7, 103);
+            this.GridItensPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GridItensPedido.Name = "GridItensPedido";
             this.GridItensPedido.ReadOnly = true;
             this.GridItensPedido.RowHeadersVisible = false;
             this.GridItensPedido.RowHeadersWidth = 51;
-            this.GridItensPedido.Size = new System.Drawing.Size(597, 245);
+            this.GridItensPedido.Size = new System.Drawing.Size(796, 330);
             this.GridItensPedido.TabIndex = 26;
             // 
             // colunaPedido
             // 
             this.colunaPedido.HeaderText = "Pedido";
+            this.colunaPedido.MinimumWidth = 6;
             this.colunaPedido.Name = "colunaPedido";
             this.colunaPedido.ReadOnly = true;
             // 
             // colunaProduto
             // 
             this.colunaProduto.HeaderText = "Produto";
+            this.colunaProduto.MinimumWidth = 6;
             this.colunaProduto.Name = "colunaProduto";
             this.colunaProduto.ReadOnly = true;
             // 
             // colunaValor
             // 
             this.colunaValor.HeaderText = "Valor";
+            this.colunaValor.MinimumWidth = 6;
             this.colunaValor.Name = "colunaValor";
             this.colunaValor.ReadOnly = true;
             // 
             // colunaQuantidade
             // 
             this.colunaQuantidade.HeaderText = "Quantidade";
+            this.colunaQuantidade.MinimumWidth = 6;
             this.colunaQuantidade.Name = "colunaQuantidade";
             this.colunaQuantidade.ReadOnly = true;
             // 
             // colunaDesconto
             // 
             this.colunaDesconto.HeaderText = "Desconto";
+            this.colunaDesconto.MinimumWidth = 6;
             this.colunaDesconto.Name = "colunaDesconto";
             this.colunaDesconto.ReadOnly = true;
             // 
@@ -305,9 +313,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(159, 25);
+            this.label9.Location = new System.Drawing.Point(181, 31);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 17);
+            this.label9.Size = new System.Drawing.Size(94, 21);
             this.label9.TabIndex = 25;
             this.label9.Text = "Descricao";
             // 
@@ -317,16 +326,18 @@
             // 
             // 
             this.txtDescricao.CustomButton.Image = null;
-            this.txtDescricao.CustomButton.Location = new System.Drawing.Point(80, 1);
+            this.txtDescricao.CustomButton.Location = new System.Drawing.Point(147, 2);
+            this.txtDescricao.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescricao.CustomButton.Name = "";
-            this.txtDescricao.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDescricao.CustomButton.Size = new System.Drawing.Size(31, 28);
             this.txtDescricao.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtDescricao.CustomButton.TabIndex = 1;
             this.txtDescricao.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtDescricao.CustomButton.UseSelectable = true;
             this.txtDescricao.CustomButton.Visible = false;
             this.txtDescricao.Lines = new string[0];
-            this.txtDescricao.Location = new System.Drawing.Point(162, 45);
+            this.txtDescricao.Location = new System.Drawing.Point(185, 55);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescricao.MaxLength = 32767;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.PasswordChar = '\0';
@@ -335,7 +346,7 @@
             this.txtDescricao.SelectionLength = 0;
             this.txtDescricao.SelectionStart = 0;
             this.txtDescricao.ShortcutsEnabled = true;
-            this.txtDescricao.Size = new System.Drawing.Size(102, 23);
+            this.txtDescricao.Size = new System.Drawing.Size(136, 28);
             this.txtDescricao.TabIndex = 24;
             this.txtDescricao.UseSelectable = true;
             this.txtDescricao.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -346,9 +357,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(415, 25);
+            this.label8.Location = new System.Drawing.Point(522, 31);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 17);
+            this.label8.Size = new System.Drawing.Size(91, 21);
             this.label8.TabIndex = 23;
             this.label8.Text = "Desconto";
             // 
@@ -358,16 +370,18 @@
             // 
             // 
             this.txtDesconto.CustomButton.Image = null;
-            this.txtDesconto.CustomButton.Location = new System.Drawing.Point(80, 1);
+            this.txtDesconto.CustomButton.Location = new System.Drawing.Point(147, 2);
+            this.txtDesconto.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDesconto.CustomButton.Name = "";
-            this.txtDesconto.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDesconto.CustomButton.Size = new System.Drawing.Size(31, 28);
             this.txtDesconto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtDesconto.CustomButton.TabIndex = 1;
             this.txtDesconto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtDesconto.CustomButton.UseSelectable = true;
             this.txtDesconto.CustomButton.Visible = false;
             this.txtDesconto.Lines = new string[0];
-            this.txtDesconto.Location = new System.Drawing.Point(418, 45);
+            this.txtDesconto.Location = new System.Drawing.Point(526, 55);
+            this.txtDesconto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDesconto.MaxLength = 32767;
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.PasswordChar = '\0';
@@ -376,7 +390,7 @@
             this.txtDesconto.SelectionLength = 0;
             this.txtDesconto.SelectionStart = 0;
             this.txtDesconto.ShortcutsEnabled = true;
-            this.txtDesconto.Size = new System.Drawing.Size(102, 23);
+            this.txtDesconto.Size = new System.Drawing.Size(136, 28);
             this.txtDesconto.TabIndex = 22;
             this.txtDesconto.UseSelectable = true;
             this.txtDesconto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -386,9 +400,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(287, 25);
+            this.label7.Location = new System.Drawing.Point(352, 31);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 17);
+            this.label7.Size = new System.Drawing.Size(54, 21);
             this.label7.TabIndex = 21;
             this.label7.Text = "Valor";
             // 
@@ -398,16 +413,18 @@
             // 
             // 
             this.txtCodbar.CustomButton.Image = null;
-            this.txtCodbar.CustomButton.Location = new System.Drawing.Point(80, 1);
+            this.txtCodbar.CustomButton.Location = new System.Drawing.Point(147, 2);
+            this.txtCodbar.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCodbar.CustomButton.Name = "";
-            this.txtCodbar.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtCodbar.CustomButton.Size = new System.Drawing.Size(31, 28);
             this.txtCodbar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCodbar.CustomButton.TabIndex = 1;
             this.txtCodbar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtCodbar.CustomButton.UseSelectable = true;
             this.txtCodbar.CustomButton.Visible = false;
             this.txtCodbar.Lines = new string[0];
-            this.txtCodbar.Location = new System.Drawing.Point(16, 45);
+            this.txtCodbar.Location = new System.Drawing.Point(21, 55);
+            this.txtCodbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCodbar.MaxLength = 32767;
             this.txtCodbar.Name = "txtCodbar";
             this.txtCodbar.PasswordChar = '\0';
@@ -416,7 +433,7 @@
             this.txtCodbar.SelectionLength = 0;
             this.txtCodbar.SelectionStart = 0;
             this.txtCodbar.ShortcutsEnabled = true;
-            this.txtCodbar.Size = new System.Drawing.Size(102, 23);
+            this.txtCodbar.Size = new System.Drawing.Size(136, 28);
             this.txtCodbar.TabIndex = 20;
             this.txtCodbar.UseSelectable = true;
             this.txtCodbar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -429,16 +446,18 @@
             // 
             // 
             this.txtValor.CustomButton.Image = null;
-            this.txtValor.CustomButton.Location = new System.Drawing.Point(80, 1);
+            this.txtValor.CustomButton.Location = new System.Drawing.Point(147, 2);
+            this.txtValor.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtValor.CustomButton.Name = "";
-            this.txtValor.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtValor.CustomButton.Size = new System.Drawing.Size(31, 28);
             this.txtValor.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtValor.CustomButton.TabIndex = 1;
             this.txtValor.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtValor.CustomButton.UseSelectable = true;
             this.txtValor.CustomButton.Visible = false;
             this.txtValor.Lines = new string[0];
-            this.txtValor.Location = new System.Drawing.Point(290, 45);
+            this.txtValor.Location = new System.Drawing.Point(356, 55);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtValor.MaxLength = 32767;
             this.txtValor.Name = "txtValor";
             this.txtValor.PasswordChar = '\0';
@@ -447,7 +466,7 @@
             this.txtValor.SelectionLength = 0;
             this.txtValor.SelectionStart = 0;
             this.txtValor.ShortcutsEnabled = true;
-            this.txtValor.Size = new System.Drawing.Size(102, 23);
+            this.txtValor.Size = new System.Drawing.Size(136, 28);
             this.txtValor.TabIndex = 20;
             this.txtValor.UseSelectable = true;
             this.txtValor.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -457,17 +476,19 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(13, 25);
+            this.label5.Location = new System.Drawing.Point(17, 31);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 17);
+            this.label5.Size = new System.Drawing.Size(108, 21);
             this.label5.TabIndex = 20;
             this.label5.Text = "Cod. Barras";
             // 
             // btnInserirPed
             // 
-            this.btnInserirPed.Location = new System.Drawing.Point(526, 41);
+            this.btnInserirPed.Location = new System.Drawing.Point(701, 50);
+            this.btnInserirPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInserirPed.Name = "btnInserirPed";
-            this.btnInserirPed.Size = new System.Drawing.Size(75, 27);
+            this.btnInserirPed.Size = new System.Drawing.Size(100, 33);
             this.btnInserirPed.TabIndex = 21;
             this.btnInserirPed.Text = "Inserir";
             this.btnInserirPed.UseSelectable = true;
@@ -475,53 +496,39 @@
             // 
             // gpOperacoes
             // 
+            this.gpOperacoes.Controls.Add(this.metroButton1);
             this.gpOperacoes.Controls.Add(this.btnFecharPed);
             this.gpOperacoes.Controls.Add(this.metroButton3);
-            this.gpOperacoes.Controls.Add(this.metroButton2);
             this.gpOperacoes.Enabled = false;
             this.gpOperacoes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpOperacoes.Location = new System.Drawing.Point(635, 190);
+            this.gpOperacoes.Location = new System.Drawing.Point(29, 624);
+            this.gpOperacoes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gpOperacoes.Name = "gpOperacoes";
-            this.gpOperacoes.Size = new System.Drawing.Size(153, 252);
+            this.gpOperacoes.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpOperacoes.Size = new System.Drawing.Size(809, 89);
             this.gpOperacoes.TabIndex = 21;
             this.gpOperacoes.TabStop = false;
             this.gpOperacoes.Text = "Operações";
             // 
             // btnFecharPed
             // 
-            this.btnFecharPed.Location = new System.Drawing.Point(6, 196);
+            this.btnFecharPed.Location = new System.Drawing.Point(588, 28);
+            this.btnFecharPed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFecharPed.Name = "btnFecharPed";
-            this.btnFecharPed.Size = new System.Drawing.Size(133, 36);
+            this.btnFecharPed.Size = new System.Drawing.Size(177, 44);
             this.btnFecharPed.TabIndex = 22;
             this.btnFecharPed.Text = "Fechar Pedido";
             this.btnFecharPed.UseSelectable = true;
             this.btnFecharPed.Click += new System.EventHandler(this.btnFecharPed_Click);
             // 
-            // metroButton3
-            // 
-            this.metroButton3.Location = new System.Drawing.Point(6, 114);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(133, 36);
-            this.metroButton3.TabIndex = 21;
-            this.metroButton3.Text = "metroButton3";
-            this.metroButton3.UseSelectable = true;
-            // 
-            // metroButton2
-            // 
-            this.metroButton2.Location = new System.Drawing.Point(6, 32);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(133, 36);
-            this.metroButton2.TabIndex = 20;
-            this.metroButton2.Text = "metroButton2";
-            this.metroButton2.UseSelectable = true;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(645, 473);
+            this.label6.Location = new System.Drawing.Point(846, 530);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 17);
+            this.label6.Size = new System.Drawing.Size(126, 21);
             this.label6.TabIndex = 21;
             this.label6.Text = "VALOR TOTAL";
             // 
@@ -531,9 +538,10 @@
             // 
             // 
             this.txtValorFinal.CustomButton.Image = null;
-            this.txtValorFinal.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtValorFinal.CustomButton.Location = new System.Drawing.Point(205, 2);
+            this.txtValorFinal.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtValorFinal.CustomButton.Name = "";
-            this.txtValorFinal.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtValorFinal.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtValorFinal.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtValorFinal.CustomButton.TabIndex = 1;
             this.txtValorFinal.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -541,7 +549,8 @@
             this.txtValorFinal.CustomButton.Visible = false;
             this.txtValorFinal.Enabled = false;
             this.txtValorFinal.Lines = new string[0];
-            this.txtValorFinal.Location = new System.Drawing.Point(645, 496);
+            this.txtValorFinal.Location = new System.Drawing.Point(846, 558);
+            this.txtValorFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtValorFinal.MaxLength = 32767;
             this.txtValorFinal.Name = "txtValorFinal";
             this.txtValorFinal.PasswordChar = '\0';
@@ -550,7 +559,7 @@
             this.txtValorFinal.SelectionLength = 0;
             this.txtValorFinal.SelectionStart = 0;
             this.txtValorFinal.ShortcutsEnabled = true;
-            this.txtValorFinal.Size = new System.Drawing.Size(143, 23);
+            this.txtValorFinal.Size = new System.Drawing.Size(231, 28);
             this.txtValorFinal.TabIndex = 20;
             this.txtValorFinal.UseSelectable = true;
             this.txtValorFinal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -559,24 +568,58 @@
             // lbStatusPed
             // 
             this.lbStatusPed.AutoSize = true;
-            this.lbStatusPed.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatusPed.Location = new System.Drawing.Point(642, 73);
+            this.lbStatusPed.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatusPed.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lbStatusPed.Location = new System.Drawing.Point(884, 201);
+            this.lbStatusPed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbStatusPed.Name = "lbStatusPed";
-            this.lbStatusPed.Size = new System.Drawing.Size(0, 25);
+            this.lbStatusPed.Size = new System.Drawing.Size(0, 44);
             this.lbStatusPed.TabIndex = 20;
+            // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(315, 28);
+            this.metroButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(177, 44);
+            this.metroButton3.TabIndex = 21;
+            this.metroButton3.Text = "metroButton3";
+            this.metroButton3.UseSelectable = true;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(42, 28);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(177, 44);
+            this.metroButton1.TabIndex = 23;
+            this.metroButton1.Text = "metroButton1";
+            this.metroButton1.UseSelectable = true;
+            // 
+            // picImage
+            // 
+            this.picImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picImage.Location = new System.Drawing.Point(861, 288);
+            this.picImage.Name = "picImage";
+            this.picImage.Size = new System.Drawing.Size(200, 200);
+            this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picImage.TabIndex = 38;
+            this.picImage.TabStop = false;
             // 
             // PedidoView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 590);
+            this.ClientSize = new System.Drawing.Size(1097, 726);
             this.Controls.Add(this.lbStatusPed);
+            this.Controls.Add(this.picImage);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.gpOperacoes);
             this.Controls.Add(this.txtValorFinal);
             this.Controls.Add(this.gpItensPed);
             this.Controls.Add(this.gpDadosPed);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PedidoView";
             this.Text = "PedidoView";
             this.Load += new System.EventHandler(this.PedidoView_Load);
@@ -586,6 +629,7 @@
             this.gpItensPed.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).EndInit();
             this.gpOperacoes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -603,8 +647,6 @@
         private System.Windows.Forms.GroupBox gpItensPed;
         private System.Windows.Forms.GroupBox gpOperacoes;
         private MetroFramework.Controls.MetroButton btnFecharPed;
-        private MetroFramework.Controls.MetroButton metroButton3;
-        private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton btnInserirPed;
         private System.Windows.Forms.Label label9;
         private MetroFramework.Controls.MetroTextBox txtDescricao;
@@ -625,6 +667,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDesconto;
-        private MetroFramework.Controls.MetroButton btnPesqCod;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton metroButton3;
+        private System.Windows.Forms.PictureBox picImage;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ComercialSys.Controller;
 using ComercialSys.Model;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ComercialSys.View
@@ -58,20 +59,30 @@ namespace ComercialSys.View
 
         private void txtCodbar_KeyUp(object sender, KeyEventArgs e)
         {
-            // Verificando se o valor a pesquisar é vazio
-            if (txtCodbar.Text.Length > 12)
+            try
             {
-                // Instancia do Controlador
-                ProdutoController PC = new ProdutoController();
+                // Verificando se o valor a pesquisar é vazio
+                if (txtCodbar.Text.Length > 12)
+                {
+                    // Instancia do Controlador
+                    ProdutoController PC = new ProdutoController();
 
-                // Consultando o ID do codbar para prencher TextBox
-                PC.ConsultaCodBar(txtCodbar.Text);
+                    // Consultando o ID do codbar para prencher TextBox
+                    PC.ConsultaCodBar(txtCodbar.Text);
 
-                // Prenchendo TextBox
-                txtCodbar.Text = PC.Codbar;
-                txtDesconto.Text = PC.Desconto.ToString();
-                txtDescricao.Text = PC.Descricao;
-                txtValor.Text = PC.Valor.ToString();
+                    // Prenchendo TextBox
+                    txtCodbar.Text = PC.Codbar;
+                    txtDesconto.Text = PC.Desconto.ToString();
+                    txtDescricao.Text = PC.Descricao;
+                    txtValor.Text = PC.Valor.ToString();
+
+                    MemoryStream mstream = new MemoryStream(ProdutoModel.PesquisaFotoCodBar(txtCodbar.Text));
+                    picImage.Image = System.Drawing.Image.FromStream(mstream);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "SysComercial", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -87,6 +98,7 @@ namespace ComercialSys.View
             PC.ConsultaCodBar(txtCodbar.Text);
 
             IPC.ListarItem(Convert.ToInt32(txtIdPed.Text), PC.Id, GridItensPedido, colunaPedido, colunaProduto, colunaValor, colunaQuantidade, colunaDesconto);
+            
 
             calculaTotal();
         }
@@ -104,12 +116,6 @@ namespace ComercialSys.View
             txtValorFinal.Text = Convert.ToDouble(total).ToString("C");
         }
 
-        private void btnPesqCod_Click(object sender, EventArgs e)
-        {
-            ListaProdutosView LPW = new ListaProdutosView();
-
-            LPW.ShowDialog();
-        }
 
         private void btnFecharPed_Click(object sender, EventArgs e)
         {

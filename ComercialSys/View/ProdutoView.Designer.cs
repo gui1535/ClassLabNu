@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProdutoView));
             this.gpBoxCadastrar = new System.Windows.Forms.GroupBox();
             this.btnInserirImagem = new MetroFramework.Controls.MetroButton();
             this.picImage = new System.Windows.Forms.PictureBox();
@@ -118,9 +119,12 @@
             // 
             // picImage
             // 
+            this.picImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picImage.BackgroundImage")));
+            this.picImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picImage.Location = new System.Drawing.Point(674, 24);
             this.picImage.Name = "picImage";
             this.picImage.Size = new System.Drawing.Size(172, 124);
+            this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImage.TabIndex = 37;
             this.picImage.TabStop = false;
             // 

@@ -412,7 +412,7 @@ namespace ComercialSys.Model
             return lista;
         }
 
-        public static byte[] PesquisaFoto(int _id)
+        public static byte[] PesquisaFotoId(int _id)
         {
             ProdutoModel prod = new ProdutoModel();
 
@@ -426,6 +426,27 @@ namespace ComercialSys.Model
                 prod.Unidade = dr.GetString(2);
                 prod.Codbar = dr.GetString(3);
                 prod.Valor =  dr.GetDouble(4);
+                prod.Desconto = dr.GetDouble(5);
+                prod.Descontinuado = dr.GetBoolean(6);
+                prod.Foto = (byte[])dr["foto"];
+            }
+            return prod.Foto;
+        }
+
+        public static byte[] PesquisaFotoCodBar(string _codbar)
+        {
+            ProdutoModel prod = new ProdutoModel();
+
+            var cmd = BancoModel.Abrir();
+            cmd.CommandText = "select * from produtos where codbar = " + _codbar;
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                prod.Id = Convert.ToInt32(dr.GetValue(0));
+                prod.Descricao = dr.GetString(1);
+                prod.Unidade = dr.GetString(2);
+                prod.Codbar = dr.GetString(3);
+                prod.Valor = dr.GetDouble(4);
                 prod.Desconto = dr.GetDouble(5);
                 prod.Descontinuado = dr.GetBoolean(6);
                 prod.Foto = (byte[])dr["foto"];

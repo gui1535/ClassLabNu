@@ -78,6 +78,7 @@
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -142,12 +143,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClienteView.resx</DependentUpon>
     </Compile>
-    <Compile Include="View\ListaProdutosView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ListaProdutosView.Designer.cs">
-      <DependentUpon>ListaProdutosView.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\LoginView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,9 +185,6 @@
       <DependentUpon>ClienteView.cs</DependentUpon>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ClienteView1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ListaProdutosView.resx">
-      <DependentUpon>ListaProdutosView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>

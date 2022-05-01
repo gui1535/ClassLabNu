@@ -168,7 +168,7 @@ namespace ComercialSys
             txtDesconto.Text = PAtributos.Desconto.ToString();
             chkDescontinuado.Checked = PAtributos.Descontinuado;
 
-            MemoryStream mstream = new MemoryStream(ProdutoModel.PesquisaFoto(Convert.ToInt32(txtId.Text)));
+            MemoryStream mstream = new MemoryStream(ProdutoModel.PesquisaFotoId(Convert.ToInt32(txtId.Text)));
             picImage.Image = System.Drawing.Image.FromStream(mstream);
         }
 
@@ -298,7 +298,7 @@ namespace ComercialSys
                     txtDesconto.Text = i.Desconto.ToString();
                     chkDescontinuado.Checked = i.Descontinuado;
 
-                    MemoryStream mstream = new MemoryStream(ProdutoModel.PesquisaFoto(Convert.ToInt32(txtId.Text)));
+                    MemoryStream mstream = new MemoryStream(ProdutoModel.PesquisaFotoId(Convert.ToInt32(txtId.Text)));
                     picImage.Image = System.Drawing.Image.FromStream(mstream);
                 });
             }
@@ -359,7 +359,7 @@ namespace ComercialSys
                     txtValor.Text = i.Valor.ToString();
                     txtDesconto.Text = i.Desconto.ToString();
 
-                    MemoryStream mstream = new MemoryStream(ProdutoModel.PesquisaFoto(Convert.ToInt32(txtId.Text)));
+                    MemoryStream mstream = new MemoryStream(ProdutoModel.PesquisaFotoId(Convert.ToInt32(txtId.Text)));
                     picImage.Image = System.Drawing.Image.FromStream(mstream);
                 });
             }

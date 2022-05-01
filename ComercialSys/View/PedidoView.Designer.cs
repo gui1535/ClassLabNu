@@ -62,6 +62,7 @@
             this.colunaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colunaDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gpDadosPed.SuspendLayout();
             this.gpItensPed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridItensPedido)).BeginInit();
@@ -608,13 +609,23 @@
             this.colunaDesconto.Name = "colunaDesconto";
             this.colunaDesconto.ReadOnly = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(850, 265);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(220, 230);
+            this.groupBox1.TabIndex = 39;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Imagem";
+            // 
             // PedidoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1097, 726);
-            this.Controls.Add(this.lbStatusPed);
             this.Controls.Add(this.picImage);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.lbStatusPed);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.gpOperacoes);
             this.Controls.Add(this.txtValorFinal);
@@ -672,5 +683,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaDesconto;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

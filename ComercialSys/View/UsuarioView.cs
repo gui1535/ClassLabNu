@@ -13,7 +13,6 @@ namespace ComercialSys.View
 
             //MdiParent
             MdiParent = parent;
-
             
             // Listar usuarios
             ListarDataGrid();

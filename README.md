@@ -18,7 +18,6 @@ No momento, o sistema lista, cadastra e armazena em um banco de dados relacional
 As técnicas e tecnologias utilizadas pra isso são:
 
 - `MetroFramework`: Deixar visual do sistema mais moderno
-- `DataGridView`: Listagem de produtos, clientes e usuarios de forma mais interativa
 - `Procedures`: Facilitar a manipulação de dados
 - `Biblioteca de classes`: Prover a reusabilidade em sistemas futuros
 - `Web Service ViaCep`: Consultando CEP do clientes atraves de um Web Service do Viacep
